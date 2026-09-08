@@ -1,0 +1,457 @@
+archetype (adl_version=1.4; uid=9ad69ec8-3759-4ba1-a10f-48ecb99be244)
+	openEHR-EHR-CLUSTER.admin_salut.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"Pau Corral Montañés">
+				["organisation"] = <"Sample Health Service">
+				["email"] = <"pcorral@ticsalutsocial.cat">
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+				["name"] = <"Pau Corral Montañés">
+				["organisation"] = <"Sample Health Service">
+				["email"] = <"pcorral@ticsalutsocial.cat">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-02-01">
+		["name"] = <"Clinical Modeling Team">
+		["organisation"] = <"SampleHealth">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*Lorem Ipsum (ca)">
+			keywords = <"*Lorem Ipsum (ca)", ...>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+			use = <"*Lorem Ipsum (ca)">
+			misuse = <"*Lorem Ipsum (ca)">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Lorem Ipsum">
+			keywords = <"Lorem Ipsum", ...>
+			use = <"Lorem Ipsum">
+			misuse = <"Lorem Ipsum">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"*Lorem Ipsum (ca)">
+			keywords = <"*Lorem Ipsum (ca)", ...>
+			copyright = <"© openEHR Foundation">
+			use = <"*Lorem Ipsum (ca)">
+			misuse = <"*Lorem Ipsum (ca)">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Sample Health Service">
+		["references"] = <"Lorem Ipsum">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"20e7046af716a76c3f60257bf8f7ea9f">
+		["build_uid"] = <"ef244692-23eb-3dbd-a1a3-9a9658a33114">
+		["revision"] = <"0.0.0">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Admin salut
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Data autorització document
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Data creació document
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Data publicació document
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Codi règim econòmic
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- CCAA
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0006] occurrences matches {0..1} matches {    -- Institució realitzadora
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Centre realitzador
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- SA realitzador
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- UP realitzadora
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0010] occurrences matches {0..1} matches {    -- Institució publicadora
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Centre publicador
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- SA publicador
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- UP publicadora
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0014] occurrences matches {0..1} matches {    -- Institució custòdia
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Centre custòdia
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- SA custòdia
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- UP custòdia
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0018] occurrences matches {0..1} matches {    -- Institució sol·licitant
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Centre sol·licitant
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {    -- SA sol·licitant
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- UP sol·licitant
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin salut">
+					description = <"Arquetip per recullir les necessitats del SampleHealth en persistir les dades en format openEHR al RDC">
+				>
+				["at0001"] = <
+					text = <"Data autorització document">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Data creació document">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Data publicació document">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Codi règim econòmic">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"CCAA">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Institució realitzadora">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Centre realitzador">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"SA realitzador">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"UP realitzadora">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Institució publicadora">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Centre publicador">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"SA publicador">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"UP publicadora">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Institució custòdia">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Centre custòdia">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"SA custòdia">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"UP custòdia">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Institució sol·licitant">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Centre sol·licitant">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"SA sol·licitant">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"UP sol·licitant">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin salut">
+					description = <"*Arquetip per recullir les necessitats del SampleHealth en persistir les dades en format openEHR al RDC (ca)">
+				>
+				["at0001"] = <
+					text = <"Document authorisation date">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Document creation date">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Document publication date">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Economic code">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Responsible region">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Performing institution">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Performing centre">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Performing SA">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Performing UP">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Publishing institution">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Publishing centre">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Publishing SA">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Publishing UP">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Custodial institution">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Custodial centre">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Custodial SA">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Custodial UP">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Requesting institution">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Requesting centre">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Requesting SA">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Requesting UP">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin salut">
+					description = <"*Arquetip per recullir les necessitats del SampleHealth en persistir les dades en format openEHR al RDC (ca)">
+				>
+				["at0001"] = <
+					text = <"Fecha autorización documento">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Fecha creación documento">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Fecha publicacion documento">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Código régimen económico">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"CCAA">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Institución realizadora">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Centro realizador">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"SA realizador">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"UP realitzadora">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Institución publicadora">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Centro publicador">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"SA publicador">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"UP publicadora">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Institución custodia">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Centro custodia">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"SA custodia">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"UP custodia">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Institución solicitante">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Centro solicitante">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"SA solicitante">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"UP solicitante">
+					description = <"">
+				>
+			>
+		>
+	>

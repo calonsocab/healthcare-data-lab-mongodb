@@ -1,0 +1,54 @@
+archetype (adl_version=1.4; uid=ab9ac6d7-66f4-48bf-9728-1661353c5db1)
+	openEHR-EHR-COMPOSITION.informe_ad_hoc.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+
+description
+	original_author = <
+		["date"] = <"2023-11-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"70ab12277ef4320a7bbce48e83a0e95a">
+		["build_uid"] = <"e18eb09c-adef-37f9-aa6d-3b72e34f0117">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- informe_ad_hoc
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"informe_ad_hoc">
+					description = <"Informe d'implant">
+				>
+			>
+		>
+	>

@@ -1,0 +1,94 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "air_know-c1r",
+    "user" : "179175ce-a420-441a-b931-2a7d1b12d414@microsoft",
+    "repositoryId" : "air_know-c1r"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/air_known_allergies_v0.3.t.json",
+    "type" : "template",
+    "id" : "air_known_allergies_v0.3",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2025-01-22T15:15:04.587Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.absence.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.adverse_reaction_list.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adverse_reaction_list.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.adverse_reaction_screening.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.exclusion_global.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0"
+    } ]
+  }, {
+    "path" : "Templates/air_known_allergies_v0.3.opt",
+    "type" : "opt",
+    "id" : "air_known_allergies_v0.3",
+    "lastModified" : "2025-01-22T15:15:04.587Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.absence.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.absence.v2",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-12-02T11:35:06.147Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.adverse_reaction_list.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.adverse_reaction_list.v1",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adverse_reaction_list.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adverse_reaction_list.v0",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.adverse_reaction_screening.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.adverse_reaction_screening.v0",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.exclusion_global.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.exclusion_global.v1",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:36:03.385Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0",
+    "sourceId" : "air_know-c1r",
+    "lastModified" : "2024-11-25T11:34:50.248Z"
+  } ]
+}

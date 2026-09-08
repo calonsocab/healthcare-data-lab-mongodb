@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .box { fill: #ffffff; stroke: #0f172a; stroke-width: 2; rx: 18; }
+      .title { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-weight: 700; font-size: 20px; fill: #0f172a; }
+      .text { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-weight: 500; font-size: 14px; fill: #334155; }
+      .muted { fill: #64748b; font-weight: 500; }
+      .chip { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.5; rx: 999; }
+      .chipText { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-weight: 600; font-size: 12px; fill: #0f172a; }
+      .accent { stroke: #0ea5a4; }
+      .accentFill { fill: #e6fffb; }
+      .arrow { stroke: #0f172a; stroke-width: 2.5; fill: none; marker-end: url(#arrowHead); }
+      .arrowMuted { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrowHeadMuted); }
+    </style>
+
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#0f172a"/>
+    </marker>
+    <marker id="arrowHeadMuted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- background (set to 'none' for transparent) -->
+  <rect class="bg" x="0" y="0" width="1400" height="420"/>
+
+  <!-- 1) Raw data -->
+  <rect class="box" x="40" y="70" width="250" height="280" rx="18"/>
+  <text class="title" x="65" y="110">Raw data (at scale)</text>
+  <text class="text" x="65" y="140">EHR events, notes, labs,</text>
+  <text class="text" x="65" y="160">imaging, claims, genomics</text>
+
+  <!-- mini cards -->
+  <rect class="chip" x="65" y="195" width="95" height="28" rx="999"/><text class="chipText" x="82" y="214">Vitals</text>
+  <rect class="chip" x="170" y="195" width="95" height="28" rx="999"/><text class="chipText" x="193" y="214">Labs</text>
+
+  <rect class="chip" x="65" y="235" width="95" height="28" rx="999"/><text class="chipText" x="86" y="254">Notes</text>
+  <rect class="chip" x="170" y="235" width="95" height="28" rx="999"/><text class="chipText" x="186" y="254">Orders</text>
+
+  <rect class="chip" x="65" y="275" width="120" height="28" rx="999"/><text class="chipText" x="83" y="294">Imaging</text>
+  <rect class="chip" x="195" y="275" width="70" height="28" rx="999"/><text class="chipText" x="212" y="294">Dx</text>
+
+  <text class="text muted" x="65" y="330">Millions → billions of records</text>
+
+  <!-- 2) ContextObjects layer -->
+  <rect class="box accent" x="330" y="70" width="380" height="280" rx="18"/>
+  <rect class="accentFill" x="332" y="72" width="376" height="276" rx="16" opacity="0.55"/>
+  <text class="title" x="355" y="110">ContextObjects layer</text>
+  <text class="text" x="355" y="138">openEHR-inspired dual modelling,</text>
+  <text class="text" x="355" y="158">without heavy RM constraints</text>
+
+  <!-- chips -->
+  <rect class="chip" x="355" y="195" width="140" height="28" rx="999"/><text class="chipText" x="375" y="214">Context + anchors</text>
+  <rect class="chip" x="505" y="195" width="165" height="28" rx="999"/><text class="chipText" x="528" y="214">Terminologies</text>
+
+  <rect class="chip" x="355" y="235" width="140" height="28" rx="999"/><text class="chipText" x="375" y="254">Enriched fields</text>
+  <rect class="chip" x="505" y="235" width="165" height="28" rx="999"/><text class="chipText" x="548" y="254">Embeddings</text>
+
+  <rect class="chip" x="355" y="275" width="315" height="28" rx="999"/><text class="chipText" x="380" y="294">Provenance + governance (PHI/purpose)</text>
+
+  <text class="text muted" x="355" y="330">Persist "situations" (episode, workup, therapy line…)</text>
+
+  <!-- 3) Agent -->
+  <rect class="box" x="750" y="90" width="220" height="240" rx="18"/>
+  <text class="title" x="775" y="130">Agent / Copilot</text>
+  <text class="text" x="775" y="158">Understands intent</text>
+  <text class="text" x="775" y="178">and allowed access</text>
+
+  <!-- speech bubble -->
+  <path d="M785 205
+           Q785 190 800 190
+           H935
+           Q950 190 950 205
+           V245
+           Q950 260 935 260
+           H835
+           L815 278
+           L818 260
+           H800
+           Q785 260 785 245 Z"
+        fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text class="text" x="802" y="215">"What's the status of</text>
+  <text class="text" x="802" y="235">this diagnostic workup?"</text>
+
+  <text class="text muted" x="775" y="312">Detects data points</text>
+
+  <!-- 4) Query planner -->
+  <rect class="box" x="1005" y="110" width="330" height="200" rx="18"/>
+  <text class="title" x="1030" y="150">Operational query plan</text>
+  <text class="text" x="1030" y="178">Single request to the store</text>
+
+  <rect class="chip" x="1030" y="205" width="290" height="28" rx="999"/>
+  <text class="chipText" x="1050" y="224">Filter by anchors + time window</text>
+
+  <rect class="chip" x="1030" y="243" width="290" height="28" rx="999"/>
+  <text class="chipText" x="1050" y="262">Join linked data + coded fields</text>
+
+  <rect class="chip" x="1030" y="281" width="290" height="28" rx="999"/>
+  <text class="chipText" x="1050" y="300">Text / vector search when needed</text>
+
+  <!-- arrows -->
+  <path class="arrow" d="M290 210 C310 210, 315 210, 330 210"/>
+  <path class="arrow" d="M710 210 C730 210, 735 210, 750 210"/>
+  <path class="arrow" d="M970 210 C990 210, 995 210, 1005 210"/>
+
+  <!-- bottom caption -->
+  <path class="arrowMuted" d="M1170 312 C1170 360, 670 385, 165 360"/>
+  <text class="text muted" x="520" y="405">Execute at scale → return situation + evidence (governed)</text>
+
+</svg>

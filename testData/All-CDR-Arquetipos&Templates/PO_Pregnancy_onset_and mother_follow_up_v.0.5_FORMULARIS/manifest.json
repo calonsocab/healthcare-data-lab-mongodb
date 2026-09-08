@@ -1,0 +1,166 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "po_071_o-bl0",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "po_071_o-bl0"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Pregnancy_onset_and mother_follow_up_v.0.5_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Pregnancy_onset_and mother_follow_up_v.0.5_FORMULARIS",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-11T14:42:12.545Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.test_request_screen.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_general_data.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.assist_test.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.dades_de_la_parella.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.pregnancy_follow_up_complementary_tests.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.activitats_educatius_seguiment_mare.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_tests.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.mother_general_data.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Pregnancy_onset_and mother_follow_up_v.0.5_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Pregnancy_onset_and mother_follow_up_v.0.5_FORMULARIS",
+    "lastModified" : "2024-11-11T14:42:12.545Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.998Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.test_request_screen.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.test_request_screen.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-07T15:01:26.142Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_general_data.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_general_data.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-05T07:40:15.238Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.assist_test.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.assist_test.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-07T15:00:10.850Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.998Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.dades_de_la_parella.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.dades_de_la_parella.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.998Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.pregnancy_follow_up_complementary_tests.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.pregnancy_follow_up_complementary_tests.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-07T14:52:45.996Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.activitats_educatius_seguiment_mare.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.activitats_educatius_seguiment_mare.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-10-30T15:08:19.994Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_tests.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_tests.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-11T14:38:55.749Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-04T12:28:29.094Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.mother_general_data.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.mother_general_data.v0",
+    "sourceId" : "po_071_o-bl0",
+    "lastModified" : "2024-11-04T13:58:02.953Z"
+  } ]
+}

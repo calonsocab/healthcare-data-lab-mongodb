@@ -1,0 +1,405 @@
+archetype (adl_version=1.4; uid=5532a7de-9c91-4e60-bafe-140a7205a8a9)
+	openEHR-EHR-CLUSTER.medication_attention_mother.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"145dd69db5ca2f0fb13943c24b9bf17f">
+		["build_uid"] = <"daba4f8a-6848-346d-b7d6-e83e94141dd4">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Medication
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Prophylaxis
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0022,    -- Yes
+							at0023]    -- No
+						}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Analgesic treatment during childbirth
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- relaxation
+							at0009,    -- breathing
+							at0010,    -- massage
+							at0011,    -- Local heat
+							at0012,    -- dip water
+							at0013,    -- nitrous oxide
+							at0014,    -- smelly
+							at0015,    -- intravenously
+							at0016,    -- epidural
+							at0017,    -- intradural
+							at0018,    -- locoregional
+							at0019,    -- sedation
+							at0020,    -- general
+							at0021]    -- none
+						}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Reason antibiotic prophylaxis
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0004,    -- SGB- Group B Streptococcus agalactiae
+							at0005,    -- intrapartum fever
+							at0006,    -- elongated amniorrhexis
+							at0007]    -- others
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medicació">
+					description = <"Medicació">
+				>
+				["at0001"] = <
+					text = <"Profilaxi ATB">
+					description = <"Profilaxis ATB">
+				>
+				["at0002"] = <
+					text = <"Tractament analgèsic durant el part">
+					description = <"Tractament analgèsic durant el part">
+				>
+				["at0003"] = <
+					text = <"Motiu profilaxi ATB">
+					description = <"Motiu profilaxis ATB">
+				>
+				["at0004"] = <
+					text = <"SGB- Streptococcus agalactiae del grup B">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"febre intrapart">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"amniorrexis perllonagada">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"altres">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Relaxació">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Respiració">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Massatge">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Calor local">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"immersio aigua">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Oxid nitros">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"pudendos">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"endovenosa">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"peridural">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"intradural">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"locoregional">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"sedació">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"General">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Cap">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Si">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication">
+					description = <"Medication">
+				>
+				["at0001"] = <
+					text = <"Prophylaxis">
+					description = <"ATB prophylaxis">
+				>
+				["at0002"] = <
+					text = <"Analgesic treatment during childbirth">
+					description = <"Analgesic treatment during childbirth">
+				>
+				["at0003"] = <
+					text = <"Reason antibiotic prophylaxis">
+					description = <"Reason ATB prophylaxis">
+				>
+				["at0004"] = <
+					text = <"SGB- Group B Streptococcus agalactiae">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"intrapartum fever">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"elongated amniorrhexis">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"others">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"relaxation">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"breathing">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"massage">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Local heat">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"dip water">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"nitrous oxide">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"smelly">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"intravenously">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"epidural">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"intradural">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"locoregional">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"sedation">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"general">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"none">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medicación">
+					description = <"Medicación">
+				>
+				["at0001"] = <
+					text = <"Profilaxis">
+					description = <"Profilaxis ATB">
+				>
+				["at0002"] = <
+					text = <"Tratamiento analgésico durante el parto">
+					description = <"Tratamiento analgésico durante el parto">
+				>
+				["at0003"] = <
+					text = <"Motivo profilaxis ATB">
+					description = <"Motivo profilaxis ATB">
+				>
+				["at0004"] = <
+					text = <"SGB- Streptococcus agalactiae del grupo B">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"fiebre intrapart">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"amniorexis prolongada">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"otros">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Relajación">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Respiración">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Masaje">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Calor local">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"inmersión agua">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Oxido nitros">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"pudendos">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"endovenosa">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"peridural">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"intradural">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"locoregional">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"sedación">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"General">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Ninguno">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Si">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+			>
+		>
+	>

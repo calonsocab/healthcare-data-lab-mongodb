@@ -1,0 +1,213 @@
+archetype (adl_version=1.4; uid=d906e83e-9307-4142-8c67-8ecad6c618e8)
+	openEHR-EHR-COMPOSITION.self_reported_data.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2022-04-29">
+		["name"] = <"Marit Alice Venheim">
+		["organisation"] = <"Helse Vest IKT AS">
+		["email"] = <"marit.alice.venheim@helse-vest-ikt.no">
+	>
+	lifecycle_state = <"published">
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)","Astrid Askeland, Dips AS, Norway","Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)","Aleocidio Balzanelo, DASA, Brazil","Maria Berggren, Region Uppsala, Sweden","SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India","Diego Bosca, VeraTech for Health, Spain","Samanta Dallagnese, Private Office, Brazil","Gunn Elin Blakkisrud, DIPS ASA, Norway","Kåre Flø, DIPS ASA, Norway","Martin Grundberg, Cambio Healthcare Systems, Sweden","Evelyn Hovenga, EJSH Consulting, Australia","Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)","Ronald Krawec, Alberta Health Services, Canada","Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)","Liv Laugen, ​Oslo University Hospital, Norway, Norway","Heather Leslie, Atomica Informatics, Australia (openEHR Editor)","Manisha Mantri, C-DAC, India","Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)","Mikael Nyström, Cambio Healthcare Systems AB, Sweden","Terje Sagmyr, Helse Vest IKT, Norway","Carina Sandell, Region Östergötland, Sweden","Andre Smitt-Ingebretsen, Sørlandet sykehus HF, Norway","Natalia Strauch, Medizinische Hochschule Hannover, Germany","Erik Sundvall, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University, Sweden","John Tore Valand, Helse Bergen, Norway (openEHR Editor)","Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)","Ina Wille, Helse-Vest RHF, Norway">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"A container for information provided by an individual, to support clear separation of patient generated from clinician-generated health data.">
+			keywords = <"questionnaire, self-report, form, survey, PROM, PREM, PRO, diary, journal", ...>
+			copyright = <"© openEHR Foundation">
+			use = <"Use as a generic container to record information provided by an individual, to support clear separation of patient-generated from clinician-generated health data.
+
+The scope of content for this archetype can be very broad and be inclusive of many contexts. The anticipated scope of content includes, but not limited to:
+- self-generated responses to questionnaires, including PREMs or PROMs
+- pain or mood diary
+- tobacco smoking diary
+- self-generated health summary for sharing with others
+- self-monitoring of measurements and observations
+
+The anticipated use of this archetype includes, but is not limited to:
+- submission of a self-reported questionnaire to a clinician in advance of a planned contact
+- submission of a contact request form
+- daily measurements within a Personal Health Record
+- patient-entered data in a shared clinical portal
+- patient generated records of information from personal or medical devices
+
+The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template.">
+			misuse = <"Not to be used to represent clinician-generated records.">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"d7d16ed11c0972de9035521cfaafafd2">
+		["build_uid"] = <"228f6227-4ee7-4853-86e8-3afccefce6d2">
+		["revision"] = <"1.0.1">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Self-reported data
+		category matches {
+			DV_CODED_TEXT[at0001] matches {    -- Coded text
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT[at0002] matches {    -- Event Context
+				other_context matches {
+					ITEM_TREE[at0003] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Information Source
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Device
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+							allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Extension
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Self-reported data">
+					description = <"Generic container for information provided by an individual.">
+				>
+				["at0001"] = <
+					text = <"Coded text">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Event Context">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR.">
+				>
+				["at0005"] = <
+					text = <"Device">
+					description = <"To capture the device used to report data.">
+				>
+				["at0006"] = <
+					text = <"Information Source">
+					description = <"About one or more source types for the information contained in the report.">
+					comment = <"This data element may be used when the Information source is different to the author or composer. For example: 'parent'; or 'carer'.">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Self-reported data (en)">
+					description = <"*Generic container for information provided by an individual. (en)">
+				>
+				["at0001"] = <
+					text = <"*Coded text (en)">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"*Event Context (en)">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"*Extension (en)">
+					description = <"*Additional information required to capture local content or to align with other reference models/formalisms. (en)">
+					comment = <"*For example: local information requirements or additional metadata to align with FHIR. (en)">
+				>
+				["at0005"] = <
+					text = <"*Device (en)">
+					description = <"*To capture the device used to report data. (en)">
+				>
+				["at0006"] = <
+					text = <"*Information Source (en)">
+					description = <"*About one or more source types for the information contained in the report. (en)">
+					comment = <"*This data element may be used when the Information source is different to the author or composer. For example: 'parent'; or 'carer'. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Self-reported data (en)">
+					description = <"*Generic container for information provided by an individual. (en)">
+				>
+				["at0001"] = <
+					text = <"*Coded text (en)">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"*Event Context (en)">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"*Extension (en)">
+					description = <"*Additional information required to capture local content or to align with other reference models/formalisms. (en)">
+					comment = <"*For example: local information requirements or additional metadata to align with FHIR. (en)">
+				>
+				["at0005"] = <
+					text = <"*Device (en)">
+					description = <"*To capture the device used to report data. (en)">
+				>
+				["at0006"] = <
+					text = <"*Information Source (en)">
+					description = <"*About one or more source types for the information contained in the report. (en)">
+					comment = <"*This data element may be used when the Information source is different to the author or composer. For example: 'parent'; or 'carer'. (en)">
+				>
+			>
+		>
+	>

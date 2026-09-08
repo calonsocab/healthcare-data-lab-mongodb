@@ -1,0 +1,4618 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "d793e8f8-11e5-4cf2-a767-a7b456dcde80",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2024-07-10"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "",
+      "custodian_organisation" : "",
+      "original_namespace" : "",
+      "original_publisher" : "",
+      "custodian_namespace" : "",
+      "sem_ver" : "23.0.0",
+      "build_uid" : "",
+      "MD5-CAM-1.0.1" : "023cfe7d1c19b0d2e069747289f89653",
+      "PARENT:MD5-CAM-1.0.1" : "6ef9e1249182645814310495df3985e6"
+    },
+    "details" : {
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "es" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ca" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ca"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+  "differential" : false,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_probs_base_composition.v0"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "occurrences" : "1..1",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "existence" : "1..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "existence" : "0..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "occurrences" : "1..1",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "existence" : "0..1",
+              "cardinality" : {
+                "@type" : "CARDINALITY",
+                "interval" : "0..*",
+                "ordered" : false,
+                "unique" : false
+              },
+              "children" : [ {
+                "@type" : "ARCHETYPE_SLOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002",
+                "includes" : [ {
+                  "@type" : "ASSERTION",
+                  "stringExpression" : "archetype_id/value matches {/.*/}",
+                  "expression" : {
+                    "@type" : "BINARY_OPERATOR",
+                    "type" : "BOOLEAN",
+                    "operator" : "matches",
+                    "leftOperand" : {
+                      "@type" : "MODEL_REFERENCE",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Attribute",
+                      "path" : "archetype_id/value"
+                    },
+                    "rightOperand" : {
+                      "@type" : "CONSTRAINT",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Constraint",
+                      "item" : {
+                        "@type" : "C_STRING",
+                        "constraint" : [ "/.*/" ]
+                      }
+                    },
+                    "precedenceOverriden" : false
+                  },
+                  "variables" : [ ]
+                } ],
+                "excludes" : [ ],
+                "closed" : false
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..1",
+                "nodeId" : "at0002.1",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-admin_salut-001.v0",
+                "referenceType" : "archetypeOverlay"
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..1",
+                "nodeId" : "at0002.2",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-xds_metadata-001.v0",
+                "referenceType" : "archetypeOverlay"
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..1",
+                "nodeId" : "at0002.3",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-admin_professional-001.v0",
+                "referenceType" : "archetypeOverlay"
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..1",
+                "nodeId" : "at0002.4",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-health_thread-001.v0",
+                "referenceType" : "archetypeOverlay"
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-probs_base_observation-001.v0",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ca" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "PO_Pregnancy_End",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "*PROBS_base_composition (en)",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Item tree",
+          "description" : "@ internal @"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.4" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        }
+      },
+      "es" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "PO_Pregnancy_End",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "*PROBS_base_composition (en)",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Item tree",
+          "description" : "@ internal @"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.4" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        }
+      },
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "PO_Pregnancy_End",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "*PROBS_base_composition (en)",
+          "description" : "*PROBS_base_composition (en)"
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Item tree",
+          "description" : "@ internal @"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        },
+        "at0002.4" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*CLUSTER_SLOT (en)",
+          "description" : ""
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "75243fec-7e8d-3773-bb3e-0fa305511507",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "PO_Pregnancy_End_v0.7_FORMULARIS",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "c2016d94-567e-4967-9f31-bcf00aae7bc8",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "8B41A545D448137713B8815907732588"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-admin_salut-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0002",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0023",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0003",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0004",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0005",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "existence" : "1..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0026.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "CATÀLEG EP ST"
+                      },
+                      "constraint" : [ "ac0.2" ],
+                      "selectedTerminologies" : [ "CATÀLEG EP ST" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0013.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "CATÀLEG UP ST"
+                      },
+                      "constraint" : [ "ac0.1" ],
+                      "selectedTerminologies" : [ "CATÀLEG UP ST" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0011",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0012",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "existence" : "1..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0027",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0016",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0014",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0015",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0010.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "existence" : "1..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0028",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0019",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0017",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0018",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0009",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "existence" : "1..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0029",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0022",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0020",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0021",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "existence" : "0..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "ARCHETYPE_SLOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0025",
+          "includes" : [ {
+            "@type" : "ASSERTION",
+            "stringExpression" : "archetype_id/value matches {/.*/}",
+            "expression" : {
+              "@type" : "BINARY_OPERATOR",
+              "type" : "BOOLEAN",
+              "operator" : "matches",
+              "leftOperand" : {
+                "@type" : "MODEL_REFERENCE",
+                "type" : "STRING",
+                "precedenceOverriden" : false,
+                "referenceType" : "Attribute",
+                "path" : "archetype_id/value"
+              },
+              "rightOperand" : {
+                "@type" : "CONSTRAINT",
+                "type" : "STRING",
+                "precedenceOverriden" : false,
+                "referenceType" : "Constraint",
+                "item" : {
+                  "@type" : "C_STRING",
+                  "constraint" : [ "/.*/" ]
+                }
+              },
+              "precedenceOverriden" : false
+            },
+            "variables" : [ ]
+          } ],
+          "excludes" : [ ],
+          "closed" : false
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salut",
+            "description" : "Admin Salut"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Document authorisation date",
+            "description" : ""
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Document creation date",
+            "description" : "Date and time when the source document is generated by the supplier system. \r\n"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Economic code",
+            "description" : ""
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Responsible region",
+            "description" : ""
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Performing institution",
+            "description" : ""
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Publishing institution",
+            "description" : ""
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Requesting institution",
+            "description" : ""
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Custodial institution",
+            "description" : ""
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Performing centre",
+            "description" : ""
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Performing SA",
+            "description" : ""
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Performing UP",
+            "description" : ""
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Publishing centre",
+            "description" : ""
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Publishing SA",
+            "description" : ""
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Publishing UP",
+            "description" : ""
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Custodial centre",
+            "description" : ""
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Custodial SA",
+            "description" : ""
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Custodial UP",
+            "description" : ""
+          },
+          "at0020" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020",
+            "text" : "Requesting centre",
+            "description" : ""
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Requesting SA",
+            "description" : ""
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Requesting UP",
+            "description" : ""
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Document publication date",
+            "description" : "Date and time when the previously created document is registered in the target database. "
+          },
+          "at0025" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0025",
+            "text" : "Additional details",
+            "description" : ""
+          },
+          "at0026" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026",
+            "text" : "Performing EP",
+            "description" : ""
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Publishing EP",
+            "description" : ""
+          },
+          "at0028" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0028",
+            "text" : "Custodial EP",
+            "description" : ""
+          },
+          "at0029" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0029",
+            "text" : "Requesting EP",
+            "description" : ""
+          },
+          "at0007.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Publishing institution",
+            "description" : ""
+          },
+          "at0010.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Custodial institution",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salut",
+            "description" : "Admin Salut"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Performing UP",
+            "description" : ""
+          },
+          "at0026.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026.1",
+            "text" : "Performing EP",
+            "description" : ""
+          }
+        },
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salut",
+            "description" : "Dades administratives relatives a l'actuació sanitària registrada, necessàries per complementar la semàntica del contingut clínic, que no estan presents al Model de Referència, o que es decideix modelar al Template per motius tècnics.",
+            "comment" : "Les dades no clíniques d'una actuació sanitària que són necessàries per entendre correctament el registre clínic en consultar-lo (localització de l'actuació, tipus d'activitat sanitària, etc.) haurien de ser registrades a la Composició.\r\nEs poden registrar al Model de Referència (no modelables) si estan contemplades a les especificacions. Si no existeix aquesta possibilitat al Model de Referència o és preferible per raons tècniques, es poden modelar com a Cluster a nivell del context de la Composició."
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Data autorització document",
+            "description" : "Data en que el document s'autoritza per poder ser publicat."
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Data creació document",
+            "description" : "Data en que el sistema d'origen crea el document registrat."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Règim econòmic",
+            "description" : "Tipus d'entitat asseguradora que proporciona el nivell de cobertura sanitària (les prestacions sanitàries a les quals tenen dret els ciutadans assegurats). Per exemple:  Propi (Sample Health Service), Altres comunitats autònomes (Sample Health Service), Entitats d'assegurança lliure, Particular...\r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Servidor Terminològic \"U-DT 0072\" OID 2.16.840.1.113883.12.72"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Regió sanitària",
+            "description" : "En el sistema de salut català, una regió sanitària és una unitat territorial que organitza la prestació de serveis sanitaris a la població d'una zona específica. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Cada regió sanitària compta amb recursos sanitaris d'atenció primària i d'atenció especialitzada i s'ordena, al seu torn, en sectors sanitaris, que agrupen les anomenades àrees bàsiques de salut, formades per barris o districtes a les àrees urbanes, o per un o més municipis en l'àmbit rural.\r\nServidor Terminològic \"RS\" OID 2.16.724.4.9.20.7"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Institució que realitza",
+            "description" : "Dades relatives a la institució que realitza l'actuació sanitària documentada, incloent-hi identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada.\r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Institució publicadora",
+            "description" : "Dades relatives a la institució que publica el resultat de l'actuació sanitària documentada, incloent-hi identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada.\r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Institució sol·licitant",
+            "description" : "Dades relatives a la institució que sol·licita la realització de l'actuació sanitària documentada, incloent identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada. \r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Institució custòdia",
+            "description" : "Dades relatives a la institució que custodia el resultat de l'actuació sanitària documentada, incloent identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada. \r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Centre sanitari que realitza",
+            "description" : "Instal·lació física dotada de mitjans tècnics on professionals amb capacitació han realitzat l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Centre sanitari: conjunt organitzat d'instal·lacions i mitjans tècnics on professionals amb capacitació, sota la direcció d'un responsable sanitari, duen a terme activitats sanitàries. Cada centre pertany a una Entitat Proveïdora (EP) i realitza activitats sanitàries emmarcades administrativament en una o més Unitats Proveïdores (UP).\r\nServidor Terminològic \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Servei Assistencial que realitza",
+            "description" : "Codi que indica el tipus de Servei sanitari on es realitza l'actuació sanitària documentada, segons la categoria de l'activitat assistencial que fa.  \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats. ",
+            "comment" : "Un Servei Sanitari és una unitat funcional assistencial, amb organització diferenciada, dotada de professionals i recursos tècnics per fer activitats sanitàries específiques dintre d'un Centre sanitari, i es categoritza pel tipus d'activitat que presta (Medicina general/de família, Infermeria, Podologia, Vacunació, Al·lergologia, Cardiologia, Dermatologia...)\r\nEl concepte registrat aquí és coincident amb el descrit a l'Element \"Practice Setting Code\" del cluster \"XDS Metadata\".\r\nEs recomana utilitzar l'Element \"Practice Setting Code\" en lloc de \"Servei Assistencial que realitza\" per registrar el tipus d'activitat prestada a un Servei Sanitari (tipus de Servei sanitari).\r\nNomés es recomana utilitzar aquest Element quan es vulgui registrar concomitantment el tipus d'activitat d'altres Serveis sanitaris implicats (petició, publicació o custòdia del resultat l'actuació sanitària). En aquest cas, es recomana registrar el tipus de Servei Sanitari que executa l'actuació sanitària tant a \"Practice Setting Code\" com a \"Servei Assistencial que realitza\" per evitar inconsistències d'informació.\r\nServidor Terminològic \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Unitat Proveïdora que realitza",
+            "description" : "Subdivisió operativa dins d'una \"Entitat proveïdora\" que gestiona el conjunt específic de serveis responsable de realitzar l'actuació sanitària documentada.\r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "UP (Unitat proveïdora): divisió administrativa d'una Entitat proveïdora (EP) segons el tipus de prestació sanitària (línies assistencials) acordada amb el Catsalut (per exemple A. primària, Salut Mental, Hospitalització, Sociosanitari...). Cada UP pot incloure diversos centres sanitaris.\r\nServidor Terminològic \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Centre sanitari publicador",
+            "description" : "Instal·lació física dotada de mitjans tècnics on professionals amb capacitació han publicat el resultat de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Centre sanitari: conjunt organitzat d'instal·lacions i mitjans tècnics on professionals amb capacitació, sota la direcció d'un responsable sanitari, duen a terme activitats sanitàries. Cada centre pertany a una Entitat Proveïdora (EP) i realitza activitats sanitàries emmarcades administrativament en una o més Unitats Proveïdores (UP).\r\nServidor Terminològic \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Servei Assistencial publicador",
+            "description" : "Codi que indica el tipus de Servei sanitari on es publica el resultat de l'actuació sanitària documentada, segons la categoria de l'activitat assistencial que fa.  \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats. ",
+            "comment" : "Un Servei Sanitari és una unitat funcional assistencial, amb organització diferenciada, dotada de professionals i recursos tècnics per fer activitats sanitàries específiques dintre d'un Centre sanitari, i es categoritza pel tipus d'activitat que presta (Medicina general/de família, Infermeria, Podologia, Vacunació, Al·lergologia, Cardiologia, Dermatologia...).\r\nServidor Terminològic \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Unitat Proveïdora publicadora",
+            "description" : "Subdivisió operativa dins d'una \"Entitat proveïdora\" que gestiona el conjunt específic de serveis responsable de  publicar el resultat de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "UP (Unitat proveïdora): divisió administrativa d'una Entitat proveïdora (EP) segons el tipus de prestació sanitària (línies assistencials) acordada amb el Catsalut (per exemple A. primària, Salut Mental, Hospitalització, Sociosanitari...). Cada UP pot incloure diversos centres sanitaris.\r\nServidor Terminològic \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Centre sanitari custodi",
+            "description" : "Instal·lació física dotada de mitjans tècnics on professionals amb capacitació custodien el resultat de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Centre sanitari: conjunt organitzat d'instal·lacions i mitjans tècnics on professionals amb capacitació, sota la direcció d'un responsable sanitari, duen a terme activitats sanitàries. Cada centre pertany a una Entitat Proveïdora (EP) i realitza activitats sanitàries emmarcades administrativament en una o més Unitats Proveïdores (UP).\r\nServidor Terminològic \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Servei Assistencial custodi",
+            "description" : "Codi que indica el tipus de Servei sanitari on es custodia el resultat de l'actuació sanitària documentada, segons la categoria de l'activitat assistencial que fa.  \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats. ",
+            "comment" : "Un Servei Sanitari és una unitat funcional assistencial, amb organització diferenciada, dotada de professionals i recursos tècnics per fer activitats sanitàries específiques dintre d'un Centre sanitari, i es categoritza pel tipus d'activitat que presta (Medicina general/de família, Infermeria, Podologia, Vacunació, Al·lergologia, Cardiologia, Dermatologia...).\r\nServidor Terminològic \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Unitat Proveïdora custòdia",
+            "description" : "Subdivisió operativa dins d'una \"Entitat proveïdora\" que gestiona el conjunt específic de serveis responsable de la custòdia del resultat de l'actuació sanitària documentada.\r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "UP (Unitat proveïdora): divisió administrativa d'una Entitat proveïdora (EP) segons el tipus de prestació sanitària (línies assistencials) acordada amb el Catsalut (per exemple A. primària, Salut Mental, Hospitalització, Sociosanitari...). Cada UP pot incloure diversos centres sanitaris.\r\nServidor Terminològic \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0020" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020",
+            "text" : "Centre sanitari sol·licitant",
+            "description" : "Instal·lació física dotada de mitjans tècnics on professionals amb capacitació sol·liciten la realització de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "Centre sanitari: conjunt organitzat d'instal·lacions i mitjans tècnics on professionals amb capacitació, sota la direcció d'un responsable sanitari, duen a terme activitats sanitàries. Cada centre pertany a una Entitat Proveïdora (EP) i realitza activitats sanitàries emmarcades administrativament en una o més Unitats Proveïdores (UP).\r\nServidor Terminològic \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Servei Assistencial sol·licitant",
+            "description" : "Codi que indica el tipus de Servei sanitari que sol·licita l'actuació sanitària documentada, segons la categoria de l'activitat assistencial que fa.  \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats. ",
+            "comment" : "Un Servei Sanitari és una unitat funcional assistencial, amb organització diferenciada, dotada de professionals i recursos tècnics per fer activitats sanitàries específiques dintre d'un Centre sanitari, i es categoritza pel tipus d'activitat que presta (Medicina general/de família, Infermeria, Podologia, Vacunació, Al·lergologia, Cardiologia, Dermatologia...).\r\nServidor Terminològic \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Unitat Proveïdora sol·licitant",
+            "description" : "Subdivisió operativa dins d'una \"Entitat proveïdora\" que gestiona el conjunt específic de serveis responsable de sol·licitar la realització de l'actuació sanitària documentada.\r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "UP (Unitat proveïdora): divisió administrativa d'una Entitat proveïdora (EP) segons el tipus de prestació sanitària (línies assistencials) acordada amb el Catsalut (per exemple A. primària, Salut Mental, Hospitalització, Sociosanitari...). Cada UP pot incloure diversos centres sanitaris.\r\nServidor Terminològic \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Data publicació document",
+            "description" : "Data en la que el document creat es va registrar a la base de dades de destí. "
+          },
+          "at0025" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0025",
+            "text" : "Detalls addicionals",
+            "description" : ""
+          },
+          "at0026" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026",
+            "text" : "Entitat Proveïdora que realitza",
+            "description" : "Organització que proveeix serveis de salut a Catalunya, dins del Sistema Sanitari Integral d'Utilització Pública de Catalunya (SISCAT), i que ha realitzat l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "EP (Entitat proveïdora): entitat amb personalitat jurídica que acorda amb el Catsalut (assegurador) la prestació de serveis sanitaris als usuaris (assegurats).\r\nServidor Terminològic \"Catàleg EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Entitat Proveïdora publicadora",
+            "description" : "Organització que proveeix serveis de salut a Catalunya, dins del Sistema Sanitari Integral d'Utilització Pública de Catalunya (SISCAT), i que publica el resultat de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "EP (Entitat proveïdora): entitat amb personalitat jurídica que acorda amb el Catsalut (assegurador) la prestació de serveis sanitaris als usuaris (assegurats).\r\nServidor Terminològic \"Catàleg EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0028" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0028",
+            "text" : "Entitat Proveïdora custòdia",
+            "description" : "Organització que proveeix serveis de salut a Catalunya, dins del Sistema Sanitari Integral d'Utilització Pública de Catalunya (SISCAT), i que custodia el resultat de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "EP (Entitat proveïdora): entitat amb personalitat jurídica que acorda amb el Catsalut (assegurador) la prestació de serveis sanitaris als usuaris (assegurats).\r\nServidor Terminològic \"Catàleg EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0029" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0029",
+            "text" : "Entitat Proveïdora sol·licitant",
+            "description" : "Organització que proveeix serveis de salut a Catalunya, dins del Sistema Sanitari Integral d'Utilització Pública de Catalunya (SISCAT), i que sol·licita la realització de l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "EP (Entitat proveïdora): entitat amb personalitat jurídica que acorda amb el Catsalut (assegurador) la prestació de serveis sanitaris als usuaris (assegurats).\r\nServidor Terminològic \"Catàleg EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0007.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Institució publicadora",
+            "description" : "Dades relatives a la institució que publica el resultat de l'actuació sanitària documentada, incloent-hi identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada.\r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0010.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Institució custòdia",
+            "description" : "Dades relatives a la institució que custodia el resultat de l'actuació sanitària documentada, incloent identificació de l'entitat, subdivisions administratives (unitats proveïdores, centres) i el tipus d'activitat sanitària prestada. \r\nEls llistats de valors de resposta possibles dels Elements continguts s'hauria de restringir als dels corresponents catàlegs del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats."
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salut",
+            "description" : "Dades administratives relatives a l'actuació sanitària registrada, necessàries per complementar la semàntica del contingut clínic, que no estan presents al Model de Referència, o que es decideix modelar al Template per motius tècnics.",
+            "comment" : "Les dades no clíniques d'una actuació sanitària que són necessàries per entendre correctament el registre clínic en consultar-lo (localització de l'actuació, tipus d'activitat sanitària, etc.) haurien de ser registrades a la Composició.\r\nEs poden registrar al Model de Referència (no modelables) si estan contemplades a les especificacions. Si no existeix aquesta possibilitat al Model de Referència o és preferible per raons tècniques, es poden modelar com a Cluster a nivell del context de la Composició."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Unitat Proveïdora que realitza",
+            "description" : "Subdivisió operativa dins d'una \"Entitat proveïdora\" que gestiona el conjunt específic de serveis responsable de realitzar l'actuació sanitària documentada.\r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "UP (Unitat proveïdora): divisió administrativa d'una Entitat proveïdora (EP) segons el tipus de prestació sanitària (línies assistencials) acordada amb el Catsalut (per exemple A. primària, Salut Mental, Hospitalització, Sociosanitari...). Cada UP pot incloure diversos centres sanitaris.\r\nServidor Terminològic \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0026.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026.1",
+            "text" : "Entitat Proveïdora que realitza",
+            "description" : "Organització que proveeix serveis de salut a Catalunya, dins del Sistema Sanitari Integral d'Utilització Pública de Catalunya (SISCAT), i que ha realitzat l'actuació sanitària documentada. \r\nEl llistat de valors de resposta possibles d'aquest Element s'hauria de restringir als del corresponent catàleg del Servidor Terminològic del Departament de Salut de Catalunya, on estan disponibles estandarditzats i codificats.",
+            "comment" : "EP (Entitat proveïdora): entitat amb personalitat jurídica que acorda amb el Catsalut (assegurador) la prestació de serveis sanitaris als usuaris (assegurats).\r\nServidor Terminològic \"Catàleg EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salud",
+            "description" : "Datos administrativos relativos a la actuación sanitaria registrada, necesarios para complementar la semántica del contenido clínico, que no están presentes en el Modelo de Referencia, o que se decide modelar en el Template por motivos técnicos.",
+            "comment" : "Los datos no clínicos de una actuación sanitaria que son necesarios para entender correctamente el registro clínico al ser consultado (localización de la actuación, tipo de actividad sanitaria, etc) tendrían que ser registrados en la Composición.\r\nSe pueden registrar en el Modelo de Referencia (no modelables) si están contemplados a las especificaciones. Si no existe esta posibilidad en el Modelo de Referencia o es preferible por razones técnicas, se pueden modelar como Cluster a nivel del contexto de la Composición."
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Fecha autorización documento",
+            "description" : "Fecha en la que el documento se autoriza para poder publicarse."
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Fecha creación documento",
+            "description" : "Fecha en que el sistema de origen crea el documento registrado."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Régimen económico",
+            "description" : "Tipo de entidad aseguradora que proporciona el nivel de cobertura sanitaria (las prestaciones sanitarias a las cuales tienen derecho los ciudadanos asegurados). Por ejemplo: Propio (Servicio Catalán de la Salud), Otras comunidades autónomas (Servicio Catalán de la Salud), Entidades de seguro libre, Particular...\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Servidor Terminológico \"U-DT 0072\" OID 2.16.840.1.113883.12.72"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Región sanitaria",
+            "description" : "En el sistema de salud catalán, una región sanitaria es una unidad territorial que organiza la prestación de servicios sanitarios en la población de una zona específica.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Cada región sanitaria cuenta con recursos sanitarios de atención primaria y de atención especializada y se ordena, a su vez, en sectores sanitarios, que agrupan las llamadas áreas básicas de salud, formadas por barrios o distritos a las áreas urbanas, o por uno o más municipios en el ámbito rural.\r\nServidor Terminológico \"RS\" OID 2.16.724.4.9.20.7"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Institución que realiza",
+            "description" : "Datos relativos a la institución que realiza la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Institución publicadora",
+            "description" : "Datos relativos a la institución que publica el resultado de la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Institución solicitante",
+            "description" : "Datos relativos a la institución que solicita la realización de la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Institución custodia",
+            "description" : "Datos relativos a la institución que custodia el resultado de la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Centro que realiza",
+            "description" : "Instalación física dotada de medios técnicos donde profesionales con capacitación han realizado la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Centro sanitario: conjunto organizado de instalaciones y medios técnicos donde profesionales con capacitación, bajo la dirección de un responsable sanitario, llevan a cabo actividades sanitarias. Cada centro pertenece a una Entidad Proveedora (EP) y realiza actividades sanitarias enmarcadas administrativamente en una o más Unidades Proveedoras (UP).\r\nServidor Terminológico \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Servicio Asistencial que realiza",
+            "description" : "Código que indica el tipo de Servicio sanitario donde se realiza la actuación sanitaria documentada, según la categoría de la actividad asistencial que hace.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Un Servicio Sanitario es una unidad funcional asistencial, con organización diferenciada, dotada de profesionales y recursos técnicos para hacer actividades sanitarias específicas dentro de un Centro sanitario, y se categoriza por el tipo de actividad que presta (Medicina general/de familia, Enfermería, Podología, Vacunación, Alergología, Cardiología, Dermatología...)\r\nEl concepto registrado aquí es coincidente con el descrito en el Elemento \"Practice Setting Code\" del  Cluster \"XDS Metadata\".\r\nSe recomienda utilizar el Elemento \"Practice Setting Code\" en lugar de \"Servicio Asistencial que realiza\" para registrar el tipo de actividad prestada en un Servicio Sanitario (tipo de Servicio sanitario).\r\nSolo se recomienda utilizar este Elemento cuando se quiera registrar concomitantemente el tipo de actividad de otros Servicios sanitarios implicados (petición, publicación o custodia del resultado la actuación sanitaria). En este caso, se recomienda registrar el tipo de Servicio Sanitario que ejecuta la actuación sanitaria tanto en \"Practice Setting Code\" como en \"Servicio Asistencial que realiza\" para evitar inconsistencias de información.\r\nServidor Terminológico \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Unidad Proveedora que realiza",
+            "description" : "Subdivisión operativa dentro de una \"Entidad proveedora\" que gestiona el conjunto específico de servicios responsable de realizar la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "UP (Unidad proveedora): división administrativa de una Entidad proveedora (EP) según el tipo de prestación sanitaria (líneas asistenciales) acordada con el Catsalut (por ejemplo A. primaria, Salud Mental, Hospitalización, Sociosanitario...). Cada UP puede incluir varios centros sanitarios.\r\nServidor Terminológico \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Centro publicador",
+            "description" : "Instalación física dotada de medios técnicos donde profesionales con capacitación han publicado el resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Centro sanitario: conjunto organizado de instalaciones y medios técnicos donde profesionales con capacitación, bajo la dirección de un responsable sanitario, llevan a cabo actividades sanitarias. Cada centro pertenece a una Entidad Proveedora (EP) y realiza actividades sanitarias enmarcadas administrativamente en una o más Unidades Proveedoras (UP).\r\nServidor Terminológico \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Servicio Asistencial publicador",
+            "description" : "Código que indica el tipo de Servicio sanitario donde se publica el resultado de la actuación sanitaria documentada, según la categoría de la actividad asistencial que hace.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Un Servicio Sanitario es una unidad funcional asistencial, con organización diferenciada, dotada de profesionales y recursos técnicos para hacer actividades sanitarias específicas dentro de un Centro sanitario, y se categoriza por el tipo de actividad que presta (Medicina general/de familia, Enfermería, Podología, Vacunación, Alergología, Cardiología, Dermatología...)\r\nServidor Terminológico \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Unidad Proveedora publicadora",
+            "description" : "Subdivisión operativa dentro de una \"Entidad proveedora\" que gestiona el conjunto específico de servicios responsable de publicar el resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "UP (Unidad proveedora): división administrativa de una Entidad proveedora (EP) según el tipo de prestación sanitaria (líneas asistenciales) acordada con el Catsalut (por ejemplo A. primaria, Salud Mental, Hospitalización, Sociosanitario...). Cada UP puede incluir varios centros sanitarios.\r\nServidor Terminológico \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Centro custodio",
+            "description" : "Instalación física dotada de medios técnicos donde profesionales con capacitación custodian el resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Centro sanitario: conjunto organizado de instalaciones y medios técnicos donde profesionales con capacitación, bajo la dirección de un responsable sanitario, llevan a cabo actividades sanitarias. Cada centro pertenece a una Entidad Proveedora (EP) y realiza actividades sanitarias enmarcadas administrativamente en una o más Unidades Proveedoras (UP).\r\nServidor Terminológico \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Servicio Asistencial custodio",
+            "description" : "Código que indica el tipo de Servicio sanitario donde se custodia el resultado de la actuación sanitaria documentada, según la categoría de la actividad asistencial que hace.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados. ",
+            "comment" : "Un Servicio Sanitario es una unidad funcional asistencial, con organización diferenciada, dotada de profesionales y recursos técnicos para hacer actividades sanitarias específicas dentro de un Centro sanitario, y se categoriza por el tipo de actividad que presta (Medicina general/de familia, Enfermería, Podología, Vacunación, Alergología, Cardiología, Dermatología...)\r\nServidor Terminológico \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Unidad Proveedora custodia",
+            "description" : "Subdivisión operativa dentro de una \"Entidad proveedora\" que gestiona el conjunto específico de servicios responsable de la custodia del resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "UP (Unidad proveedora): división administrativa de una Entidad proveedora (EP) según el tipo de prestación sanitaria (líneas asistenciales) acordada con el Catsalut (por ejemplo A. primaria, Salud Mental, Hospitalización, Sociosanitario...). Cada UP puede incluir varios centros sanitarios.\r\nServidor Terminológico \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0020" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020",
+            "text" : "Centro solicitante",
+            "description" : "Instalación física dotada de medios técnicos donde profesionales con capacitación solicitan la realización de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Centro sanitario: conjunto organizado de instalaciones y medios técnicos donde profesionales con capacitación, bajo la dirección de un responsable sanitario, llevan a cabo actividades sanitarias. Cada centro pertenece a una Entidad Proveedora (EP) y realiza actividades sanitarias enmarcadas administrativamente en una o más Unidades Proveedoras (UP).\r\nServidor Terminológico \"Catàleg centres\" OID 2.16.840.1.113883.4.292.10.12"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Servicio Asistencial solicitante",
+            "description" : "Código que indica el tipo de Servicio sanitario que solicita la actuación sanitaria documentada, según la categoría de la actividad asistencial que hace.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "Un Servicio Sanitario es una unidad funcional asistencial, con organización diferenciada, dotada de profesionales y recursos técnicos para hacer actividades sanitarias específicas dentro de un Centro sanitario, y se categoriza por el tipo de actividad que presta (Medicina general/de familia, Enfermería, Podología, Vacunación, Alergología, Cardiología, Dermatología...)\r\nServidor Terminológico \"ET99 SER\" OID 2.16.724.4.9.40.4"
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Unidad Proveedora solicitante",
+            "description" : "ubdivisión operativa dentro de una \"Entidad proveedora\" que gestiona el conjunto específico de servicios responsable de solicitar la realización de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "UP (Unidad proveedora): división administrativa de una Entidad proveedora (EP) según el tipo de prestación sanitaria (líneas asistenciales) acordada con el Catsalut (por ejemplo A. primaria, Salud Mental, Hospitalización, Sociosanitario...). Cada UP puede incluir varios centros sanitarios.\r\nServidor Terminológico \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Fecha publicación documento",
+            "description" : "Fecha en la que el documento creado se registró a la base de datos de destino."
+          },
+          "at0025" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0025",
+            "text" : "Detalles adicionales",
+            "description" : ""
+          },
+          "at0026" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026",
+            "text" : "Entidad Proveedora que realiza",
+            "description" : "Organización que provee servicios de salud en Cataluña, dentro del Sistema Sanitario Integral de Utilización Pública de Cataluña (SISCAT), y que ha realizado la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "EP (Entidad proveedora): entidad con personalidad jurídica que acuerda con el Catsalut (asegurador) la prestación de servicios sanitarios a los usuarios (asegurados).\r\nServidor Terminológico \"Catálogo EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Entidad Proveedora publicadora",
+            "description" : "Organización que provee servicios de salud en Cataluña, dentro del Sistema Sanitario Integral de Utilización Pública de Cataluña (SISCAT), y que publica el resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "EP (Entidad proveedora): entidad con personalidad jurídica que acuerda con el Catsalut (asegurador) la prestación de servicios sanitarios a los usuarios (asegurados).\r\nServidor Terminológico \"Catálogo EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0028" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0028",
+            "text" : "Entidad Proveedora custodia",
+            "description" : "Organización que provee servicios de salud en Cataluña, dentro del Sistema Sanitario Integral de Utilización Pública de Cataluña (SISCAT), y que custodia el resultado de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "EP (Entidad proveedora): entidad con personalidad jurídica que acuerda con el Catsalut (asegurador) la prestación de servicios sanitarios a los usuarios (asegurados).\r\nServidor Terminológico \"Catálogo EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0029" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0029",
+            "text" : "Entidad Proveedora solicitante",
+            "description" : "Organización que provee servicios de salud en Cataluña, dentro del Sistema Sanitario Integral de Utilización Pública de Cataluña (SISCAT), y que solicita la realización de la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "EP (Entidad proveedora): entidad con personalidad jurídica que acuerda con el Catsalut (asegurador) la prestación de servicios sanitarios a los usuarios (asegurados).\r\nServidor Terminológico \"Catálogo EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          },
+          "at0007.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Institución publicadora",
+            "description" : "Datos relativos a la institución que publica el resultado de la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0010.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Institución custodia",
+            "description" : "Datos relativos a la institución que custodia el resultado de la actuación sanitaria documentada, incluyendo identificación de la entidad, subdivisiones administrativas (unidades proveedoras, centros) y el tipo de actividad sanitaria prestada.\r\nLos listados de valores de respuesta posibles de los Elementos contenidos se tendrían que restringir a los de los correspondientes catálogos del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados."
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Admin Salud",
+            "description" : "Datos administrativos relativos a la actuación sanitaria registrada, necesarios para complementar la semántica del contenido clínico, que no están presentes en el Modelo de Referencia, o que se decide modelar en el Template por motivos técnicos.",
+            "comment" : "Los datos no clínicos de una actuación sanitaria que son necesarios para entender correctamente el registro clínico al ser consultado (localización de la actuación, tipo de actividad sanitaria, etc) tendrían que ser registrados en la Composición.\r\nSe pueden registrar en el Modelo de Referencia (no modelables) si están contemplados a las especificaciones. Si no existe esta posibilidad en el Modelo de Referencia o es preferible por razones técnicas, se pueden modelar como Cluster a nivel del contexto de la Composición."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Unidad Proveedora que realiza",
+            "description" : "Subdivisión operativa dentro de una \"Entidad proveedora\" que gestiona el conjunto específico de servicios responsable de realizar la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este Elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "UP (Unidad proveedora): división administrativa de una Entidad proveedora (EP) según el tipo de prestación sanitaria (líneas asistenciales) acordada con el Catsalut (por ejemplo A. primaria, Salud Mental, Hospitalización, Sociosanitario...). Cada UP puede incluir varios centros sanitarios.\r\nServidor Terminológico \"Catàleg UPs\" OID 2.16.840.1.113883.4.292.10.12.6"
+          },
+          "at0026.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026.1",
+            "text" : "Entidad Proveedora que realiza",
+            "description" : "Organización que provee servicios de salud en Cataluña, dentro del Sistema Sanitario Integral de Utilización Pública de Cataluña (SISCAT), y que ha realizado la actuación sanitaria documentada.\r\nEl listado de valores de respuesta posibles de este elemento se tendría que restringir a los del correspondiente catálogo del Servidor Terminológico del Departamento de Salud de Cataluña, donde están disponibles estandarizados y codificados.",
+            "comment" : "EP (Entidad proveedora): entidad con personalidad jurídica que acuerda con el Catsalut (asegurador) la prestación de servicios sanitarios a los usuarios (asegurados).\r\nServidor Terminológico \"Catálogo EPs\" OID 2.16.840.1.113883.4.292.10.12.5"
+          }
+        }
+      },
+      "termBindings" : {
+        "CATÀLEG UP ST" : {
+          "ac0.1" : "terminology://fhir.hl7.org/CodeSystem/$expand?url=https://sample.fhir.example.org/fhir/CodeSystem/2.16.840.1.113883.4.292.10.12.6"
+        },
+        "CATÀLEG EP ST" : {
+          "ac0.2" : "terminology://fhir.hl7.org/CodeSystem/$expand?url=https://sample.fhir.example.org/fhir/CodeSystem/2.16.840.1.113883.4.292.10.12.5"
+        }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ef244692-23eb-3dbd-a1a3-9a9658a33114",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "09472c21-0cb1-4559-ba63-12412475bdc0",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "31e43d4eda470aa89efd7cfdeb649e49"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class.",
+          "keywords" : [ "Document, metadata", "IHE", "XDS" ],
+          "use" : "Use to add IHE-XDS aligned metadata to a COMPOSITION.context, which along with existing COMPOSITION attributes, allows the composition to be registered in an IHE-XDS environment.",
+          "copyright" : "© Apperta Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-xds_metadata-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0002",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0003",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0004",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0032",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0009",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..*",
+          "nodeId" : "at0011",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0010",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_URI",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "XDS Metadata",
+            "description" : "Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class."
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Author specialty",
+            "description" : "The speciality of the author/composer of the document."
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Class code",
+            "description" : "A high-level document class code, normally selected from a valueset provided by the IHE-XDS Affinity Domain.",
+            "comment" : "For example: Report, Summary, Images, Plan, Patient Preferences, Workflow.\nThese codes are specific to an XDS Affinity Domain."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Document type",
+            "description" : "The code specifying the precise type of document from the user perspective. Normally selected from a valueset provided by the local IHE-XDS Affinity Domain or national standard.",
+            "comment" : "for example:  Pulmonary History and Physical, Discharge Summary, Ultrasound Report.\nThese codes are specific to an XDS Affinity Domain."
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Confidentiality code",
+            "description" : "A term specifying the level of confidentiality of the XDS Document.",
+            "comment" : "Coded text is preferred, normally specific to an XDS Affinity Domain."
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Practice setting code",
+            "description" : "The code specifying the clinical specialty where the act that resulted in the document was performed.",
+            "comment" : "For example: Family Practice, Laboratory, Radiology.\nCoded text is preferred, normally specific to an XDS Affinity Domain."
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Document_media",
+            "description" : "Additional metadata about the document itself, including size, url."
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Event code",
+            "description" : "This list of codes represents the main clinical acts.",
+            "comment" : "For example: Colonoscopy or appendicectomy."
+          },
+          "at0032" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0032",
+            "text" : "Health care facility type",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "XDS Metadata",
+            "description" : "Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class."
+          }
+        },
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "XDS Metadata",
+            "description" : "*Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class. (en)"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Especialitat autor",
+            "description" : "*The speciality of the author/composer of the document. (en)"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Tipus document",
+            "description" : "*A high-level document class code, normally selected from a valueset provided by the IHE-XDS Affinity Domain. (en)",
+            "comment" : "*For example: Report, Summary, Images, Plan, Patient Preferences, Workflow.\nThese codes are specific to an XDS Affinity Domain. (en)"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "*Document type (en)",
+            "description" : "*The code specifying the precise type of document from the user perspective. Normally selected from a valueset provided by the local IHE-XDS Affinity Domain or national standard. (en)",
+            "comment" : "*for example:  Pulmonary History and Physical, Discharge Summary, Ultrasound Report.\nThese codes are specific to an XDS Affinity Domain. (en)"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Codi de condifencialitat",
+            "description" : "*A term specifying the level of confidentiality of the XDS Document. (en)",
+            "comment" : "*Coded text is preferred, normally specific to an XDS Affinity Domain. (en)"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Codi especialitat clínica",
+            "description" : "*The code specifying the clinical specialty where the act that resulted in the document was performed. (en)",
+            "comment" : "*For example: Family Practice, Laboratory, Radiology.\nCoded text is preferred, normally specific to an XDS Affinity Domain. (en)"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Document multimedia",
+            "description" : "*Additional metadata about the document itself, including size, url. (en)"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Codi de l'event",
+            "description" : "*This list of codes represents the main clinical acts. (en)",
+            "comment" : "*For example: Colonoscopy or appendicectomy. (en)"
+          },
+          "at0032" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0032",
+            "text" : "*Health care facility type (en)",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "XDS Metadata",
+            "description" : "*Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class. (en)"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*XDS Metadata (en)",
+            "description" : "*Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class. (en)"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Especialidad",
+            "description" : "*The speciality of the author/composer of the document. (en)"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "*Class code (en)",
+            "description" : "*A high-level document class code, normally selected from a valueset provided by the IHE-XDS Affinity Domain. (en)",
+            "comment" : "*For example: Report, Summary, Images, Plan, Patient Preferences, Workflow.\nThese codes are specific to an XDS Affinity Domain. (en)"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "*Document type (en)",
+            "description" : "*The code specifying the precise type of document from the user perspective. Normally selected from a valueset provided by the local IHE-XDS Affinity Domain or national standard. (en)",
+            "comment" : "*for example:  Pulmonary History and Physical, Discharge Summary, Ultrasound Report.\nThese codes are specific to an XDS Affinity Domain. (en)"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*Confidentiality code (en)",
+            "description" : "*A term specifying the level of confidentiality of the XDS Document. (en)",
+            "comment" : "*Coded text is preferred, normally specific to an XDS Affinity Domain. (en)"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "*Practice setting code (en)",
+            "description" : "*The code specifying the clinical specialty where the act that resulted in the document was performed. (en)",
+            "comment" : "*For example: Family Practice, Laboratory, Radiology.\nCoded text is preferred, normally specific to an XDS Affinity Domain. (en)"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "*Document_media (en)",
+            "description" : "*Additional metadata about the document itself, including size, url. (en)"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "*Event code (en)",
+            "description" : "*This list of codes represents the main clinical acts. (en)",
+            "comment" : "*For example: Colonoscopy or appendicectomy. (en)"
+          },
+          "at0032" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0032",
+            "text" : "*Health care facility type (en)",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*XDS Metadata (en)",
+            "description" : "*Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class. (en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "feed3fab-2d92-470b-a6c9-f19499a58c8b",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "0cba0547-f350-45d0-b685-6cd354be5f75",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "a1251f6b3416b29b262d83208b34b61f"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-probs_base_observation-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "existence" : "1..1",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "occurrences" : "1..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "existence" : "0..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "occurrences" : "0..*",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "occurrences" : "1..1",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "existence" : "0..1",
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "ARCHETYPE_SLOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0004",
+                      "includes" : [ {
+                        "@type" : "ASSERTION",
+                        "stringExpression" : "archetype_id/value matches {/.*/}",
+                        "expression" : {
+                          "@type" : "BINARY_OPERATOR",
+                          "type" : "BOOLEAN",
+                          "operator" : "matches",
+                          "leftOperand" : {
+                            "@type" : "MODEL_REFERENCE",
+                            "type" : "STRING",
+                            "precedenceOverriden" : false,
+                            "referenceType" : "Attribute",
+                            "path" : "archetype_id/value"
+                          },
+                          "rightOperand" : {
+                            "@type" : "CONSTRAINT",
+                            "type" : "STRING",
+                            "precedenceOverriden" : false,
+                            "referenceType" : "Constraint",
+                            "item" : {
+                              "@type" : "C_STRING",
+                              "constraint" : [ "/.*/" ]
+                            }
+                          },
+                          "precedenceOverriden" : false
+                        },
+                        "variables" : [ ]
+                      } ],
+                      "excludes" : [ ],
+                      "closed" : false
+                    }, {
+                      "@type" : "C_ARCHETYPE_ROOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0004.3",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ],
+                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-resum_de_l_embaras-001.v0",
+                      "referenceType" : "archetypeOverlay"
+                    }, {
+                      "@type" : "C_ARCHETYPE_ROOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0004.2",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ],
+                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-comment-001.v0",
+                      "referenceType" : "archetypeOverlay"
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "PROBS_base_observation",
+            "description" : "PROBS_base_observation"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Any event",
+            "description" : "@ internal @"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "CLUSTER_SLOT",
+            "description" : ""
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "CLUSTER_SLOT",
+            "description" : ""
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "CLUSTER_SLOT",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "PROBS_base_observation",
+            "description" : "PROBS_base_observation"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*PROBS_base_observation (en)",
+            "description" : "*PROBS_base_observation (en)"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Any event",
+            "description" : "@ internal @"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*PROBS_base_observation (en)",
+            "description" : "*PROBS_base_observation (en)"
+          }
+        },
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*PROBS_base_observation (en)",
+            "description" : "*PROBS_base_observation (en)"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Any event",
+            "description" : "@ internal @"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*CLUSTER_SLOT (en)",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "*PROBS_base_observation (en)",
+            "description" : "*PROBS_base_observation (en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "cf59d15d-f63d-37f1-a507-9137f912d149",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "1e1856ec-63da-4510-9ee3-1d3a04a32659",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "a36987a96588bbc0ba0098e51e928260"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.comment.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-comment-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Comment",
+            "description" : "Comment"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Comment",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Comment",
+            "description" : "Comment"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Observaciones",
+            "description" : "*Comment (en)"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Observaciones",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Observaciones",
+            "description" : "*Comment (en)"
+          }
+        },
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Observacions",
+            "description" : "Observacions"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Observacions",
+            "description" : "Observacions"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Observacions",
+            "description" : "Observacions"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "e9e73bbd-6ab5-3714-b906-ca18849d1f0f",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "16e83bef-c514-4d50-9f58-bd24cbf099ae",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "14ffe3b48a1876578151ca9f9f095d9a"
+      },
+      "details" : {
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "annotations" : {
+      "@type" : "RESOURCE_ANNOTATIONS",
+      "documentation" : {
+        "ca" : {
+          "/items[at0004.1]" : {
+            "SNOMED_CT::2771000122100" : "Data de fi de l'embaràs"
+          },
+          "/items[at0019.1]" : {
+            "SNOMED_CT::2771000122100" : "Data de tancament de l'embaràs"
+          },
+          "/items[at0001.1]" : {
+            "SNOMED_CT::310506006" : "Causa de tancament de l'embaràs"
+          },
+          "/items[at0003.1]" : {
+            "SNOMED_CT::57036006" : "Durada de l'embaràs en setmanes"
+          },
+          "/items[at0002.1]" : {
+            "SNOMED_CT::366323009" : "Qualificador de l'embaràs segons durada"
+          }
+        },
+        "en" : {
+          "/items[at0004.1]" : {
+            "SNOMED_CT::2771000122100" : "Date of end of pregnancy"
+          },
+          "/items[at0019.1]" : {
+            "SNOMED_CT::2771000122100" : "Date of termination of pregnancy"
+          },
+          "/items[at0001.1]" : {
+            "SNOMED_CT::310506006" : "Cause of termination of pregnancy"
+          },
+          "/items[at0003.1]" : {
+            "SNOMED_CT::57036006" : "Length of pregnancy in weeks"
+          },
+          "/items[at0002.1]" : {
+            "SNOMED_CT::366323009" : "Qualifier of pregnancy according to duration"
+          }
+        },
+        "es" : {
+          "/items[at0004.1]" : {
+            "SNOMED_CT::2771000122100" : "Fecha de fin del embarazo"
+          },
+          "/items[at0019.1]" : {
+            "SNOMED_CT::2771000122100" : "Fecha de cierre del embarazo"
+          },
+          "/items[at0001.1]" : {
+            "SNOMED_CT::310506006" : "Causa de cierre del embarazo"
+          },
+          "/items[at0003.1]" : {
+            "SNOMED_CT::57036006" : "Duración del embarazo en semanas"
+          },
+          "/items[at0002.1]" : {
+            "SNOMED_CT::366323009" : "Calificador del embarazo según duración"
+          }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.resum_de_l_embaras.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-resum_de_l_embaras-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0001.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "SNOMED_CT"
+                  },
+                  "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED_CT" ],
+                  "includedExternalTerminologyCodes" : [ {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "48782003",
+                    "value" : "Part"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "200144004",
+                    "value" : "Cesària"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "313178001",
+                    "value" : "Prematuritat"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "17369002",
+                    "value" : "Avortament"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "276507005",
+                    "value" : "Mort fetal"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "416402001",
+                    "value" : "Mola hidatiforme"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "34801009",
+                    "value" : "Embaràs ectòpic"
+                  }, {
+                    "terminologyId" : "SNOMED_CT",
+                    "code" : "107724000",
+                    "value" : "Trasllat"
+                  } ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0002.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local_terms"
+                  },
+                  "constraint" : [ ],
+                  "selectedTerminologies" : [ "local_terms" ],
+                  "includedExternalTerminologyCodes" : [ {
+                    "terminologyId" : "local_terms",
+                    "code" : "10761241000119104",
+                    "value" : "Preterme"
+                  }, {
+                    "terminologyId" : "local_terms",
+                    "code" : "87527008",
+                    "value" : "A terme"
+                  }, {
+                    "terminologyId" : "local_terms",
+                    "code" : "22281000119101",
+                    "value" : "Postterme"
+                  }, {
+                    "terminologyId" : "local_terms",
+                    "code" : "17369002",
+                    "value" : "Avortament"
+                  } ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0003.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "128" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_REAL",
+                    "constraint" : [ {
+                      "lower" : 0.0,
+                      "upper" : 52.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_STRING",
+                    "constraint" : [ "wk" ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0004.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0019.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ca" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Data de fi de l'embaràs",
+            "description" : "Data del part o final de l'embaràs per altres causes"
+          },
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Resum de l'embaràs",
+            "description" : "Resum de l'embaràs"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Causa de tancament de l'embaràs",
+            "description" : "Causa de tancament de l'embaràs"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Qualificador de l'embaràs segons durada",
+            "description" : "Qualificador de l'embaràs segons durada"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Durada de l'embaràs en setmanes",
+            "description" : "Durada de l'embaràs en setmanes"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Data de fi de l'embaràs",
+            "description" : "Data de fi de l'embaràs"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Part",
+            "description" : ""
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Cesària",
+            "description" : ""
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Prematuritat",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "Avortament",
+            "description" : ""
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Mort fetal",
+            "description" : ""
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Mola hidatiforme",
+            "description" : ""
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Embaràs ectòpic",
+            "description" : ""
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Trasllat",
+            "description" : ""
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Preterm",
+            "description" : ""
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Term",
+            "description" : ""
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Perllong",
+            "description" : ""
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Avort",
+            "description" : ""
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Data de tancament de l'embaràs",
+            "description" : "Data de tancament de l'embaràs"
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Qualificador de l'embaràs segons durada",
+            "description" : "Qualificador de l'embaràs segons durada"
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Durada de l'embaràs en setmanes",
+            "description" : "Durada de l'embaràs en setmanes"
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Data de tancament de l'embaràs",
+            "description" : "Data de tancament de l'embaràs"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Resum de l'embaràs",
+            "description" : "Resum de l'embaràs"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Causa de tancament de l'embaràs",
+            "description" : "Causa de tancament de l'embaràs"
+          }
+        },
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Pregnancy summary",
+            "description" : "Pregnancy summary"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Cause of termination of pregnancy",
+            "description" : "Cause of termination of pregnancy"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Qualifier of pregnancy according to duration",
+            "description" : "Qualifier of pregnancy according to duration"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Length of pregnancy in weeks",
+            "description" : "Length of pregnancy in weeks"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Date of end of pregnancy",
+            "description" : "Date of end of pregnancy"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Birth",
+            "description" : ""
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "caesarean section",
+            "description" : ""
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "prematurity",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "abortion",
+            "description" : ""
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "fetal death",
+            "description" : ""
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Hydatidiform molar",
+            "description" : ""
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Ectopic pregnancy",
+            "description" : ""
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "transfer",
+            "description" : ""
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "preterm",
+            "description" : ""
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Term",
+            "description" : ""
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "long",
+            "description" : ""
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "abortion",
+            "description" : ""
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Date of termination of pregnancy",
+            "description" : "Date of termination of pregnancy"
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Qualifier of pregnancy according to duration",
+            "description" : "Qualifier of pregnancy according to duration"
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Length of pregnancy in weeks",
+            "description" : "Length of pregnancy in weeks"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Date of end of pregnancy",
+            "description" : "Date of end of pregnancy"
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Date of termination of pregnancy",
+            "description" : "Date of termination of pregnancy"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Pregnancy summary",
+            "description" : "Pregnancy summary"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Cause of termination of pregnancy",
+            "description" : "Cause of termination of pregnancy"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Resumen del embarazo",
+            "description" : "Resumen del embarazo"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Causa de cierre del embarazo",
+            "description" : "Causa de cierre del embarazo"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Calificador del embarazo según duración",
+            "description" : "Calificador del embarazo según duración"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Duración del embarazo en semanas",
+            "description" : "Duración del embarazo en semanas"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Fecha de fin del embarazo",
+            "description" : "Fecha de fin del embarazo"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Parte",
+            "description" : ""
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Cesárea",
+            "description" : ""
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Prematuridad",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "Aborto",
+            "description" : ""
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Muerte fetal",
+            "description" : ""
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Muela hidatiforme",
+            "description" : ""
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Embarazo ectópico",
+            "description" : ""
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Traslado",
+            "description" : ""
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Pretermo",
+            "description" : ""
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Termo",
+            "description" : ""
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Prolongo",
+            "description" : ""
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Aborto",
+            "description" : ""
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Fecha de cierre del embarazo",
+            "description" : "Fecha de cierre del embarazo"
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Calificador del embarazo según duración",
+            "description" : "Calificador del embarazo según duración"
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Duración del embarazo en semanas",
+            "description" : "Duración del embarazo en semanas"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Fecha de fin del embarazo",
+            "description" : "Fecha de fin del embarazo"
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Fecha de cierre del embarazo",
+            "description" : "Fecha de cierre del embarazo"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Resumen del embarazo",
+            "description" : "Resumen del embarazo"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Causa de cierre del embarazo",
+            "description" : "Causa de cierre del embarazo"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0005", "at0006", "at0007", "at0008", "at0009", "at0010", "at0011", "at0014" ]
+        },
+        "ac0.3" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.3",
+          "members" : [ ]
+        },
+        "ac0.4" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.4",
+          "members" : [ ]
+        },
+        "ac0.6" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.6",
+          "members" : [ "at0015", "at0016", "at0017", "at0018" ]
+        },
+        "ac0.7" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.7",
+          "members" : [ ]
+        },
+        "ac0.8" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.8",
+          "members" : [ ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "67b172c2-5378-3d53-9157-32d3bdf42f63",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ca"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "72e29b6c-0099-458c-b057-7f73d3dd30b1",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "648c2a1a66f3725153e34494fe622501"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-admin_professional-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0013",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "constraint" : [ "ac0000" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0014",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "constraint" : [ "ac0001" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0002",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0009",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0010",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0012.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0011",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Dades del professional",
+            "description" : "Dades del  professional"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Nom",
+            "description" : "Nom"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Primer cognom",
+            "description" : "Primer cognom"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Segon cognom",
+            "description" : "Segon cognom"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Tipus d'identificador",
+            "description" : "Tipus d'identificador"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Codi identificador",
+            "description" : "Codi identificador"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Codi Categoria professional",
+            "description" : "Codi Categoria professional"
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Descripció Categoria professional",
+            "description" : "Descripció Categoria professional"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Dades del professional",
+            "description" : "Dades del  professional"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Codi identificador",
+            "description" : "Codi identificador"
+          }
+        },
+        "en" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Professional data",
+            "description" : "Professional data"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Name",
+            "description" : "name"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "First surname",
+            "description" : "First surname"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Second surname",
+            "description" : "Second surname"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Identifier type",
+            "description" : "Identifier type"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Identification code",
+            "description" : "Identification code"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Professional Category Code",
+            "description" : "Professional Category Code"
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Description Professional category",
+            "description" : "Description Professional category"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Professional data",
+            "description" : "Professional data"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Identification code",
+            "description" : "Identification code"
+          }
+        },
+        "es" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Datos del profesional",
+            "description" : "Datos del profesional"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Nombre",
+            "description" : "Nombre"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Primer apellido",
+            "description" : "Primer apellido"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Segundo apellido",
+            "description" : "Segundo apellido"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Tipo de identificador",
+            "description" : "Tipo de identificador"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Código identificador",
+            "description" : "Código identificador"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Código Categoría profesional",
+            "description" : "Código Categoría profesional"
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Descripción Categoría profesional",
+            "description" : "Descripción Categoría profesional"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Datos del profesional",
+            "description" : "Datos del profesional"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Código identificador",
+            "description" : "Código identificador"
+          }
+        }
+      },
+      "termBindings" : {
+        "CATÀLEG TIPUS PROFESSIONAL ST" : {
+          "ac0.1" : "terminology:2.16.724.4.9.50.5",
+          "ac0000" : "terminology://fhir.hl7.org/CodeSystem/$expand?url=https://sample.fhir.example.org/fhir/CodeSystem/2.16.724.4.9.50.5",
+          "ac0001" : "terminology://fhir.hl7.org/CodeSystem/$expand?url=https://sample.fhir.example.org/fhir/CodeSystem/2.16.724.4.9.50.5"
+        }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "185fd9fd-d37d-3553-8ab6-5462b6b2670e",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ca"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "37642133-0daa-4124-b2c1-8aa9087c8838",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "314cc73ef4c4fde60890d983b80bf7df"
+      },
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-health_thread-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "1..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0001.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0002.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
+          "nodeId" : "at0003",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_IDENTIFIER",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0004.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0005.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0006.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "existence" : "0..1",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "ac0.1" ],
+                  "selectedTerminologies" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "health_thread",
+            "description" : "Health thread"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Thread name",
+            "description" : "Thread name"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Description",
+            "description" : "Description"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Thread ID",
+            "description" : "Thread ID"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Start date",
+            "description" : "Start date"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "End Date",
+            "description" : "End Date"
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Reason for the end of the process",
+            "description" : "Reason for the end of the process"
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "*automàtic (ca)",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "*manual (ca)",
+            "description" : ""
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Description",
+            "description" : "Description"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Start date",
+            "description" : "Start date"
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "End Date",
+            "description" : "End Date"
+          },
+          "at0006.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Reason for the end of the process",
+            "description" : "Reason for the end of the process"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "health_thread",
+            "description" : "Health thread"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Thread name",
+            "description" : "Thread name"
+          }
+        },
+        "es" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "health_thread",
+            "description" : "Proceso clínico"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Nombre proceso",
+            "description" : "Nombre proceso"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Descripción",
+            "description" : "Descripción"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "ID proceso",
+            "description" : "ID proceso"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Fecha de inicio",
+            "description" : "Fecha de inicio"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Fecha de finalización",
+            "description" : "Fecha de finalización"
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Motivo de finalización del proceso",
+            "description" : "Motivo de finalización del proceso"
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "*automàtic (ca)",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "*manual (ca)",
+            "description" : ""
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Descripción",
+            "description" : "Descripción"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Fecha de inicio",
+            "description" : "Fecha de inicio"
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Fecha de finalización",
+            "description" : "Fecha de finalización"
+          },
+          "at0006.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Motivo de finalización del proceso",
+            "description" : "Motivo de finalización del proceso"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "health_thread",
+            "description" : "Proceso clínico"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Nombre proceso",
+            "description" : "Nombre proceso"
+          }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Procés clínic",
+            "description" : "Procés clínic"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Nom procés",
+            "description" : "Nom procés"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Descripció",
+            "description" : "Descripció"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "ID procés",
+            "description" : "ID procés"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Data d'inici",
+            "description" : "Data d'inici"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Data de final",
+            "description" : "Data de final"
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Motiu de finalització del procés",
+            "description" : "Motiu de finalització del procés"
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Automàtic",
+            "description" : ""
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "Manual",
+            "description" : ""
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Descripció",
+            "description" : "Descripció"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Data d'inici",
+            "description" : "Data d'inici"
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Data de final",
+            "description" : "Data de final"
+          },
+          "at0006.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Motiu de finalització del procés",
+            "description" : "Motiu de finalització del procés"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Procés clínic",
+            "description" : "Procés clínic"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "Nom procés",
+            "description" : "Nom procés"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0007", "at0008" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ad904c82-89a8-3bcb-83fb-c661be4ac8b7",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ca"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}

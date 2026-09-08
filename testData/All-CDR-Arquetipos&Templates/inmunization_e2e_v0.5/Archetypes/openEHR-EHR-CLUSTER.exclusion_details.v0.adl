@@ -1,0 +1,88 @@
+archetype (adl_version=1.4; uid=e9430cd8-fd8f-48b3-9d61-b3cb5d2a8351)
+	openEHR-EHR-CLUSTER.exclusion_details.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2024-10-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"f7802f0e3691b2e4b79f8be1ba6a6adc">
+		["build_uid"] = <"4dba012a-a90a-3f05-997a-6ad114997552">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Exclusion details
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Exclusion period
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- 1 month
+							at0003,    -- 3 months
+							at0004,    -- 6 months
+							at0005]    -- 12 months
+						}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Datetime of registration
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Exclusion details">
+					description = <"Exclusion details">
+				>
+				["at0001"] = <
+					text = <"Exclusion period">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"1 month">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"3 months">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"6 months">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"12 months">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Datetime of registration">
+					description = <"">
+				>
+			>
+		>
+	>

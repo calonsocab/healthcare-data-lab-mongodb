@@ -1,0 +1,566 @@
+archetype (adl_version=1.4; uid=b0bdfa13-12e3-4103-9cd0-30f26463b888)
+	openEHR-EHR-CLUSTER.seguiment_nado.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"edacff4f0cda2bf6884bf41e741f5db3">
+		["build_uid"] = <"c5c141c0-730b-361d-acdf-ddb0d7fd6752">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Seguiment nadò
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- ID Fetus/nadó
+				value matches {
+					DV_IDENTIFIER matches {*}
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- Estat del fetus/nadó
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0025,    -- actiu
+							at0026,    -- eliminat
+							at0027]    -- inactiu
+						}
+					}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {    -- Motiu d’eliminació
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0029,    -- error pacient
+							at0030]    -- error registre
+						}
+					}
+				}
+			}
+			ELEMENT[at0031] occurrences matches {0..1} matches {    -- Motiu d’inactivació
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0032]    -- mort
+						}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Batec fetal
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007,    -- Present
+							at0008]    -- Absent
+						}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Moviments fetals
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0009,    -- Present
+							at0010]    -- Absent
+						}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Presentació fetal
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0020,    -- cefàlica
+							at0021,    -- natges
+							at0022,    -- podàlica
+							at0023]    -- altres
+						}
+					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Situació fetal
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0011,    -- longitudinal
+							at0012,    -- transversal
+							at0013]    -- obliqüa
+						}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Dors fetal
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0014,    -- esquerra
+							at0015,    -- dreta
+							at0016,    -- superior
+							at0017,    -- inferior
+							at0018,    -- anterior
+							at0019]    -- posterior
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Seguiment nadò">
+					description = <"Seguiment nadó">
+				>
+				["at0001"] = <
+					text = <"ID Fetus/nadó">
+					description = <"ID Fetus/nadó">
+				>
+				["at0002"] = <
+					text = <"Batec fetal">
+					description = <"Batec fetal">
+				>
+				["at0003"] = <
+					text = <"Moviments fetals">
+					description = <"Moviments fetals">
+				>
+				["at0004"] = <
+					text = <"Presentació fetal">
+					description = <"Presentació fetal">
+				>
+				["at0005"] = <
+					text = <"Situació fetal">
+					description = <"Situació fetal">
+				>
+				["at0006"] = <
+					text = <"Dors fetal">
+					description = <"Dors fetal">
+				>
+				["at0007"] = <
+					text = <"Present">
+					description = <"Es detecta el batec del cor fetal.">
+				>
+				["at0008"] = <
+					text = <"Absent">
+					description = <"No es detecta el batec del cor fetal.">
+				>
+				["at0009"] = <
+					text = <"Present">
+					description = <"Els moviments fetals espontanis han estat percebuts per la mare.">
+				>
+				["at0010"] = <
+					text = <"Absent">
+					description = <"Els moviments fetals espontanis no han estat percebuts per la mare.">
+				>
+				["at0011"] = <
+					text = <"longitudinal">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"transversal">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"obliqüa">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"esquerra">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"dreta">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"superior">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"inferior">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"anterior">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"posterior">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"cefàlica">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"natges">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"podàlica">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"altres">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Estat del fetus/nadó">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"actiu">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"eliminat">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"inactiu">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Motiu d’eliminació">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"error pacient">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"error registre">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Motiu d’inactivació">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"mort">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Newborn tracking">
+					description = <"Newborn tracking">
+				>
+				["at0001"] = <
+					text = <"Fetus/newborn ID">
+					description = <"Fetus/newborn ID">
+				>
+				["at0002"] = <
+					text = <"Fetal heartbeat">
+					description = <"Fetal heartbeat">
+				>
+				["at0003"] = <
+					text = <"Fetal movements">
+					description = <"Fetal movements">
+				>
+				["at0004"] = <
+					text = <"Fetal presentation">
+					description = <"Fetal presentation">
+				>
+				["at0005"] = <
+					text = <"Fetal situation">
+					description = <"Fetal situation">
+				>
+				["at0006"] = <
+					text = <"Fetal back">
+					description = <"Fetal back">
+				>
+				["at0007"] = <
+					text = <"Present">
+					description = <"The fetal heartbeat is detected.">
+				>
+				["at0008"] = <
+					text = <"Absent">
+					description = <"Fetal heartbeat is not detected.">
+				>
+				["at0009"] = <
+					text = <"Present">
+					description = <"Spontaneous fetal movements have been perceived by the mother.">
+				>
+				["at0010"] = <
+					text = <"Absent">
+					description = <"Spontaneous fetal movements have not been perceived by the mother.">
+				>
+				["at0011"] = <
+					text = <"longitudinal">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"transversal">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"oblique">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"left">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"right">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"superior">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"inferior">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"anterior">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"posterior">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"cephalic">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"breech">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"foot">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"other">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Estat del fetus/nadó (ca)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*actiu (ca)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*eliminat (ca)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*inactiu (ca)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*Motiu d’eliminació (ca)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*error pacient (ca)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*error registre (ca)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Motiu d’inactivació (ca)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*mort (ca)">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Seguimiento neonato">
+					description = <"Seguimiento neonato">
+				>
+				["at0001"] = <
+					text = <"ID Feto/neonato">
+					description = <"ID Feto/neonato">
+				>
+				["at0002"] = <
+					text = <"Latido fetal">
+					description = <"Latido fetal">
+				>
+				["at0003"] = <
+					text = <"Movimientos fetales">
+					description = <"Movimientos fetales">
+				>
+				["at0004"] = <
+					text = <"Presentación fetal">
+					description = <"Presentación fetal">
+				>
+				["at0005"] = <
+					text = <"Situación fetal">
+					description = <"Situación fetal">
+				>
+				["at0006"] = <
+					text = <"Dorso fetal">
+					description = <"Dorso fetal">
+				>
+				["at0007"] = <
+					text = <"Presente">
+					description = <"Se detecta el latido del corazón fetal.">
+				>
+				["at0008"] = <
+					text = <"Ausente">
+					description = <"No se detecta el latido del corazón fetal.">
+				>
+				["at0009"] = <
+					text = <"Presente">
+					description = <"Los movimientos fetales espontáneos han sido percibidos por la madre.">
+				>
+				["at0010"] = <
+					text = <"Ausente">
+					description = <"Los movimientos fetales espontáneos no han sido percibidos por la madre.">
+				>
+				["at0011"] = <
+					text = <"*longitudinal (ca)">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"*transversal (ca)">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"*obliqüa (ca)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*esquerra (ca)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*dreta (ca)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*superior (ca)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*inferior (ca)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*anterior (ca)">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"*posterior (ca)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*cefàlica (ca)">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"*natges (ca)">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"*podàlica (ca)">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"*altres (ca)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Estat del fetus/nadó (ca)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*actiu (ca)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*eliminat (ca)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*inactiu (ca)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*Motiu d’eliminació (ca)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*error pacient (ca)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*error registre (ca)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Motiu d’inactivació (ca)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*mort (ca)">
+					description = <"">
+				>
+			>
+		>
+	>

@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-02-10T10:59:39.898Z",
+  "templates": [
+    {
+      "templateId": "claims-base",
+      "version": "1.0.0",
+      "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[claimsContent]\n/content[claimsContent]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[claimId]/value\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[memberId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+    },
+    {
+      "templateId": "clinical-care-base",
+      "version": "1.0.0",
+      "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[clinicalContent]\n/content[clinicalContent]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[patientId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+    },
+    {
+      "templateId": "clinical-research-base",
+      "version": "1.0.0",
+      "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[clinicalContent]\n/content[clinicalContent]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[participantId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[studyId]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+    },
+    {
+      "templateId": "clinical-trials-base",
+      "version": "1.0.0",
+      "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[clinicalContent]\n/content[clinicalContent]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[participantId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[studyId]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[contextHeader]/items[visitId]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+    },
+    {
+      "templateId": "genomics-base",
+      "version": "1.0.0",
+      "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[runId]/value\n/content[contextHeader]/items[sampleId]/value\n/content[contextHeader]/items[specimenId]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/content[genomicsContent]\n/content[genomicsContent]/items[note]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+    }
+  ]
+}

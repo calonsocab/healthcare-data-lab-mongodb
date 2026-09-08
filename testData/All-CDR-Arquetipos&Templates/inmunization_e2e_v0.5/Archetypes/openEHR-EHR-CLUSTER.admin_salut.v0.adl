@@ -1,0 +1,455 @@
+archetype (adl_version=1.4; uid=b9e0b28c-6d5c-440d-b78d-3c4dfdbfe30b)
+	openEHR-EHR-CLUSTER.admin_salut.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2023-01-13">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0deb597db5ce24a577baf057d39d10ef">
+		["build_uid"] = <"5ae78b20-264b-4183-9550-93d8b7421048">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Admin Salut
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Document authorisation date
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Document creation date
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Document publication date
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Economic code
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Responsible region
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0005] occurrences matches {0..1} matches {    -- Performing institution
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Performing centre
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Performing SA
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Performing UP
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0007] occurrences matches {0..1} matches {    -- Publishing institution
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Publishing centre
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Publishing SA
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Publishing UP
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0010] occurrences matches {0..1} matches {    -- Custodial institution
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Custodial centre
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Custodial SA
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Custodial UP
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0009] occurrences matches {0..1} matches {    -- Requesting institution
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Requesting centre
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Requesting SA
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Requesting UP
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0025] occurrences matches {0..*} matches {    -- Additional details
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin Salut">
+					description = <"Admin Salut">
+				>
+				["at0001"] = <
+					text = <"Document authorisation date">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Document creation date">
+					description = <"Date and time when the source document is generated by the supplier system. 
+">
+				>
+				["at0003"] = <
+					text = <"Economic code">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Responsible region">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Performing institution">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Publishing institution">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Requesting institution">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Custodial institution">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Performing centre">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Performing SA">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Performing UP">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Publishing centre">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Publishing SA">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Publishing UP">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Custodial centre">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Custodial SA">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Custodial UP">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Requesting centre">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Requesting SA">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Requesting UP">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Document publication date">
+					description = <"Date and time when the previously created document is registered in the target database. ">
+				>
+				["at0025"] = <
+					text = <"Additional details">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin Salud">
+					description = <"*Admin Salut (en)">
+				>
+				["at0001"] = <
+					text = <"Fecha de autorización del documento">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Fecha de creación del documento">
+					description = <"*Date and time when the source document is generated by the supplier system. 
+ (en)">
+				>
+				["at0003"] = <
+					text = <"Codificación económica">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Región competente">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Institución">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Institución publicadora">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Institución solicitante">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Institución custodia">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Centro de actuación">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Servicio Asistencial (SA) de actuación">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Unidad Productiva (UP) de actuación">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Centro publicador">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"SA publicador">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"UP publicador">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Centro custodia">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"SA custodia">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"UP custodia">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Centro solicitante">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"SA solicitante">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"UP solicitante">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Fecha de publicación del documento">
+					description = <"*Date and time when the previously created document is registered in the target database.  (en)">
+				>
+				["at0025"] = <
+					text = <"Detalles adicionales">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin Salut">
+					description = <"*Admin Salut (en)">
+				>
+				["at0001"] = <
+					text = <"Data d'autorització del document">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Data de creació del document">
+					description = <"*Date and time when the source document is generated by the supplier system. 
+ (en)">
+				>
+				["at0003"] = <
+					text = <"Codificació econòmica">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Regió competent">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Institució">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Institució publicadora">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Institució sol·licitant">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Institució custòdia">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Centre d'actuació">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Servei Assistencial (SA) d'actuació">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Unitat Productiva (UP) d'actuació">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Centre publicador">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"SA publicador">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"UP publicador">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Centre custòdia">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"SA custòdia">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"UP custòdia">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Centre sol·licitant">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"SA sol·licitant">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"UP sol·licitant">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Data de publicació del document">
+					description = <"*Date and time when the previously created document is registered in the target database.  (en)">
+				>
+				["at0025"] = <
+					text = <"Detalls addicionals">
+					description = <"">
+				>
+			>
+		>
+	>

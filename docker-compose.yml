@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  data-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+      args:
+        - NEXT_PUBLIC_KEHRNEL_AQL_ENDPOINT=http://localhost:8000
+        - NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+        - NEXT_PUBLIC_MONGODBEHR_URL=http://localhost:8000
+    image: data-lab:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    container_name: data-lab
+    env_file:
+      - .env.docker
+    environment:
+      - NODE_ENV=production
+    networks:
+      - healthcare_shared
+
+networks:
+  healthcare_shared:
+    external: true

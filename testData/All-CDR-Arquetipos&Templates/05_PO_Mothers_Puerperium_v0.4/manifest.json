@@ -1,0 +1,312 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "procs-ob-6zt",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "procs-ob-6zt"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Mothers_Puerperium_v0.4.t.json",
+    "type" : "template",
+    "id" : "PO_Mothers_Puerperium_v0.4",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-08T10:14:04.955Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.symptom_sign_screening.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.exam.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.sexual_health_screening.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.escala_edimburg_postpart.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.communication_capability.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.problem_screening.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.body_temperature.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.exam-palpation-uterus.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.exam.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.medication_screening.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.blood_pressure.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.symptom_sign.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.severity_rating_scale.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.management_screening.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.clinical_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.language.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.pregnancy_summary.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.health_risk.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.timing_daily.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.alcohol_audit.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.pregnancy_care_summary.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.contraceptive_summary.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.health_summary.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.progress_note.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.pulse.v2"
+    } ]
+  }, {
+    "path" : "Templates/PO_Mothers_Puerperium_v0.4.opt",
+    "type" : "opt",
+    "id" : "PO_Mothers_Puerperium_v0.4",
+    "lastModified" : "2024-04-08T10:14:04.955Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.symptom_sign_screening.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.symptom_sign_screening.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:01.045Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.exam.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.exam.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.sexual_health_screening.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.sexual_health_screening.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.escala_edimburg_postpart.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.escala_edimburg_postpart.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.communication_capability.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.communication_capability.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.problem_screening.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.problem_screening.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T13:00:22.615Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:01.045Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.body_temperature.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.body_temperature.v2",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.exam-palpation-uterus.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.exam-palpation-uterus.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.036Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.exam-palpation.v0"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.exam-palpation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.exam-palpation.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.036Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.exam.v1"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.exam.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.exam.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.036Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.exam.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.exam.v2",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.036Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:27.209Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.medication_screening.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.medication_screening.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T12:45:19.431Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.blood_pressure.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.blood_pressure.v2",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.symptom_sign.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.symptom_sign.v2",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.severity_rating_scale.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.severity_rating_scale.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.management_screening.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.management_screening.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:01.045Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.clinical_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.clinical_metadata.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:27.209Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.language.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.language.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.036Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.pregnancy_summary.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.pregnancy_summary.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:01.045Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.health_risk.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.health_risk.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.timing_daily.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.timing_daily.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.alcohol_audit.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.alcohol_audit.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.pregnancy_care_summary.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.pregnancy_care_summary.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.contraceptive_summary.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.contraceptive_summary.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:27.209Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.health_summary.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.health_summary.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.040Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.progress_note.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.progress_note.v1",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:13:01.045Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.clinical_attribute.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.pulse.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.pulse.v2",
+    "sourceId" : "procs-ob-6zt",
+    "lastModified" : "2024-04-02T11:10:59.044Z"
+  } ]
+}

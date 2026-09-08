@@ -1,0 +1,31 @@
+# Next.js local dependencies
+node_modules
+# Note: lockfiles should usually be committed for reproducible installs.
+
+# Yarn local dependencies
+yarn.lock
+
+# Next.js build output
+.next
+
+# Environment variables
+.env*
+!.env.example
+!**/.env.example
+
+# OS cruft
+.DS_Store
+
+# Private/local runtime artifacts
+.kehrnel_registry.json
+
+# Private deployment configs (do not publish internal CI or env files)
+# .drone.yml
+# environments/*.yaml
+# !environments/example.yaml
+
+# Generated data / runtime artifacts
+public/syntheticData/**
+!public/syntheticData/.gitkeep
+tmp/**
+!tmp/.gitkeep

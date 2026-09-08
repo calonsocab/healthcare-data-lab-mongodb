@@ -1,0 +1,17 @@
+{
+"q": "select c/feeder_audit AS sisOrigenIds,
+c/uid/value AS compositionid,
+c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/time/value AS dataAdmin,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[at0020]/value/defining_code/code_string AS codiImmunitzacio,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[openEHR-EHR-CLUSTER.medication.v2]/items[at0132]/value AS codiMarcaComercial,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[openEHR-EHR-CLUSTER.medication.v2]/items[at0150]/value/value AS numLot,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/other_participations/performer AS dadesProfessional,
+ c/context/other_context[at0004]/items[openEHR-EHR-CLUSTER.admin_salut.v0]/items[at0007]/items[at0014]/value/defining_code/code_string AS codiCentrePublicador,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/provider/identifiers/id as origenInformacio,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/ism_transition/current_state AS estat,
+ c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[at0021] AS reason  
+ FROM EHR e 
+    contains COMPOSITION c[openEHR-EHR-COMPOSITION.vaccination_list.v0] 
+ WHERE e/ehr_id/value='5b9cb35e-d7ab-4ef3-8869-9bd9ee432301' 
+ LIMIT 100"
+}

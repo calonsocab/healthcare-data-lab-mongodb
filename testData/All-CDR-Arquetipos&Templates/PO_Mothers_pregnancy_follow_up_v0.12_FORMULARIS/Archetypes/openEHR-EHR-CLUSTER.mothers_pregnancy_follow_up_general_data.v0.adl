@@ -1,0 +1,1912 @@
+archetype (adl_version=1.4; uid=00afebae-9fb1-47db-9c5b-0c55d108158e)
+	openEHR-EHR-CLUSTER.mothers_pregnancy_follow_up_general_data.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-15">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"c3dd24e31510e5ece23dbd45b277dcb3">
+		["build_uid"] = <"5d2e05c9-e404-3a5c-ba3e-362c0f49969d">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- General data for monitoring the mother's pregnancy
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Gestation week
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::128]>
+						list = <
+							["1"] = <
+								units = <"wk">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Pregnancy risk classification
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0003,    -- Low risk
+							at0004,    -- Medium risk
+							at0005,    -- High risk
+							at0006]    -- Very high risk
+						}
+					}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..*} matches {    -- Pregnancy risk
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- EBR: Pelvic anomalies
+							at0009,    -- EBR: Short height (less than 145 cm)
+							at0010,    -- EBR: Inadequate Body Mass Index (<18.5 or >30)
+							at0011,    -- EBR: Unwanted pregnancy
+							at0012,    -- EBR: Inadequate vaccination status
+							at0013,    -- EBR: maternal cardiovascular risk WHO I
+							at0014,    -- ERM: Very early age (less than 15 years)
+							at0015,    -- ERM: Elderly woman (≥ 40 years)
+							at0016,    -- ERM: Great multiparity (woman who has had 4 or more births)
+							at0017,    -- ERM: Intergenic period < 12 months
+							at0018,    -- ERM: Antecedents of intrauterine growth retardation and low birth weight infants
+							at0019,    -- ERM: Dystosic parts
+							at0020,    -- ERM: Previous uterine surgery
+							at0021,    -- ERM: Previous caesarean section
+							at0022,    -- ERM: Previous sterility
+							at0023,    -- ERM: Antecedents of placental pathology
+							at0024,    -- ERM: Antecedents of obstetric pathology in previous pregnancies
+							at0025,    -- ERM: Insufficient or inadequate control of the pregnant woman
+							at0026,    -- ERM: Unfavorable socio-economic conditions
+							at0027,    -- ERM: Victim of gender violence
+							at0028,    -- ERM: Personal history of mental illness
+							at0029,    -- ERM: Current controlled and stable mental pathology
+							at0030,    -- ERM: Metrorrhagia 1st. quarter
+							at0031,    -- ERM: Gestational diabetes
+							at0032,    -- ERM: Low risk of urinary tract infection or bacterial, Zika or STI
+							at0033,    -- ERM: Regular smoker
+							at0034,    -- ERM: Rh -
+							at0035,    -- ERM: Cardiovascular risk WHO II
+							at0036,    -- ERM: Family history of hereditary diseases
+							at0037,    -- ERA: Morbid obesity (BMI >40)
+							at0038,    -- ERA: History of abortions (2 or more)
+							at0039,    -- ERA: Previous uterine cervical incompetence
+							at0040,    -- ERA: Previous chromosomal abnormality
+							at0041,    -- ERA: Previous ectopic pregnancy
+							at0042,    -- ERA: Previous gestational trophoblastic disease
+							at0043,    -- ERA: Previous preterm birth
+							at0044,    -- ERA: Endocrinopathy
+							at0045,    -- ERA: Maternal cardiovascular risk WHO III
+							at0046,    -- ERA: Hypertension prior to pregnancy
+							at0047,    -- WAS: Twins
+							at0048,    -- ERA: Gestational diabetes corrected with diet and insulin
+							at0049,    -- ERA: Mild preeclampsia (>20 sep. gestation) >140/90 mm Hg and <160/110 mm Hg
+							at0050,    -- ERA: Maternal infection diagnosed during pregnancy
+							at0051,    -- ERA: Isoimmunization - Indirect Coombs test (+) in mother Rh (-)
+							at0052,    -- ERA: Severe current mental illness
+							at0053,    -- ERA: Severe anemia (Hb <9 g/dl and Hematocrit <25 %)
+							at0054,    -- ERA: Suspected fetal malformation
+							at0055,    -- ERMA: Severe associated pathology
+							at0056,    -- ERMA: Previous perinatal death
+							at0057,    -- ERMA: Diabetes Mellitus type 1 or 2
+							at0058,    -- ERMA: Maternal cardiovascular risk WHO IV
+							at0059,    -- ERMA: Alcohol and/or other drug dependence syndrome
+							at0060,    -- ERMA: Diagnosed uterine malformations
+							at0061,    -- ERMA: Multiple gestation (>3 fetuses in the current pregnancy)
+							at0062,    -- ERMA: Intrauterine Growth Retardation (IRG)
+							at0063,    -- ERMA: Confirmed fetal malformation
+							at0064,    -- ERMA: Anomalous situation of the placenta
+							at0065,    -- ERMA: Severe preeclampsia
+							at0066,    -- ERMA: Premature birth threaten
+							at0067]    -- ERMA: Premature rupture of membranes in the preterm
+						}
+					}
+				}
+			}
+			ELEMENT[at0071] occurrences matches {0..1} matches {    -- Early preeclampsia risk
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0072,    -- Low risk
+							at0073,    -- Risk
+							at0074,    -- Not assessable
+							at0075]    -- Not applicable
+						}
+					}
+				}
+			}
+			ELEMENT[at0129] occurrences matches {0..1} matches {    -- DV_TEXT
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0130] occurrences matches {0..1} matches {    -- DV_TEXT
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0076] occurrences matches {0..1} matches {    -- Risk fraction of preeclampsia
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::507]>
+						list = <
+							["1"] = <
+								units = <"/10*3">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0077] occurrences matches {0..1} matches {    -- Weight
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"kg">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0078] occurrences matches {0..1} matches {    -- Weight gain
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"kg">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0079] occurrences matches {0..1} matches {    -- Systolic blood pressure
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::125]>
+						list = <
+							["1"] = <
+								units = <"mm[Hg]">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0080] occurrences matches {0..1} matches {    -- Diastolic blood pressure
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::125]>
+						list = <
+							["1"] = <
+								units = <"mm[Hg]">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0081] occurrences matches {0..1} matches {    -- Proteinuria
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0082,    -- Negative
+							at0083,    -- Positive
+							at0084,    -- +
+							at0085,    -- ++
+							at0086]    -- +++
+						}
+					}
+				}
+			}
+			ELEMENT[at0087] occurrences matches {0..1} matches {    -- Edema
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0088,    -- Absence of edema
+							at0089,    -- Edema in the feet, malleolar and pretibial
+							at0090,    -- Edema in the lower extremities
+							at0091,    -- Edema of the face, hands, abdominal wall and sacrum
+							at0092]    -- Anasarca with ascites
+						}
+					}
+				}
+			}
+			ELEMENT[at0093] occurrences matches {0..1} matches {    -- Uterine height
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"cm">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0094] occurrences matches {0..1} matches {    -- Symptoms - general
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0095,    -- Asymptomatic
+							at0096,    -- Various
+							at0097]    -- Absence of fetal movements
+						}
+					}
+				}
+			}
+			ELEMENT[at0098] occurrences matches {0..1} matches {    -- Symptoms - vulvovaginal discomfort
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0099,    -- Vulvovaginal itching
+							at0100,    -- Leucorrhea
+							at0101]    -- Vulvar ulcers
+						}
+					}
+				}
+			}
+			ELEMENT[at0102] occurrences matches {0..1} matches {    -- Symptoms - digestive disorders
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0103,    -- Nausea
+							at0104,    -- Vomiting
+							at0105,    -- Heartburn
+							at0106,    -- Diarrhea
+							at0107,    -- Constipation
+							at0108]    -- Anal discomfort
+						}
+					}
+				}
+			}
+			ELEMENT[at0109] occurrences matches {0..1} matches {    -- Symptoms - painful processes
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0110,    -- FIE
+							at0111,    -- FID
+							at0112,    -- Hypogastrium
+							at0113,    -- Right lumbar fossa
+							at0114,    -- Left lumbar fossa
+							at0115,    -- hypochondria
+							at0116,    -- epigastrium
+							at0117,    -- Headaches
+							at0118,    -- EEEE
+							at0119,    -- dysuria
+							at0120,    -- Pollaciuria
+							at0121,    -- Bladder tenesmus
+							at0122]    -- Urinary incontinence
+						}
+					}
+				}
+			}
+			ELEMENT[at0123] occurrences matches {0..1} matches {    -- Symptoms - dermatological disorders
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0124,    -- Itching
+							at0125]    -- Flaking
+						}
+					}
+				}
+			}
+			ELEMENT[at0126] occurrences matches {0..1} matches {    -- Tobacco
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0127] occurrences matches {0..1} matches {    -- Stop smoking
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0128] occurrences matches {0..1} matches {    -- Number of cigarettes
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"General data for monitoring the mother's pregnancy">
+					description = <"General data for monitoring the mother's pregnancy">
+				>
+				["at0001"] = <
+					text = <"Gestation week">
+					description = <"Gestation week">
+				>
+				["at0002"] = <
+					text = <"Pregnancy risk classification">
+					description = <"Pregnancy risk classification">
+				>
+				["at0003"] = <
+					text = <"Low risk">
+					description = <"Low risk">
+				>
+				["at0004"] = <
+					text = <"Medium risk">
+					description = <"Medium risk">
+				>
+				["at0005"] = <
+					text = <"High risk">
+					description = <"High risk">
+				>
+				["at0006"] = <
+					text = <"Very high risk">
+					description = <"Very high risk">
+				>
+				["at0007"] = <
+					text = <"Pregnancy risk">
+					description = <"Pregnancy risk">
+				>
+				["at0008"] = <
+					text = <"EBR: Pelvic anomalies">
+					description = <"EBR: Pelvic anomalies">
+				>
+				["at0009"] = <
+					text = <"EBR: Short height (less than 145 cm)">
+					description = <"EBR: Short height (less than 145 cm)">
+				>
+				["at0010"] = <
+					text = <"EBR: Inadequate Body Mass Index (<18.5 or >30)">
+					description = <"EBR: Inadequate Body Mass Index (<18.5 or >30)">
+				>
+				["at0011"] = <
+					text = <"EBR: Unwanted pregnancy">
+					description = <"EBR: Unwanted pregnancy">
+				>
+				["at0012"] = <
+					text = <"EBR: Inadequate vaccination status">
+					description = <"EBR: Inadequate vaccination status">
+				>
+				["at0013"] = <
+					text = <"EBR: maternal cardiovascular risk WHO I">
+					description = <"EBR: maternal cardiovascular risk WHO I">
+				>
+				["at0014"] = <
+					text = <"ERM: Very early age (less than 15 years)">
+					description = <"ERM: Very early age (less than 15 years)">
+				>
+				["at0015"] = <
+					text = <"ERM: Elderly woman (≥ 40 years)">
+					description = <"ERM: Elderly woman (≥ 40 years)">
+				>
+				["at0016"] = <
+					text = <"ERM: Great multiparity (woman who has had 4 or more births)">
+					description = <"ERM: Great multiparity (woman who has had 4 or more births)">
+				>
+				["at0017"] = <
+					text = <"ERM: Intergenic period < 12 months">
+					description = <"ERM: Intergenic period < 12 months">
+				>
+				["at0018"] = <
+					text = <"ERM: Antecedents of intrauterine growth retardation and low birth weight infants">
+					description = <"ERM: Antecedents of intrauterine growth retardation and low birth weight infants">
+				>
+				["at0019"] = <
+					text = <"ERM: Dystosic parts">
+					description = <"ERM: Dystosic parts">
+				>
+				["at0020"] = <
+					text = <"ERM: Previous uterine surgery">
+					description = <"ERM: Previous uterine surgery">
+				>
+				["at0021"] = <
+					text = <"ERM: Previous caesarean section">
+					description = <"ERM: Previous caesarean section">
+				>
+				["at0022"] = <
+					text = <"ERM: Previous sterility">
+					description = <"ERM: Previous sterility">
+				>
+				["at0023"] = <
+					text = <"ERM: Antecedents of placental pathology">
+					description = <"ERM: Antecedents of placental pathology">
+				>
+				["at0024"] = <
+					text = <"ERM: Antecedents of obstetric pathology in previous pregnancies">
+					description = <"ERM: Antecedents of obstetric pathology in previous pregnancies">
+				>
+				["at0025"] = <
+					text = <"ERM: Insufficient or inadequate control of the pregnant woman">
+					description = <"ERM: Insufficient or inadequate control of the pregnant woman">
+				>
+				["at0026"] = <
+					text = <"ERM: Unfavorable socio-economic conditions">
+					description = <"ERM: Unfavorable socio-economic conditions">
+				>
+				["at0027"] = <
+					text = <"ERM: Victim of gender violence">
+					description = <"ERM: Victim of gender violence">
+				>
+				["at0028"] = <
+					text = <"ERM: Personal history of mental illness">
+					description = <"ERM: Personal history of mental illness">
+				>
+				["at0029"] = <
+					text = <"ERM: Current controlled and stable mental pathology">
+					description = <"ERM: Current controlled and stable mental pathology">
+				>
+				["at0030"] = <
+					text = <"ERM: Metrorrhagia 1st. quarter">
+					description = <"ERM: Metrorrhagia 1st. quarter">
+				>
+				["at0031"] = <
+					text = <"ERM: Gestational diabetes">
+					description = <"ERM: Gestational diabetes">
+				>
+				["at0032"] = <
+					text = <"ERM: Low risk of urinary tract infection or bacterial, Zika or STI">
+					description = <"ERM: Low risk of urinary tract infection or bacterial, Zika or STI">
+				>
+				["at0033"] = <
+					text = <"ERM: Regular smoker">
+					description = <"ERM: Regular smoker">
+				>
+				["at0034"] = <
+					text = <"ERM: Rh -">
+					description = <"ERM: Rh -">
+				>
+				["at0035"] = <
+					text = <"ERM: Cardiovascular risk WHO II">
+					description = <"ERM: Cardiovascular risk WHO II">
+				>
+				["at0036"] = <
+					text = <"ERM: Family history of hereditary diseases">
+					description = <"ERM: Family history of hereditary diseases">
+				>
+				["at0037"] = <
+					text = <"ERA: Morbid obesity (BMI >40)">
+					description = <"ERA: Morbid obesity (BMI >40)">
+				>
+				["at0038"] = <
+					text = <"ERA: History of abortions (2 or more)">
+					description = <"ERA: History of abortions (2 or more)">
+				>
+				["at0039"] = <
+					text = <"ERA: Previous uterine cervical incompetence">
+					description = <"ERA: Previous uterine cervical incompetence">
+				>
+				["at0040"] = <
+					text = <"ERA: Previous chromosomal abnormality">
+					description = <"ERA: Previous chromosomal abnormality">
+				>
+				["at0041"] = <
+					text = <"ERA: Previous ectopic pregnancy">
+					description = <"ERA: Previous ectopic pregnancy">
+				>
+				["at0042"] = <
+					text = <"ERA: Previous gestational trophoblastic disease">
+					description = <"ERA: Previous gestational trophoblastic disease">
+				>
+				["at0043"] = <
+					text = <"ERA: Previous preterm birth">
+					description = <"ERA: Previous preterm birth">
+				>
+				["at0044"] = <
+					text = <"ERA: Endocrinopathy">
+					description = <"ERA: Endocrinopathy">
+				>
+				["at0045"] = <
+					text = <"ERA: Maternal cardiovascular risk WHO III">
+					description = <"ERA: Maternal cardiovascular risk WHO III">
+				>
+				["at0046"] = <
+					text = <"ERA: Hypertension prior to pregnancy">
+					description = <"ERA: Hypertension prior to pregnancy">
+				>
+				["at0047"] = <
+					text = <"WAS: Twins">
+					description = <"WAS: Twins">
+				>
+				["at0048"] = <
+					text = <"ERA: Gestational diabetes corrected with diet and insulin">
+					description = <"ERA: Gestational diabetes corrected with diet and insulin">
+				>
+				["at0049"] = <
+					text = <"ERA: Mild preeclampsia (>20 sep. gestation) >140/90 mm Hg and <160/110 mm Hg">
+					description = <"ERA: Mild preeclampsia (>20 sep. gestation) >140/90 mm Hg and <160/110 mm Hg">
+				>
+				["at0050"] = <
+					text = <"ERA: Maternal infection diagnosed during pregnancy">
+					description = <"ERA: Maternal infection diagnosed during pregnancy">
+				>
+				["at0051"] = <
+					text = <"ERA: Isoimmunization - Indirect Coombs test (+) in mother Rh (-)">
+					description = <"ERA: Isoimmunization - Indirect Coombs test (+) in mother Rh (-)">
+				>
+				["at0052"] = <
+					text = <"ERA: Severe current mental illness">
+					description = <"ERA: Severe current mental illness">
+				>
+				["at0053"] = <
+					text = <"ERA: Severe anemia (Hb <9 g/dl and Hematocrit <25 %)">
+					description = <"ERA: Severe anemia (Hb <9 g/dl and Hematocrit <25 %)">
+				>
+				["at0054"] = <
+					text = <"ERA: Suspected fetal malformation">
+					description = <"ERA: Suspected fetal malformation">
+				>
+				["at0055"] = <
+					text = <"ERMA: Severe associated pathology">
+					description = <"ERMA: Severe associated pathology">
+				>
+				["at0056"] = <
+					text = <"ERMA: Previous perinatal death">
+					description = <"ERMA: Previous perinatal death">
+				>
+				["at0057"] = <
+					text = <"ERMA: Diabetes Mellitus type 1 or 2">
+					description = <"ERMA: Diabetes Mellitus type 1 or 2">
+				>
+				["at0058"] = <
+					text = <"ERMA: Maternal cardiovascular risk WHO IV">
+					description = <"ERMA: Maternal cardiovascular risk WHO IV">
+				>
+				["at0059"] = <
+					text = <"ERMA: Alcohol and/or other drug dependence syndrome">
+					description = <"ERMA: Alcohol and/or other drug dependence syndrome">
+				>
+				["at0060"] = <
+					text = <"ERMA: Diagnosed uterine malformations">
+					description = <"ERMA: Diagnosed uterine malformations">
+				>
+				["at0061"] = <
+					text = <"ERMA: Multiple gestation (>3 fetuses in the current pregnancy)">
+					description = <"ERMA: Multiple gestation (>3 fetuses in the current pregnancy)">
+				>
+				["at0062"] = <
+					text = <"ERMA: Intrauterine Growth Retardation (IRG)">
+					description = <"ERMA: Intrauterine Growth Retardation (IRG)">
+				>
+				["at0063"] = <
+					text = <"ERMA: Confirmed fetal malformation">
+					description = <"ERMA: Confirmed fetal malformation">
+				>
+				["at0064"] = <
+					text = <"ERMA: Anomalous situation of the placenta">
+					description = <"ERMA: Anomalous situation of the placenta">
+				>
+				["at0065"] = <
+					text = <"ERMA: Severe preeclampsia">
+					description = <"ERMA: Severe preeclampsia">
+				>
+				["at0066"] = <
+					text = <"ERMA: Premature birth threaten">
+					description = <"ERMA: Premature birth threaten">
+				>
+				["at0067"] = <
+					text = <"ERMA: Premature rupture of membranes in the preterm">
+					description = <"ERMA: Premature rupture of membranes in the preterm">
+				>
+				["at0071"] = <
+					text = <"Early preeclampsia risk">
+					description = <"Early preeclampsia risk">
+				>
+				["at0072"] = <
+					text = <"Low risk">
+					description = <"Low risk">
+				>
+				["at0073"] = <
+					text = <"Risk">
+					description = <"Risk">
+				>
+				["at0074"] = <
+					text = <"Not assessable">
+					description = <"Not assessable">
+				>
+				["at0075"] = <
+					text = <"Not applicable">
+					description = <"Not applicable">
+				>
+				["at0076"] = <
+					text = <"Risk fraction of preeclampsia">
+					description = <"Risk fraction of preeclampsia">
+				>
+				["at0077"] = <
+					text = <"Weight">
+					description = <"Weight">
+				>
+				["at0078"] = <
+					text = <"Weight gain">
+					description = <"Weight gain">
+				>
+				["at0079"] = <
+					text = <"Systolic blood pressure">
+					description = <"Systolic blood pressure">
+				>
+				["at0080"] = <
+					text = <"Diastolic blood pressure">
+					description = <"Diastolic blood pressure">
+				>
+				["at0081"] = <
+					text = <"Proteinuria">
+					description = <"Proteinuria">
+				>
+				["at0082"] = <
+					text = <"Negative">
+					description = <"Negative">
+				>
+				["at0083"] = <
+					text = <"Positive">
+					description = <"Positive">
+				>
+				["at0084"] = <
+					text = <"+">
+					description = <"+">
+				>
+				["at0085"] = <
+					text = <"++">
+					description = <"++">
+				>
+				["at0086"] = <
+					text = <"+++">
+					description = <"+++">
+				>
+				["at0087"] = <
+					text = <"Edema">
+					description = <"Edema">
+				>
+				["at0088"] = <
+					text = <"Absence of edema">
+					description = <"Absence of edema">
+				>
+				["at0089"] = <
+					text = <"Edema in the feet, malleolar and pretibial">
+					description = <"Edema in the feet, malleolar and pretibial">
+				>
+				["at0090"] = <
+					text = <"Edema in the lower extremities">
+					description = <"Edema in the lower extremities">
+				>
+				["at0091"] = <
+					text = <"Edema of the face, hands, abdominal wall and sacrum">
+					description = <"Edema of the face, hands, abdominal wall and sacrum">
+				>
+				["at0092"] = <
+					text = <"Anasarca with ascites">
+					description = <"Anasarca with ascites">
+				>
+				["at0093"] = <
+					text = <"Uterine height">
+					description = <"Uterine height">
+				>
+				["at0094"] = <
+					text = <"Symptoms - general">
+					description = <"Symptoms - general">
+				>
+				["at0095"] = <
+					text = <"Asymptomatic">
+					description = <"Asymptomatic">
+				>
+				["at0096"] = <
+					text = <"Various">
+					description = <"Various">
+				>
+				["at0097"] = <
+					text = <"Absence of fetal movements">
+					description = <"Absence of fetal movements">
+				>
+				["at0098"] = <
+					text = <"Symptoms - vulvovaginal discomfort">
+					description = <"Symptoms - vulvovaginal discomfort">
+				>
+				["at0099"] = <
+					text = <"Vulvovaginal itching">
+					description = <"Vulvovaginal itching">
+				>
+				["at0100"] = <
+					text = <"Leucorrhea">
+					description = <"Leucorrhea">
+				>
+				["at0101"] = <
+					text = <"Vulvar ulcers">
+					description = <"Vulvar ulcers">
+				>
+				["at0102"] = <
+					text = <"Symptoms - digestive disorders">
+					description = <"Symptoms - digestive disorders">
+				>
+				["at0103"] = <
+					text = <"Nausea">
+					description = <"Nausea">
+				>
+				["at0104"] = <
+					text = <"Vomiting">
+					description = <"Vomiting">
+				>
+				["at0105"] = <
+					text = <"Heartburn">
+					description = <"Heartburn">
+				>
+				["at0106"] = <
+					text = <"Diarrhea">
+					description = <"Diarrhea">
+				>
+				["at0107"] = <
+					text = <"Constipation">
+					description = <"Constipation">
+				>
+				["at0108"] = <
+					text = <"Anal discomfort">
+					description = <"Anal discomfort">
+				>
+				["at0109"] = <
+					text = <"Symptoms - painful processes">
+					description = <"Symptoms - painful processes">
+				>
+				["at0110"] = <
+					text = <"FIE">
+					description = <"FIE">
+				>
+				["at0111"] = <
+					text = <"FID">
+					description = <"FID">
+				>
+				["at0112"] = <
+					text = <"Hypogastrium">
+					description = <"Hypogastrium">
+				>
+				["at0113"] = <
+					text = <"Right lumbar fossa">
+					description = <"Right lumbar fossa">
+				>
+				["at0114"] = <
+					text = <"Left lumbar fossa">
+					description = <"Left lumbar fossa">
+				>
+				["at0115"] = <
+					text = <"hypochondria">
+					description = <"hypochondria">
+				>
+				["at0116"] = <
+					text = <"epigastrium">
+					description = <"epigastrium">
+				>
+				["at0117"] = <
+					text = <"Headaches">
+					description = <"Headaches">
+				>
+				["at0118"] = <
+					text = <"EEEE">
+					description = <"EEEE">
+				>
+				["at0119"] = <
+					text = <"dysuria">
+					description = <"dysuria">
+				>
+				["at0120"] = <
+					text = <"Pollaciuria">
+					description = <"Pollaciuria">
+				>
+				["at0121"] = <
+					text = <"Bladder tenesmus">
+					description = <"Bladder tenesmus">
+				>
+				["at0122"] = <
+					text = <"Urinary incontinence">
+					description = <"Urinary incontinence">
+				>
+				["at0123"] = <
+					text = <"Symptoms - dermatological disorders">
+					description = <"Symptoms - dermatological disorders">
+				>
+				["at0124"] = <
+					text = <"Itching">
+					description = <"Itching">
+				>
+				["at0125"] = <
+					text = <"Flaking">
+					description = <"Flaking">
+				>
+				["at0126"] = <
+					text = <"Tobacco">
+					description = <"Tobacco">
+				>
+				["at0127"] = <
+					text = <"Stop smoking">
+					description = <"Stop smoking">
+				>
+				["at0128"] = <
+					text = <"Number of cigarettes">
+					description = <"Number of cigarettes">
+				>
+				["at0129"] = <
+					text = <"DV_TEXT">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"DV_TEXT">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dades generals per al seguiment de l'embaràs de la mare">
+					description = <"Dades generals per al seguiment de l'embaràs de la mare">
+				>
+				["at0001"] = <
+					text = <"Setmana gestació">
+					description = <"Setmana gestació">
+				>
+				["at0002"] = <
+					text = <"Classificació risc embaràs">
+					description = <"Classificació risc embaràs">
+				>
+				["at0003"] = <
+					text = <"Baix risc">
+					description = <"Baix risc">
+				>
+				["at0004"] = <
+					text = <"Risc mitjà">
+					description = <"Risc mitjà">
+				>
+				["at0005"] = <
+					text = <"Alt risc">
+					description = <"Alt risc">
+				>
+				["at0006"] = <
+					text = <"Molt alt risc">
+					description = <"Molt alt risc">
+				>
+				["at0007"] = <
+					text = <"Risc embaràs">
+					description = <"Risc embaràs">
+				>
+				["at0008"] = <
+					text = <"EBR: Anomalies pelvianes">
+					description = <"EBR: Anomalies pelvianes">
+				>
+				["at0009"] = <
+					text = <"EBR: Alçada baixa (menys de 145 cm)">
+					description = <"EBR: Alçada baixa (menys de 145 cm)">
+				>
+				["at0010"] = <
+					text = <"EBR: Índex de Massa Corporal inadequat (<18,5 o >30)">
+					description = <"EBR: Índex de Massa Corporal inadequat (<18,5 o >30)">
+				>
+				["at0011"] = <
+					text = <"EBR: Embaràs no desitjat">
+					description = <"EBR: Embaràs no desitjat">
+				>
+				["at0012"] = <
+					text = <"EBR: Estat vacunal inadequat">
+					description = <"EBR: Estat vacunal inadequat">
+				>
+				["at0013"] = <
+					text = <"EBR: Risc cardiovascular matern OMS I">
+					description = <"EBR: Risc cardiovascular matern OMS I">
+				>
+				["at0014"] = <
+					text = <"ERM: Edat molt precoç (menys de 15 anys)">
+					description = <"ERM: Edat molt precoç (menys de 15 anys)">
+				>
+				["at0015"] = <
+					text = <"ERM: Dona d'edat avançada (≥ 40 anys)">
+					description = <"ERM: Dona d'edat avançada (≥ 40 anys)">
+				>
+				["at0016"] = <
+					text = <"ERM: Gran multiparitat (dona que ha tingut 4 o més parts)">
+					description = <"ERM: Gran multiparitat (dona que ha tingut 4 o més parts)">
+				>
+				["at0017"] = <
+					text = <"ERM: Període intergenèsic < 12 mesos">
+					description = <"ERM: Període intergenèsic < 12 mesos">
+				>
+				["at0018"] = <
+					text = <"ERM: Antencedents de creixement intrauterí retardat i nadons de baix pes">
+					description = <"ERM: Antencedents de creixement intrauterí retardat i nadons de baix pes">
+				>
+				["at0019"] = <
+					text = <"ERM: Parts distòcics">
+					description = <"ERM: Parts distòcics">
+				>
+				["at0020"] = <
+					text = <"ERM: Cirurgia uterina prèvia">
+					description = <"ERM: Cirurgia uterina prèvia">
+				>
+				["at0021"] = <
+					text = <"ERM: Cesària prèvia">
+					description = <"ERM: Cesària prèvia">
+				>
+				["at0022"] = <
+					text = <"ERM: Esterilitat prèvia">
+					description = <"ERM: Esterilitat prèvia">
+				>
+				["at0023"] = <
+					text = <"ERM: Antecedents de patologia placentària">
+					description = <"ERM: Antecedents de patologia placentària">
+				>
+				["at0024"] = <
+					text = <"ERM: Antecedents patologia obstètrica en gestacions anteriors">
+					description = <"ERM: Antecedents patologia obstètrica en gestacions anteriors">
+				>
+				["at0025"] = <
+					text = <"ERM: Control insuficient o no adequat de la gestant">
+					description = <"ERM: Control insuficient o no adequat de la gestant">
+				>
+				["at0026"] = <
+					text = <"ERM: Condicions socioeconòmiques desfavorables">
+					description = <"ERM: Condicions socioeconòmiques desfavorables">
+				>
+				["at0027"] = <
+					text = <"ERM: Víctima de violència de gènere">
+					description = <"ERM: Víctima de violència de gènere">
+				>
+				["at0028"] = <
+					text = <"ERM: Antecedents personals de patologia mental">
+					description = <"ERM: Antecedents personals de patologia mental">
+				>
+				["at0029"] = <
+					text = <"ERM: Patologia mental actual controlada i estable">
+					description = <"ERM: Patologia mental actual controlada i estable">
+				>
+				["at0030"] = <
+					text = <"ERM: Metrorràgies 1r. trimestre">
+					description = <"ERM: Metrorràgies 1r. trimestre">
+				>
+				["at0031"] = <
+					text = <"ERM: Diabetis gestacional">
+					description = <"ERM: Diabetis gestacional">
+				>
+				["at0032"] = <
+					text = <"ERM: Risc d'infecció urinària baixa o bacteriana, Zika o ITS">
+					description = <"ERM: Risc d'infecció urinària baixa o bacteriana, Zika o ITS">
+				>
+				["at0033"] = <
+					text = <"ERM: Fumadora habitual">
+					description = <"ERM: Fumadora habitual">
+				>
+				["at0034"] = <
+					text = <"ERM: Rh -">
+					description = <"ERM: Rh -">
+				>
+				["at0035"] = <
+					text = <"ERM: Risc cardiovascular OMS II">
+					description = <"ERM: Risc cardiovascular OMS II">
+				>
+				["at0036"] = <
+					text = <"ERM: Antecedents familiars de malalties hereditàries">
+					description = <"ERM: Antecedents familiars de malalties hereditàries">
+				>
+				["at0037"] = <
+					text = <"ERA: Obesitat mòrbida (IMC >40)">
+					description = <"ERA: Obesitat mòrbida (IMC >40)">
+				>
+				["at0038"] = <
+					text = <"ERA: Antecedents d'avortaments (2 o més)">
+					description = <"ERA: Antecedents d'avortaments (2 o més)">
+				>
+				["at0039"] = <
+					text = <"ERA: Antecedent incompetència cervical uterina">
+					description = <"ERA: Antecedent incompetència cervical uterina">
+				>
+				["at0040"] = <
+					text = <"ERA: Anomalia cromosòmica prèvia">
+					description = <"ERA: Anomalia cromosòmica prèvia">
+				>
+				["at0041"] = <
+					text = <"ERA: Embaràs ectòpic previ">
+					description = <"ERA: Embaràs ectòpic previ">
+				>
+				["at0042"] = <
+					text = <"ERA: Malaltia trofoblàstica gestacional prèvia">
+					description = <"ERA: Malaltia trofoblàstica gestacional prèvia">
+				>
+				["at0043"] = <
+					text = <"ERA: Part prematur previ">
+					description = <"ERA: Part prematur previ">
+				>
+				["at0044"] = <
+					text = <"ERA: Endocrinopatia">
+					description = <"ERA: Endocrinopatia">
+				>
+				["at0045"] = <
+					text = <"ERA: Risc cardiovascular matern OMS III">
+					description = <"ERA: Risc cardiovascular matern OMS III">
+				>
+				["at0046"] = <
+					text = <"ERA: HTA prèvia a l'embaràs">
+					description = <"ERA: HTA prèvia a l'embaràs">
+				>
+				["at0047"] = <
+					text = <"ERA: Bessons">
+					description = <"ERA: Bessons">
+				>
+				["at0048"] = <
+					text = <"ERA: Diabetis gestacional corregida amb dieta i insulina">
+					description = <"ERA: Diabetis gestacional corregida amb dieta i insulina">
+				>
+				["at0049"] = <
+					text = <"ERA: Preeclàmpsia lleu (>20 set. gest) >140/90 mm Hg i <160/110 mm Hg">
+					description = <"ERA: Preeclàmpsia lleu (>20 set. gest) >140/90 mm Hg i <160/110 mm Hg">
+				>
+				["at0050"] = <
+					text = <"ERA: Infecció materna diagnosticada durant l'embaràs">
+					description = <"ERA: Infecció materna diagnosticada durant l'embaràs">
+				>
+				["at0051"] = <
+					text = <"ERA: Isoimmunització - Test Coombs indirecte (+) en mare Rh (-)">
+					description = <"ERA: Isoimmunització - Test Coombs indirecte (+) en mare Rh (-)">
+				>
+				["at0052"] = <
+					text = <"ERA: Patologia mental actual greu">
+					description = <"ERA: Patologia mental actual greu">
+				>
+				["at0053"] = <
+					text = <"ERA: Anèmia greu (Hb <9 g/dl i Hematòcrit <25 %)">
+					description = <"ERA: Anèmia greu (Hb <9 g/dl i Hematòcrit <25 %)">
+				>
+				["at0054"] = <
+					text = <"ERA: Sospita malformació fetal">
+					description = <"ERA: Sospita malformació fetal">
+				>
+				["at0055"] = <
+					text = <"ERMA: Patologia associada greu">
+					description = <"ERMA: Patologia associada greu">
+				>
+				["at0056"] = <
+					text = <"ERMA: Mort perinatal prèvia">
+					description = <"ERMA: Mort perinatal prèvia">
+				>
+				["at0057"] = <
+					text = <"ERMA: Diabetis Mellitus tipus 1 o 2">
+					description = <"ERMA: Diabetis Mellitus tipus 1 o 2">
+				>
+				["at0058"] = <
+					text = <"ERMA: Risc cardiovascular matern OMS IV">
+					description = <"ERMA: Risc cardiovascular matern OMS IV">
+				>
+				["at0059"] = <
+					text = <"ERMA: Síndrome de dependència de l'alcohol i/o altres drogues">
+					description = <"ERMA: Síndrome de dependència de l'alcohol i/o altres drogues">
+				>
+				["at0060"] = <
+					text = <"ERMA: Malformacions uterines diagnosticades">
+					description = <"ERMA: Malformacions uterines diagnosticades">
+				>
+				["at0061"] = <
+					text = <"ERMA: Gestació múltiple (>3 fetus en l'embaràs actual)">
+					description = <"ERMA: Gestació múltiple (>3 fetus en l'embaràs actual)">
+				>
+				["at0062"] = <
+					text = <"ERMA: Creixement intrauterí retardat (CIR)">
+					description = <"ERMA: Creixement intrauterí retardat (CIR)">
+				>
+				["at0063"] = <
+					text = <"ERMA: Malformació fetal confirmada">
+					description = <"ERMA: Malformació fetal confirmada">
+				>
+				["at0064"] = <
+					text = <"ERMA: Situació anòmala de la placenta">
+					description = <"ERMA: Situació anòmala de la placenta">
+				>
+				["at0065"] = <
+					text = <"ERMA: Preeclàmpsia greu">
+					description = <"ERMA: Preeclàmpsia greu">
+				>
+				["at0066"] = <
+					text = <"ERMA: Amenaça part prematur">
+					description = <"ERMA: Amenaça part prematur">
+				>
+				["at0067"] = <
+					text = <"ERMA: Trencament prematur de membranes en el preterme">
+					description = <"ERMA: Trencament prematur de membranes en el preterme">
+				>
+				["at0071"] = <
+					text = <"Risc preeclàmpsia precoç">
+					description = <"Risc preeclàmpsia precoç">
+				>
+				["at0072"] = <
+					text = <"Baix risc">
+					description = <"Baix risc">
+				>
+				["at0073"] = <
+					text = <"Risc">
+					description = <"Risc">
+				>
+				["at0074"] = <
+					text = <"No valorable">
+					description = <"No valorable">
+				>
+				["at0075"] = <
+					text = <"No procedeix">
+					description = <"No procedeix">
+				>
+				["at0076"] = <
+					text = <"Fracció de risc de preeclampsia">
+					description = <"Fracció de risc de preeclampsia">
+				>
+				["at0077"] = <
+					text = <"Pes">
+					description = <"Pes">
+				>
+				["at0078"] = <
+					text = <"Augment de pes">
+					description = <"Augment de pes">
+				>
+				["at0079"] = <
+					text = <"Tensió arterial sistòlica">
+					description = <"Tensió arterial sistòlica">
+				>
+				["at0080"] = <
+					text = <"Tensió arterial diastòlica">
+					description = <"Tensió arterial diastòlica">
+				>
+				["at0081"] = <
+					text = <"Proteinuria">
+					description = <"Proteinuria">
+				>
+				["at0082"] = <
+					text = <"Negatiu">
+					description = <"Negatiu">
+				>
+				["at0083"] = <
+					text = <"Positiu">
+					description = <"Positiu">
+				>
+				["at0084"] = <
+					text = <"+">
+					description = <"+">
+				>
+				["at0085"] = <
+					text = <"++">
+					description = <"++">
+				>
+				["at0086"] = <
+					text = <"+++">
+					description = <"+++">
+				>
+				["at0087"] = <
+					text = <"Edema">
+					description = <"Edema">
+				>
+				["at0088"] = <
+					text = <"Absència d'edema">
+					description = <"Absència d'edema">
+				>
+				["at0089"] = <
+					text = <"Edemes als peus, mal.leolars i pretibials">
+					description = <"Edemes als peus, mal.leolars i pretibials">
+				>
+				["at0090"] = <
+					text = <"Edema a les extremitats inferiors">
+					description = <"Edema a les extremitats inferiors">
+				>
+				["at0091"] = <
+					text = <"Edemes facials, a les mans, la paret abdominal i el sacre">
+					description = <"Edemes facials, a les mans, la paret abdominal i el sacre">
+				>
+				["at0092"] = <
+					text = <"Anasarca amb ascitis">
+					description = <"Anasarca amb ascitis">
+				>
+				["at0093"] = <
+					text = <"Alçada uterina">
+					description = <"Alçada uterina">
+				>
+				["at0094"] = <
+					text = <"Símptomes - generals">
+					description = <"Símptomes - generals">
+				>
+				["at0095"] = <
+					text = <"Assimptomàtica">
+					description = <"Assimptomàtica">
+				>
+				["at0096"] = <
+					text = <"Varius">
+					description = <"Varius">
+				>
+				["at0097"] = <
+					text = <"Absència de moviments fetals">
+					description = <"Absència de moviments fetals">
+				>
+				["at0098"] = <
+					text = <"Símptomes - molèsties vulvovaginals">
+					description = <"Símptomes - molèsties vulvovaginals">
+				>
+				["at0099"] = <
+					text = <"Pruïja vulvovaginal">
+					description = <"Pruïja vulvovaginal">
+				>
+				["at0100"] = <
+					text = <"Leucorrea">
+					description = <"Leucorrea">
+				>
+				["at0101"] = <
+					text = <"Nafres vulvars">
+					description = <"Nafres vulvars">
+				>
+				["at0102"] = <
+					text = <"Símptomes - trastorns digestius">
+					description = <"Símptomes - trastorns digestius">
+				>
+				["at0103"] = <
+					text = <"Nàusees">
+					description = <"Nàusees">
+				>
+				["at0104"] = <
+					text = <"Vòmits">
+					description = <"Vòmits">
+				>
+				["at0105"] = <
+					text = <"Pirosi">
+					description = <"Pirosi">
+				>
+				["at0106"] = <
+					text = <"Diarrees">
+					description = <"Diarrees">
+				>
+				["at0107"] = <
+					text = <"Restrenyiment">
+					description = <"Restrenyiment">
+				>
+				["at0108"] = <
+					text = <"Molèsties anals">
+					description = <"Molèsties anals">
+				>
+				["at0109"] = <
+					text = <"Símptomes - processos dolorosos">
+					description = <"Símptomes - processos dolorosos">
+				>
+				["at0110"] = <
+					text = <"FIE">
+					description = <"FIE">
+				>
+				["at0111"] = <
+					text = <"FID">
+					description = <"FID">
+				>
+				["at0112"] = <
+					text = <"Hipogastri">
+					description = <"Hipogastri">
+				>
+				["at0113"] = <
+					text = <"Fossa lumbar dreta">
+					description = <"Fossa lumbar dreta">
+				>
+				["at0114"] = <
+					text = <"Fossa lumbar esquerra">
+					description = <"Fossa lumbar esquerra">
+				>
+				["at0115"] = <
+					text = <"Hipocondri">
+					description = <"Hipocondri">
+				>
+				["at0116"] = <
+					text = <"Epigastri">
+					description = <"Epigastri">
+				>
+				["at0117"] = <
+					text = <"Cefalees">
+					description = <"Cefalees">
+				>
+				["at0118"] = <
+					text = <"EEII">
+					description = <"EEII">
+				>
+				["at0119"] = <
+					text = <"Disúria">
+					description = <"Disúria">
+				>
+				["at0120"] = <
+					text = <"Pol·laciúria">
+					description = <"Pol·laciúria">
+				>
+				["at0121"] = <
+					text = <"Tenesme vesical">
+					description = <"Tenesme vesical">
+				>
+				["at0122"] = <
+					text = <"Incontinència urinària">
+					description = <"Incontinència urinària">
+				>
+				["at0123"] = <
+					text = <"Símptomes - trastorns dermatològics">
+					description = <"Símptomes - trastorns dermatològics">
+				>
+				["at0124"] = <
+					text = <"Pruïja">
+					description = <"Pruïja">
+				>
+				["at0125"] = <
+					text = <"Descamació">
+					description = <"Descamació">
+				>
+				["at0126"] = <
+					text = <"Tabac">
+					description = <"Tabac">
+				>
+				["at0127"] = <
+					text = <"Deixar de fumar">
+					description = <"Deixar de fumar">
+				>
+				["at0128"] = <
+					text = <"Número de cigarretes">
+					description = <"Número de cigarretes">
+				>
+				["at0129"] = <
+					text = <"Valoració professional">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"Observacions educació sanitària">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos generales para el seguimiento del embarazo de la madre.">
+					description = <"Datos generales para el seguimiento del embarazo de la madre.">
+				>
+				["at0001"] = <
+					text = <"Semana gestación">
+					description = <"Semana gestación">
+				>
+				["at0002"] = <
+					text = <"Clasificación riesgo embarazo">
+					description = <"Clasificación riesgo embarazo">
+				>
+				["at0003"] = <
+					text = <"Bajo riesgo">
+					description = <"Bajo riesgo">
+				>
+				["at0004"] = <
+					text = <"Riesgo medio">
+					description = <"Riesgo medio">
+				>
+				["at0005"] = <
+					text = <"Alto riesgo">
+					description = <"Alto riesgo">
+				>
+				["at0006"] = <
+					text = <"Muy alto riesgo">
+					description = <"Muy alto riesgo">
+				>
+				["at0007"] = <
+					text = <"Riesgo embarazo">
+					description = <"Riesgo embarazo">
+				>
+				["at0008"] = <
+					text = <"EBR: Anomalías pélvicas">
+					description = <"EBR: Anomalías pélvicas">
+				>
+				["at0009"] = <
+					text = <"EBR: Altura baja (menos de 145 cm)">
+					description = <"EBR: Altura baja (menos de 145 cm)">
+				>
+				["at0010"] = <
+					text = <"EBR: Índice de Masa Corporal inadecuado (<18,5 o >30)">
+					description = <"EBR: Índice de Masa Corporal inadecuado (<18,5 o >30)">
+				>
+				["at0011"] = <
+					text = <"EBR: Embarazo no deseado">
+					description = <"EBR: Embarazo no deseado">
+				>
+				["at0012"] = <
+					text = <"EBR: Estado vacunal inadecuado">
+					description = <"EBR: Estado vacunal inadecuado">
+				>
+				["at0013"] = <
+					text = <"EBR: Riesgo cardiovascular materno OMS I">
+					description = <"EBR: Riesgo cardiovascular materno OMS I">
+				>
+				["at0014"] = <
+					text = <"ERM: Edad muy precoz (menos de 15 años)">
+					description = <"ERM: Edad muy precoz (menos de 15 años)">
+				>
+				["at0015"] = <
+					text = <"ERM: Mujer de edad avanzada (≥ 40 años)">
+					description = <"ERM: Mujer de edad avanzada (≥ 40 años)">
+				>
+				["at0016"] = <
+					text = <"ERM: Gran multiparidad (mujer que ha tenido 4 o más partos)">
+					description = <"ERM: Gran multiparidad (mujer que ha tenido 4 o más partos)">
+				>
+				["at0017"] = <
+					text = <"ERM: Periodo intergenésico < 12 meses">
+					description = <"ERM: Periodo intergenésico < 12 meses">
+				>
+				["at0018"] = <
+					text = <"ERM: Antencedentes de crecimiento intrauterino retardado  y bebés de bajo peso">
+					description = <"ERM: Antencedentes de crecimiento intrauterino retardado  y bebés de bajo peso">
+				>
+				["at0019"] = <
+					text = <"ERM: Partos distócicos">
+					description = <"ERM: Partos distócicos">
+				>
+				["at0020"] = <
+					text = <"ERM: Cirugía uterina previa">
+					description = <"ERM: Cirugía uterina previa">
+				>
+				["at0021"] = <
+					text = <"ERM: Cesárea previa">
+					description = <"ERM: Cesárea previa">
+				>
+				["at0022"] = <
+					text = <"ERM: Esterilidad previa">
+					description = <"ERM: Esterilidad previa">
+				>
+				["at0023"] = <
+					text = <"ERM: Antecedentes de patología placentaria">
+					description = <"ERM: Antecedentes de patología placentaria">
+				>
+				["at0024"] = <
+					text = <"ERM: Antecedentes patología obstétrica en gestaciones anteriores">
+					description = <"ERM: Antecedentes patología obstétrica en gestaciones anteriores">
+				>
+				["at0025"] = <
+					text = <"ERM: Control insuficiente o no adecuado de la gestante">
+					description = <"ERM: Control insuficiente o no adecuado de la gestante">
+				>
+				["at0026"] = <
+					text = <"ERM: Condiciones socioeconómicas desfavorables">
+					description = <"ERM: Condiciones socioeconómicas desfavorables">
+				>
+				["at0027"] = <
+					text = <"ERM: Víctima de violencia de género">
+					description = <"ERM: Víctima de violencia de género">
+				>
+				["at0028"] = <
+					text = <"ERM: Antecedentes personales de patología mental">
+					description = <"ERM: Antecedentes personales de patología mental">
+				>
+				["at0029"] = <
+					text = <"ERM: Patología mental actual controlada y estable">
+					description = <"ERM: Patología mental actual controlada y estable">
+				>
+				["at0030"] = <
+					text = <"ERM: Metrorragias 1r. trimestre">
+					description = <"ERM: Metrorragias 1r. trimestre">
+				>
+				["at0031"] = <
+					text = <"ERM: Diabetes gestacional">
+					description = <"ERM: Diabetes gestacional">
+				>
+				["at0032"] = <
+					text = <"ERM: Riesgo de infección urinaria baja o bacteriana, Zika o ITS">
+					description = <"ERM: Riesgo de infección urinaria baja o bacteriana, Zika o ITS">
+				>
+				["at0033"] = <
+					text = <"ERM: Fumadora habitual">
+					description = <"ERM: Fumadora habitual">
+				>
+				["at0034"] = <
+					text = <"ERM: Rh -">
+					description = <"ERM: Rh -">
+				>
+				["at0035"] = <
+					text = <"ERM: Riesgo cardiovascular OMS II">
+					description = <"ERM: Riesgo cardiovascular OMS II">
+				>
+				["at0036"] = <
+					text = <"ERM: Antecedentes familiares de enfermedades hereditarias">
+					description = <"ERM: Antecedentes familiares de enfermedades hereditarias">
+				>
+				["at0037"] = <
+					text = <"ERA: Obesidad mórbida (IMC >40)">
+					description = <"ERA: Obesidad mórbida (IMC >40)">
+				>
+				["at0038"] = <
+					text = <"ERA: Antecedentes de abortos (2 o más)">
+					description = <"ERA: Antecedentes de abortos (2 o más)">
+				>
+				["at0039"] = <
+					text = <"ERA: Antecedente incompetencia cervical uterina">
+					description = <"ERA: Antecedente incompetencia cervical uterina">
+				>
+				["at0040"] = <
+					text = <"ERA: Anomalía cromosómica previa">
+					description = <"ERA: Anomalía cromosómica previa">
+				>
+				["at0041"] = <
+					text = <"ERA: Embarazo ectópico previo">
+					description = <"ERA: Embarazo ectópico previo">
+				>
+				["at0042"] = <
+					text = <"ERA: Enfermedad trofoblástica gestacional previa">
+					description = <"ERA: Enfermedad trofoblástica gestacional previa">
+				>
+				["at0043"] = <
+					text = <"ERA: Parto prematuro previo">
+					description = <"ERA: Parto prematuro previo">
+				>
+				["at0044"] = <
+					text = <"ERA: Endocrinopatía">
+					description = <"ERA: Endocrinopatía">
+				>
+				["at0045"] = <
+					text = <"ERA: Riesgo cardiovascular materno OMS III">
+					description = <"ERA: Riesgo cardiovascular materno OMS III">
+				>
+				["at0046"] = <
+					text = <"ERA: HTA previa al embarazo">
+					description = <"ERA: HTA previa al embarazo">
+				>
+				["at0047"] = <
+					text = <"ERA: Gemelos">
+					description = <"ERA: Gemelos">
+				>
+				["at0048"] = <
+					text = <"ERA: Diabetes gestacional corregida con dieta e insulina">
+					description = <"ERA: Diabetes gestacional corregida con dieta e insulina">
+				>
+				["at0049"] = <
+					text = <"ERA: Preeclampsia leve (>20 sept. gesto) >140/90 mm Hg y <160/110 mm Hg">
+					description = <"ERA: Preeclampsia leve (>20 sept. gesto) >140/90 mm Hg y <160/110 mm Hg">
+				>
+				["at0050"] = <
+					text = <"ERA: Infección materna diagnosticada durante el embarazo">
+					description = <"ERA: Infección materna diagnosticada durante el embarazo">
+				>
+				["at0051"] = <
+					text = <"ERA: Isoinmunización - Test Coombs indirecto (+) en madre Rh (-)">
+					description = <"ERA: Isoinmunización - Test Coombs indirecto (+) en madre Rh (-)">
+				>
+				["at0052"] = <
+					text = <"ERA: Patología mental actual grave">
+					description = <"ERA: Patología mental actual grave">
+				>
+				["at0053"] = <
+					text = <"ERA: Anemia grave (Hb <9 g/dl y Hematócrito <25 %)">
+					description = <"ERA: Anemia grave (Hb <9 g/dl y Hematócrito <25 %)">
+				>
+				["at0054"] = <
+					text = <"ERA: Sospecha malformación fetal">
+					description = <"ERA: Sospecha malformación fetal">
+				>
+				["at0055"] = <
+					text = <"ERMA: Patología asociada grave">
+					description = <"ERMA: Patología asociada grave">
+				>
+				["at0056"] = <
+					text = <"ERMA: Muerte perinatal previa">
+					description = <"ERMA: Muerte perinatal previa">
+				>
+				["at0057"] = <
+					text = <"ERMA: Diabetes Mellitus tipo 1 o 2">
+					description = <"ERMA: Diabetes Mellitus tipo 1 o 2">
+				>
+				["at0058"] = <
+					text = <"ERMA: Riesgo cardiovascular materno OMS IV">
+					description = <"ERMA: Riesgo cardiovascular materno OMS IV">
+				>
+				["at0059"] = <
+					text = <"ERMA: Síndrome de dependencia del alcohol y/u otras drogas">
+					description = <"ERMA: Síndrome de dependencia del alcohol y/u otras drogas">
+				>
+				["at0060"] = <
+					text = <"ERMA: Malformaciones uterinas diagnosticadas">
+					description = <"ERMA: Malformaciones uterinas diagnosticadas">
+				>
+				["at0061"] = <
+					text = <"ERMA: Gestación múltiple (>3 fetos en el embarazo actual)">
+					description = <"ERMA: Gestación múltiple (>3 fetos en el embarazo actual)">
+				>
+				["at0062"] = <
+					text = <"ERMA: Crecimiento intrauterino retardado (CIR)">
+					description = <"ERMA: Crecimiento intrauterino retardado (CIR)">
+				>
+				["at0063"] = <
+					text = <"ERMA: Malformación fetal confirmada">
+					description = <"ERMA: Malformación fetal confirmada">
+				>
+				["at0064"] = <
+					text = <"ERMA: Situación anómala de la placenta">
+					description = <"ERMA: Situación anómala de la placenta">
+				>
+				["at0065"] = <
+					text = <"ERMA: Preeclampsia grave">
+					description = <"ERMA: Preeclampsia grave">
+				>
+				["at0066"] = <
+					text = <"ERMA: Amenaza parto prematuro">
+					description = <"ERMA: Amenaza parto prematuro">
+				>
+				["at0067"] = <
+					text = <"ERMA: Rotura prematura de membranas en el pretérmino">
+					description = <"ERMA: Rotura prematura de membranas en el pretérmino">
+				>
+				["at0071"] = <
+					text = <"Riesgo preeclampsia precoz">
+					description = <"Riesgo preeclampsia precoz">
+				>
+				["at0072"] = <
+					text = <"Bajo riesgo">
+					description = <"Bajo riesgo">
+				>
+				["at0073"] = <
+					text = <"Riesgo">
+					description = <"Riesgo">
+				>
+				["at0074"] = <
+					text = <"No valorable">
+					description = <"No valorable">
+				>
+				["at0075"] = <
+					text = <"No procede">
+					description = <"No procede">
+				>
+				["at0076"] = <
+					text = <"Fracción de riesgo de preeclampsia">
+					description = <"Fracción de riesgo de preeclampsia">
+				>
+				["at0077"] = <
+					text = <"Peso">
+					description = <"Peso">
+				>
+				["at0078"] = <
+					text = <"Aumento de peso">
+					description = <"Aumento de peso">
+				>
+				["at0079"] = <
+					text = <"Tensión arterial sistolica">
+					description = <"Tensión arterial sistolica">
+				>
+				["at0080"] = <
+					text = <"Tensión arterial diastólica">
+					description = <"Tensión arterial diastólica">
+				>
+				["at0081"] = <
+					text = <"Proteinuria">
+					description = <"Proteinuria">
+				>
+				["at0082"] = <
+					text = <"Negativo">
+					description = <"Negativo">
+				>
+				["at0083"] = <
+					text = <"Positivo">
+					description = <"Positivo">
+				>
+				["at0084"] = <
+					text = <"+">
+					description = <"+">
+				>
+				["at0085"] = <
+					text = <"++">
+					description = <"++">
+				>
+				["at0086"] = <
+					text = <"+++">
+					description = <"+++">
+				>
+				["at0087"] = <
+					text = <"Edema">
+					description = <"Edema">
+				>
+				["at0088"] = <
+					text = <"Ausencia de edema">
+					description = <"Ausencia de edema">
+				>
+				["at0089"] = <
+					text = <"Edemas en los pies, maleolares y pretibiales">
+					description = <"Edemas en los pies, maleolares y pretibiales">
+				>
+				["at0090"] = <
+					text = <"Edema en las extremidades inferiores">
+					description = <"Edema en las extremidades inferiores">
+				>
+				["at0091"] = <
+					text = <"Edemas faciales, en manos, pared abdominal y sacro">
+					description = <"Edemas faciales, en manos, pared abdominal y sacro">
+				>
+				["at0092"] = <
+					text = <"Anasarca con ascitis">
+					description = <"Anasarca con ascitis">
+				>
+				["at0093"] = <
+					text = <"Altura uterina">
+					description = <"Altura uterina">
+				>
+				["at0094"] = <
+					text = <"Síntomas - generales">
+					description = <"Síntomas - generales">
+				>
+				["at0095"] = <
+					text = <"Asintomática">
+					description = <"Asintomática">
+				>
+				["at0096"] = <
+					text = <"Varices">
+					description = <"Varices">
+				>
+				["at0097"] = <
+					text = <"Ausencia de movimientos fetales">
+					description = <"Ausencia de movimientos fetales">
+				>
+				["at0098"] = <
+					text = <"Síntomas - molestias vulvovaginales">
+					description = <"Síntomas - molestias vulvovaginales">
+				>
+				["at0099"] = <
+					text = <"Prurito vulvovaginal">
+					description = <"Prurito vulvovaginal">
+				>
+				["at0100"] = <
+					text = <"Leucorrea">
+					description = <"Leucorrea">
+				>
+				["at0101"] = <
+					text = <"Úlceras vulvares">
+					description = <"Úlceras vulvares">
+				>
+				["at0102"] = <
+					text = <"Síntomas - trastornos digestivos">
+					description = <"Síntomas - trastornos digestivos">
+				>
+				["at0103"] = <
+					text = <"Náuseas">
+					description = <"Náuseas">
+				>
+				["at0104"] = <
+					text = <"Vómitos">
+					description = <"Vómitos">
+				>
+				["at0105"] = <
+					text = <"Pirosis">
+					description = <"Pirosis">
+				>
+				["at0106"] = <
+					text = <"Diarreas">
+					description = <"Diarreas">
+				>
+				["at0107"] = <
+					text = <"Estreñimiento">
+					description = <"Estreñimiento">
+				>
+				["at0108"] = <
+					text = <"Molestias anales">
+					description = <"Molestias anales">
+				>
+				["at0109"] = <
+					text = <"Síntomas - procesos dolorosos">
+					description = <"Síntomas - procesos dolorosos">
+				>
+				["at0110"] = <
+					text = <"FIE">
+					description = <"FIE">
+				>
+				["at0111"] = <
+					text = <"FID">
+					description = <"FID">
+				>
+				["at0112"] = <
+					text = <"Hipogastrio">
+					description = <"Hipogastrio">
+				>
+				["at0113"] = <
+					text = <"Fosa lumbar derecha">
+					description = <"Fosa lumbar derecha">
+				>
+				["at0114"] = <
+					text = <"Fosa lumbar izquierda">
+					description = <"Fosa lumbar izquierda">
+				>
+				["at0115"] = <
+					text = <"Hipocondrio">
+					description = <"Hipocondrio">
+				>
+				["at0116"] = <
+					text = <"Epigastrio">
+					description = <"Epigastrio">
+				>
+				["at0117"] = <
+					text = <"Cefaleas">
+					description = <"Cefaleas">
+				>
+				["at0118"] = <
+					text = <"EEII">
+					description = <"EEII">
+				>
+				["at0119"] = <
+					text = <"Disuria">
+					description = <"Disuria">
+				>
+				["at0120"] = <
+					text = <"Polaquiúria">
+					description = <"Polaquiúria">
+				>
+				["at0121"] = <
+					text = <"Tenesmo vesical">
+					description = <"Tenesmo vesical">
+				>
+				["at0122"] = <
+					text = <"Incontinencia urinaria">
+					description = <"Incontinencia urinaria">
+				>
+				["at0123"] = <
+					text = <"Síntomas - trastornos dermatológicos">
+					description = <"Síntomas - trastornos dermatológicos">
+				>
+				["at0124"] = <
+					text = <"Prurito">
+					description = <"Prurito">
+				>
+				["at0125"] = <
+					text = <"Descamación">
+					description = <"Descamación">
+				>
+				["at0126"] = <
+					text = <"Tabaco">
+					description = <"Tabaco">
+				>
+				["at0127"] = <
+					text = <"Dejar de fumar">
+					description = <"Dejar de fumar">
+				>
+				["at0128"] = <
+					text = <"Número de cigarrillos">
+					description = <"Número de cigarrillos">
+				>
+				["at0129"] = <
+					text = <"*DV_TEXT (en)">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"*DV_TEXT (en)">
+					description = <"">
+				>
+			>
+		>
+	>

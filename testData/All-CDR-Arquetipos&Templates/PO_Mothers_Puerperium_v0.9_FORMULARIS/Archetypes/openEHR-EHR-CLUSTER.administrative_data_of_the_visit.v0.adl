@@ -1,0 +1,327 @@
+archetype (adl_version=1.4; uid=081356e3-5224-4b88-9554-2416de14c48b)
+	openEHR-EHR-CLUSTER.administrative_data_of_the_visit.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-09">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0ac8e027a1782761aeabeb0b354a2773">
+		["build_uid"] = <"222f9cc4-31ca-3114-af1a-674a7d692f02">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Administrative data of the visit
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..1} matches {    -- Pregnancy care summary
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Type of visit
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013,    -- *PDOM -Visita domiciliaria (ca)
+									at0014,    -- *CONS- consulta (ca)
+									at0015,    -- *VTEL Visita puerperi telefònica (ca)
+									at0016]    -- *VC Visita puerperi per videoconferncia (ca)
+								}
+							}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Hours from hospital discharge
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- <12h
+									at0010,    -- 12-24h
+									at0011,    -- 24-48h
+									at0012]    -- <48h
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0002] occurrences matches {0..1} matches {    -- Communication capability
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Language difficulties in catalan and/or spanish
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Language difficulties in catalan and/or spanish
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0007,    -- Yes
+									at0008]    -- No
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Administrative data of the visit">
+					description = <"Administrative data of the visit">
+				>
+				["at0001"] = <
+					text = <"Pregnancy care summary">
+					description = <"Pregnancy care summary">
+				>
+				["at0002"] = <
+					text = <"Communication capability">
+					description = <"Communication capability">
+				>
+				["at0003"] = <
+					text = <"Type of visit">
+					description = <"Type of visit">
+				>
+				["at0004"] = <
+					text = <"Hours from hospital discharge">
+					description = <"Hours from hospital discharge">
+				>
+				["at0005"] = <
+					text = <"Language difficulties in catalan and/or spanish">
+					description = <"Language difficulties in catalan and/or spanish">
+				>
+				["at0006"] = <
+					text = <"Language difficulties in catalan and/or spanish">
+					comment = <"Additional narrative about the language not captured in other fields.">
+					description = <"Language difficulties in catalan and/or spanish">
+				>
+				["at0007"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"<12h">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"12-24h">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"24-48h">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"<48h">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"*PDOM -Visita domiciliaria (ca)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*CONS- consulta (ca)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*VTEL Visita puerperi telefònica (ca)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*VC Visita puerperi per videoconferncia (ca)">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos administrativos del paciente">
+					description = <"Datos administrativos del paciente">
+				>
+				["at0001"] = <
+					text = <"Resumen de cuidados durante el embarazo">
+					description = <"Resumen de cuidados durante el embarazo">
+				>
+				["at0002"] = <
+					text = <"Capacidad de comunicación">
+					description = <"Capacidad de comunicación">
+				>
+				["at0003"] = <
+					text = <"Tipo de visita">
+					description = <"Tipo de visita">
+				>
+				["at0004"] = <
+					text = <"Horas de alta hospitalaria">
+					description = <"Horas de alta hospitalaria">
+				>
+				["at0005"] = <
+					text = <"Dificultadas idiomáticas">
+					description = <"Dificultadas idiomáticas">
+				>
+				["at0006"] = <
+					text = <"Dificultadas idiomáticas">
+					description = <"Dificultades idiomáticas">
+					comment = <"*Additional narrative about the language not captured in other fields. (en)">
+				>
+				["at0007"] = <
+					text = <"Si">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"<12h">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"12-24h">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"24-48h">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"<48h">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"PDOM -Visita domiciliaria">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"CONS-consulta">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"VTEL Visita puerperio telefónica">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"VC Visita puerperio por videoconferencia">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dades administratives del pacient">
+					description = <"Dades administratives del pacient">
+				>
+				["at0001"] = <
+					text = <"Resum de la cura de l'embaràs">
+					description = <"Resum de la cura de l'embaràs">
+				>
+				["at0002"] = <
+					text = <"Capacitat de comunicació">
+					description = <"Capacitat de comunicació">
+				>
+				["at0003"] = <
+					text = <"Tipus de visita">
+					description = <"Tipus de visita">
+				>
+				["at0004"] = <
+					text = <"Hores d'alta hospitalària">
+					description = <"Hores d'alta hospitalària">
+				>
+				["at0005"] = <
+					text = <"Dificultats idiomàtiques">
+					description = <"Dificultades idiomáticas">
+				>
+				["at0006"] = <
+					text = <"Dificultats idiomàtiques">
+					description = <"Dificultats idiomàtiques">
+					comment = <"*Additional narrative about the language not captured in other fields. (en)">
+				>
+				["at0007"] = <
+					text = <"Si">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"<12h">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"12-24h">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"24-48h">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"<48h">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"PDOM -Visita domiciliaria">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"CONS- consulta">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"VTEL Visita puerperi telefònica">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"VC   Visita puerperi  per videoconferencia">
+					description = <"">
+				>
+			>
+		>
+	>

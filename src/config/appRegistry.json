@@ -1,0 +1,74 @@
+{
+  "demos": [
+    {
+      "id": "hybrid-fhir-odl",
+      "name": "Hybrid FHIR Operational Data Layer",
+      "tagline": "Unify clinical data with FHIR-native MongoDB architecture",
+      "publisher": "MongoDB",
+      "authors": ["Patricia Renart Carnicero", "Francesc Mateu Amengual"],
+      "description": "A reference architecture that develops a FHIR hybrid ODL pattern for healthcare. Creates a single, highly performant operational store powering web services while exposing FHIR-compatible endpoints.",
+      "longDescription": "This solution demonstrates how to build a FHIR-centric data model in MongoDB that serves both custom application endpoints and standards-based FHIR APIs. The three-block document structure (canonical FHIR, application metadata, and search optimization) enables maximum flexibility without data duplication.",
+      "category": "interoperability",
+      "protocol": "FHIR",
+      "status": "published",
+      "featured": true,
+      "version": "1.0.0",
+      "media": {
+        "thumbnail": "https://www.mongodb.com/docs/atlas/architecture/current/includes/images/industry-solutions/fhir-hybrid-odl-architecture.svg",
+        "slides": [
+          {
+            "image": "https://www.mongodb.com/docs/atlas/architecture/current/includes/images/industry-solutions/fhir-hybrid-odl-architecture.svg",
+            "caption": "Reference Architecture - Atlas with FHIR ODL"
+          },
+          {
+            "image": "https://www.mongodb.com/docs/atlas/architecture/current/includes/images/industry-solutions/fhir-hybrid-odl-mappings.svg",
+            "caption": "Interactive Field Mapping Interface"
+          }
+        ],
+        "video": null
+      },
+      "highlights": [
+        "Dual API Layer - Application + FHIR endpoints",
+        "FHIR R4 compliant resource storage",
+        "Built-in synthetic data generator",
+        "MongoDB Atlas Search integration"
+      ],
+      "techStack": ["MongoDB Atlas", "FastAPI", "Next.js", "Tapdata"],
+      "links": {
+        "solutionLibrary": "https://www.mongodb.com/docs/atlas/architecture/current/solutions-library/fhir-data-layer/",
+        "repo": "https://github.com/mongodb-industry-solutions/hybrid-fhir-odl",
+        "demo": null,
+        "docs": "https://www.mongodb.com/docs/atlas/architecture/current/solutions-library/fhir-data-layer/"
+      },
+      "compatibility": {
+        "strategyIds": ["fhir_resource_first", "all"],
+        "protocol": "FHIR"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "All Demos",
+      "icon": "Sparkles"
+    },
+    {
+      "id": "data-entry",
+      "label": "Data Entry",
+      "icon": "Edit",
+      "description": "Solutions for capturing and managing clinical data"
+    },
+    {
+      "id": "interoperability",
+      "label": "Interoperability",
+      "icon": "GitMerge",
+      "description": "Solutions for data exchange and format conversion"
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics",
+      "icon": "BarChart2",
+      "description": "Solutions for data analysis and visualization"
+    }
+  ]
+}

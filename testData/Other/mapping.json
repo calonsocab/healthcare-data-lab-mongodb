@@ -1,0 +1,139 @@
+{
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "ehrid": {
+          "type": "token"
+        },
+        "CanonicalJSON": {
+          "fields": {
+            "archetype_node_id": {
+              "type": "token"
+            },
+            "content": {
+              "fields": {
+                "archetype_node_id": {
+                  "type": "token"
+                },
+                "items": {
+                  "fields": {
+                    "archetype_node_id": {
+                      "type": "token"
+                    },
+                    "other_participations": {
+                      "fields": {
+                        "performer": {
+                          "fields": {
+                            "identifiers": {
+                              "fields": {
+                                "id": {
+                                  "type": "token"
+                                }
+                              },
+                              "type": "embeddedDocuments"
+                            }
+                          },
+                          "type": "document"
+                        }
+                      },
+                      "type": "embeddedDocuments"
+                    },
+                    "time": {
+                      "fields": {
+                        "value": {
+                          "type": "date"
+                        }
+                      },
+                      "type": "document"
+                    }
+                  },
+                  "type": "embeddedDocuments"
+                }
+              },
+              "type": "embeddedDocuments"
+            },
+            "context": {
+              "fields": {
+                "other_context": {
+                  "fields": {
+                    "items": {
+                      "fields": {
+                        "archetype_node_id": {
+                          "type": "token"
+                        },
+                        "items": {
+                          "fields": {
+                            "archetype_node_id": {
+                              "type": "token"
+                            },
+                            "items": {
+                              "fields": {
+                                "archetype_node_id": {
+                                  "type": "token"
+                                },
+                                "value": {
+                                  "fields": {
+                                    "defining_code": {
+                                      "fields": {
+                                        "code_string": {
+                                          "type": "token"
+                                        }
+                                      },
+                                      "type": "document"
+                                    }
+                                  },
+                                  "type": "document"
+                                }
+                              },
+                              "type": "embeddedDocuments"
+                            }
+                          },
+                          "type": "embeddedDocuments"
+                        }
+                      },
+                      "type": "embeddedDocuments"
+                    }
+                  },
+                  "type": "document"
+                },
+                "start_time": {
+                  "fields": {
+                    "value": {
+                      "type": "date"
+                    }
+                  },
+                  "type": "document"
+                }
+              },
+              "type": "document"
+            },
+            "feeder_audit": {
+              "fields": {
+                "originating_system_item_ids": {
+                  "fields": {
+                    "id": {
+                      "type": "token"
+                    },
+                    "type": {
+                      "type": "token"
+                    }
+                  },
+                  "type": "embeddedDocuments"
+                }
+              },
+              "type": "document"
+            },
+            "uid": {
+              "fields": {
+                "value": {
+                  "type": "token"
+                }
+              },
+              "type": "document"
+            }
+          },
+          "type": "document"
+        }
+      }
+    }
+  }

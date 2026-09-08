@@ -1,0 +1,76 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "vertgen--62v",
+    "user" : "xavier.alzaga@gmail.com@google",
+    "repositoryId" : "vertgen--62v"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/DHI_v2.t.json",
+    "type" : "template",
+    "id" : "DHI_v2",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2024-09-23T08:55:09.521Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.dhi.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.self_reported_data.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.interpretacio_dhi.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.preguntes_addicionals.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    } ]
+  }, {
+    "path" : "Templates/DHI_v2.opt",
+    "type" : "opt",
+    "id" : "DHI_v2",
+    "lastModified" : "2024-09-23T08:55:09.521Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2024-09-23T08:54:31.825Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.dhi.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.dhi.v0",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2024-09-19T05:35:05.945Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.self_reported_data.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.self_reported_data.v1",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2023-08-05T06:50:53.632Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.interpretacio_dhi.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.interpretacio_dhi.v0",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2023-08-06T06:42:18.338Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.preguntes_addicionals.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.preguntes_addicionals.v0",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2023-08-05T06:51:03.232Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "vertgen--62v",
+    "lastModified" : "2024-09-21T06:12:51.473Z"
+  } ]
+}

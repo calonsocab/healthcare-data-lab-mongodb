@@ -1,0 +1,454 @@
+archetype (adl_version=1.4; uid=210e1e7c-1d27-4568-947d-fa6a6b32519c)
+	openEHR-EHR-CLUSTER.test_request_screen.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-11-06">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5a1d53009bbf7b5a3f12fcd9987c9bbe">
+		["build_uid"] = <"bdfbee3c-acf4-3b4c-b810-b0c952693acc">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Test request screen
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- 1st T blood test
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- 2nd T blood test
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- 3rd T blood test
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Additional blood test
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- 1st T ultrasound
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- 2nd T ultrasound
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {    -- 3rd T ultrasound
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Additional ultrasound
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Screening for chromosomal abnormalities 1st T
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Screening for chromosomal abnormalities 2nd T
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Modified combined screening
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Fetal DNA
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Invasive prenatal diagnosis (IPD)
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0018,    -- CB
+							at0019,    -- Amniocentesis
+							at0020,    -- Conventional
+							at0021]    -- Array
+						}
+					}
+				}
+			}
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- Kariotype
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0022,    -- *Qf-PCR (es)
+							at0023,    -- *Convencional (es)
+							at0024]    -- *Array (es)
+						}
+					}
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Vaginal / rectal culture
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Chlamydia/N. Gonorrhoeae
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Test request screen">
+					description = <"test request screen">
+				>
+				["at0001"] = <
+					text = <"1st T blood test">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"2nd T blood test">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"3rd T blood test">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Additional blood test">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"1st T ultrasound">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"2nd T ultrasound">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"3rd T ultrasound">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Additional ultrasound">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Screening for chromosomal abnormalities 1st T">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Screening for chromosomal abnormalities 2nd T">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Modified combined screening">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Fetal DNA">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Vaginal / rectal culture">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Chlamydia/N. Gonorrhoeae">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Invasive prenatal diagnosis (IPD)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Kariotype">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"CB">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Amniocentesis">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Conventional">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Array">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"*Qf-PCR (es)">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"*Convencional (es)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Array (es)">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pantalla de sol·licitud de proves">
+					description = <"test request screen">
+				>
+				["at0001"] = <
+					text = <"Analítica 1r T">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Analítica 2n T">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Analítica 3r T">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Analítica addicional">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Ecografia 1r T">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Ecografia 2n T">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Ecografia 3r T">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Ecografia addicional">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Cribratge d'anomalies cromosòmiques 1r T">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Cribratge d'anomalies cromosòmiques 2n T">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Cribratge combinat modificat">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"ADN fetal">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Cultiu vaginal/rectal">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Chlamydia/N. Gonorrhoeae">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Diagnòstic prenatal invasiu (DPI)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Cariotip">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"BC">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Amniocentesi">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Convencional">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Array">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Qf-PCR">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Convencional">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Array">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pantalla solicitud de pruebas">
+					description = <"*test request screen (en)">
+				>
+				["at0001"] = <
+					text = <"Analítica 1rT">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Analítica 2ºT">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Analítica 3rT">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Analítica adicional">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Ecografía 1rT">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Ecografía 2ºT">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Ecografía 3rT">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Ecografia adicional">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Cribaje anomalías cromosómicas 1r T">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Cribaje anomalías cromosómicas 2º T">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Cribaje combinado modificado">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"ADN fetal">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Cultivo vaginal/rectal">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Chlamydia/N. Gonorrhoeae">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Diagnóstico prenatal invasivo (DPI)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Cariotipo">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*CB (en)">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"*Amniocentesis (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Conventional (en)">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"*Array (en)">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Qf-PCR">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Convencional">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Array">
+					description = <"">
+				>
+			>
+		>
+	>

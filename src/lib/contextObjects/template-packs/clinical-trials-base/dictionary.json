@@ -1,0 +1,8 @@
+{
+  "dictionaryId": "trials-core.v1",
+  "bindings": {
+    "adverseEvent": ["MedDRA", "CTCAE"],
+    "lab": ["LOINC", "UCUM"],
+    "diagnosis": ["SNOMED-CT", "ICD-10"]
+  }
+}

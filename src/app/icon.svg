@@ -1,0 +1,27 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  aria-label="Healthcare Data Lab Icon"
+>
+  <title>Healthcare Data Lab</title>
+  <!-- Main sail -->
+  <path
+    d="M32 8 L32 56 L12 56 Q16 40, 20 28 Q24 16, 32 8 Z"
+    fill="#00ED64"
+  />
+  <!-- Sail highlight -->
+  <path
+    d="M32 16 L32 52"
+    stroke="#8CEBB0"
+    stroke-width="2"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <!-- Small flag -->
+  <path
+    d="M32 8 L40 12 L32 16 Z"
+    fill="#00ED64"
+  />
+</svg>

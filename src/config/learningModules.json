@@ -1,0 +1,1890 @@
+{
+  "sections": [
+    {
+      "id": "home",
+      "title": "Home"
+    },
+    {
+      "id": "strategy",
+      "title": "Data Strategy Studio"
+    },
+    {
+      "id": "models",
+      "title": "Data Models"
+    },
+    {
+      "id": "factory",
+      "title": "Data Factory"
+    },
+    {
+      "id": "query",
+      "title": "Query Studio"
+    },
+    {
+      "id": "api",
+      "title": "API & Sandbox"
+    },
+    {
+      "id": "apps",
+      "title": "App Gallery"
+    },
+    {
+      "id": "workspace",
+      "title": "Workspace Operations"
+    }
+  ],
+  "modules": [
+    {
+      "id": "home-overview",
+      "sectionId": "home",
+      "title": "Platform Overview",
+      "timeMinutes": 6,
+      "description": "Understand Healthcare Data Lab as the control-plane workspace and {'{kehrnel}'} as the execution engine across domains and strategies.",
+      "icon": "Rocket",
+      "difficulty": "beginner",
+      "routes": [
+        "home"
+      ],
+      "prerequisites": [],
+      "video": {
+        "type": "placeholder",
+        "title": "Platform Orientation",
+        "placeholderId": "video-home-overview",
+        "placeholderPath": "public/videos/learning/home/home-overview/welcome.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Home dashboard overview",
+            "placeholderPath": "public/images/learning/home/home-overview/dashboard-overview.png"
+          },
+          {
+            "title": "Welcome modal",
+            "placeholderPath": "public/images/learning/home/home-overview/welcome-modal.png"
+          },
+          {
+            "title": "Guided journey panel",
+            "placeholderPath": "public/images/learning/home/home-overview/guided-journey.png"
+          },
+          {
+            "title": "Recent activity panel",
+            "placeholderPath": "public/images/learning/home/home-overview/recent-activity.png"
+          },
+          {
+            "title": "Workspace health callouts",
+            "placeholderPath": "public/images/learning/home/home-overview/workspace-health-callout.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "ho-1",
+          "title": "Understand separation of concerns",
+          "description": "Healthcare Data Lab orchestrates team workflows and UX, while {'{kehrnel}'} executes runtime APIs, strategy activations, and data operations.",
+          "cta": "learn"
+        },
+        {
+          "id": "ho-2",
+          "title": "Identify your workspace path",
+          "description": "Pick your path by section: strategy design, modeling, data factory, querying, APIs, and apps.",
+          "cta": "home"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "home"
+          },
+          {
+            "label": "Open Strategy Studio Tutorial",
+            "cta": "learn:strategy-studio"
+          },
+          {
+            "label": "{kehrnel} Documentation",
+            "url": "{{KEHRNEL_DOCS_URL}}"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Home is the launch point for the workspace. It summarizes readiness (health checks), highlights recent activity, and provides shortcuts into the main applications.",
+              "Healthcare Data Lab is the control-plane UX. {kehrnel} is the execution runtime behind strategy activations and data operations."
+            ]
+          },
+          {
+            "id": "welcome-video",
+            "title": "Welcome Video",
+            "content": [
+              {
+                "type": "video",
+                "title": "Healthcare Data Lab Welcome",
+                "placeholderPath": "public/videos/learning/home/home-overview/welcome.mp4"
+              }
+            ]
+          },
+          {
+            "id": "platform-architecture",
+            "title": "Platform Architecture",
+            "paragraphs": [
+              "Use this diagram to understand the division of responsibilities: Healthcare Data Lab provides the user experience and orchestration layer; {kehrnel} executes strategies and performs runtime operations."
+            ],
+            "image": {
+              "title": "Architecture diagram (dark mode)",
+              "placeholderPath": "public/images/learning/home/architecture-overview.png"
+            }
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Start your journey with guided navigation into Strategy Studio, Data Models, Data Factory, and Query Studio.",
+              "Run a Workspace Health snapshot and review recent health runs.",
+              "Review recent activity (recent templates and recent queries).",
+              "Jump directly to {kehrnel} documentation for runtime concepts and APIs."
+            ]
+          },
+          {
+            "id": "concepts",
+            "title": "Key Concepts",
+            "terms": [
+              {
+                "term": "Workspace",
+                "definition": "Your team or personal space for environments, strategies, models, jobs, queries, and settings."
+              },
+              {
+                "term": "Environment",
+                "definition": "An operational context (and runtime connection) used when activating strategies and running jobs."
+              },
+              {
+                "term": "Guided Journey / Health",
+                "definition": "A readiness signal based on health checks that validate core platform and runtime connectivity."
+              }
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Confirm Workspace Health is green (or run a health check).",
+              "Open Strategy Studio and confirm which strategies are active for your environment.",
+              "Import or review model assets in Data Model Catalog.",
+              "Generate data in Synthetic Data and validate outcomes in Jobs History.",
+              "Draft queries in Query Lab/Builder and save stable versions to Query Library."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "strategy-studio",
+      "sectionId": "strategy",
+      "title": "Strategy Studio",
+      "timeMinutes": 10,
+      "description": "Explore and manage multi-domain, multi-strategy patterns. Activate strategies that {'{kehrnel}'} can execute per environment.",
+      "icon": "Layers",
+      "difficulty": "intermediate",
+      "routes": [
+        "strategies"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Strategy Studio Walkthrough",
+        "placeholderId": "video-strategy-studio",
+        "placeholderPath": "public/videos/learning/strategy/strategy-studio/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Active strategies by domain",
+            "placeholderPath": "public/images/learning/strategy/strategy-studio/active-strategies.png"
+          },
+          {
+            "title": "Browse & learn catalog",
+            "placeholderPath": "public/images/learning/strategy/strategy-studio/catalog-browse.png"
+          },
+          {
+            "title": "Strategy details panel",
+            "placeholderPath": "public/images/learning/strategy/strategy-studio/strategy-details.png"
+          },
+          {
+            "title": "Activation and config overrides",
+            "placeholderPath": "public/images/learning/strategy/strategy-studio/config-overrides.png"
+          },
+          {
+            "title": "Database overview",
+            "placeholderPath": "public/images/learning/strategy/strategy-studio/database-overview.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "ss-1",
+          "title": "Browse strategy catalog",
+          "description": "Review domain and strategy metadata to understand runtime capabilities and maturity.",
+          "cta": "strategies"
+        },
+        {
+          "id": "ss-2",
+          "title": "Inspect strategy contracts",
+          "description": "Check strategy endpoints, expected configs, and operation contracts exposed through {'{kehrnel}'}.",
+          "cta": "strategies"
+        },
+        {
+          "id": "ss-3",
+          "title": "Choose strategy per environment",
+          "description": "Align domain + strategy per environment before moving to data generation, mapping, and query execution.",
+          "cta": "environments"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "strategies"
+          },
+          {
+            "label": "Deploy Your Strategy Tutorial",
+            "cta": "learn:deploy-your-strategy"
+          },
+          {
+            "label": "Environment Settings",
+            "cta": "environments"
+          },
+          {
+            "label": "{kehrnel} Documentation",
+            "url": "{{KEHRNEL_DOCS_URL}}"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Strategy Studio is where you browse strategies, inspect their contracts, and activate them for a specific environment.",
+              "Activations connect a domain strategy to your environment so runtime operations (synthetic generation, query execution, etc.) can be executed through {kehrnel}."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Browse the {kehrnel} strategy catalog with search and domain filters.",
+              "Inspect strategy capabilities, expected configuration schema, and supported operations.",
+              "Activate a strategy for the current environment and maintain per-environment config overrides.",
+              "Review environment bindings and confirm the active strategy per domain.",
+              "Refresh activation state and re-hydrate catalog data from runtime."
+            ]
+          },
+          {
+            "id": "concepts",
+            "title": "Key Concepts",
+            "terms": [
+              {
+                "term": "Domain",
+                "definition": "A data protocol or standard (for example openEHR, FHIR, Genomics, X12) associated with a strategy."
+              },
+              {
+                "term": "Strategy",
+                "definition": "A runtime implementation that defines how data is stored, indexed, and queried for a domain."
+              },
+              {
+                "term": "Activation",
+                "definition": "A binding of (environment, domain, strategyId, config) used by runtime operations."
+              },
+              {
+                "term": "Config Overrides",
+                "definition": "Environment-specific configuration adjustments layered on top of the strategy defaults."
+              }
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Select your target domain (or use the domain filter).",
+              "Open a strategy and review its summary, capabilities, and config schema.",
+              "Activate the strategy for your environment.",
+              "Set config overrides if required for your runtime endpoint or data layout.",
+              "Move to Synthetic Data or Query Lab to validate behavior end-to-end."
+            ]
+          },
+          {
+            "id": "troubleshooting",
+            "title": "Troubleshooting",
+            "bullets": [
+              "If the catalog fails to load, verify the active environment has a valid {kehrnel} connection and re-run Workspace Health.",
+              "If activation fails, confirm the strategy supports your selected domain and that required config keys are provided."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "deploy-your-strategy",
+      "sectionId": "strategy",
+      "title": "Deploy Your Strategy",
+      "timeMinutes": 8,
+      "description": "Deploy and validate strategy configuration safely in your selected workspace environment.",
+      "icon": "Rocket",
+      "difficulty": "intermediate",
+      "routes": [
+        "deploy-strategies"
+      ],
+      "prerequisites": [
+        "strategy-studio"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Deploy Strategy Flow",
+        "placeholderId": "video-deploy-strategy",
+        "placeholderPath": "public/videos/learning/strategy/deploy-your-strategy/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Guide tab entry",
+            "placeholderPath": "public/images/learning/strategy/deploy-your-strategy/guide-entry.png"
+          },
+          {
+            "title": "Deploy pack wizard",
+            "placeholderPath": "public/images/learning/strategy/deploy-your-strategy/deploy-wizard.png"
+          },
+          {
+            "title": "Admin-only restriction",
+            "placeholderPath": "public/images/learning/strategy/deploy-your-strategy/admin-only.png"
+          },
+          {
+            "title": "SDK reference tab",
+            "placeholderPath": "public/images/learning/strategy/deploy-your-strategy/sdk-reference.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "dys-1",
+          "title": "Select target strategy",
+          "description": "Choose the strategy and domain combination to deploy into your active environment.",
+          "cta": "deploy-strategies"
+        },
+        {
+          "id": "dys-2",
+          "title": "Apply runtime configuration",
+          "description": "Configure settings and verify runtime binding before activation.",
+          "cta": "deploy-strategies"
+        },
+        {
+          "id": "dys-3",
+          "title": "Validate activation status",
+          "description": "Confirm activation health and operation readiness via workspace and API checks.",
+          "cta": "workspace-health"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "deploy-strategies"
+          },
+          {
+            "label": "Open Strategy Studio",
+            "cta": "strategies"
+          },
+          {
+            "label": "{kehrnel} Documentation",
+            "url": "{{KEHRNEL_DOCS_URL}}"
+          }
+        ],
+        "sections": [
+          {
+            "id": "paths",
+            "title": "Choose Your Build Path",
+            "paragraphs": [
+              "There are multiple ways to extend or create strategies. Pick the smallest path that meets your requirements, then iterate."
+            ],
+            "bullets": [
+              "Level 1: Bundles. Extend existing strategies with mappings/enrichment/shortcuts without writing a full custom strategy.",
+              "Level 2: Custom Strategy Pack. Implement a full strategy with its own manifest, defaults, and configuration schema.",
+              "Level 3: Multi-Domain Strategy Suites. Coordinated packs across domains with shared indexing, cross-domain query patterns, and unified governance."
+            ]
+          },
+          {
+            "id": "pack-structure",
+            "title": "Strategy Pack Structure",
+            "paragraphs": [
+              "A strategy pack is versioned and published as a single unit. The exact layout can vary, but the following pieces are typical:"
+            ],
+            "bullets": [
+              "manifest.json: Strategy metadata (id/name/version), domain, capabilities, operations, UI hints.",
+              "strategy implementation: The plugin/runtime code that performs ingest/query/index operations.",
+              "schema.json: Configuration validation (required keys, types, allowed values).",
+              "defaults.json: Default config values used when no environment overrides are set."
+            ]
+          },
+          {
+            "id": "validation",
+            "title": "Validation And Safety",
+            "bullets": [
+              "Validate the pack schema and defaults before publishing to prevent broken activations for other users.",
+              "After publishing, activate the strategy in Strategy Studio for a test environment before using it broadly.",
+              "Use Workspace Health and Sandbox to validate runtime connectivity and basic operations end-to-end."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "data-model-catalog",
+      "sectionId": "models",
+      "title": "Data Model Catalog",
+      "timeMinutes": 9,
+      "description": "Understand what a data model is in the Healthcare Data Lab and learn how to register, inspect, and use model assets across domains.",
+      "icon": "Database",
+      "difficulty": "intermediate",
+      "routes": [
+        "templates"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Understanding and Using the Data Model Catalog",
+        "placeholderId": "video-model-catalog",
+        "placeholderPath": "public/videos/learning/models/data-model-catalog/video.mp4",
+        "position": "top"
+      },
+      "steps": [
+        {
+          "id": "dmc-1",
+          "title": "Understand the role of data models",
+          "description": "Learn how model assets define structure, semantics, and validation rules before any data is ingested.",
+          "cta": "templates"
+        },
+        {
+          "id": "dmc-2",
+          "title": "Upload and inspect model assets",
+          "description": "Register templates or schemas and explore their structure to ensure they match your strategy requirements.",
+          "cta": "templates"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "templates"
+          },
+          {
+            "label": "Open Mapping Studio Tutorial",
+            "cta": "learn:mapping-studio"
+          }
+        ],
+        "sections": [
+          {
+            "id": "what-is-a-data-model",
+            "title": "What Is a Data Model in This Lab?",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "In the Healthcare Data Lab, everything starts with a data model. A data model defines the structure, allowed fields, data types, constraints, and semantic meaning of healthcare information before any data is stored or queried."
+              },
+              {
+                "type": "paragraph",
+                "text": "If you are a developer, think of a data model as a strongly typed contract for clinical data. It defines what is valid, how it is organized, and which paths can later be used for mapping, validation, and analytics."
+              },
+              {
+                "type": "paragraph",
+                "text": "Without a model, there is no reliable ingestion, no consistent querying, and no safe analytics. The Data Model Catalog is the semantic registry that makes this possible."
+              }
+            ]
+          },
+          {
+            "id": "domains-overview",
+            "title": "Supported Domains",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "The catalog supports multiple modeling standards, also called domains. Each domain represents a different way of defining healthcare structure."
+              },
+              {
+                "type": "image",
+                "path": "public/images/learning/models/data-model-catalog/catalog-list.png",
+                "caption": "Data Model Catalog with domain tabs and registered assets.",
+                "count": 3
+              },
+              {
+                "type": "paragraph",
+                "text": "Typical domains include openEHR templates, FHIR StructureDefinitions, and ContextObject schemas. Switching tabs changes the modeling standard you are working with, but the governance and inspection workflow remains consistent."
+              }
+            ]
+          },
+          {
+            "id": "search-and-discovery",
+            "title": "Search and Discover Models",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "As your workspace grows, you may have dozens or hundreds of model assets. The catalog provides search and filtering capabilities to quickly locate the model you need."
+              },
+              {
+                "type": "image",
+                "path": "public/images/learning/models/data-model-catalog/search.png",
+                "caption": "Search and filtering within the Data Model Catalog."
+              },
+              {
+                "type": "paragraph",
+                "text": "You can search by name, sort by creation date, and filter using domain-specific metadata. For openEHR templates, additional facets such as archetypes or composition types may be available."
+              }
+            ]
+          },
+          {
+            "id": "upload-models",
+            "title": "Uploading Model Assets",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "Models are typically designed outside the Lab and then registered here. For example, openEHR templates are exported as OPT files, while FHIR profiles are uploaded as StructureDefinition JSON documents."
+              },
+              {
+                "type": "image",
+                "path": "public/images/learning/models/data-model-catalog/upload.png",
+                "caption": "Uploading a new model asset into the catalog.",
+                "count": 4
+              },
+              {
+                "type": "paragraph",
+                "text": "When you upload a model, the Lab parses its structure and extracts metadata such as node paths, cardinalities, and data types. Once registered, the model becomes available to Mapping Studio, Synthetic Data, and Query tools."
+              }
+            ]
+          },
+          {
+            "id": "inspect-model-details",
+            "title": "Inspecting Model Structure",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "Each model asset can be opened to inspect its internal structure. This allows developers to verify fields, paths, and constraints before building ingestion pipelines or analytics queries."
+              },
+              {
+                "type": "image",
+                "path": "public/images/learning/models/data-model-catalog/model-detail.png",
+                "caption": "Detailed view of a registered model, including structure and metadata.",
+                "count": 2
+              },
+              {
+                "type": "paragraph",
+                "text": "Depending on the domain, you may see hierarchical structure views, mind maps, raw JSON, or analytics configuration panels. This transparency ensures that the model matches your intended use case before data flows through the system."
+              }
+            ]
+          },
+          {
+            "id": "typical-workflow",
+            "title": "Typical Developer Workflow",
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "A common workflow looks like this:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Select the modeling domain (for example openEHR or FHIR).",
+                  "Upload or import the required model assets.",
+                  "Inspect the structure and confirm fields and paths.",
+                  "Use the model in Mapping Studio, Synthetic Data generation, or Query Studio.",
+                  "Define analytics-relevant fields if cross-patient queries are required."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "In this architecture, models always come before data. This model-first approach guarantees consistency, validation, and long-term maintainability."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "contextobject-builder",
+      "sectionId": "models",
+      "title": "ContextObject Builder",
+      "timeMinutes": 12,
+      "description": "Design reusable context objects that bridge model semantics and operational workflows.",
+      "icon": "Boxes",
+      "difficulty": "advanced",
+      "routes": [
+        "contextObjects"
+      ],
+      "prerequisites": [
+        "data-model-catalog"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "ContextObject Design",
+        "placeholderId": "video-contextobject-builder",
+        "placeholderPath": "public/videos/learning/models/contextobject-builder/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "ContextObject list and filters",
+            "placeholderPath": "public/images/learning/models/contextobject-builder/list.png"
+          },
+          {
+            "title": "Embedded creation wizard",
+            "placeholderPath": "public/images/learning/models/contextobject-builder/wizard.png"
+          },
+          {
+            "title": "Editor canvas",
+            "placeholderPath": "public/images/learning/models/contextobject-builder/editor.png"
+          },
+          {
+            "title": "Lint and validation",
+            "placeholderPath": "public/images/learning/models/contextobject-builder/lint.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "cob-1",
+          "title": "Create a context object",
+          "description": "Define object structure and references to strategy/domain-relevant fields.",
+          "cta": "contextObjects"
+        },
+        {
+          "id": "cob-2",
+          "title": "Validate object quality",
+          "description": "Run validation and lint checks before using the object in downstream operations.",
+          "cta": "contextObjects"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "contextObjects"
+          },
+          {
+            "label": "Data Model Catalog",
+            "cta": "templates"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "ContextObject Builder is used to design reusable context definitions that persist clinical situations (episodes, therapy lines, workups) as first-class objects.",
+              "This feature is experimental and under active development."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Search and filter ContextObject definitions by kind/origin/status.",
+              "Create new ContextObjects using starter examples or a guided wizard.",
+              "Edit node structure (roles, datatypes, occurrences) and maintain consistent references.",
+              "Validate and lint definitions before using them in downstream workflows."
+            ]
+          },
+          {
+            "id": "concepts",
+            "title": "Key Concepts",
+            "terms": [
+              {
+                "term": "ContextObject",
+                "definition": "A persisted representation of a clinical situation optimized for fast reads and consistent interpretation."
+              },
+              {
+                "term": "Definition",
+                "definition": "The JSON specification describing the object shape, nodes, and constraints."
+              },
+              {
+                "term": "Wizard",
+                "definition": "Guided creation flow that bootstraps a usable definition from an example or template."
+              }
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Create a new ContextObject from an example (or start from scratch).",
+              "Edit the structure and roles for the target use case.",
+              "Run lint/validation and fix warnings.",
+              "Save the definition and use it in relevant strategy or application workflows."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "synthetic-data",
+      "sectionId": "factory",
+      "title": "Synthetic Data",
+      "timeMinutes": 11,
+      "description": "Generate test datasets against active domain strategies through {'{kehrnel}'} runtime operations.",
+      "icon": "FlaskConical",
+      "difficulty": "intermediate",
+      "routes": [
+        "synthetic"
+      ],
+      "prerequisites": [
+        "strategy-studio",
+        "data-model-catalog"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Synthetic Data Workflow",
+        "placeholderId": "video-synthetic-data",
+        "placeholderPath": "public/videos/learning/factory/synthetic-data/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Source mode selection",
+            "placeholderPath": "public/images/learning/factory/synthetic-data/source-selection.png"
+          },
+          {
+            "title": "Template selection",
+            "placeholderPath": "public/images/learning/factory/synthetic-data/template-selection.png"
+          },
+          {
+            "title": "Generation parameters",
+            "placeholderPath": "public/images/learning/factory/synthetic-data/parameters.png"
+          },
+          {
+            "title": "Generation progress",
+            "placeholderPath": "public/images/learning/factory/synthetic-data/progress.png"
+          },
+          {
+            "title": "Review results",
+            "placeholderPath": "public/images/learning/factory/synthetic-data/results.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "sd-1",
+          "title": "Configure generation run",
+          "description": "Set generation parameters aligned with active environment and strategy.",
+          "cta": "synthetic"
+        },
+        {
+          "id": "sd-2",
+          "title": "Execute generation job",
+          "description": "Launch generation and monitor progress from the same workspace.",
+          "cta": "synthetic"
+        },
+        {
+          "id": "sd-3",
+          "title": "Review generated output",
+          "description": "Validate output quality before running mapping and query validation.",
+          "cta": "history"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "synthetic"
+          },
+          {
+            "label": "Jobs History",
+            "cta": "history"
+          },
+          {
+            "label": "Workspace Health",
+            "cta": "workspace-health"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Synthetic Data generates test datasets against the active environment bindings. It supports different source modes (runtime/kehrnel-governed, Data Lab samples, and imported data)."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Choose a source mode (for example {kehrnel}-governed generation, Data Lab samples, or imported compositions).",
+              "Select templates/models to generate against.",
+              "Configure patient counts and validation options.",
+              "Launch generation jobs and monitor live progress.",
+              "Inspect job outcomes and navigate to Jobs History for deeper troubleshooting."
+            ]
+          },
+          {
+            "id": "concepts",
+            "title": "Key Concepts",
+            "terms": [
+              {
+                "term": "Source Mode",
+                "definition": "Controls whether generation uses runtime strategies, local sample data, or imported input."
+              },
+              {
+                "term": "Templates / Models",
+                "definition": "The structures used to shape generated documents."
+              },
+              {
+                "term": "Validation Mode",
+                "definition": "Controls whether to validate none, a sample, or all generated documents."
+              },
+              {
+                "term": "Synthetic Strategy Binding",
+                "definition": "The environment strategy link used when generation runs through {kehrnel}."
+              }
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Select a source mode.",
+              "Pick one or more templates/models.",
+              "Set patient count and generation options.",
+              "Run generation and monitor progress.",
+              "Review results and open Jobs History if errors occur."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "mapping-studio",
+      "sectionId": "factory",
+      "title": "Mapping Studio",
+      "timeMinutes": 14,
+      "description": "Build and test mapping logic from source documents into target model structures.",
+      "icon": "FileCode2",
+      "difficulty": "advanced",
+      "routes": [
+        "mapping"
+      ],
+      "prerequisites": [
+        "data-model-catalog"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Mapping Studio Deep Dive",
+        "placeholderId": "video-mapping-studio",
+        "placeholderPath": "public/videos/learning/factory/mapping-studio/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Upload documents",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/upload.png"
+          },
+          {
+            "title": "Document type identification",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/type-identification.png"
+          },
+          {
+            "title": "YAML mapping configurator",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/yaml-mapping.png"
+          },
+          {
+            "title": "Transformation preview",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/preview.png"
+          },
+          {
+            "title": "Validation results",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/validation-results.png"
+          },
+          {
+            "title": "Pattern manager",
+            "placeholderPath": "public/images/learning/factory/mapping-studio/pattern-manager.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "ms-1",
+          "title": "Prepare source and target artifacts",
+          "description": "Load source examples and target model assets before authoring mappings.",
+          "cta": "mapping"
+        },
+        {
+          "id": "ms-2",
+          "title": "Author mapping rules",
+          "description": "Define deterministic mapping logic; optional AI assistance can accelerate draft creation.",
+          "cta": "mapping"
+        },
+        {
+          "id": "ms-3",
+          "title": "Run and validate transformations",
+          "description": "Execute test transformations and inspect validation outputs iteratively.",
+          "cta": "mapping"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "mapping"
+          },
+          {
+            "label": "Data Model Catalog",
+            "cta": "templates"
+          },
+          {
+            "label": "Jobs History",
+            "cta": "history"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Mapping Studio transforms incoming documents into target model structures using repeatable mapping logic.",
+              "It supports document upload, type identification, template association, mapping configuration (YAML), transformation preview, and validation."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Upload clinical documents (XML/JSON/CSV/TXT/HL7 v2) and group them by identified document type.",
+              "Maintain type-to-template associations so similar documents map consistently.",
+              "Author or edit YAML mapping definitions and store them for reuse.",
+              "Run transformations, preview outputs, and inspect validation results.",
+              "Reprocess documents after updating patterns or mappings."
+            ]
+          },
+          {
+            "id": "concepts",
+            "title": "Key Concepts",
+            "terms": [
+              {
+                "term": "Document Type",
+                "definition": "A classification label used to group similar input documents and reuse mappings."
+              },
+              {
+                "term": "Type-Template Association",
+                "definition": "A mapping from a document type to the target template/model used for transformation."
+              },
+              {
+                "term": "YAML Mapping",
+                "definition": "A deterministic mapping definition stored locally via the workspace API."
+              },
+              {
+                "term": "Validation Results",
+                "definition": "Structured errors/warnings emitted after transformation."
+              }
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Upload input documents.",
+              "Confirm or correct document type identification and associations.",
+              "Create or update YAML mapping logic.",
+              "Run transformation and review preview outputs.",
+              "Inspect validation results and iterate until clean."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "jobs-history",
+      "sectionId": "factory",
+      "title": "Jobs History",
+      "timeMinutes": 6,
+      "description": "Monitor synthetic and mapping execution history with runtime-level observability.",
+      "icon": "History",
+      "difficulty": "beginner",
+      "routes": [
+        "history"
+      ],
+      "prerequisites": [
+        "synthetic-data"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Jobs Monitoring",
+        "placeholderId": "video-jobs-history",
+        "placeholderPath": "public/videos/learning/factory/jobs-history/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Jobs list",
+            "placeholderPath": "public/images/learning/factory/jobs-history/list.png"
+          },
+          {
+            "title": "Filters and status chips",
+            "placeholderPath": "public/images/learning/factory/jobs-history/filters.png"
+          },
+          {
+            "title": "Expanded job details",
+            "placeholderPath": "public/images/learning/factory/jobs-history/job-details.png"
+          },
+          {
+            "title": "Cancel running jobs",
+            "placeholderPath": "public/images/learning/factory/jobs-history/cancel.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "jh-1",
+          "title": "Inspect job status and outcomes",
+          "description": "Track running, completed, and failed jobs to validate operational reliability.",
+          "cta": "history"
+        },
+        {
+          "id": "jh-2",
+          "title": "Use history for troubleshooting",
+          "description": "Correlate job logs and output summaries to diagnose configuration issues quickly.",
+          "cta": "history"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "history"
+          },
+          {
+            "label": "Synthetic Data",
+            "cta": "synthetic"
+          },
+          {
+            "label": "Mapping Studio",
+            "cta": "mapping"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Jobs History provides observability for synthetic generation and mapping operations. It aggregates running and completed jobs across your active environment bindings."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Filter jobs by type (synthetic, mapping) and by status (running, completed, warning, failed, canceled).",
+              "Expand a job to inspect parameters, target collections, and runtime metadata.",
+              "Cancel running jobs (when supported by the runtime).",
+              "Use warning signals (for example missing source templates) to correct inputs and rerun."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "After starting a generation/mapping run, open Jobs History to track status.",
+              "Expand a failed job to review error codes and messages.",
+              "Fix configuration or inputs, then re-run the job from the original app."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "query-library",
+      "sectionId": "query",
+      "title": "Query Library",
+      "timeMinutes": 7,
+      "description": "Manage reusable query assets and query lifecycle from drafting to operational reuse.",
+      "icon": "Tag",
+      "difficulty": "intermediate",
+      "routes": [
+        "queries"
+      ],
+      "prerequisites": [
+        "data-model-catalog"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Query Library Basics",
+        "placeholderId": "video-query-library",
+        "placeholderPath": "public/videos/learning/query/query-library/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Query library list/grid",
+            "placeholderPath": "public/images/learning/query/query-library/library.png"
+          },
+          {
+            "title": "Search and filters",
+            "placeholderPath": "public/images/learning/query/query-library/search-filters.png"
+          },
+          {
+            "title": "Query editor",
+            "placeholderPath": "public/images/learning/query/query-library/query-editor.png"
+          },
+          {
+            "title": "Folders and tags",
+            "placeholderPath": "public/images/learning/query/query-library/folders-tags.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "ql-1",
+          "title": "Create and save reusable queries",
+          "description": "Store query assets with clear naming and intent for team reuse.",
+          "cta": "queries"
+        },
+        {
+          "id": "ql-2",
+          "title": "Organize query variants",
+          "description": "Use the library to keep controlled versions for dev/test/prod patterns.",
+          "cta": "queries"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "queries"
+          },
+          {
+            "label": "Query Lab",
+            "cta": "lab"
+          },
+          {
+            "label": "Data Organization",
+            "cta": "data-organization"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Query Library is where stable query assets are saved for reuse. It supports naming, tagging, foldering, and duplication to manage query lifecycle."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Create, edit, save, and delete query assets.",
+              "Organize queries with folders and tags (and filter by them).",
+              "Duplicate queries to create controlled variants.",
+              "Switch between grid and list views."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Draft and validate a query in Query Lab.",
+              "Save it into Query Library with clear name, description, folder, and tags.",
+              "Duplicate it to maintain dev/test/prod variants."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "query-lab",
+      "sectionId": "query",
+      "title": "Query Lab",
+      "timeMinutes": 12,
+      "description": "Run and inspect query execution behavior. Current implementation is openEHR-focused and marked as work in progress for broader multidomain support.",
+      "icon": "FlaskConical",
+      "difficulty": "advanced",
+      "routes": [
+        "lab"
+      ],
+      "prerequisites": [
+        "query-library"
+      ],
+      "statusNote": "Work in progress: currently openEHR-focused.",
+      "video": {
+        "type": "placeholder",
+        "title": "Query Lab Execution",
+        "placeholderId": "video-query-lab",
+        "placeholderPath": "public/videos/learning/query/query-lab/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "AQL editor",
+            "placeholderPath": "public/images/learning/query/query-lab/aql-editor.png"
+          },
+          {
+            "title": "MQL preview tab",
+            "placeholderPath": "public/images/learning/query/query-lab/mql-preview.png"
+          },
+          {
+            "title": "Execute and results",
+            "placeholderPath": "public/images/learning/query/query-lab/results.png"
+          },
+          {
+            "title": "Save to library",
+            "placeholderPath": "public/images/learning/query/query-lab/save.png"
+          },
+          {
+            "title": "Environment strategy binding",
+            "placeholderPath": "public/images/learning/query/query-lab/env-binding.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "qla-1",
+          "title": "Execute query variants",
+          "description": "Run query versions and inspect response behavior against active environment data.",
+          "cta": "lab"
+        },
+        {
+          "id": "qla-2",
+          "title": "Inspect translation and runtime plan",
+          "description": "Review query translation and execution details to optimize performance.",
+          "cta": "lab"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "lab"
+          },
+          {
+            "label": "Query Library",
+            "cta": "queries"
+          },
+          {
+            "label": "Strategy Studio",
+            "cta": "strategies"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Query Lab is the execution workbench for testing queries against active environment data. It is currently openEHR-focused and includes translation/preview tooling."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Select an environment strategy binding for query execution (when configured).",
+              "Write or load AQL text and validate/parse it.",
+              "Preview translations (for example AQL to MQL) when available.",
+              "Execute queries and inspect results and errors.",
+              "Save validated queries back to Query Library."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Ensure an environment has a query-enabled strategy binding.",
+              "Load a saved query (or write a new one).",
+              "Preview translation and confirm the query shape.",
+              "Execute and inspect results.",
+              "Save stable queries into Query Library."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "query-builder",
+      "sectionId": "query",
+      "title": "Query Builder",
+      "timeMinutes": 10,
+      "description": "Build queries visually. Current builder is openEHR-focused and planned to evolve to broader multidomain patterns.",
+      "icon": "Code",
+      "difficulty": "intermediate",
+      "routes": [
+        "builder"
+      ],
+      "prerequisites": [
+        "query-library"
+      ],
+      "statusNote": "Work in progress: currently openEHR-focused.",
+      "video": {
+        "type": "placeholder",
+        "title": "Visual Query Builder",
+        "placeholderId": "video-query-builder",
+        "placeholderPath": "public/videos/learning/query/query-builder/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Template selector",
+            "placeholderPath": "public/images/learning/query/query-builder/template-selector.png"
+          },
+          {
+            "title": "Builder sections",
+            "placeholderPath": "public/images/learning/query/query-builder/sections.png"
+          },
+          {
+            "title": "Where builder and groups",
+            "placeholderPath": "public/images/learning/query/query-builder/where.png"
+          },
+          {
+            "title": "Generated query output",
+            "placeholderPath": "public/images/learning/query/query-builder/output.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "qb-1",
+          "title": "Compose query blocks",
+          "description": "Select fields, filters, and conditions with guided controls.",
+          "cta": "builder"
+        },
+        {
+          "id": "qb-2",
+          "title": "Export and validate query output",
+          "description": "Generate query text and validate it in Query Lab before operational use.",
+          "cta": "lab"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "builder"
+          },
+          {
+            "label": "Query Lab",
+            "cta": "lab"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Query Builder provides a visual way to compose AQL queries by selecting templates, fields, filters, and return options. It is currently openEHR-focused."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Select one or more templates to scope your query.",
+              "Build FROM/SELECT/WHERE/ORDER BY/RETURN options using guided blocks.",
+              "Generate query text continuously as you change inputs.",
+              "Reset and iterate quickly before validating in Query Lab."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Choose the template(s) that represent the target clinical documents.",
+              "Use the blocks to select fields and add filters.",
+              "Review the generated AQL output and copy it into Query Lab for execution."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "api-docs",
+      "sectionId": "api",
+      "title": "API Documentation",
+      "timeMinutes": 6,
+      "description": "Explore platform APIs and understand where Healthcare Data Lab endpoints stop and {'{kehrnel}'} runtime APIs begin.",
+      "icon": "Book",
+      "difficulty": "beginner",
+      "routes": [
+        "api-docs",
+        "api"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "API Documentation Tour",
+        "placeholderId": "video-api-docs",
+        "placeholderPath": "public/videos/learning/api/api-docs/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "API documentation overview",
+            "placeholderPath": "public/images/learning/api/api-docs/docs-overview.png"
+          },
+          {
+            "title": "Domain API docs",
+            "placeholderPath": "public/images/learning/api/api-docs/domain-docs.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "api-1",
+          "title": "Read endpoint contracts",
+          "description": "Review API contracts, request/response structure, and environment requirements.",
+          "cta": "api-docs"
+        },
+        {
+          "id": "api-2",
+          "title": "Open {'{kehrnel}'} docs when needed",
+          "description": "Use {'{kehrnel}'} docs for runtime-specific behavior and domain strategy internals.",
+          "cta": "learn"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "api-docs"
+          },
+          {
+            "label": "{kehrnel} Documentation",
+            "url": "{{KEHRNEL_DOCS_URL}}"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "API Documentation explains available workspace APIs and how they relate to runtime APIs exposed through {kehrnel}.",
+              "Use this section to understand endpoint contracts before integrating externally."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Browse endpoint contracts and request/response shapes.",
+              "Understand which endpoints are platform-level vs runtime-level.",
+              "Jump to {kehrnel} docs for deeper runtime behavior and domain specifics."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "api-sandbox",
+      "sectionId": "api",
+      "title": "Sandbox",
+      "timeMinutes": 7,
+      "description": "Test API calls safely against your active environment and inspect operational behavior.",
+      "icon": "FlaskConical",
+      "difficulty": "intermediate",
+      "routes": [
+        "sandbox"
+      ],
+      "prerequisites": [
+        "api-docs"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Sandbox Testing",
+        "placeholderId": "video-api-sandbox",
+        "placeholderPath": "public/videos/learning/api/api-sandbox/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Explore landing",
+            "placeholderPath": "public/images/learning/api/api-sandbox/explore.png"
+          },
+          {
+            "title": "EHR create and list",
+            "placeholderPath": "public/images/learning/api/api-sandbox/ehr.png"
+          },
+          {
+            "title": "Templates list and upload",
+            "placeholderPath": "public/images/learning/api/api-sandbox/templates.png"
+          },
+          {
+            "title": "Compositions create and view",
+            "placeholderPath": "public/images/learning/api/api-sandbox/compositions.png"
+          },
+          {
+            "title": "AQL execution",
+            "placeholderPath": "public/images/learning/api/api-sandbox/aql.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "as-1",
+          "title": "Build and execute requests",
+          "description": "Compose request payloads and execute API calls with active environment context.",
+          "cta": "sandbox"
+        },
+        {
+          "id": "as-2",
+          "title": "Validate responses and errors",
+          "description": "Use response traces to confirm expected behavior before integrating externally.",
+          "cta": "sandbox"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "sandbox"
+          },
+          {
+            "label": "Workspace Health",
+            "cta": "workspace-health"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Sandbox is a safe, interactive runner for making API calls against your active environment.",
+              "It is designed for testing workflows (create EHRs, upload templates, store compositions, execute queries) without leaving the UI."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Create and manage EHR records.",
+              "List and upload templates (where supported).",
+              "Create and retrieve compositions.",
+              "Execute AQL queries and review results in table or JSON view.",
+              "Inspect contributions and versioned change sets."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Confirm the active environment is configured and healthy.",
+              "Use Sandbox to create a minimal dataset (EHR + composition).",
+              "Run AQL queries to validate the stored data.",
+              "Copy stable requests into external tooling or app code."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "app-gallery",
+      "sectionId": "apps",
+      "title": "App Gallery",
+      "timeMinutes": 5,
+      "description": "Discover reference applications and reusable patterns that build on multi-domain, multi-strategy foundations.",
+      "icon": "GraduationCap",
+      "difficulty": "beginner",
+      "routes": [
+        "app-gallery"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "App Gallery Navigation",
+        "placeholderId": "video-app-gallery",
+        "placeholderPath": "public/videos/learning/apps/app-gallery/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Gallery list",
+            "placeholderPath": "public/images/learning/apps/app-gallery/list.png"
+          },
+          {
+            "title": "Category and protocol filters",
+            "placeholderPath": "public/images/learning/apps/app-gallery/filters.png"
+          },
+          {
+            "title": "App detail page",
+            "placeholderPath": "public/images/learning/apps/app-gallery/detail.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "ag-1",
+          "title": "Browse solution patterns",
+          "description": "Use the gallery to identify architectural patterns and reusable solution components.",
+          "cta": "app-gallery"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "app-gallery"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "App Gallery is a curated list of reference applications and reusable patterns built on multi-domain and multi-strategy foundations."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Browse apps by category and protocol compatibility.",
+              "Filter and search to find relevant solution patterns.",
+              "Open detailed instructions for how to run or integrate each app.",
+              "Mark apps as installed/uninstalled for workspace tracking."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "workspace-health",
+      "sectionId": "workspace",
+      "title": "Workspace Health",
+      "timeMinutes": 7,
+      "description": "Validate workspace and runtime readiness, including environment context, data paths, and {'{kehrnel}'} connectivity.",
+      "icon": "Database",
+      "difficulty": "intermediate",
+      "routes": [
+        "workspace-health"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Workspace Health Checks",
+        "placeholderId": "video-workspace-health",
+        "placeholderPath": "public/videos/learning/workspace/workspace-health/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Health score summary",
+            "placeholderPath": "public/images/learning/workspace/workspace-health/summary.png"
+          },
+          {
+            "title": "Health checks list",
+            "placeholderPath": "public/images/learning/workspace/workspace-health/checks.png"
+          },
+          {
+            "title": "Run history",
+            "placeholderPath": "public/images/learning/workspace/workspace-health/history.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "wh-1",
+          "title": "Run health checks",
+          "description": "Execute workspace checks to confirm service accessibility and configuration readiness.",
+          "cta": "workspace-health"
+        },
+        {
+          "id": "wh-2",
+          "title": "Investigate degraded checks",
+          "description": "Use health details and linked sections to remediate issues quickly.",
+          "cta": "environments"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "workspace-health"
+          },
+          {
+            "label": "Environment Settings",
+            "cta": "environments"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Workspace Health validates platform readiness and runtime connectivity. It provides a snapshot view and a saved run history."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Run a health check snapshot for the current active environment.",
+              "Review passing/warning/failing checks and their details/metrics.",
+              "Inspect run history to confirm stability over time."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Run a health check before major actions (strategy activation, synthetic jobs, API testing).",
+              "If checks are degraded, open Environment Settings to fix runtime endpoints or bindings."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "workspace-configuration",
+      "sectionId": "workspace",
+      "title": "Workspace Configuration",
+      "timeMinutes": 9,
+      "description": "Manage environments, data organization, team settings, and theme for consistent team operation.",
+      "icon": "Database",
+      "difficulty": "intermediate",
+      "routes": [
+        "environments",
+        "data-organization",
+        "team",
+        "join-team",
+        "theme-config"
+      ],
+      "prerequisites": [
+        "home-overview"
+      ],
+      "video": {
+        "type": "placeholder",
+        "title": "Workspace Configuration",
+        "placeholderId": "video-workspace-config",
+        "placeholderPath": "public/videos/learning/workspace/workspace-configuration/video.mp4"
+      },
+      "media": {
+        "screenshots": [
+          {
+            "title": "Environment settings",
+            "placeholderPath": "public/images/learning/workspace/workspace-configuration/environments.png"
+          },
+          {
+            "title": "Strategy links per environment",
+            "placeholderPath": "public/images/learning/workspace/workspace-configuration/strategy-links.png"
+          },
+          {
+            "title": "Data organization (folders/tags)",
+            "placeholderPath": "public/images/learning/workspace/workspace-configuration/data-organization.png"
+          },
+          {
+            "title": "Team management",
+            "placeholderPath": "public/images/learning/workspace/workspace-configuration/team-management.png"
+          },
+          {
+            "title": "Theme configuration",
+            "placeholderPath": "public/images/learning/workspace/workspace-configuration/theme.png"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "wc-1",
+          "title": "Configure environments",
+          "description": "Set environment metadata, default runtime endpoints, and strategy links.",
+          "cta": "environments"
+        },
+        {
+          "id": "wc-2",
+          "title": "Manage workspace governance",
+          "description": "Maintain team and data organization settings for safe collaboration.",
+          "cta": "data-organization"
+        },
+        {
+          "id": "wc-3",
+          "title": "Apply visual theme policy",
+          "description": "Use theme configuration for clear workspace identity and operational clarity.",
+          "cta": "theme-config"
+        }
+      ],
+      "manual": {
+        "links": [
+          {
+            "label": "Open This App Section",
+            "cta": "environments"
+          },
+          {
+            "label": "Data Organization",
+            "cta": "data-organization"
+          },
+          {
+            "label": "Team Settings",
+            "cta": "team"
+          },
+          {
+            "label": "Theme Configuration",
+            "cta": "theme-config"
+          }
+        ],
+        "sections": [
+          {
+            "id": "purpose",
+            "title": "Purpose",
+            "paragraphs": [
+              "Workspace configuration covers environments, governance, and UX policy used across the rest of the platform."
+            ]
+          },
+          {
+            "id": "you-can",
+            "title": "What You Can Do",
+            "bullets": [
+              "Create and manage environments and choose an active environment.",
+              "Maintain environment strategy links and runtime connection metadata.",
+              "Manage data organization primitives (folders/tags) used by queries and other assets.",
+              "Manage team membership and workspace settings.",
+              "Apply theme configuration for consistent identity and readability."
+            ]
+          },
+          {
+            "id": "workflow",
+            "title": "Typical Workflow",
+            "steps": [
+              "Create environments for dev/test/prod (or domain-specific contexts).",
+              "Bind strategies per environment and validate via Workspace Health.",
+              "Set up folders/tags for query governance.",
+              "Adjust theme settings only after governance basics are stable."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "externalResources": [
+    {
+      "title": "{'{kehrnel}'} Documentation",
+      "description": "Execution runtime APIs, domain strategy internals, and deployment guides",
+      "url": "{{KEHRNEL_DOCS_URL}}",
+      "icon": "Book"
+    },
+    {
+      "title": "openEHR Specifications",
+      "description": "Official openEHR specifications and reference material",
+      "url": "https://specifications.openehr.org/",
+      "icon": "ExternalLink"
+    },
+    {
+      "title": "FHIR Resources",
+      "description": "HL7 FHIR specification and resource definitions",
+      "url": "https://hl7.org/fhir/resourcelist.html",
+      "icon": "ExternalLink"
+    },
+    {
+      "title": "MongoDB Documentation",
+      "description": "MongoDB query, indexing, and aggregation reference",
+      "url": "https://www.mongodb.com/docs/",
+      "icon": "Database"
+    }
+  ]
+}

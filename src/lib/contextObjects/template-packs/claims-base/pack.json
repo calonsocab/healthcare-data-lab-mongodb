@@ -1,0 +1,12 @@
+{
+  "templateId": "claims-base",
+  "name": "Claims Base",
+  "version": "1.0.0",
+  "intent": "payer_claims",
+  "primaryAnchor": "member",
+  "headerProfileId": "header.member.v1",
+  "terminologyProfileId": "term.claims.core.v1",
+  "dictionaryId": "claims-core.v1",
+  "skeletonGroups": ["claimsContent", "events", "assessment"],
+  "requiredAnchors": ["memberId", "claimId"]
+}

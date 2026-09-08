@@ -1,0 +1,186 @@
+﻿archetype (adl_version=1.4; uid=b0b27f1e-6b24-4017-8d7b-89ca6524a79a)
+	openEHR-EHR-EVALUATION.plan_note.v0
+
+concept
+	[at0000]	-- Plan note
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Modelatge del Coneixement Clínic  Catsalut">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"ckm.salut@gencat.cat">
+		["date"] = <"2024-05-14">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a description of the plan component, specifically from the perspective of a healthcare provider, usually focused on future investigations and treatment, goals of therapy and monitoring.">
+			use = <"Use to record a description of the plan component, specifically from the perspective of a healthcare provider, usually focused on future investigations and treatment, goals of therapy and monitoring.">
+			keywords = <"plan", ...>
+			misuse = <"">
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Enregistrar una descripció del component del pla, concretament des de la perspectiva d'un proveïdor d'atenció mèdica, normalment centrada en investigacions i tractaments futurs, objectius de la teràpia i seguiment.">
+			use = <"S'utilitza per registrar una descripció del component del pla, concretament des de la perspectiva d'un proveïdor d'atenció mèdica, normalment centrada en investigacions i tractaments futurs, objectius de la teràpia i seguiment.">
+			keywords = <"Pla", ...>
+			misuse = <"">
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar una descripción del componente del plan, específicamente desde la perspectiva de un proveedor de atención médica, generalmente centrada en investigaciones y tratamientos futuros, objetivos de la terapia y seguimiento.">
+			use = <"Se utiliza para registrar una descripción del componente del plan, específicamente desde la perspectiva de un proveedor de atención médica, generalmente centrada en investigaciones y tratamientos futuros, objetivos de terapia y seguimiento.">
+			keywords = <"plan, MEAP", ...>
+			misuse = <"">
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>">
+		["custodian_organisation"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["original_namespace"] = <"org.samplehealth">
+		["original_publisher"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["custodian_namespace"] = <"org.samplehealth">
+		["MD5-CAM-1.0.1"] = <"1281F07284D41602850E9C3FE2294CC5">
+		["build_uid"] = <"a3644f5c-a600-430a-a6aa-15af0b8812b8">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Plan note
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- PLAN
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0003] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Plan note">
+					description = <"Narrative description of the plan component, specifically from the perspective of a healthcare provider, usually focused on future investigations and treatment, goals of therapy and monitoring.
+">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"PLAN">
+					description = <"Narrative description of the strategy that will be followed to provide care/solve the health problem that the patient presents. Description of the proposed action and treatment plan, once the diagnostic assessment has been carried out Generally, the following aspects will be reported in this text field, in summary or schematic form:
+ - Investigations or tests requested, in the event that the diagnosis is unknown or confirmation is required, as it is still an orientation or suspicion. 
+- Referral consultations.
+- Future treatment, whether initial or changes.
+- Objectives of said therapy.
+- Follow-up period.
+">
+					comment = <"If there exists a fullfiled progress note that includes a description of the plan, this text field could be redundant.">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Extension">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nota_Plan">
+					description = <"Descripción narrativa del componente del plan, específicamente desde la perspectiva de un proveedor de atención médica, generalmente centrada en investigaciones y tratamientos futuros, objetivos de la terapia y seguimiento.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"PLAN">
+					description = <"Descripción narrativa de la estrategia que se seguirá para dar atención/ resolver el problema de salud que el paciente presenta. Descripción del plan de actuación i tratamiento propuesto, un vez completada la evaluación diagnóstica. Generalmente se informará en este campo de texto, de forma resumida o esquemática, los siguientes aspectos :
+ - Investigaciones o pruebas solicitadas, en el caso de que el diagnóstico sea desconocido o se precise confirmación, por ser todavia una orientación o sospecha. 
+- Tratamiento futuros, ya sean iniciales o cambios.
+- Objetivos de dicha terápia.
+- Período de segumiento.
+- Interconsultas de derivación">
+					comment = <"Si existe un curso clínico completo que incluye una descripción del plan, este campo de texto podría ser redundante.">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Extension">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nota_Pla">
+					description = <"Descripció narrativa del component del pla, concretament des de la perspectiva d'un proveïdor d'atenció mèdica, generalment centrada en investigacions i tractaments futurs, objectius de la teràpia i seguiment.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"PLA">
+					description = <"Descripció narrativa de l'estratègia que se seguirà per atendre / resoldre el problema de salut que el pacient presenta. Descripció del pla d'actuació i tractament proposat, un cop s'ha realitzat l'avaluació diagnòstica. Generalment s'informarà o es mencionaran en aquest camp de text, de forma resumida o esquemàtica, els aspectes següents:
+ - Investigacions o proves sol·licitades, en el cas que el diagnòstic sigui desconegut o cal confirmació, per ser encara una orientació o sospita. 
+- Tractament futurs, ja siguin inicials o canvis.
+- Objectius de la mencionada teràpia.
+- Període de seguiment.
+- Interconsultes de derivació">
+					comment = <"Si hi ha un curs clínic complet que inclou una descripció del pla, aquest camp de text podria ser redundant.">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Extensio">
+					description = <"">
+				>
+			>
+		>
+	>

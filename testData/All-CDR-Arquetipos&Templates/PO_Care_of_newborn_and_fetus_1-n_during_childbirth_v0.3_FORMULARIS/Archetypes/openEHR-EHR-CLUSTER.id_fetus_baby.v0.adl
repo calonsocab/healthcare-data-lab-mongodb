@@ -1,0 +1,99 @@
+archetype (adl_version=1.4; uid=37e98a50-bd78-41e1-8456-748d1c0d1498)
+	openEHR-EHR-CLUSTER.id_fetus_baby.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-10-25">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"fa819608bfd341055a7dd23f61672c64">
+		["build_uid"] = <"273cb563-c678-3450-ac47-4d602ce916f4">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- ID fetus baby
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- ID fetus baby
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"ID fetus baby">
+					description = <"ID fetus baby">
+				>
+				["at0001"] = <
+					text = <"ID fetus baby">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"ID fetus/nadó">
+					description = <"*ID fetus baby (en)">
+				>
+				["at0001"] = <
+					text = <"ID fetus/nadó">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Identificador feto/bebé">
+					description = <"*ID fetus baby (en)">
+				>
+				["at0001"] = <
+					text = <"Identificador feto/bebé">
+					description = <"">
+				>
+			>
+		>
+	>

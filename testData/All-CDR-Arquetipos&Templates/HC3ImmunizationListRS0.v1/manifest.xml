@@ -1,0 +1,102 @@
+<releaseset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+   <cid>1380.155.1</cid>
+   <versionAsset>1</versionAsset>
+   <rsIdentifier>HC3ImmunizationListRS0.v1</rsIdentifier>
+   <rsName>HC3 Immunization list RS 0</rsName>
+   <rsDescription>Conjunto de publicación de plantillas "HC3". 
+      En este caso solo contiene "Immunization list".</rsDescription>
+   <publisher></publisher>
+   <purpose></purpose>
+   <use>Para la descarga y validación en el CDR.</use>
+   <misuse></misuse>
+   <creationTime>2024-03-12T09:02:34+0100</creationTime>
+   <modificationTime>2024-03-12T09:02:34+0100</modificationTime>
+   <directLink>https://ckm.salut.gencat.cat/ckm/#showReleaseSet_1380.155.1_1</directLink>
+   <logMessage>Release Set per proves HC3 Immunization list</logMessage>
+   <implicitlyContainedArchetypes>
+      <ckmResource>
+         <cid>1380.146.84</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-COMPOSITION.vaccination_list.v0</resourceMainId>
+         <resourceMainDisplayName>Vaccination list</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:41+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:41+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.84/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.85</cid>
+         <versionAsset>1</versionAsset>
+         <revision>1.2.3</revision>
+         <resourceMainId>openEHR-EHR-ACTION.medication.v1</resourceMainId>
+         <resourceMainDisplayName>Gestió de la medicació</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:42+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:42+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.85/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.88</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.admin_salut.v0</resourceMainId>
+         <resourceMainDisplayName>Admin Salut</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:30:42+0100</creationTime>
+         <modificationTime>2024-03-12T08:30:42+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.88/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.89</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.xds_metadata.v0</resourceMainId>
+         <resourceMainDisplayName>Metadades XDS</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:31:27+0100</creationTime>
+         <modificationTime>2024-03-12T08:31:27+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.89/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.86</cid>
+         <versionAsset>1</versionAsset>
+         <revision>2.0.1</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.medication.v2</resourceMainId>
+         <resourceMainDisplayName>Medication details</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:44+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:44+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.86/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.87</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-SECTION.immunisation_list.v0</resourceMainId>
+         <resourceMainDisplayName>Vaccination list</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:45+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:45+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.87/1</directLink>
+      </ckmResource>
+   </implicitlyContainedArchetypes>
+   <explicitlyContainedTemplates>
+      <ckmResource>
+         <cid>1380.167.114</cid>
+         <versionAsset>1</versionAsset>
+         <resourceMainId>3806c87e-40c6-4c85-9b7d-c128dc6de19e</resourceMainId>
+         <resourceMainDisplayName>HC3 Immunization List v0.6</resourceMainDisplayName>
+         <resourceType>TEMPLATE</resourceType>
+         <creationTime>2024-03-12T08:35:53+0100</creationTime>
+         <modificationTime>2024-03-12T08:35:53+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/templates/1380.167.114/1</directLink>
+      </ckmResource>
+   </explicitlyContainedTemplates>
+   <secondaryAssets>
+      <asset>
+         <resourceType>template</resourceType>
+         <secondaryResourceType>operational-template</secondaryResourceType>
+      </asset>
+   </secondaryAssets>
+</releaseset>

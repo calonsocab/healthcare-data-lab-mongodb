@@ -1,0 +1,67 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "sumd-90w",
+    "user" : "xavier.alzaga@gmail.com@google",
+    "repositoryId" : "sumd-90w"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/SUMD_v2.t.json",
+    "type" : "template",
+    "id" : "SUMD_v2",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-06-25T12:31:20.236Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.self_reported_data.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.interpre_sumd.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.sumd.v0"
+    } ]
+  }, {
+    "path" : "Templates/SUMD_v2.opt",
+    "type" : "opt",
+    "id" : "SUMD_v2",
+    "lastModified" : "2024-06-25T12:31:20.236Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-06-13T12:49:36.954Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.self_reported_data.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.self_reported_data.v1",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-04-28T06:32:36.403Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.interpre_sumd.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.interpre_sumd.v0",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-04-30T05:00:57.931Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-06-25T12:07:31.640Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.sumd.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.sumd.v0",
+    "sourceId" : "sumd-90w",
+    "lastModified" : "2024-06-13T04:54:34.883Z"
+  } ]
+}

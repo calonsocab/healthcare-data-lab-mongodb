@@ -1,0 +1,856 @@
+archetype (adl_version=1.4; uid=4f5da66b-b12f-4dd0-b828-6776dbe851f7)
+	openEHR-EHR-OBSERVATION.resum_riqcat.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+
+description
+	original_author = <
+		["date"] = <"2023-11-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"b985597d744dd3b9e3ac5382d51d979e">
+		["build_uid"] = <"cb108e14-34c2-35a7-abfc-f6d00f514994">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- resum_RIQCat
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Centre realitzador
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Data d'ingrés del pacient
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Data d'intervenció del pacient
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Data d'alta del pacient
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Tipus d'intervenció
+										value matches {
+											1|[local::at0009],
+											2|[local::at0010],
+											3|[local::at0011]
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Codi procediment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0013] occurrences matches {0..1} matches {    -- Implant
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0014] occurrences matches {0..1} matches {    -- Implant 1
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0024] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0025] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0026] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0027] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0028] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0029] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0030] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0015] occurrences matches {0..1} matches {    -- Implant 2
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0031] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0032] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0033] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0034] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0035] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0036] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0037] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0016] occurrences matches {0..1} matches {    -- Implant 3
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0038] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0039] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0041] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0044] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0017] occurrences matches {0..1} matches {    -- Implant 4
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0045] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0046] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0047] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0048] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0049] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0050] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0051] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0018] occurrences matches {0..1} matches {    -- Implant 5
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0052] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0053] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0054] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0055] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0056] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0057] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0058] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0019] occurrences matches {0..1} matches {    -- Implant 6
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0059] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0060] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0061] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0062] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0063] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0064] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0065] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0020] occurrences matches {0..1} matches {    -- Implant 7
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0066] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0067] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0068] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0069] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0070] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0071] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0072] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0021] occurrences matches {0..1} matches {    -- Implant 8
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0073] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0074] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0075] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0076] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0077] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0078] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0079] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0080] occurrences matches {0..1} matches {    -- Implant 9
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0081] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0082] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0083] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0084] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0085] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0086] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0087] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0023] occurrences matches {0..1} matches {    -- Implant 10
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0088] occurrences matches {0..1} matches {    -- Codi tipus implant EMDN
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0089] occurrences matches {0..1} matches {    -- Número identificatiu de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0090] occurrences matches {0..1} matches {    -- Número del lot del implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0091] occurrences matches {0..1} matches {    -- Número de serie de l'implant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0092] occurrences matches {0..1} matches {    -- Nom/descripció del producte
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0093] occurrences matches {0..1} matches {    -- Nom del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0094] occurrences matches {0..1} matches {    -- Número d'identificació del fabricant
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"resum_RIQCat">
+					description = <"resum_RIQCat">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Centre realitzador">
+					description = <"Centre realitzador">
+				>
+				["at0005"] = <
+					text = <"Data d'ingrés del pacient">
+					description = <"Data d'ingrés del pacient">
+				>
+				["at0006"] = <
+					text = <"Data d'intervenció del pacient">
+					description = <"Data d'intervenció del pacient">
+				>
+				["at0007"] = <
+					text = <"Data d'alta del pacient">
+					description = <"Data d'alta del pacient">
+				>
+				["at0008"] = <
+					text = <"Tipus d'intervenció">
+					description = <"Tipus d'intervenció">
+				>
+				["at0009"] = <
+					text = <"Primera intervenció">
+					description = <"Primera intervenció">
+				>
+				["at0010"] = <
+					text = <"Reintervenció">
+					description = <"Reintervenció">
+				>
+				["at0011"] = <
+					text = <"Explantació">
+					description = <"Explantació">
+				>
+				["at0012"] = <
+					text = <"Codi procediment">
+					description = <"Codi procediment">
+				>
+				["at0013"] = <
+					text = <"Implant">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Implant 1">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Implant 2">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Implant 3">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Implant 4">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Implant 5">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Implant 6">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Implant 7">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Implant 8">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Implant 10">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0025"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0026"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0027"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0028"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0029"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0030"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0031"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0032"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0033"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0034"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0035"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0036"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0037"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0038"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0039"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0040"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0041"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0042"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0043"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0044"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0045"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0046"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0047"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0048"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0049"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0050"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0051"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0052"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0053"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0054"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0055"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0056"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0057"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0058"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0059"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0060"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0061"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0062"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0063"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0064"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0065"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0066"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0067"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0068"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0069"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0070"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0071"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0072"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0073"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0074"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0075"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0076"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0077"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0078"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0079"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0080"] = <
+					text = <"Implant 9">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0082"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0083"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0084"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0085"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0086"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0087"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+				["at0088"] = <
+					text = <"Codi tipus implant EMDN">
+					description = <"Codi tipus implant EMDN">
+				>
+				["at0089"] = <
+					text = <"Número identificatiu de l'implant">
+					description = <"Número identificatiu de l'implant">
+				>
+				["at0090"] = <
+					text = <"Número del lot del implant">
+					description = <"Número del lot del implant">
+				>
+				["at0091"] = <
+					text = <"Número de serie de l'implant">
+					description = <"Número de serie de l'implant">
+				>
+				["at0092"] = <
+					text = <"Nom/descripció del producte">
+					description = <"Nom/descripció del producte">
+				>
+				["at0093"] = <
+					text = <"Nom del fabricant">
+					description = <"Nom del fabricant">
+				>
+				["at0094"] = <
+					text = <"Número d'identificació del fabricant">
+					description = <"Número d'identificació del fabricant">
+				>
+			>
+		>
+	>

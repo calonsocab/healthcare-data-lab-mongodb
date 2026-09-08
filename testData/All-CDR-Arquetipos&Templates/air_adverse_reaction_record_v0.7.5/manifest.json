@@ -1,0 +1,211 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "air_adve-clw",
+    "user" : "179175ce-a420-441a-b931-2a7d1b12d414@microsoft",
+    "repositoryId" : "air_adve-clw"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/air_adverse_reaction_record_v0.7.5.t.json",
+    "type" : "template",
+    "id" : "air_adverse_reaction_record_v0.7.5",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-22T10:34:13.423Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.gender.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.problem_qualifier.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.body_weight.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.adverse_reaction_event.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.medication.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adverse_reaction_list.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.dosage.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.timing_daily.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.height.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.pharmacovigilance_notification_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.adverse_reaction_risk.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.adverse_reaction_additional_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.age_assertion.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.anatomical_location.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.administration_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.clinical_evidence.v1"
+    } ]
+  }, {
+    "path" : "Templates/air_adverse_reaction_record_v0.7.5.opt",
+    "type" : "opt",
+    "id" : "air_adverse_reaction_record_v0.7.5",
+    "lastModified" : "2025-01-22T10:34:13.423Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.gender.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.gender.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.problem_qualifier.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.problem_qualifier.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.body_weight.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.body_weight.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.adverse_reaction_event.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.adverse_reaction_event.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.medication.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.medication.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adverse_reaction_list.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adverse_reaction_list.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:33.205Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.dosage.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.dosage.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.timing_daily.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.timing_daily.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.height.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.height.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.motiu_actualitzacio_registre.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.pharmacovigilance_notification_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.pharmacovigilance_notification_details.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.adverse_reaction_risk.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.adverse_reaction_risk.v2",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.adverse_reaction_additional_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.adverse_reaction_additional_details.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.age_assertion.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.age_assertion.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.909Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.anatomical_location.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.anatomical_location.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.administration_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.administration_details.v0",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.clinical_evidence.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
+    "sourceId" : "air_adve-clw",
+    "lastModified" : "2025-01-17T08:22:30.905Z"
+  } ]
+}

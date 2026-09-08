@@ -1,0 +1,116 @@
+﻿archetype (adl_version=1.4; uid=b53b4753-2042-40b8-a410-e151c422f1d4)
+	openEHR-EHR-CLUSTER.relevance.v0
+
+concept
+	[at0000]	-- Relevance
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Modelatge del Coneixement Clínic  Catsalut">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"ckm.salut@gencat.cat">
+		["date"] = <"2024-07-03">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record ">
+			use = <"Use to record ">
+			misuse = <"Not to be used to record
+
+">
+			copyright = <"© openEHR Foundation, Departament de Salut de la Generalitat de Catalunya, Departament de Salut de la Generalitat de Catalunya">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar ">
+			use = <"Se utiliza para registrar ">
+			misuse = <"No debe utilizarse para
+">
+			copyright = <"© openEHR Foundation, Departament de Salut de la Generalitat de Catalunya, Departament de Salut de la Generalitat de Catalunya">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Registrar ">
+			use = <"S'utilitza per registrar ">
+			misuse = <"No s'ha d'utilitzar per registrar">
+			copyright = <"© openEHR Foundation, Departament de Salut de la Generalitat de Catalunya, Departament de Salut de la Generalitat de Catalunya">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>">
+		["custodian_organisation"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["original_namespace"] = <"org.samplehealth">
+		["original_publisher"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["custodian_namespace"] = <"org.samplehealth">
+		["MD5-CAM-1.0.1"] = <"B1314DA2D0D9AF359765A363C7073640">
+		["build_uid"] = <"8c061597-73c0-40dc-a174-3290daebd43f">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- Relevance
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0043] occurrences matches {0..1} matches {    -- Relevance of the problem or diagnosis ECAP
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Relevance">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Relevance of the problem or diagnosis ECAP">
+					description = <"It is the relevance for that health problem for the specific patient. It will condition the display priority of the diagnosis in the list of patient diagnoses. Although each diagnostic code has a default relevance assigned in the Configuration Center, the professional can decide to modify it for the patient in question.">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Rellevància">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Rellevància del problema o diagnòstic a ECAP">
+					description = <"És la rellevància per aquell problema de salut pel pacient concret. Condicionarà la prioritat de visualització del diagnòstic en el llistat de diagnòstics del pacient. Tot i que cada codi diagnòstic té una rellevància default assignada en el Centre de Configuració, el professional pot decidir modificar-la pel pacient en qüestió.">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Relevancia">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Relevancia del problema o diagnostico en ECAP">
+					description = <"Es la relevancia por ese problema de salud para el paciente concreto. Condicionará la prioridad de visualización del diagnóstico en el listado de diagnósticos del paciente. Aunque cada código diagnóstico tiene una relevancia default asignada en el Centro de Configuración, el profesional puede decidir modificarla por el paciente en cuestión.">
+				>
+			>
+		>
+	>

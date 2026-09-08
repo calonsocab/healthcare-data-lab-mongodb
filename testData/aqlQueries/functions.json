@@ -1,0 +1,28 @@
+SELECT 
+  c/context/start_time/value AS start_time, 
+  c/content[openEHR-EHR-OBSERVATION.probs_base_observation.v0]/
+    data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.test_request_screen.v0]/
+    items/name/value AS prova_name, 
+  CONCAT(
+    c/content[openEHR-EHR-OBSERVATION.probs_base_observation.v0]/
+      data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.test_request_screen.v0]/
+      items/value/value, 
+    '_suffix'
+  ) AS extended_value,
+  ABS(c/uid/value) AS absolute_id,
+  SUBSTRING(c/archetype_details/template_id/value, 1, 5) AS templatePrefix,
+  COUNT(*) AS record_count
+FROM EHR e 
+  CONTAINS COMPOSITION c[openEHR-EHR-COMPOSITION.probs_base_composition.v0] 
+  CONTAINS (CLUSTER t[openEHR-EHR-CLUSTER.test_request_screen.v0])
+WHERE 
+  (
+    c/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.health_thread.v0]/
+      items[at0003]/value/id = 'PROBS-ccf3f3c9-7524-422d-ba2e-9d62f4b9204b-7'
+    OR 
+    e/ehr_id/value <> 'ccf3f3c9-7524-422d-ba2e-9d62f4b9204b'
+  )
+  AND LENGTH(c/uid/value) > 5
+  AND (c/someNumericField/value * 2 + 10) >= 100
+ORDER BY c/context/start_time/value DESC 
+LIMIT 20 OFFSET 5

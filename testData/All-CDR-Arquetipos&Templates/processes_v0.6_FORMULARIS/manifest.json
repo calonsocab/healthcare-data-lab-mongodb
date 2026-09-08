@@ -1,0 +1,85 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "probs-fo-aa6",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "probs-fo-aa6"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/processes_v0.6_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "processes_v0.6_FORMULARIS",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:06:18.110Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.fetus_identification.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0"
+    } ]
+  }, {
+    "path" : "Templates/processes_v0.6_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "processes_v0.6_FORMULARIS",
+    "lastModified" : "2024-07-25T11:06:18.110Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.fetus_identification.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.fetus_identification.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:02:35.410Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0",
+    "sourceId" : "probs-fo-aa6",
+    "lastModified" : "2024-07-25T11:05:17.583Z"
+  } ]
+}

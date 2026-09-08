@@ -1,0 +1,26 @@
+{
+    "mongo_uri": "mongodb://localhost:27017",
+    "source_db": "openehr_dataLab",
+    "target_db": "openehr_dataLab",
+    "compositions_collection": "compositions",
+    "meta_collection": "metaIndex",
+    "patient_batch_size": 100,
+    "strategy": "SingleCollection",
+    "strategy_config": {
+      "denormalize": true,
+      "flatten": [
+        "CanonicalJSON.content[openEHR-EHR-SECTION.immunisation_list.v0].items[openEHR-EHR-ACTION.medication.v1].time.value",
+        "CanonicalJSON.content[openEHR-EHR-SECTION.immunisation_list.v0].items[openEHR-EHR-ACTION.medication.v1].other_participations.performer.name"
+      ],
+      "extract": {
+        "patient_id": "ehrid",
+        "composition_date": "composition_date"
+      },
+      "indexes": [
+        {
+          "field": "ehrid",
+          "type": "hashed"
+        }
+      ]
+    }
+  }

@@ -1,0 +1,24 @@
+env:
+  NODE_ENV: staging
+  # Backend URL for the kehrnel service (server-side)
+  BACKEND_URL: http://localhost:8000
+  # Backend URL used by the browser (must be reachable from the client)
+  NEXT_PUBLIC_BACKEND_URL: http://localhost:8000
+
+  # Feature flags (examples)
+  # NEXT_PUBLIC_DISABLE_AI_ASSISTANT: "true"
+
+# Example only.
+# In production, inject these via your secret manager / CI system (do not commit real values).
+envSecrets:
+  ENV_SECRETS_KEY: "<secret-ref>"
+  MONGODB_URI: "<secret-ref>"
+  CORE_MONGODB_URL: "<secret-ref>"
+  CORE_DATABASE_NAME: "<secret-ref>"
+  NEXTAUTH_URL: "<secret-ref>"
+  NEXTAUTH_SECRET: "<secret-ref>"
+  GOOGLE_CLIENT_ID: "<secret-ref>"
+  GOOGLE_CLIENT_SECRET: "<secret-ref>"
+  OPENAI_API_KEY: "<secret-ref>"
+  OPENAI_MODEL: "<secret-ref>"
+

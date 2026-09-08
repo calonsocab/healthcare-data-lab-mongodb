@@ -1,0 +1,5313 @@
+archetype (adl_version=1.4; uid=741e79ca-b4d5-45c2-9f2a-4f244337a4c2)
+	openEHR-EHR-OBSERVATION.assist.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-03-12">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"608ec6dd35cada3f4af643af4af85c6c">
+		["build_uid"] = <"51841de0-a4e5-3718-be32-81a0c3075855">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- ASSIST
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Consum tabac al llarg de la vida
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Consum begudes alcohòliques al llarg de la vida
+										value matches {
+											0|[local::at0008],
+											1|[local::at0009]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Consum cànnabis al llarg de la vida
+										value matches {
+											0|[local::at0011],
+											1|[local::at0012]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Consum cocaïna al llarg de la vida
+										value matches {
+											0|[local::at0014],
+											1|[local::at0015]
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Consum amfetamines al llarg de la vida
+										value matches {
+											0|[local::at0017],
+											1|[local::at0018]
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Consum inhalants al llarg de la vida
+										value matches {
+											0|[local::at0020],
+											1|[local::at0021]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Consum sedants al llarg de la vida
+										value matches {
+											0|[local::at0023],
+											1|[local::at0024]
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Consum al∙lucinògens al llarg de la vida
+										value matches {
+											0|[local::at0026],
+											1|[local::at0027]
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Consum opioides al llarg de la vida
+										value matches {
+											0|[local::at0029],
+											1|[local::at0030]
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Consum altres drogues al llarg de la vida
+										value matches {
+											0|[local::at0032],
+											1|[local::at0033]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Altres especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {    -- Consum institut
+										value matches {
+											0|[local::at0036],
+											1|[local::at0037]
+										}
+									}
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Consum tabac darrers tres mesos
+										value matches {
+											0|[local::at0039],
+											2|[local::at0040],
+											3|[local::at0041],
+											4|[local::at0042],
+											6|[local::at0043]
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Consum begudes alcohòliques darrers tres mesos
+										value matches {
+											0|[local::at0045],
+											2|[local::at0046],
+											3|[local::at0047],
+											4|[local::at0048],
+											6|[local::at0049]
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {    -- Consum cànnabis darrers tres mesos
+										value matches {
+											0|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054],
+											6|[local::at0055]
+										}
+									}
+									ELEMENT[at0056] occurrences matches {0..1} matches {    -- Consum cocaïna darrers tres mesos
+										value matches {
+											0|[local::at0057],
+											2|[local::at0058],
+											3|[local::at0059],
+											4|[local::at0060],
+											6|[local::at0061]
+										}
+									}
+									ELEMENT[at0062] occurrences matches {0..1} matches {    -- Consum amfetamina darrers tres mesos
+										value matches {
+											0|[local::at0063],
+											2|[local::at0064],
+											3|[local::at0065],
+											4|[local::at0066],
+											6|[local::at0067]
+										}
+									}
+									ELEMENT[at0068] occurrences matches {0..1} matches {    -- Consum inhalants darrers tres mesos
+										value matches {
+											0|[local::at0069],
+											2|[local::at0070],
+											3|[local::at0071],
+											4|[local::at0072],
+											6|[local::at0073]
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..1} matches {    -- Consum sedants darrers tres mesos
+										value matches {
+											0|[local::at0075],
+											2|[local::at0076],
+											3|[local::at0077],
+											4|[local::at0078],
+											6|[local::at0079]
+										}
+									}
+									ELEMENT[at0080] occurrences matches {0..1} matches {    -- Consum  al∙lucinògens darrers tres mesos
+										value matches {
+											0|[local::at0081],
+											2|[local::at0082],
+											3|[local::at0083],
+											4|[local::at0084],
+											6|[local::at0085]
+										}
+									}
+									ELEMENT[at0086] occurrences matches {0..1} matches {    -- Consum  opioides darrers tres mesos
+										value matches {
+											0|[local::at0087],
+											2|[local::at0088],
+											3|[local::at0089],
+											4|[local::at0090],
+											6|[local::at0091]
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {    -- Consum altres drogues darrers tres mesos
+										value matches {
+											0|[local::at0093],
+											2|[local::at0094],
+											3|[local::at0095],
+											4|[local::at0096],
+											6|[local::at0097]
+										}
+									}
+									ELEMENT[at0098] occurrences matches {0..1} matches {    -- Consum Altres especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0099] occurrences matches {0..1} matches {    -- Desig tabac darrers tres mesos
+										value matches {
+											0|[local::at0100],
+											3|[local::at0101],
+											4|[local::at0102],
+											5|[local::at0103],
+											6|[local::at0104]
+										}
+									}
+									ELEMENT[at0105] occurrences matches {0..1} matches {    -- Desig begudes alcohòliques darrers tres mesos
+										value matches {
+											0|[local::at0106],
+											3|[local::at0107],
+											4|[local::at0108],
+											5|[local::at0109],
+											6|[local::at0110]
+										}
+									}
+									ELEMENT[at0111] occurrences matches {0..1} matches {    -- Desig cànnabis darrers tres mesos
+										value matches {
+											0|[local::at0112],
+											3|[local::at0113],
+											4|[local::at0114],
+											5|[local::at0115],
+											6|[local::at0116]
+										}
+									}
+									ELEMENT[at0117] occurrences matches {0..1} matches {    -- Desig cocaïna darrers tres mesos
+										value matches {
+											0|[local::at0118],
+											3|[local::at0119],
+											4|[local::at0120],
+											5|[local::at0121],
+											6|[local::at0122]
+										}
+									}
+									ELEMENT[at0123] occurrences matches {0..1} matches {    -- Desig amfetamina darrers tres mesos
+										value matches {
+											0|[local::at0124],
+											3|[local::at0125],
+											4|[local::at0126],
+											5|[local::at0127],
+											6|[local::at0128]
+										}
+									}
+									ELEMENT[at0129] occurrences matches {0..1} matches {    -- Desig inhalants darrers tres mesos
+										value matches {
+											0|[local::at0130],
+											3|[local::at0131],
+											4|[local::at0132],
+											5|[local::at0133],
+											6|[local::at0134]
+										}
+									}
+									ELEMENT[at0135] occurrences matches {0..1} matches {    -- Desig sedants darrers tres mesos
+										value matches {
+											0|[local::at0136],
+											3|[local::at0137],
+											4|[local::at0138],
+											5|[local::at0139],
+											6|[local::at0140]
+										}
+									}
+									ELEMENT[at0141] occurrences matches {0..1} matches {    -- Desig al∙lucinògens darrers tres mesos
+										value matches {
+											0|[local::at0142],
+											3|[local::at0143],
+											4|[local::at0144],
+											5|[local::at0145],
+											6|[local::at0146]
+										}
+									}
+									ELEMENT[at0147] occurrences matches {0..1} matches {    -- Desig opioides darrers tres mesos
+										value matches {
+											0|[local::at0148],
+											3|[local::at0149],
+											4|[local::at0150],
+											5|[local::at0151],
+											6|[local::at0152]
+										}
+									}
+									ELEMENT[at0153] occurrences matches {0..1} matches {    -- Desig altres drogues darrers tres mesos
+										value matches {
+											0|[local::at0154],
+											3|[local::at0155],
+											4|[local::at0156],
+											5|[local::at0157],
+											6|[local::at0158]
+										}
+									}
+									ELEMENT[at0159] occurrences matches {0..1} matches {    -- Desig altres especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0160] occurrences matches {0..1} matches {    -- Problemes diversos tabac darrers tres mesos
+										value matches {
+											0|[local::at0161],
+											4|[local::at0162],
+											5|[local::at0163],
+											6|[local::at0164],
+											7|[local::at0165]
+										}
+									}
+									ELEMENT[at0166] occurrences matches {0..1} matches {    -- Problemes diversos begudes alcohòliques darrers tres mesos
+										value matches {
+											0|[local::at0167],
+											4|[local::at0168],
+											5|[local::at0169],
+											6|[local::at0170],
+											7|[local::at0171]
+										}
+									}
+									ELEMENT[at0172] occurrences matches {0..1} matches {    -- Problemes diversos cànnabis darrers tres mesos
+										value matches {
+											0|[local::at0173],
+											4|[local::at0174],
+											5|[local::at0175],
+											6|[local::at0176],
+											7|[local::at0177]
+										}
+									}
+									ELEMENT[at0178] occurrences matches {0..1} matches {    -- Problemes diversos cocaïna darrers tres mesos
+										value matches {
+											0|[local::at0179],
+											4|[local::at0180],
+											5|[local::at0181],
+											6|[local::at0182],
+											7|[local::at0183]
+										}
+									}
+									ELEMENT[at0191] occurrences matches {0..1} matches {    -- Problemes diversos amfetamina darrers tres mesos
+										value matches {
+											0|[local::at0192],
+											4|[local::at0193],
+											5|[local::at0194],
+											6|[local::at0195],
+											7|[local::at0196]
+										}
+									}
+									ELEMENT[at0197] occurrences matches {0..1} matches {    -- Problemes diversos inhalants darrers tres mesos
+										value matches {
+											0|[local::at0198],
+											4|[local::at0199],
+											5|[local::at0200],
+											6|[local::at0201],
+											7|[local::at0202]
+										}
+									}
+									ELEMENT[at0203] occurrences matches {0..1} matches {    -- Problemes diversos sedants darrers tres mesos
+										value matches {
+											0|[local::at0204],
+											4|[local::at0205],
+											5|[local::at0206],
+											6|[local::at0207],
+											7|[local::at0208]
+										}
+									}
+									ELEMENT[at0209] occurrences matches {0..1} matches {    -- Problemes diversos al∙lucinògens darrers tres mesos
+										value matches {
+											0|[local::at0210],
+											4|[local::at0211],
+											5|[local::at0212],
+											6|[local::at0213],
+											7|[local::at0214]
+										}
+									}
+									ELEMENT[at0215] occurrences matches {0..1} matches {    -- Problemes diversos opioides darrers tres mesos
+										value matches {
+											0|[local::at0216],
+											4|[local::at0217],
+											5|[local::at0218],
+											6|[local::at0219],
+											7|[local::at0220]
+										}
+									}
+									ELEMENT[at0386] occurrences matches {0..1} matches {    -- Problemes diversos altres drogues darrers tres mesos
+										value matches {
+											0|[local::at0387],
+											4|[local::at0388],
+											5|[local::at0389],
+											6|[local::at0390],
+											7|[local::at0391]
+										}
+									}
+									ELEMENT[at0227] occurrences matches {0..1} matches {    -- Problemes diversos altres drogues:  especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0228] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per  tabac darrers tres mesos
+										value matches {
+											0|[local::at0229],
+											5|[local::at0230],
+											6|[local::at0231],
+											7|[local::at0232],
+											8|[local::at0233]
+										}
+									}
+									ELEMENT[at0234] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per begudes alcohòliques darrers tres mesos
+										value matches {
+											0|[local::at0235],
+											5|[local::at0236],
+											6|[local::at0237],
+											7|[local::at0238],
+											8|[local::at0239]
+										}
+									}
+									ELEMENT[at0240] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per cànnabis darrers tres mesos
+										value matches {
+											0|[local::at0241],
+											5|[local::at0242],
+											6|[local::at0243],
+											7|[local::at0244],
+											8|[local::at0245]
+										}
+									}
+									ELEMENT[at0392] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per  cocaïna darrers tres mesos
+										value matches {
+											0|[local::at0393],
+											5|[local::at0394],
+											6|[local::at0395],
+											7|[local::at0396],
+											8|[local::at0397]
+										}
+									}
+									ELEMENT[at0252] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per amfetamina darrers tres mesos
+										value matches {
+											0|[local::at0253],
+											5|[local::at0254],
+											6|[local::at0255],
+											7|[local::at0256],
+											8|[local::at0257]
+										}
+									}
+									ELEMENT[at0258] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per inhalants darrers tres mesos
+										value matches {
+											0|[local::at0259],
+											5|[local::at0260],
+											6|[local::at0261],
+											7|[local::at0262],
+											8|[local::at0263]
+										}
+									}
+									ELEMENT[at0264] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per sedants darrers tres mesos
+										value matches {
+											0|[local::at0265],
+											5|[local::at0266],
+											6|[local::at0267],
+											7|[local::at0268],
+											8|[local::at0269]
+										}
+									}
+									ELEMENT[at0270] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per al∙lucinògens darrers tres mesos
+										value matches {
+											0|[local::at0271],
+											5|[local::at0272],
+											6|[local::at0273],
+											7|[local::at0274],
+											8|[local::at0275]
+										}
+									}
+									ELEMENT[at0276] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per opioides darrers tres mesos
+										value matches {
+											0|[local::at0277],
+											5|[local::at0278],
+											6|[local::at0279],
+											7|[local::at0280],
+											8|[local::at0281]
+										}
+									}
+									ELEMENT[at0282] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per altres drogues darrers tres mesos
+										value matches {
+											0|[local::at0283],
+											5|[local::at0284],
+											6|[local::at0285],
+											7|[local::at0286],
+											8|[local::at0287]
+										}
+									}
+									ELEMENT[at0289] occurrences matches {0..1} matches {    -- No consecució fer l'esperat per altres especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0290] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum  tabac darrers tres mesos
+										value matches {
+											0|[local::at0291],
+											6|[local::at0292],
+											3|[local::at0293]
+										}
+									}
+									ELEMENT[at0294] occurrences matches {0..1} matches {    -- Preocupació amics o  familiars consum begudes alcohòliques darrers tres mesos
+										value matches {
+											0|[local::at0295],
+											6|[local::at0296],
+											3|[local::at0297]
+										}
+									}
+									ELEMENT[at0298] occurrences matches {0..1} matches {    -- Preocupació amics  o familiars consum  cànnabis darrers tres mesos
+										value matches {
+											0|[local::at0299],
+											6|[local::at0300],
+											3|[local::at0301]
+										}
+									}
+									ELEMENT[at0302] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum cocaïna darrers tres mesos
+										value matches {
+											0|[local::at0303],
+											6|[local::at0304],
+											3|[local::at0305]
+										}
+									}
+									ELEMENT[at0306] occurrences matches {0..1} matches {    -- Preocupació amics  o familiars consum amfetamina darrers tres mesos
+										value matches {
+											0|[local::at0307],
+											6|[local::at0308],
+											3|[local::at0309]
+										}
+									}
+									ELEMENT[at0310] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum inhalants darrers tres mesos
+										value matches {
+											0|[local::at0311],
+											6|[local::at0312],
+											3|[local::at0313]
+										}
+									}
+									ELEMENT[at0314] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum sedants darrers tres mesos
+										value matches {
+											0|[local::at0315],
+											6|[local::at0316],
+											3|[local::at0317]
+										}
+									}
+									ELEMENT[at0318] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum al∙lucinògens darrers tres mesos
+										value matches {
+											0|[local::at0319],
+											6|[local::at0320],
+											3|[local::at0321]
+										}
+									}
+									ELEMENT[at0322] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum opioides darrers tres mesos
+										value matches {
+											0|[local::at0323],
+											6|[local::at0324],
+											3|[local::at0325]
+										}
+									}
+									ELEMENT[at0326] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum altres drogues darrers tres mesos
+										value matches {
+											0|[local::at0327],
+											6|[local::at0328],
+											3|[local::at0329]
+										}
+									}
+									ELEMENT[at0330] occurrences matches {0..1} matches {    -- Preocupació amics o familiars consum d'altres especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0331] occurrences matches {0..1} matches {    -- Reducció o deixar consum  tabac
+										value matches {
+											0|[local::at0333],
+											6|[local::at0334],
+											3|[local::at0335]
+										}
+									}
+									ELEMENT[at0332] occurrences matches {0..1} matches {    -- Reducció o deixar consum begudes alcohòliques
+										value matches {
+											0|[local::at0336],
+											6|[local::at0337],
+											3|[local::at0338]
+										}
+									}
+									ELEMENT[at0339] occurrences matches {0..1} matches {    -- Reducció o deixar el consum cànnabis
+										value matches {
+											0|[local::at0340],
+											6|[local::at0341],
+											3|[local::at0342]
+										}
+									}
+									ELEMENT[at0343] occurrences matches {0..1} matches {    -- Reducció o deixar consum cocaïna
+										value matches {
+											0|[local::at0344],
+											6|[local::at0345],
+											3|[local::at0346]
+										}
+									}
+									ELEMENT[at0347] occurrences matches {0..1} matches {    -- Reducció o deixar consum amfetamines
+										value matches {
+											0|[local::at0348],
+											6|[local::at0349],
+											3|[local::at0350]
+										}
+									}
+									ELEMENT[at0351] occurrences matches {0..1} matches {    -- Reducció o deixar consum inhalants
+										value matches {
+											0|[local::at0352],
+											6|[local::at0353],
+											3|[local::at0354]
+										}
+									}
+									ELEMENT[at0355] occurrences matches {0..1} matches {    -- Reducció o deixar consum sedants
+										value matches {
+											0|[local::at0356],
+											6|[local::at0357],
+											3|[local::at0358]
+										}
+									}
+									ELEMENT[at0359] occurrences matches {0..1} matches {    -- Reducció o deixar consum al∙lucinògens
+										value matches {
+											0|[local::at0360],
+											6|[local::at0361],
+											3|[local::at0362]
+										}
+									}
+									ELEMENT[at0363] occurrences matches {0..1} matches {    -- Reducció o deixar consum opioides
+										value matches {
+											0|[local::at0364],
+											6|[local::at0365],
+											3|[local::at0366]
+										}
+									}
+									ELEMENT[at0367] occurrences matches {0..1} matches {    -- Reducció o deixar consum d'altres drogues
+										value matches {
+											0|[local::at0368],
+											6|[local::at0369],
+											3|[local::at0370]
+										}
+									}
+									ELEMENT[at0371] occurrences matches {0..1} matches {    -- Reducció o deixar consum altres drogues especificar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0372] occurrences matches {0..1} matches {    -- Consum drogues via intravenosa
+										value matches {
+											1|[local::at0373],
+											2|[local::at0374],
+											3|[local::at0375]
+										}
+									}
+									ELEMENT[at0376] occurrences matches {0..1} matches {    -- Puntuació tabac
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0377] occurrences matches {0..1} matches {    -- Puntuació alcohol
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0378] occurrences matches {0..1} matches {    -- Puntuació cànnabis
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0379] occurrences matches {0..1} matches {    -- Puntuació cocaïna
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0380] occurrences matches {0..1} matches {    -- Puntuació ATS
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0381] occurrences matches {0..1} matches {    -- Puntuació inhalants
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0382] occurrences matches {0..1} matches {    -- Puntuació sedants
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0383] occurrences matches {0..1} matches {    -- Puntuació al∙lucinògens
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0384] occurrences matches {0..1} matches {    -- Puntuació opioides
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0385] occurrences matches {0..1} matches {    -- Puntuació altres drogues
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0398] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0399] occurrences matches {0..*} matches {    -- Element
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"ASSIST">
+					description = <"ASSIST">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Consum tabac al llarg de la vida">
+					description = <"1a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0005"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Consum begudes alcohòliques al llarg de la vida">
+					description = <"1b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Consum cànnabis al llarg de la vida">
+					description = <"1c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0011"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Consum cocaïna al llarg de la vida">
+					description = <"1d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Consum amfetamines al llarg de la vida">
+					description = <"1e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Consum inhalants al llarg de la vida">
+					description = <"1f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Consum sedants al llarg de la vida">
+					description = <"1g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Consum al∙lucinògens al llarg de la vida">
+					description = <"1h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0026"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Consum opioides al llarg de la vida">
+					description = <"1i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Consum altres drogues al llarg de la vida">
+					description = <"1j. Altres drogues">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Altres especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0035"] = <
+					text = <"Consum institut">
+					description = <"Si totes les respostes han estat negatives: Ni tan sols quan anaves a l’institut?
+">
+				>
+				["at0036"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Consum tabac darrers tres mesos">
+					description = <"2a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0039"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Consum begudes alcohòliques darrers tres mesos">
+					description = <"2b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0045"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Consum cànnabis darrers tres mesos">
+					description = <"2c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0051"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Consum cocaïna darrers tres mesos">
+					description = <"2d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0057"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Consum amfetamina darrers tres mesos">
+					description = <"2e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0063"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Consum inhalants darrers tres mesos">
+					description = <"2f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0069"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Consum sedants darrers tres mesos">
+					description = <"2g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0075"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Consum  al∙lucinògens darrers tres mesos">
+					description = <"2h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0081"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Consum  opioides darrers tres mesos">
+					description = <"2i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0087"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Consum altres drogues darrers tres mesos">
+					description = <"2j. Altres drogues (especifiqueu‐les):">
+				>
+				["at0093"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Consum Altres especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0099"] = <
+					text = <"Desig tabac darrers tres mesos">
+					description = <"3a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0100"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0101"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0102"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0104"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"Desig begudes alcohòliques darrers tres mesos">
+					description = <"3b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0106"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0107"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0108"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0109"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"Desig cànnabis darrers tres mesos">
+					description = <"3c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0112"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0114"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0115"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0116"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"Desig cocaïna darrers tres mesos">
+					description = <"3d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0118"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0119"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0121"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"Desig amfetamina darrers tres mesos">
+					description = <"3e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0124"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0126"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0128"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"Desig inhalants darrers tres mesos">
+					description = <"3f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0130"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0131"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0135"] = <
+					text = <"Desig sedants darrers tres mesos">
+					description = <"3g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0136"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"Desig al∙lucinògens darrers tres mesos">
+					description = <"3h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0142"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0143"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0144"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0145"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0146"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0147"] = <
+					text = <"Desig opioides darrers tres mesos">
+					description = <"3i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0148"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Desig altres drogues darrers tres mesos">
+					description = <"3j. Altres drogues ">
+				>
+				["at0154"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Desig altres especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0160"] = <
+					text = <"Problemes diversos tabac darrers tres mesos">
+					description = <"4a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0161"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Problemes diversos begudes alcohòliques darrers tres mesos">
+					description = <"4b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0167"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0170"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0172"] = <
+					text = <"Problemes diversos cànnabis darrers tres mesos">
+					description = <"4c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0173"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0175"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0176"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0177"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Problemes diversos cocaïna darrers tres mesos">
+					description = <"4d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0179"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0180"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0183"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Problemes diversos amfetamina darrers tres mesos">
+					description = <"4e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0192"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0194"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0196"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0197"] = <
+					text = <"Problemes diversos inhalants darrers tres mesos">
+					description = <"4f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0198"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0201"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Problemes diversos sedants darrers tres mesos">
+					description = <"4g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0204"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Problemes diversos al∙lucinògens darrers tres mesos">
+					description = <"4h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0210"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0211"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0212"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0213"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0214"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0215"] = <
+					text = <"Problemes diversos opioides darrers tres mesos">
+					description = <"4i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0216"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0217"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0218"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0219"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0220"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0227"] = <
+					text = <"Problemes diversos altres drogues:  especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0228"] = <
+					text = <"No consecució fer l'esperat per  tabac darrers tres mesos">
+					description = <"5a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0229"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0230"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0231"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0232"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0233"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0234"] = <
+					text = <"No consecució fer l'esperat per begudes alcohòliques darrers tres mesos">
+					description = <"5b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0235"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"No consecució fer l'esperat per cànnabis darrers tres mesos">
+					description = <"5c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0241"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0243"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0245"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0252"] = <
+					text = <"No consecució fer l'esperat per amfetamina darrers tres mesos">
+					description = <"5e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0253"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0255"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0257"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"No consecució fer l'esperat per inhalants darrers tres mesos">
+					description = <"5f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0259"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0262"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0263"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0264"] = <
+					text = <"No consecució fer l'esperat per sedants darrers tres mesos">
+					description = <"5g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0265"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0268"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0269"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"No consecució fer l'esperat per al∙lucinògens darrers tres mesos">
+					description = <"5h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0271"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0272"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0273"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0274"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"No consecució fer l'esperat per opioides darrers tres mesos">
+					description = <"5i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0277"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0278"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0279"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"No consecució fer l'esperat per altres drogues darrers tres mesos">
+					description = <"5j. Altres drogues">
+				>
+				["at0283"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0286"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0287"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"No consecució fer l'esperat per altres especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0290"] = <
+					text = <"Preocupació amics o familiars consum  tabac darrers tres mesos">
+					description = <"6a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0291"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0292"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0293"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0294"] = <
+					text = <"Preocupació amics o  familiars consum begudes alcohòliques darrers tres mesos">
+					description = <"6b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0295"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"Preocupació amics  o familiars consum  cànnabis darrers tres mesos">
+					description = <"6c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0299"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"Preocupació amics o familiars consum cocaïna darrers tres mesos">
+					description = <"6d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0303"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"Preocupació amics  o familiars consum amfetamina darrers tres mesos">
+					description = <"6e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0307"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"Preocupació amics o familiars consum inhalants darrers tres mesos">
+					description = <"6f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0311"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0312"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"Preocupació amics o familiars consum sedants darrers tres mesos">
+					description = <"6g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0315"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Preocupació amics o familiars consum al∙lucinògens darrers tres mesos">
+					description = <"6h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0319"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"Preocupació amics o familiars consum opioides darrers tres mesos">
+					description = <"6i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0323"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"Preocupació amics o familiars consum altres drogues darrers tres mesos">
+					description = <"6j. Altres drogues">
+				>
+				["at0327"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"Preocupació amics o familiars consum d'altres especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0331"] = <
+					text = <"Reducció o deixar consum  tabac">
+					description = <"7a. Productes del tabac (cigarretes, tabac de mastegar, cigars, etc.)">
+				>
+				["at0332"] = <
+					text = <"Reducció o deixar consum begudes alcohòliques">
+					description = <"7b. Begudes alcohòliques (cervesa, vi, licors, etc.)">
+				>
+				["at0333"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"Reducció o deixar el consum cànnabis">
+					description = <"7c. Cànnabis (marihuana, porros, herba, haixix, etc.)">
+				>
+				["at0340"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"Reducció o deixar consum cocaïna">
+					description = <"7d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0344"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Reducció o deixar consum amfetamines">
+					description = <"7e. Estimulants del tipus amfetamina (speed, amfetes, èxtasi, etc.)">
+				>
+				["at0348"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0351"] = <
+					text = <"Reducció o deixar consum inhalants">
+					description = <"7f. Inhalants (òxid nitrós, cola, benzina, diluent de pintura, etc.)">
+				>
+				["at0352"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0353"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0354"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0355"] = <
+					text = <"Reducció o deixar consum sedants">
+					description = <"7g. Sedants i pastilles per dormir (diazepam, alprazolam, flunitrazepam, midalzolam, etc.)">
+				>
+				["at0356"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0357"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0358"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0359"] = <
+					text = <"Reducció o deixar consum al∙lucinògens">
+					description = <"7h. Al∙lucinògens (LSD, àcid, bolets, tripis, ketamina, etc.)">
+				>
+				["at0360"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0361"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0362"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0363"] = <
+					text = <"Reducció o deixar consum opioides">
+					description = <"7i. Opioides (heroïna, morfina, metadona, buprenorfina, codeïna, etc.)">
+				>
+				["at0364"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0365"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0366"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0367"] = <
+					text = <"Reducció o deixar consum d'altres drogues">
+					description = <"7j. Altres drogues">
+				>
+				["at0368"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0369"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0370"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0371"] = <
+					text = <"Reducció o deixar consum altres drogues especificar">
+					description = <"Especifiqueu‐les:">
+				>
+				["at0372"] = <
+					text = <"Consum drogues via intravenosa">
+					description = <"Pregunta 8. Has consumit alguna vegada alguna droga per via intravenosa (no compten els medicaments amb recepta)?">
+				>
+				["at0373"] = <
+					text = <"No mai">
+					description = <"">
+				>
+				["at0374"] = <
+					text = <"Si, en els darrers tres mesos">
+					description = <"">
+				>
+				["at0375"] = <
+					text = <"Si, però no en els darrers tres mesos">
+					description = <"">
+				>
+				["at0376"] = <
+					text = <"Puntuació tabac">
+					description = <"Puntuació tabac">
+				>
+				["at0377"] = <
+					text = <"Puntuació alcohol">
+					description = <"Puntuació alcohol">
+				>
+				["at0378"] = <
+					text = <"Puntuació cànnabis">
+					description = <"Puntuació cànnabis">
+				>
+				["at0379"] = <
+					text = <"Puntuació cocaïna">
+					description = <"Puntuació cocaïna">
+				>
+				["at0380"] = <
+					text = <"Puntuació ATS">
+					description = <"Puntuació ATS">
+				>
+				["at0381"] = <
+					text = <"Puntuació inhalants">
+					description = <"Puntuació inhalants">
+				>
+				["at0382"] = <
+					text = <"Puntuació sedants">
+					description = <"Puntuació sedants">
+				>
+				["at0383"] = <
+					text = <"Puntuació al∙lucinògens">
+					description = <"Puntuació al∙lucinògens">
+				>
+				["at0384"] = <
+					text = <"Puntuació opioides">
+					description = <"Puntuació opioides">
+				>
+				["at0385"] = <
+					text = <"Puntuació altres drogues">
+					description = <"Puntuació altres drogues">
+				>
+				["at0386"] = <
+					text = <"Problemes diversos altres drogues darrers tres mesos">
+					description = <"4j. Altres drogues ">
+				>
+				["at0387"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0388"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0389"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0390"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0391"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0392"] = <
+					text = <"No consecució fer l'esperat per  cocaïna darrers tres mesos">
+					description = <"5d. Cocaïna (coca, crack, etc.)">
+				>
+				["at0393"] = <
+					text = <"Mai">
+					description = <"">
+				>
+				["at0394"] = <
+					text = <"Un cop o dos">
+					description = <"">
+				>
+				["at0395"] = <
+					text = <"Mensualment">
+					description = <"">
+				>
+				["at0396"] = <
+					text = <"Setmanalment">
+					description = <"">
+				>
+				["at0397"] = <
+					text = <"Diàriament o gairabé">
+					description = <"">
+				>
+				["at0398"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0399"] = <
+					text = <"Element">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"ASSIST">
+					description = <"ASSIST">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Consumo tabaco a lo largo de la vida">
+					description = <"1a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0005"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Consumo bebidas alcohólicas a lo largo de la vida">
+					description = <"1b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Consumo cannabis a lo largo de la vida">
+					description = <"1c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0011"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Consumo cocaína a lo largo de la vida">
+					description = <"1d. Cocaína (coca, crack, etc.)">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Consumo amfetaminas a lo largo de la vida">
+					description = <"1e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.) No">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Consumo Inhalantes a lo largo de la vida">
+					description = <"1f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Consumo sedantes a lo largo de la vida">
+					description = <"1g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Consumo alucinógenos a lo largo de la vida">
+					description = <"1h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0026"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Consumo opioides a lo largo de la vida">
+					description = <"1i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Consumo otras drogas a lo largo de la vida">
+					description = <"1j. Otras drogas">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Otras especificar">
+					description = <"Especifique: ">
+				>
+				["at0035"] = <
+					text = <"Consumo instituto">
+					description = <"Si todas las respuestas fueron negativas : 
+¿Ni siquiera cuando estabas en la escuela?">
+				>
+				["at0036"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Consumo tabaco últimos tres meses">
+					description = <"2a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0039"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Consumo bebidas alcohólicas últimos tres meses">
+					description = <"2b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0045"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Consumo cannabis últimos tres meses">
+					description = <"2c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0051"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Consumo cocaína últimos tres meses">
+					description = <"2d. Cocaína (coca, crack, etc.)">
+				>
+				["at0057"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Consumo anfetamina últimos tres meses">
+					description = <"2e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.) No">
+				>
+				["at0063"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Consumo inhalantes últimos tres meses">
+					description = <"2f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0069"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Consumo sedantes últimos tres meses">
+					description = <"2g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0075"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Consumo alucinógenos últimos tres meses">
+					description = <"2h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0081"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Consumo opioides últimos tres meses">
+					description = <"2i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0087"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Consumo otras drogas últimos tres meses">
+					description = <"2j. Otras drogas, especificar: ">
+				>
+				["at0093"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Consumo Otros especificar">
+					description = <"Especifique: ">
+				>
+				["at0099"] = <
+					text = <"Deseo tabaco últimos tres meses">
+					description = <"3a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0100"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0101"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0102"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0104"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"Deseo bebidas alcohólicas últimos tres meses">
+					description = <"3b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0106"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0107"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0108"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0109"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"Deseo cannabis últimos tres meses">
+					description = <"3c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0112"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0114"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0115"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0116"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"Deseo cocaína últimos tres meses">
+					description = <"3d. Cocaína (coca, crack, etc.)">
+				>
+				["at0118"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0119"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0121"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"Deseo anfetamina últimos tres meses">
+					description = <"3e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.)">
+				>
+				["at0124"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0126"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0128"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"Deseo inhalantes últimos tres meses">
+					description = <"3f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0130"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0131"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0135"] = <
+					text = <"Deseo sedantes últimos tres meses">
+					description = <"3g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0136"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"Deseo alucinógenos últimos tres meses">
+					description = <"3h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0142"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0143"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0144"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0145"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0146"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0147"] = <
+					text = <"Deseo opioides últimos tres meses">
+					description = <"3i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0148"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Deseo otras drogas últimos tres meses">
+					description = <"3j. Otras drogas">
+				>
+				["at0154"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Deseo otros especificar">
+					description = <"*Especifiqueu‐les: (ca)">
+				>
+				["at0160"] = <
+					text = <"Problemas varios tabaco últimos tres meses">
+					description = <"4a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0161"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Problemas varios bebidas alcohólicas últimos tres meses">
+					description = <"4b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0167"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0170"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0172"] = <
+					text = <"Problemas varios cannabis últimos tres meses">
+					description = <"4c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0173"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0175"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0176"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0177"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Problemas varios cocaína últimos tres meses">
+					description = <"4d. Cocaína (coca, crack, etc.)">
+				>
+				["at0179"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0180"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0183"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Problemas varios anfetamina últimos tres meses">
+					description = <"4e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.)">
+				>
+				["at0192"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0194"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0196"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0197"] = <
+					text = <"Problemas varios  inhalantes en los últimos tres meses">
+					description = <"4f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0198"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0201"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Problemas varios sedantes últimos tres meses">
+					description = <"4g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0204"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Problemas varios alucinógenos últimos tres meses">
+					description = <"4h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0210"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0211"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0212"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0213"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0214"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0215"] = <
+					text = <"Problemas varios opioides últimos tres meses">
+					description = <"4i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0216"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0217"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0218"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0219"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0220"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0227"] = <
+					text = <"Problemas diversos: otras drogas especificar">
+					description = <"Especifique: ">
+				>
+				["at0228"] = <
+					text = <"No consecución hacer lo esperado por tabaco últimos tres meses">
+					description = <"5a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0229"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0230"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0231"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0232"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0233"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0234"] = <
+					text = <"No consecución hacer lo esperado por bebidas alcohólicas últimos tres meses">
+					description = <"5b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0235"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"No consecución hacer lo esperado por cannabis últimos tres meses">
+					description = <"5c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0241"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0243"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0245"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0252"] = <
+					text = <"No consecución hacer lo esperado por anfetamina últimos tres meses">
+					description = <"5e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.) No">
+				>
+				["at0253"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0255"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0257"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"No consecución hacer lo esperado por inhalantes en los últimos tres meses">
+					description = <"5f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0259"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0262"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0263"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0264"] = <
+					text = <"No consecución hacer lo esperado por sedantes últimos tres meses">
+					description = <"5g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0265"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0268"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0269"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"No consecución hacer lo esperado para alucinógenos últimos tres meses">
+					description = <"5h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0271"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0272"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0273"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0274"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"No consecución hacer lo esperado por opiácidos últimos tres meses">
+					description = <"5i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0277"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0278"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0279"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"No consecución hacer lo esperado por otras drogas últimos tres meses">
+					description = <"5j. Otras drogas">
+				>
+				["at0283"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0286"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0287"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"No consecución hacer lo esperado por otras drogas: especificar">
+					description = <"Especifique: ">
+				>
+				["at0290"] = <
+					text = <"Preocupación amigos o familiares por el consumo de tabaco últimos tres meses">
+					description = <"6a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0291"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0292"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0293"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0294"] = <
+					text = <"Preocupación amigos o familiares por el consumo de bebidas alcohólicas últimos tres meses">
+					description = <"6b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0295"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"Preocupación amigos o familiares por el consumo de por cannabis últimos tres meses">
+					description = <"6c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0299"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"Preocupación amigos o familiares por el consumo de cocaína últimos tres meses">
+					description = <"6d. Cocaína (coca, crack, etc.)">
+				>
+				["at0303"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"Preocupación amigos o familiares por el consumo de anfetamina últimos tres meses">
+					description = <"6e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.)">
+				>
+				["at0307"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"Preocupación amigos o familiares por el consumo de inhalantes en los últimos tres meses">
+					description = <"6f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0311"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0312"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"Preocupación amigos o familiares por el consumo de sedantes últimos tres meses">
+					description = <"6g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0315"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Preocupación amigos o familiares por el consumo de alucinógenos últimos tres meses">
+					description = <"6h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0319"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"Preocupación amigos o familiares por el consumo de opioides últimos tres meses">
+					description = <"6i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0323"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"Preocupación amigos o familiares por el consumo de otras drogas últimos tres meses">
+					description = <"6j. Otras drogas">
+				>
+				["at0327"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"Preocupación amigos o familiares por el consumo de otros especificar">
+					description = <"Especifique: ">
+				>
+				["at0331"] = <
+					text = <"Reducción o dejar el consumo de tabaco">
+					description = <"7a. Tabaco (cigarrillos, tabaco de mascar, puros, etc.)">
+				>
+				["at0332"] = <
+					text = <"Reducción o dejar el consumo bebidas alcohólicas">
+					description = <"7b.  Bebidas alcohólicas (cerveza, vinos, licores, etc.)">
+				>
+				["at0333"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"Reducción o dejar el consumo de cannabis">
+					description = <"7c. Cannabis (marihuana, mota, hierba, hachís, etc.)">
+				>
+				["at0340"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"Reducción o dejar el consumo de cocaína">
+					description = <"7d. Cocaína (coca, crack, etc.)">
+				>
+				["at0344"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Reducción o dejar el consumo de anfetaminas">
+					description = <"7e. Estimulantes de tipo anfetamina (speed, anfetaminas, éxtasis, etc.) ">
+				>
+				["at0348"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0351"] = <
+					text = <"Reducción o dejar el consumo de inhalantes">
+					description = <"7f. Inhalantes (óxido nitroso, pegamento, gasolina, solvente para pintura, etc.)">
+				>
+				["at0352"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0353"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0354"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0355"] = <
+					text = <"Reducción o dejar el consumo de sedantes">
+					description = <"7g. Sedantes o pastillas para dormir (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0356"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0357"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0358"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0359"] = <
+					text = <"Reducción o dejar el consumo de alucinógenos">
+					description = <"7h. Alucinógenos (LSD, ácidos, hongos, ketamina, etc.)">
+				>
+				["at0360"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0361"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0362"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0363"] = <
+					text = <"Reducción o dejar el consumo de opioides">
+					description = <"7i. Opiáceos (heroína, morfina, metadona, buprenorfina, codeína, etc.)">
+				>
+				["at0364"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0365"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0366"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0367"] = <
+					text = <"Reducción o dejar el consumo de otras drogas">
+					description = <"7j. Otras drogas">
+				>
+				["at0368"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0369"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0370"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0371"] = <
+					text = <"Reducción o dejar el consumo de otras drogas especificar">
+					description = <"Especifique: ">
+				>
+				["at0372"] = <
+					text = <"Consumo drogas vía intravenosa">
+					description = <"Pregunta 8.  ¿Alguna vez ha consumido alguna droga por vía inyectada? (solo las que consumió sin receta médica)">
+				>
+				["at0373"] = <
+					text = <"No, nunca">
+					description = <"">
+				>
+				["at0374"] = <
+					text = <"Sí, en los últimos 3 meses">
+					description = <"">
+				>
+				["at0375"] = <
+					text = <"Sí, pero no en los últimos 3 meses">
+					description = <"">
+				>
+				["at0376"] = <
+					text = <"Puntuación tabaco">
+					description = <"Puntuación tabaco">
+				>
+				["at0377"] = <
+					text = <"Puntuación Alcohol">
+					description = <"Puntuación Alcohol">
+				>
+				["at0378"] = <
+					text = <"Puntuación Cannabis">
+					description = <"Puntuación Cannabis">
+				>
+				["at0379"] = <
+					text = <"Puntuación Cocaína">
+					description = <"Puntuación Cocaína">
+				>
+				["at0380"] = <
+					text = <"Puntuación ATS">
+					description = <"Puntuación ATS">
+				>
+				["at0381"] = <
+					text = <"Puntuación Inhalantes">
+					description = <"Puntuación Inhalantes">
+				>
+				["at0382"] = <
+					text = <"Puntuación Sedantes">
+					description = <"Puntuación Sedantes">
+				>
+				["at0383"] = <
+					text = <"Puntuación alucinógenos">
+					description = <"Puntuación alucinógenos">
+				>
+				["at0384"] = <
+					text = <"Puntuación opioides">
+					description = <"Puntuación opioides">
+				>
+				["at0385"] = <
+					text = <"Puntuación otras drogas">
+					description = <"Puntuación otras drogas">
+				>
+				["at0386"] = <
+					text = <"Problemas varios otras drogas últimos tres meses">
+					description = <"4j. Otras drogas">
+				>
+				["at0387"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0388"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0389"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0390"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0391"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0392"] = <
+					text = <"No consecución hacer lo esperado por cocaína últimos tres meses">
+					description = <"5d. Cocaína (coca, crack, etc.)">
+				>
+				["at0393"] = <
+					text = <"Nunca">
+					description = <"">
+				>
+				["at0394"] = <
+					text = <"Una o dos veces">
+					description = <"">
+				>
+				["at0395"] = <
+					text = <"Mensualmente">
+					description = <"">
+				>
+				["at0396"] = <
+					text = <"Semanalmente">
+					description = <"">
+				>
+				["at0397"] = <
+					text = <"Diariamente o casi diariamente">
+					description = <"">
+				>
+				["at0398"] = <
+					text = <"*Item tree (ca)">
+					description = <"@ internal @">
+				>
+				["at0399"] = <
+					text = <"Element">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"ASSIST">
+					description = <"ASSIST">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Consumption tobacco throughout life">
+					description = <"1a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0005"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Consumption tobacco throughout life">
+					description = <"1b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0008"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Consumption cannabis throughout life">
+					description = <"1c Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0011"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Consumption cocaine throughout life">
+					description = <"1d Cocaine (coke, crack, etc.)">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Consumption amphetamines throughout  life">
+					description = <"1e Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Consumption inhalants throughout life">
+					description = <"1f Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Consumption sedates throughout  life">
+					description = <"1g Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Consumption hallucinogens throughout life">
+					description = <"1h Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0026"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Consumption opioids throughout life">
+					description = <"1i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Consumption other drugs throughout life">
+					description = <"1j. Other:">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Others specify">
+					description = <" Specify:">
+				>
+				["at0035"] = <
+					text = <"Institute consumption">
+					description = <"Probe if all answers are negative: “Not even when you were in school?”
+">
+				>
+				["at0036"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Tobacco consumption last three months">
+					description = <"2a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0039"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Alcoholic beverages consumption last three months">
+					description = <"2b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0045"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Cannabis consumption last three months">
+					description = <"2c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0051"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Cocaine consumption last three months">
+					description = <"2d. Cocaine (coke, crack, etc.)">
+				>
+				["at0057"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Amphetamine consumption last three months">
+					description = <"2e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0063"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Inhalants consumption  last three months">
+					description = <"2f Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0069"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Sedating consumption last three months">
+					description = <"2g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0075"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Hallucinogens consumption last three months">
+					description = <"2h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0081"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Opioids consumption last three months">
+					description = <"2i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0087"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Other drugs  consumption  last three months">
+					description = <"2j. Other:">
+				>
+				["at0093"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Consumption others specify">
+					description = <"Specify:">
+				>
+				["at0099"] = <
+					text = <"Desire for tobacco last three months">
+					description = <"3a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0100"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0101"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0102"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0104"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"Desire alcoholic beverages last three months">
+					description = <"3b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0106"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0107"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0108"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0109"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"Desire cannabis last three months">
+					description = <"3c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0112"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0114"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0115"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0116"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"Desire cocaine last three months">
+					description = <"3d. Cocaine (coke, crack, etc.)">
+				>
+				["at0118"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0119"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0121"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"Desire amphetamine last three months">
+					description = <"3e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0124"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0126"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0128"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"Desire inhalants last three months">
+					description = <"3f. Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0130"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0131"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0135"] = <
+					text = <"Desire sedatives last three months">
+					description = <"3g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0136"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"Desire hallucinogenic last three months">
+					description = <"3h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0142"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0143"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0144"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0145"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0146"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0147"] = <
+					text = <"Desire opioids last three months">
+					description = <"3i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0148"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Desire other drugs last three months">
+					description = <"3j. Other:">
+				>
+				["at0154"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Desire other drugs specify">
+					description = <"*Especifiqueu‐les: (ca)">
+				>
+				["at0160"] = <
+					text = <"Various tobacco problems last three months">
+					description = <"4a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0161"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Various alcoholic beverages problems last three months">
+					description = <"4b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0167"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0170"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0172"] = <
+					text = <"Various cannabis problems last three months">
+					description = <"4c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0173"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0175"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0176"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0177"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Various cocaine problems last three months">
+					description = <"4d. Cocaine (coke, crack, etc.)">
+				>
+				["at0179"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0180"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0183"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Various amphetamine problems last three months">
+					description = <"4e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0192"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0194"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0196"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0197"] = <
+					text = <"Various inhalant problems in the last three months">
+					description = <"4f. Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0198"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0201"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Various sedative problems last three months">
+					description = <"4g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0204"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Various hallucinogenic problems last three months">
+					description = <"4h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0210"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0211"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0212"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0213"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0214"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0215"] = <
+					text = <"Various opioids problems last three months">
+					description = <"4i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0216"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0217"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0218"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0219"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0220"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0227"] = <
+					text = <"Various problems: other drugs specify">
+					description = <"Specify: ">
+				>
+				["at0228"] = <
+					text = <"Failure to do what was expected due to tobacco in the last three months">
+					description = <"5a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0229"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0230"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0231"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0232"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0233"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0234"] = <
+					text = <"Failure to do what was expected due to alcoholic beverages in the last three months">
+					description = <"5b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0235"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"Failure to do what was expected for cannabis in the last three months">
+					description = <"5c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0241"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0243"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0245"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0252"] = <
+					text = <"Failure to do what was expected due to amphetamine in the last three months">
+					description = <"5e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0253"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0255"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0257"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"Failure to do what was expected for inhalants in the last three months">
+					description = <"5f. Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0259"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0262"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0263"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0264"] = <
+					text = <"Failure to do what was expected due to sedatives in the last three months">
+					description = <"5g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0265"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0268"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0269"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"Failure to do what was expected for hallucinogens last three months">
+					description = <"5h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0271"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0272"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0273"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0274"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"Failure to do what was expected due to opioids in the last three months">
+					description = <"5i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0277"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0278"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0279"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"Failure to do what was expected due to other drugs in the last three months">
+					description = <"5j. Other:">
+				>
+				["at0283"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0286"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0287"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"Failure to do what is expected by others to specify">
+					description = <"Specify: ">
+				>
+				["at0290"] = <
+					text = <"Friends or family concern about tobacco use in the last three months">
+					description = <"6a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0291"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0292"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0293"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0294"] = <
+					text = <"Friends or family concern about the consumption of alcoholic beverages in the last three months">
+					description = <"6b. Alcoholic beverages (beer, wine, spirits, etc.)">
+				>
+				["at0295"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"Friends or family concerned about cannabis use in the last three months">
+					description = <"6c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0299"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"Friends or family concerned about cocaine use in the last three months">
+					description = <"6d. Cocaine (coke, crack, etc.)">
+				>
+				["at0303"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"Friends or family concerned about amphetamine use in the last three months">
+					description = <"6e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0307"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"Friends or family concerned about inhalant use in the last three months">
+					description = <"6f. Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0311"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0312"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"Friends or family concerned about the use of sedatives in the last three months">
+					description = <"6g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0315"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Friends or family concern about the use of hallucinogens in the last three months">
+					description = <"6h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0319"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"Friends or family concerned about opioid use in the last three months">
+					description = <"6i. Opioids (heroin, morphine, methadone,  buprenorphine, codeine, etc.)">
+				>
+				["at0323"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"Friends or family concern about the use of other drugs in the last three months">
+					description = <"6j. Other:">
+				>
+				["at0327"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"Friends or family concern about the consumption of others, specify">
+					description = <"Specify: ">
+				>
+				["at0331"] = <
+					text = <"Reducing or stopping tobacco consumption">
+					description = <"7a.Tobacco products (cigarettes, chewing tobacco, cigars, etc.)">
+				>
+				["at0332"] = <
+					text = <"Reduce or stop drinking alcoholic beverages">
+					description = <"7b. Alcoholic beverages (beer, wine, spirits, etc.">
+				>
+				["at0333"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"Reduce or stop cannabis use">
+					description = <"7c. Cannabis (marijuana, pot, grass, hash, etc.)">
+				>
+				["at0340"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"Reduce or stop cocaine use">
+					description = <"7d. Cocaine (coke, crack, etc.)">
+				>
+				["at0344"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Reducing or stopping amphetamine use">
+					description = <"7e. Amphetamine-type stimulants (speed, meth, ecstasy, etc.)">
+				>
+				["at0348"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0351"] = <
+					text = <"Reducing or stopping inhalants use">
+					description = <"7f. Inhalants (nitrous, glue, petrol, paint thinner, etc.)">
+				>
+				["at0352"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0353"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0354"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0355"] = <
+					text = <"Reducing or stopping the use of sedatives">
+					description = <"7g. Sedatives or sleeping pills (diazepam, alprazolam, flunitrazepam, midazolam, etc.)">
+				>
+				["at0356"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0357"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0358"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0359"] = <
+					text = <"Reducing or stopping the use of hallucinogens">
+					description = <"7h. Hallucinogens (LSD, acid, mushrooms, trips, ketamine, etc.)">
+				>
+				["at0360"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0361"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0362"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0363"] = <
+					text = <"Reducing or stopping opioid use">
+					description = <"7i. Opioids (heroin, morphine, methadone, buprenorphine, codeine, etc.)">
+				>
+				["at0364"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0365"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0366"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0367"] = <
+					text = <"Reducing or stopping the use of other drugs">
+					description = <"7j. Other:">
+				>
+				["at0368"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0369"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0370"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0371"] = <
+					text = <"Reducing or stopping the use of other drugs specify">
+					description = <"Specify: ">
+				>
+				["at0372"] = <
+					text = <"Intravenous drug use">
+					description = <"QUESTION 8.Have you ever used any drug by injection(non-medical use only)?">
+				>
+				["at0373"] = <
+					text = <"No, never">
+					description = <"">
+				>
+				["at0374"] = <
+					text = <"Yes, in the past 3 months">
+					description = <"">
+				>
+				["at0375"] = <
+					text = <"Yes, but not in the past 3 months">
+					description = <"">
+				>
+				["at0376"] = <
+					text = <"Tobacco score">
+					description = <"Tobacco score">
+				>
+				["at0377"] = <
+					text = <"Alcohol score">
+					description = <"Alcohol score">
+				>
+				["at0378"] = <
+					text = <"Cannabis score">
+					description = <"Cannabis score">
+				>
+				["at0379"] = <
+					text = <"Cocaine score">
+					description = <"Cocaine score">
+				>
+				["at0380"] = <
+					text = <"ATS score">
+					description = <"ATS score">
+				>
+				["at0381"] = <
+					text = <"Inhalants score">
+					description = <"Inhalants score">
+				>
+				["at0382"] = <
+					text = <"Sedative score">
+					description = <"Sedative score">
+				>
+				["at0383"] = <
+					text = <"Hallucinogens score">
+					description = <"Hallucinogens score">
+				>
+				["at0384"] = <
+					text = <"Opioids score">
+					description = <"Opioids score">
+				>
+				["at0385"] = <
+					text = <"Other drugs score">
+					description = <"Opioids score">
+				>
+				["at0386"] = <
+					text = <"Various other drug problems last three months">
+					description = <"4j. Other:">
+				>
+				["at0387"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0388"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0389"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0390"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0391"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0392"] = <
+					text = <"Failure to do what was expected due to cocaine in the last three months">
+					description = <"5d. Cocaine (coke, crack, etc.)">
+				>
+				["at0393"] = <
+					text = <"Never">
+					description = <"">
+				>
+				["at0394"] = <
+					text = <"Once or twice">
+					description = <"">
+				>
+				["at0395"] = <
+					text = <"Monthly">
+					description = <"">
+				>
+				["at0396"] = <
+					text = <"Weekly">
+					description = <"">
+				>
+				["at0397"] = <
+					text = <"Daily or almost daily">
+					description = <"">
+				>
+				["at0398"] = <
+					text = <"*Item tree (ca)">
+					description = <"@ internal @">
+				>
+				["at0399"] = <
+					text = <"*Element (ca)">
+					description = <"">
+				>
+			>
+		>
+	>

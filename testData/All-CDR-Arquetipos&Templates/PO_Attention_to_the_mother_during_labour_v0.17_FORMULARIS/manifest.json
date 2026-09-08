@@ -1,0 +1,121 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "po_02_pa-bl1",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "po_02_pa-bl1"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Attention_to_the_mother_during_labour_v0.17_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Attention_to_the_mother_during_labour_v0.17_FORMULARIS",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:41:34.293Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.symptoms_attention_to_mother.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.management_attention_mother.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.transfer_attention_mother.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.medication_attention_mother.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.birth_summary_attention_mother.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Attention_to_the_mother_during_labour_v0.17_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Attention_to_the_mother_during_labour_v0.17_FORMULARIS",
+    "lastModified" : "2025-01-20T14:41:34.293Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.symptoms_attention_to_mother.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.symptoms_attention_to_mother.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.management_attention_mother.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.management_attention_mother.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.transfer_attention_mother.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.transfer_attention_mother.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.medication_attention_mother.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.medication_attention_mother.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.370Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.birth_summary_attention_mother.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.birth_summary_attention_mother.v0",
+    "sourceId" : "po_02_pa-bl1",
+    "lastModified" : "2025-01-20T14:40:27.382Z"
+  } ]
+}

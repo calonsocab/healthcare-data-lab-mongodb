@@ -1,0 +1,989 @@
+archetype (adl_version=1.4; uid=7b055e26-8b66-4d8f-8d24-b77727e0be86)
+	openEHR-EHR-CLUSTER.mother_general_data.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-15">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"1886ecfa6dbe5e6b510bca47b8f2f00c">
+		["build_uid"] = <"6120f73d-d98f-3754-8883-fc44799ad763">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Mother general data
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Woman's country of birth
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Women's profession
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Current occupation of the woman
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Language difficulties
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Height
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"cm">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Rubella immunization
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Age of the woman at the beginning of pregnancy
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::128]>
+						list = <
+							["1"] = <
+								units = <"a">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {    -- Last cytology date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Last cytology result
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0010,    -- Negatiu per cèl·lules malignes
+							at0011,    -- ASC-H
+							at0012,    -- HSIL
+							at0013,    -- LSIL
+							at0014,    -- ASC-US
+							at0015,    -- AGUS
+							at0016,    -- Adenocarcinoma
+							at0017,    -- Carcinoma escamòs
+							at0018,    -- Tumor maligne
+							at0019,    -- Mostra insatisfactoria
+							at0020,    -- Inflamació. Tractar i repetir
+							at0021]    -- Altres
+						}
+					}
+				}
+			}
+			ELEMENT[at0022] occurrences matches {0..1} matches {    -- Last HPV test date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Last HPV test result
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0024,    -- Negatiu
+							at0025,    -- Positiu
+							at0026]    -- No valorable
+						}
+					}
+				}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {    -- Anti-D gamma administration date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {    -- Last period date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0029] occurrences matches {0..1} matches {    -- Probable date of delivery
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0030] occurrences matches {0..1} matches {    -- Date of last period corrected by ultrasound
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0031] occurrences matches {0..1} matches {    -- Probable date of delivery by ultrasound
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..1} matches {    -- Gestation by gamete/embryo donation
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0033,    -- no
+							at0034,    -- ovòcits
+							at0035,    -- esperma
+							at0036,    -- ovòcits / esperma
+							at0037]    -- embrions
+						}
+					}
+				}
+			}
+			ELEMENT[at0038] occurrences matches {0..1} matches {    -- Donor age
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::128]>
+						list = <
+							["1"] = <
+								units = <"a">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0052] occurrences matches {0..1} matches {    -- Verification of blood group
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0039] occurrences matches {0..1} matches {    -- Blood group
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0040,    -- A
+							at0041,    -- B
+							at0042,    -- O
+							at0043]    -- AB
+						}
+					}
+				}
+			}
+			ELEMENT[at0044] occurrences matches {0..1} matches {    -- Rh
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0045,    -- positive +
+							at0046]    -- negative -
+						}
+					}
+				}
+			}
+			ELEMENT[at0048] occurrences matches {0..1} matches {    -- T
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0049] occurrences matches {0..1} matches {    -- P
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0050] occurrences matches {0..1} matches {    -- A
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0051] occurrences matches {0..1} matches {    -- L
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0053] occurrences matches {0..1} matches {    -- Weight at the beginning of pregnancy
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"kg">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0054] occurrences matches {0..1} matches {    -- Pregestational body mass index
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0055] occurrences matches {0..1} matches {    -- Social support
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0056,    -- Poor social support
+							at0057,    -- Average social support
+							at0058]    -- High social support
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mother general data">
+					description = <"Mother general data">
+				>
+				["at0001"] = <
+					text = <"Woman's country of birth">
+					description = <"Woman's country of birth">
+				>
+				["at0002"] = <
+					text = <"Women's profession">
+					description = <"Women's profession">
+				>
+				["at0003"] = <
+					text = <"Current occupation of the woman">
+					description = <"Current occupation of the woman">
+				>
+				["at0004"] = <
+					text = <"Language difficulties">
+					description = <"Language difficulties">
+				>
+				["at0005"] = <
+					text = <"Height">
+					description = <"Height">
+				>
+				["at0006"] = <
+					text = <"Rubella immunization">
+					description = <"Rubella immunization">
+				>
+				["at0007"] = <
+					text = <"Age of the woman at the beginning of pregnancy">
+					description = <"Age of the woman at the beginning of pregnancy">
+				>
+				["at0008"] = <
+					text = <"Last cytology date">
+					description = <"Last cytology date">
+				>
+				["at0009"] = <
+					text = <"Last cytology result">
+					description = <"Last cytology result">
+				>
+				["at0010"] = <
+					text = <"Negatiu per cèl·lules malignes">
+					description = <"Negatiu per cèl·lules malignes">
+				>
+				["at0011"] = <
+					text = <"ASC-H">
+					description = <"ASC-H">
+				>
+				["at0012"] = <
+					text = <"HSIL">
+					description = <"HSIL">
+				>
+				["at0013"] = <
+					text = <"LSIL">
+					description = <"LSIL">
+				>
+				["at0014"] = <
+					text = <"ASC-US">
+					description = <"ASC-US">
+				>
+				["at0015"] = <
+					text = <"AGUS">
+					description = <"AGUS">
+				>
+				["at0016"] = <
+					text = <"Adenocarcinoma">
+					description = <"Adenocarcinoma">
+				>
+				["at0017"] = <
+					text = <"Carcinoma escamòs">
+					description = <"Carcinoma escamòs">
+				>
+				["at0018"] = <
+					text = <"Tumor maligne">
+					description = <"Tumor maligne">
+				>
+				["at0019"] = <
+					text = <"Mostra insatisfactoria">
+					description = <"Mostra insatisfactoria">
+				>
+				["at0020"] = <
+					text = <"Inflamació. Tractar i repetir">
+					description = <"Inflamació. Tractar i repetir">
+				>
+				["at0021"] = <
+					text = <"Altres">
+					description = <"Altres">
+				>
+				["at0022"] = <
+					text = <"Last HPV test date">
+					description = <"Last HPV test date">
+				>
+				["at0023"] = <
+					text = <"Last HPV test result">
+					description = <"Last HPV test result">
+				>
+				["at0024"] = <
+					text = <"Negatiu">
+					description = <"Negatiu">
+				>
+				["at0025"] = <
+					text = <"Positiu">
+					description = <"Positiu">
+				>
+				["at0026"] = <
+					text = <"No valorable">
+					description = <"No valorable">
+				>
+				["at0027"] = <
+					text = <"Anti-D gamma administration date">
+					description = <"Anti-D gamma administration date">
+				>
+				["at0028"] = <
+					text = <"Last period date">
+					description = <"Last period date">
+				>
+				["at0029"] = <
+					text = <"Probable date of delivery">
+					description = <"Probable date of delivery">
+				>
+				["at0030"] = <
+					text = <"Date of last period corrected by ultrasound">
+					description = <"Date of last period corrected by ultrasound">
+				>
+				["at0031"] = <
+					text = <"Probable date of delivery by ultrasound">
+					description = <"Probable date of delivery by ultrasound">
+				>
+				["at0032"] = <
+					text = <"Gestation by gamete/embryo donation">
+					description = <"Gestation by gamete/embryo donation">
+				>
+				["at0033"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0034"] = <
+					text = <"ovòcits">
+					description = <"ovòcits">
+				>
+				["at0035"] = <
+					text = <"esperma">
+					description = <"esperma">
+				>
+				["at0036"] = <
+					text = <"ovòcits / esperma">
+					description = <"ovòcits / esperma">
+				>
+				["at0037"] = <
+					text = <"embrions">
+					description = <"embrions">
+				>
+				["at0038"] = <
+					text = <"Donor age">
+					description = <"Donor age">
+				>
+				["at0039"] = <
+					text = <"Blood group">
+					description = <"Blood group">
+				>
+				["at0040"] = <
+					text = <"A">
+					description = <"A">
+				>
+				["at0041"] = <
+					text = <"B">
+					description = <"B">
+				>
+				["at0042"] = <
+					text = <"O">
+					description = <"O">
+				>
+				["at0043"] = <
+					text = <"AB">
+					description = <"AB">
+				>
+				["at0044"] = <
+					text = <"Rh">
+					description = <"Rh">
+				>
+				["at0045"] = <
+					text = <"positive +">
+					description = <"positive +">
+				>
+				["at0046"] = <
+					text = <"negative -">
+					description = <"negative -">
+				>
+				["at0048"] = <
+					text = <"T">
+					description = <"T">
+				>
+				["at0049"] = <
+					text = <"P">
+					description = <"P">
+				>
+				["at0050"] = <
+					text = <"A">
+					description = <"A">
+				>
+				["at0051"] = <
+					text = <"L">
+					description = <"L">
+				>
+				["at0052"] = <
+					text = <"Verification of blood group">
+					description = <"Verification of blood group">
+				>
+				["at0053"] = <
+					text = <"Weight at the beginning of pregnancy">
+					description = <"Weight at the beginning of pregnancy">
+				>
+				["at0054"] = <
+					text = <"Pregestational body mass index">
+					description = <"Pregestational body mass index">
+				>
+				["at0055"] = <
+					text = <"Social support">
+					description = <"Social support">
+				>
+				["at0056"] = <
+					text = <"Poor social support">
+					description = <"Poor social support">
+				>
+				["at0057"] = <
+					text = <"Average social support">
+					description = <"Average social support">
+				>
+				["at0058"] = <
+					text = <"High social support">
+					description = <"High social support">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dades generals de la dona">
+					description = <"Dades generals de la dona">
+				>
+				["at0001"] = <
+					text = <"Pais de naixement de la dona">
+					description = <"Pais de naixement de la dona">
+				>
+				["at0002"] = <
+					text = <"Professió de la dona">
+					description = <"Professió de la dona">
+				>
+				["at0003"] = <
+					text = <"Ocupació actual de la dona">
+					description = <"Ocupació actual de la dona">
+				>
+				["at0004"] = <
+					text = <"Dificultats idiomàtiques">
+					description = <"Dificultats idiomàtiques">
+				>
+				["at0005"] = <
+					text = <"Talla">
+					description = <"Talla">
+				>
+				["at0006"] = <
+					text = <"Immunització rubeola">
+					description = <"Immunització rubeola">
+				>
+				["at0007"] = <
+					text = <"Edat de la dona a l'inici de l'embaràs">
+					description = <"Edat de la dona a l'inici de l'embaràs">
+				>
+				["at0008"] = <
+					text = <"Data última citologia">
+					description = <"Data última citologia">
+				>
+				["at0009"] = <
+					text = <"Resultat última citologia">
+					description = <"Resultat  última citologia">
+				>
+				["at0010"] = <
+					text = <"Negatiu per cèl·lules malignes">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"ASC-H">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"HSIL">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"LSIL">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"ASC-US">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"AGUS">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Adenocarcinoma">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Carcinoma escamòs">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Tumor maligne">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Mostra insatisfactoria">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Inflamació. Tractar i repetir">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Altres">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Data última HPV">
+					description = <"Data última  HPV">
+				>
+				["at0023"] = <
+					text = <"Resultat última HPV">
+					description = <"Resultat  última HPV">
+				>
+				["at0024"] = <
+					text = <"Negatiu">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Positiu">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"No valorable">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Data adminstració gamma anti D">
+					description = <"Data adminstració gamma anti D">
+				>
+				["at0028"] = <
+					text = <"Data última regla">
+					description = <"Data última regla">
+				>
+				["at0029"] = <
+					text = <"Data probable de part">
+					description = <"Data probable de part">
+				>
+				["at0030"] = <
+					text = <"Data última regla corregida per ecografia">
+					description = <"Data última regla corregida per ecografia">
+				>
+				["at0031"] = <
+					text = <"Data probable de part per ecografia">
+					description = <"Data probable de part per ecografia">
+				>
+				["at0032"] = <
+					text = <"Gestació donació gàmetes/embrions">
+					description = <"Gestació donació gàmetes/embrions">
+				>
+				["at0033"] = <
+					text = <"no">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"ovòcits">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"esperma">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"ovòcits / esperma">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"embrions">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Edat donant">
+					description = <"Edat donant">
+				>
+				["at0039"] = <
+					text = <"Grup sanguini">
+					description = <"Grup sanguini">
+				>
+				["at0040"] = <
+					text = <"A">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"B">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"O">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"AB">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Rh">
+					description = <"Rh">
+				>
+				["at0045"] = <
+					text = <"positiu +">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"negatiu -">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"T">
+					description = <"T">
+				>
+				["at0049"] = <
+					text = <"P">
+					description = <"P">
+				>
+				["at0050"] = <
+					text = <"A">
+					description = <"A">
+				>
+				["at0051"] = <
+					text = <"L">
+					description = <"L">
+				>
+				["at0052"] = <
+					text = <"Verificació grup sanguini">
+					description = <"Verificació grup sanguini">
+				>
+				["at0053"] = <
+					text = <"Pes a l'inici de l'embaràs">
+					description = <"Pes a l'inici de l'embaràs">
+				>
+				["at0054"] = <
+					text = <"Índex de massa corporal pregestacional">
+					description = <"Índex de massa corporal pregestacional">
+				>
+				["at0055"] = <
+					text = <"Suport social">
+					description = <"Suport social">
+				>
+				["at0056"] = <
+					text = <"Suport social pobre">
+					description = <"Suport social pobre">
+				>
+				["at0057"] = <
+					text = <"Suport social mig">
+					description = <"Suport social mig">
+				>
+				["at0058"] = <
+					text = <"Suport social alt">
+					description = <"Suport social alt">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos generales de la mujer">
+					description = <"Datos generales de la mujer">
+				>
+				["at0001"] = <
+					text = <"País de nacimiento de la mujer">
+					description = <"País de nacimiento de la mujer">
+				>
+				["at0002"] = <
+					text = <"Profesión de la mujer">
+					description = <"Profesión de la mujer">
+				>
+				["at0003"] = <
+					text = <"Ocupación actual de la mujer">
+					description = <"Ocupación actual de la mujer">
+				>
+				["at0004"] = <
+					text = <"Dificultades idiomáticas">
+					description = <"Dificultades idiomáticas">
+				>
+				["at0005"] = <
+					text = <"Talla">
+					description = <"Talla">
+				>
+				["at0006"] = <
+					text = <"Inmunización rubeola">
+					description = <"Inmunización rubeola">
+				>
+				["at0007"] = <
+					text = <"Edad de la mujer al inicio del embarazo">
+					description = <"Edad de la mujer al inicio del embarazo">
+				>
+				["at0008"] = <
+					text = <"Fecha última citología">
+					description = <"Fecha última citología">
+				>
+				["at0009"] = <
+					text = <"Resultado última citología">
+					description = <"Resultado última citología">
+				>
+				["at0010"] = <
+					text = <"Negativo para células malignas">
+					description = <"Negativo para células malignas">
+				>
+				["at0011"] = <
+					text = <"ASC-H">
+					description = <"ASC-H">
+				>
+				["at0012"] = <
+					text = <"HSIL">
+					description = <"HSIL">
+				>
+				["at0013"] = <
+					text = <"LSIL">
+					description = <"LSIL">
+				>
+				["at0014"] = <
+					text = <"ASC-US">
+					description = <"ASC-US">
+				>
+				["at0015"] = <
+					text = <"AGUS">
+					description = <"AGUS">
+				>
+				["at0016"] = <
+					text = <"Adenocarcinoma">
+					description = <"Adenocarcinoma">
+				>
+				["at0017"] = <
+					text = <"Carcinoma escamoso">
+					description = <"Carcinoma escamoso">
+				>
+				["at0018"] = <
+					text = <"Tumor maligno">
+					description = <"Tumor maligno">
+				>
+				["at0019"] = <
+					text = <"Muestra insatisfactoria">
+					description = <"Muestra insatisfactoria">
+				>
+				["at0020"] = <
+					text = <"Inflamación. Tratar y repetir">
+					description = <"Inflamación. Tratar y repetir">
+				>
+				["at0021"] = <
+					text = <"Otros">
+					description = <"Otros">
+				>
+				["at0022"] = <
+					text = <"Fecha última HPV">
+					description = <"Fecha última HPV">
+				>
+				["at0023"] = <
+					text = <"Resultado última HPV">
+					description = <"Resultado última HPV">
+				>
+				["at0024"] = <
+					text = <"Negativo">
+					description = <"Negativo">
+				>
+				["at0025"] = <
+					text = <"Positivo">
+					description = <"Positivo">
+				>
+				["at0026"] = <
+					text = <"No valorable">
+					description = <"No valorable">
+				>
+				["at0027"] = <
+					text = <"Fecha administración gamma anti D">
+					description = <"Fecha administración gamma anti D">
+				>
+				["at0028"] = <
+					text = <"Fecha última regla">
+					description = <"Fecha última regla">
+				>
+				["at0029"] = <
+					text = <"Fecha probable de parto">
+					description = <"Fecha probable de parto">
+				>
+				["at0030"] = <
+					text = <"Fecha última regla corregida por ecografía">
+					description = <"Fecha última regla corregida por ecografía">
+				>
+				["at0031"] = <
+					text = <"Fecha probable de parto por ecografía">
+					description = <"Fecha probable de parto por ecografía">
+				>
+				["at0032"] = <
+					text = <"Gestación donación gametos/embriones">
+					description = <"Gestación donación gametos/embriones">
+				>
+				["at0033"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0034"] = <
+					text = <"ovocitos">
+					description = <"ovocitos">
+				>
+				["at0035"] = <
+					text = <"esperma">
+					description = <"esperma">
+				>
+				["at0036"] = <
+					text = <"ovocitos / esperma">
+					description = <"ovocitos / esperma">
+				>
+				["at0037"] = <
+					text = <"embriones">
+					description = <"embriones">
+				>
+				["at0038"] = <
+					text = <"Edad donante">
+					description = <"Edad donante">
+				>
+				["at0039"] = <
+					text = <"Grupo sanguíneo">
+					description = <"Grupo sanguíneo">
+				>
+				["at0040"] = <
+					text = <"A">
+					description = <"A">
+				>
+				["at0041"] = <
+					text = <"B">
+					description = <"B">
+				>
+				["at0042"] = <
+					text = <"O">
+					description = <"O">
+				>
+				["at0043"] = <
+					text = <"AB">
+					description = <"AB">
+				>
+				["at0044"] = <
+					text = <"Rh">
+					description = <"Rh">
+				>
+				["at0045"] = <
+					text = <"positivo +">
+					description = <"positivo +">
+				>
+				["at0046"] = <
+					text = <"negativo -">
+					description = <"negativo -">
+				>
+				["at0048"] = <
+					text = <"T">
+					description = <"T">
+				>
+				["at0049"] = <
+					text = <"P">
+					description = <"P">
+				>
+				["at0050"] = <
+					text = <"A">
+					description = <"A">
+				>
+				["at0051"] = <
+					text = <"L">
+					description = <"L">
+				>
+				["at0052"] = <
+					text = <"Verificación grupo sanguíneo">
+					description = <"Verificación grupo sanguíneo">
+				>
+				["at0053"] = <
+					text = <"Peso al inicio del embarazo">
+					description = <"Peso al inicio del embarazo">
+				>
+				["at0054"] = <
+					text = <"Índice de masa corporal pregestacional">
+					description = <"Índice de masa corporal pregestacional">
+				>
+				["at0055"] = <
+					text = <"Apoyo social">
+					description = <"Apoyo social">
+				>
+				["at0056"] = <
+					text = <"Apoyo social pobre">
+					description = <"Apoyo social pobre">
+				>
+				["at0057"] = <
+					text = <"Apoyo social medio">
+					description = <"Apoyo social medio">
+				>
+				["at0058"] = <
+					text = <"Apoyo social alto">
+					description = <"Apoyo social alto">
+				>
+			>
+		>
+	>

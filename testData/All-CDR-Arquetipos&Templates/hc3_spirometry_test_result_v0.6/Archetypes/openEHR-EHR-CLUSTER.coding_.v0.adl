@@ -1,0 +1,55 @@
+archetype (adl_version=1.4; uid=956b68e6-700b-4644-9c0e-d49552c74715)
+	openEHR-EHR-CLUSTER.coding_.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2024-04-02">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"bd6a01ea2bf8e9d442216852b6bc8d92">
+		["build_uid"] = <"1bf54f1f-09e2-3c86-b570-82e7ee316d3f">
+	>
+
+definition
+	CLUSTER[at0000] occurrences matches {0..*} matches {    -- System code
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Code
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"System code">
+					description = <"Coding ">
+				>
+				["at0001"] = <
+					text = <"Code">
+					description = <"">
+				>
+			>
+		>
+	>

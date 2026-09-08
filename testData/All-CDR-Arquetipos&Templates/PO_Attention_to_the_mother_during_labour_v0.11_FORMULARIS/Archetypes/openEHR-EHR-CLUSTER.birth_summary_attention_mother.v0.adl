@@ -1,0 +1,657 @@
+archetype (adl_version=1.4; uid=bb850139-4d0f-4109-ac25-332ea576043e)
+	openEHR-EHR-CLUSTER.birth_summary_attention_mother.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"cf3881a605e5d37409996aaae326b0ed">
+		["build_uid"] = <"542d19c9-0f7e-3913-8cfa-e21116422d5c">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Resum embaràs
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Durada de l'embaràs en el moment del part
+				value matches {
+					DV_DURATION matches {
+						value matches {PWD}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Data del part
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Tipus d'inducció al part
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007,    -- Amniotomia
+							at0008,    -- Mecànica
+							at0009]    -- Farmacològica
+						}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..*} matches {    -- Motiu de la inducció
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0010,    -- GCP - Gestació cronológicament prolongada
+							at0011,    -- CIR - retard creixement intrauterí
+							at0012,    -- RPM - ruptura prematura de membranes
+							at0013,    -- MHE - Malalties hipertensives en l'embaràs
+							at0014,    -- diabetes
+							at0015,    -- PEG - Petit per edat gestacional
+							at0016,    -- edat
+							at0017,    -- IMC - índex de massa corporal
+							at0018,    -- coriamnionitis
+							at0019,    -- presentació de natges
+							at0020,    -- infeccions maternes
+							at0021,    -- cirurgia uterina prèvia
+							at0022,    -- prematuritat
+							at0023,    -- gestació múltiple
+							at0024,    -- Neoplàsia
+							at0025,    -- fetus gran per l'edat gestacional
+							at0026,    -- registra poc tranquil·litzador
+							at0027,    -- Patologia materna
+							at0028]    -- altres
+						}
+					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Lloc del part
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0029,    -- Hospital
+							at0030,    -- Casa de naixement
+							at0031,    -- Domicili
+							at0032]    -- Altres
+						}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Tipus de part
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0033,    -- Eutòcic
+							at0034,    -- forceps
+							at0035,    -- espàtules
+							at0036,    -- ventosa
+							at0037,    -- AMPN- Ajut manual al part de natges
+							at0038,    -- VI+VE*- Versión interna + gran extracció
+							at0039,    -- VI
+							at0040,    -- GE
+							at0041]    -- Cesarea
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Resum embaràs">
+					description = <"Resum embaràs">
+				>
+				["at0001"] = <
+					text = <"Durada de l'embaràs en el moment del part">
+					description = <"Setmanes d'embaràs al part">
+				>
+				["at0002"] = <
+					text = <"Data del part">
+					description = <"Data del part">
+				>
+				["at0003"] = <
+					text = <"Tipus d'inducció al part">
+					description = <"Tipus d'inducció al part">
+				>
+				["at0004"] = <
+					text = <"Motiu de la inducció">
+					description = <"Motiu de la inducció">
+				>
+				["at0005"] = <
+					text = <"Lloc del part">
+					description = <"Lloc del part">
+				>
+				["at0006"] = <
+					text = <"Tipus de part">
+					description = <"Tipus de part">
+				>
+				["at0007"] = <
+					text = <"Amniotomia">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Mecànica">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Farmacològica">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"GCP - Gestació cronológicament prolongada">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"CIR - retard creixement intrauterí">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"RPM - ruptura prematura de membranes">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"MHE - Malalties hipertensives en l'embaràs">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"diabetes">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"PEG - Petit per edat gestacional">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"edat">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"IMC - índex de massa corporal">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"coriamnionitis">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"presentació de natges">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"infeccions maternes">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"cirurgia uterina prèvia">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"prematuritat">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"gestació múltiple">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Neoplàsia">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"fetus gran per l'edat gestacional">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"registra poc tranquil·litzador">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Patologia materna">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"altres">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Hospital">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Casa de naixement">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Domicili">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Altres">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Eutòcic">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"forceps">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"espàtules">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"ventosa">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"AMPN- Ajut manual al part de natges">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"VI+VE*- Versión interna + gran extracció">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"VI">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"GE">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Cesarea">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pregnancy summary">
+					description = <"Pregnancy summary">
+				>
+				["at0001"] = <
+					text = <"Duration of gestation when the birth occurs">
+					description = <"Weeks of pregnancy to delivery">
+				>
+				["at0002"] = <
+					text = <"Date of birth">
+					description = <"Date of birth">
+				>
+				["at0003"] = <
+					text = <"Type of labor induction">
+					description = <"Type of labor induction">
+				>
+				["at0004"] = <
+					text = <"Reason for induction">
+					description = <"Reason for induction">
+				>
+				["at0005"] = <
+					text = <"Place of birth">
+					description = <"Place of birth">
+				>
+				["at0006"] = <
+					text = <"Type of birth">
+					description = <"Type of birth">
+				>
+				["at0007"] = <
+					text = <"amniotomy">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"mechanics">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Pharmacological">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"GCP - Chronologically prolonged gestation">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"CIR - intrauterine growth retardation">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"RPM - premature rupture of membranes">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"MHE - Hypertensive diseases in pregnancy">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"diabetes">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"PEG - Small for gestational age">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"age">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"BMI - body mass index">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"choriamnionitis">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"presentation of buttocks">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"maternal infections">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"previous uterine surgery">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"prematurity">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"multiple gestation">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"neoplasia">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"large fetus for gestational age">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"records not reassuring">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Maternal pathology">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"others">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"hospital">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"House of birth">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Home address">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"others">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"eutocic">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"forceps">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"spatulas">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"suction cup">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"AMPN- Manual support for breech delivery">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"VI+VE*- Internal version + large extraction">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"VI">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"GE">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Caesarea">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Resumen embarazo">
+					description = <"Resumen embarazo">
+				>
+				["at0001"] = <
+					text = <"Duración del embarazo en el momento del parto">
+					description = <"Semanas de embarazo en el parto">
+				>
+				["at0002"] = <
+					text = <"Fecha del parto">
+					description = <"Fecha del parto">
+				>
+				["at0003"] = <
+					text = <"Tipo de inducción al parto">
+					description = <"Tipo de inducción al parto">
+				>
+				["at0004"] = <
+					text = <"Motivo de la inducción">
+					description = <"Motivo de la inducción">
+				>
+				["at0005"] = <
+					text = <"Lugar del parto">
+					description = <"Lugar del parto">
+				>
+				["at0006"] = <
+					text = <"Tipo de parte">
+					description = <"Tipo de parte">
+				>
+				["at0007"] = <
+					text = <"Amniotomía">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Mecánica">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Farmacológica">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"GCP - Gestación cronológicamente prolongada">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"CIR - retraso crecimiento intrauterino">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"RPM - rotura prematura de membranas">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"MHE - Enfermedades hipertensivas en el embarazo">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"diabetes">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"PEG - Pequeño por edad gestacional">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"edad">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"IMC - índice de masa corporal">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"coriamnionitis">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"presentación de nalgas">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"infecciones maternas">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"cirugía uterina previa">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"prematuridad">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"gestación múltiple">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Neoplasia">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"feto grande por la edad gestacional">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"registra poco tranquilizador">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Patología materna">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"otros">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Hospital">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Casa de nacimiento">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Domicilio">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Otros">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Eutócico">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"forceps">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"espátulas">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"ventosa">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"AMPN- Ayuda manual en el parto de nalgas">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"VI+VE*- Versión interna + gran extracción">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"VI">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"GE">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Cesarea">
+					description = <"">
+				>
+			>
+		>
+	>

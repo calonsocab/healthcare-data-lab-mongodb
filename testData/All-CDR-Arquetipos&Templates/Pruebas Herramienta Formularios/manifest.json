@@ -1,0 +1,49 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "pruebas--718",
+    "user" : "lmorallopez@gmail.com@google",
+    "repositoryId" : "pruebas--718"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/Pruebas Herramienta Formularios.t.json",
+    "type" : "template",
+    "id" : "Pruebas Herramienta Formularios",
+    "sourceId" : "pruebas--718",
+    "lastModified" : "2024-06-25T14:27:21.528Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.symptom_sign_screening.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    } ]
+  }, {
+    "path" : "Templates/Pruebas Herramienta Formularios.opt",
+    "type" : "opt",
+    "id" : "Pruebas Herramienta Formularios",
+    "lastModified" : "2024-06-25T14:27:21.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.symptom_sign_screening.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.symptom_sign_screening.v1",
+    "sourceId" : "pruebas--718",
+    "lastModified" : "2024-03-11T07:57:50.806Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "pruebas--718",
+    "lastModified" : "2024-06-05T07:36:33.597Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "pruebas--718",
+    "lastModified" : "2024-03-11T07:57:50.806Z"
+  } ]
+}

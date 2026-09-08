@@ -1,0 +1,103 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "probs-ne-br0",
+    "user" : "lmorallopez@gmail.com@google",
+    "repositoryId" : "probs-ne-br0"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Newborn_Puerperium_v0.15_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Newborn_Puerperium_v0.15_FORMULARIS",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-21T15:04:58.395Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.newborn_puerperium.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.educational_activities_newborn_puerperium.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Newborn_Puerperium_v0.15_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Newborn_Puerperium_v0.15_FORMULARIS",
+    "lastModified" : "2024-11-21T15:04:58.395Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.newborn_puerperium.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.newborn_puerperium.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-21T14:47:50.334Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-20T10:21:42.578Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-20T09:27:45.655Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.educational_activities_newborn_puerperium.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.educational_activities_newborn_puerperium.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "probs-ne-br0",
+    "lastModified" : "2024-11-19T14:56:43.285Z"
+  } ]
+}

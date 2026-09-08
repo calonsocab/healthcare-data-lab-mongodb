@@ -1,0 +1,379 @@
+{
+  "id": "clinical-research-base",
+  "name": "Clinical Research Base",
+  "localizedName": "Clinical Research Base",
+  "rmType": "COMPOSITION",
+  "nodeId": "openEHR-EHR-COMPOSITION.clinical-research-base.v1",
+  "min": 1,
+  "max": 1,
+  "localizedNames": {
+    "en": "Clinical Research Base"
+  },
+  "localizedDescriptions": {},
+  "aqlPath": "",
+  "children": [
+    {
+      "name": "Category",
+      "localizedName": "Category",
+      "rmType": "DV_CODED_TEXT",
+      "nodeId": "",
+      "min": 1,
+      "max": 1,
+      "localizedNames": {
+        "en": "Category"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/category",
+      "children": [],
+      "inputs": [
+        {
+          "terminology": "openehr",
+          "list": [
+            {
+              "code": "433",
+              "label": "event"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event context",
+      "localizedName": "Event context",
+      "rmType": "EVENT_CONTEXT",
+      "nodeId": "",
+      "min": 1,
+      "max": 1,
+      "localizedNames": {
+        "en": "Event context"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/context",
+      "children": [
+        {
+          "name": "Report ID",
+          "localizedName": "Report ID",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "Report ID"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/context/other_context/items[reportId]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "Status",
+          "localizedName": "Status",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "Status"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/context/other_context/items[status]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Context Header",
+      "localizedName": "Context Header",
+      "rmType": "CLUSTER",
+      "nodeId": "clinical-research-base.context_header.v1",
+      "min": 1,
+      "max": 1,
+      "localizedNames": {
+        "en": "Context Header"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/content[contextHeader]",
+      "children": [
+        {
+          "name": "participantId",
+          "localizedName": "participantId",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 1,
+          "max": 1,
+          "localizedNames": {
+            "en": "participantId"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[participantId]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "studyId",
+          "localizedName": "studyId",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 1,
+          "max": 1,
+          "localizedNames": {
+            "en": "studyId"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[studyId]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "localizedName": "status",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "status"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[status]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "recordedAt",
+          "localizedName": "recordedAt",
+          "rmType": "DV_DATE_TIME",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "recordedAt"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[recordedAt]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "DATETIME"
+            }
+          ]
+        },
+        {
+          "name": "updatedAt",
+          "localizedName": "updatedAt",
+          "rmType": "DV_DATE_TIME",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "updatedAt"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[updatedAt]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "DATETIME"
+            }
+          ]
+        },
+        {
+          "name": "headerProfileId",
+          "localizedName": "headerProfileId",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "headerProfileId"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[contextHeader]/items[headerProfileId]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clinical Content",
+      "localizedName": "Clinical Content",
+      "rmType": "SECTION",
+      "nodeId": "clinical-research-base.clinicalContent.v1",
+      "min": 0,
+      "max": 1,
+      "localizedNames": {
+        "en": "Clinical Content"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/content[clinicalContent]",
+      "children": [
+        {
+          "name": "clinicalContentNote",
+          "localizedName": "clinicalContentNote",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 1,
+          "max": 1,
+          "localizedNames": {
+            "en": "clinicalContentNote"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[clinicalContent]/items[note]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "localizedName": "Events",
+      "rmType": "OBSERVATION",
+      "nodeId": "clinical-research-base.events.v1",
+      "min": 0,
+      "max": -1,
+      "localizedNames": {
+        "en": "Events"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/content[events]",
+      "children": [
+        {
+          "name": "Any event",
+          "localizedName": "Any event",
+          "rmType": "EVENT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "Any event"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[events]/data/events[event]",
+          "children": [
+            {
+              "name": "eventTime",
+              "localizedName": "eventTime",
+              "rmType": "DV_DATE_TIME",
+              "nodeId": "",
+              "min": 1,
+              "max": 1,
+              "localizedNames": {
+                "en": "eventTime"
+              },
+              "localizedDescriptions": {},
+              "aqlPath": "/content[events]/data/events[event]/items[eventTime]/value",
+              "children": [],
+              "inputs": [
+                {
+                  "type": "DATETIME"
+                }
+              ]
+            },
+            {
+              "name": "value",
+              "localizedName": "value",
+              "rmType": "DV_TEXT",
+              "nodeId": "",
+              "min": 0,
+              "max": 1,
+              "localizedNames": {
+                "en": "value"
+              },
+              "localizedDescriptions": {},
+              "aqlPath": "/content[events]/data/events[event]/items[value]/value",
+              "children": [],
+              "inputs": [
+                {
+                  "type": "TEXT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Assessment",
+      "localizedName": "Assessment",
+      "rmType": "SECTION",
+      "nodeId": "clinical-research-base.assessment.v1",
+      "min": 0,
+      "max": 1,
+      "localizedNames": {
+        "en": "Assessment"
+      },
+      "localizedDescriptions": {},
+      "aqlPath": "/content[assessment]",
+      "children": [
+        {
+          "name": "assessmentNote",
+          "localizedName": "assessmentNote",
+          "rmType": "DV_TEXT",
+          "nodeId": "",
+          "min": 0,
+          "max": 1,
+          "localizedNames": {
+            "en": "assessmentNote"
+          },
+          "localizedDescriptions": {},
+          "aqlPath": "/content[assessment]/items[note]/value",
+          "children": [],
+          "inputs": [
+            {
+              "type": "TEXT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "templateId": "clinical-research-base",
+    "version": "1.0.0",
+    "intent": "clinical_research",
+    "primaryAnchor": "participant",
+    "headerProfileId": "header.participant.v1",
+    "terminologyProfileId": "term.research.core.v1",
+    "dictionaryId": "research-core.v1",
+    "datatypes": [
+      "DV_CODED_TEXT",
+      "DV_DATE_TIME",
+      "DV_TEXT"
+    ],
+    "counts": {
+      "nodeCount": 20,
+      "valueNodeCount": 13,
+      "repeatingNodeCount": 1
+    },
+    "pathSignature": "\n/category\n/content[assessment]\n/content[assessment]/items[note]/value\n/content[clinicalContent]\n/content[clinicalContent]/items[note]/value\n/content[contextHeader]\n/content[contextHeader]/items[headerProfileId]/value\n/content[contextHeader]/items[participantId]/value\n/content[contextHeader]/items[recordedAt]/value\n/content[contextHeader]/items[status]/value\n/content[contextHeader]/items[studyId]/value\n/content[contextHeader]/items[updatedAt]/value\n/content[events]\n/content[events]/data/events[event]\n/content[events]/data/events[event]/items[eventTime]/value\n/content[events]/data/events[event]/items[value]/value\n/context\n/context/other_context/items[reportId]/value\n/context/other_context/items[status]/value"
+  }
+}

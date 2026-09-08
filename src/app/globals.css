@@ -1,0 +1,638 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Force main content area to have consistent background */
+main {
+  background-color: var(--color-background) !important;
+  min-height: 100vh;
+}
+
+/* Ensure the body and html also use the background color */
+html, body {
+  background-color: var(--color-background);
+}
+
+/* If you're using a dark theme, ensure consistency */
+body {
+  background: var(--color-background);
+}
+
+/* Remove any gradient or multiple backgrounds that might be applied */
+main > * {
+  background-color: transparent;
+}
+
+/* Specific fix for the main content wrapper if it exists */
+#__next,
+.app-container,
+[data-main-content] {
+  background-color: var(--color-background) !important;
+}
+
+/* Default theme variables (MongoDB Dark theme) */
+:root {
+  /* Primary brand colors - MongoDB Evergreen */
+  --color-primary: #00ED64;
+  --color-primary-hover: #00684A;
+  --color-primary-muted: #00ED6420;
+
+  /* Background hierarchy - MongoDB Dark Green palette */
+  --color-background: #001E2B;
+  --color-surface: #023430;
+  --color-surface-hover: #034540;
+  --color-surface-alt: #012A23;
+  --color-surface-muted: #011F1A;
+
+  /* Cards */
+  --color-card: #023430;
+  --color-card-hover: #034540;
+  --color-card-alt: #013D35;
+
+  /* Borders */
+  --color-border: #1C4D47;
+  --color-border-light: #164038;
+  --color-border-hover: #00ED6440;
+
+  /* Text hierarchy */
+  --color-text: #FFFFFF;
+  --color-text-secondary: #B8C4C2;
+  --color-text-muted: #7A8A87;
+  --color-text-on-primary: #001E2B;
+
+  /* Status colors */
+  --color-success: #00ED64;
+  --color-success-muted: #00ED6420;
+  --color-warning: #FFC010;
+  --color-warning-muted: #FFC01020;
+  --color-error: #FF6960;
+  --color-error-muted: #FF696020;
+  --color-info: #0498EC;
+  --color-info-muted: #0498EC20;
+
+  /* Accent colors for variety */
+  --color-accent-1: #B45AF2;
+  --color-accent-2: #FF7F50;
+  --color-accent-3: #00D2FF;
+
+  /* Legacy accent (blue) for backward compatibility */
+  --color-accent: #0498EC;
+  --color-accent-hover: #0077B6;
+
+  /* Banner/Highlight colors (for info sections) */
+  /* Light lime/yellow-green background */
+  --color-banner-bg: #e9ff99;
+  --color-banner-text: #1a2e05;
+  --color-banner-border: #c5e065;
+
+  /* Lime/Yellow accent for section headers, info emphasis, and highlights */
+  --color-lime: #e9ff99;
+  --color-lime-muted: rgba(233, 255, 153, 0.2);
+  --color-lime-dark: #c5e065;
+
+  /* Section header color for navigation */
+  --color-section-header: #e9ff99;
+
+  /* Auto-calculated contrast colors */
+  --color-primary-text: #001E2B;
+  --color-success-text: #001E2B;
+  --color-warning-text: #000000;
+  --color-error-text: #FFFFFF;
+  --color-info-text: #FFFFFF;
+  --color-accent-text: #FFFFFF;
+
+  /* Reversed/inverted colors for popups on dark backgrounds */
+  --color-popup-bg: #FFFFFF;
+  --color-popup-border: #D0D4D3;
+  --color-popup-text: #001E2B;
+  --color-popup-text-secondary: #5C6C75;
+  --color-popup-hover: #F5F6F7;
+
+  /* App-specific colors */
+  --color-sidebar: #023430;
+  --color-sidebar-hover: #034540;
+  --color-active: var(--color-primary);
+  --color-logo-text: #FFFFFF;
+}
+
+/* Base styles */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global subtle scrollbar styling - almost invisible by default */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+  }
+
+  *:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Firefox - show subtle scrollbar on hover */
+  *:hover {
+    scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+  }
+
+  /* Light mode scrollbar adjustments */
+  [data-theme="light"] *:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="light"] *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  [data-theme="light"] *:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  }
+}
+
+/* Component classes */
+@layer components {
+  /* Surface styles */
+  .surface {
+    background-color: var(--color-surface);
+  }
+  
+  .surface-hover:hover {
+    background-color: var(--color-surface-hover);
+  }
+  
+  /* Text colors */
+  .text-theme-primary {
+    color: var(--color-text);
+  }
+  
+  .text-theme-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-theme-muted {
+    color: var(--color-text-muted);
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 200ms;
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .btn-secondary {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 200ms;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-surface-hover);
+  }
+  
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Card styles */
+  .card {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+  
+  /* Input styles */
+  .input {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 200ms;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
+  }
+  
+  .input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Select styles */
+  .select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 200ms;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
+  }
+  
+  .select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Background utilities */
+  .bg-background { background-color: var(--color-background); }
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-surface-hover { background-color: var(--color-surface-hover); }
+  .bg-surface-alt { background-color: var(--color-surface-alt); }
+  .bg-surface-muted { background-color: var(--color-surface-muted); }
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-primary-hover { background-color: var(--color-primary-hover); }
+  .bg-primary-muted { background-color: var(--color-primary-muted); }
+  .bg-card { background-color: var(--color-card); }
+  .bg-card-hover { background-color: var(--color-card-hover); }
+  .bg-card-alt { background-color: var(--color-card-alt); }
+  .bg-success { background-color: var(--color-success); }
+  .bg-success-muted { background-color: var(--color-success-muted); }
+  .bg-warning { background-color: var(--color-warning); }
+  .bg-warning-muted { background-color: var(--color-warning-muted); }
+  .bg-error { background-color: var(--color-error); }
+  .bg-error-muted { background-color: var(--color-error-muted); }
+  .bg-info { background-color: var(--color-info); }
+  .bg-info-muted { background-color: var(--color-info-muted); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-accent-hover { background-color: var(--color-accent-hover); }
+  .bg-accent-1 { background-color: var(--color-accent-1); }
+  .bg-accent-2 { background-color: var(--color-accent-2); }
+  .bg-accent-3 { background-color: var(--color-accent-3); }
+  .bg-popup { background-color: var(--color-popup-bg); }
+  .bg-popup-hover { background-color: var(--color-popup-hover); }
+  .bg-banner { background-color: var(--color-banner-bg); }
+  .border-banner { border-color: var(--color-banner-border); }
+
+  /* Text color utilities */
+  .text-primary { color: var(--color-primary); }
+  .text-success { color: var(--color-success); }
+  .text-warning { color: var(--color-warning); }
+  .text-error { color: var(--color-error); }
+  .text-info { color: var(--color-info); }
+  .text-accent { color: var(--color-accent); }
+  .text-accent-1 { color: var(--color-accent-1); }
+  .text-accent-2 { color: var(--color-accent-2); }
+  .text-accent-3 { color: var(--color-accent-3); }
+  .text-muted { color: var(--color-text-muted); }
+  .text-on-primary { color: var(--color-text-on-primary); }
+  .text-primary-text { color: var(--color-primary-text); }
+  .text-success-text { color: var(--color-success-text); }
+  .text-warning-text { color: var(--color-warning-text); }
+  .text-error-text { color: var(--color-error-text); }
+  .text-info-text { color: var(--color-info-text); }
+  .text-accent-text { color: var(--color-accent-text); }
+  .text-popup { color: var(--color-popup-text); }
+  .text-popup-secondary { color: var(--color-popup-text-secondary); }
+  .text-lime { color: var(--color-lime); }
+  .text-section-header { color: var(--color-section-header); }
+  .text-banner { color: var(--color-banner-text); }
+
+  /* Border utilities */
+  .border-theme { border-color: var(--color-border); }
+  .border-light { border-color: var(--color-border-light); }
+  .border-hover { border-color: var(--color-border-hover); }
+  .border-primary { border-color: var(--color-primary); }
+  .border-success { border-color: var(--color-success); }
+  .border-warning { border-color: var(--color-warning); }
+  .border-error { border-color: var(--color-error); }
+  .border-info { border-color: var(--color-info); }
+  .border-accent { border-color: var(--color-accent); }
+  .border-popup { border-color: var(--color-popup-border); }
+
+  /* Hover utilities */
+  .hover\:bg-surface-hover:hover { background-color: var(--color-surface-hover); }
+  .hover\:bg-card-hover:hover { background-color: var(--color-card-hover); }
+  .hover\:bg-primary-hover:hover { background-color: var(--color-primary-hover); }
+  .hover\:bg-accent-hover:hover { background-color: var(--color-accent-hover); }
+  .hover\:bg-popup-hover:hover { background-color: var(--color-popup-hover); }
+  .hover\:border-hover:hover { border-color: var(--color-border-hover); }
+  
+  /* Scrollbar styling - minimal */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Subtle scrollbar - nearly invisible, appears on hover */
+  .scrollbar-subtle {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+  }
+
+  .scrollbar-subtle:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Almost invisible scrollbar */
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
+/* Remove spinner from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Animation for theme transitions */
+* {
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary);
+}
+
+/* Custom animations */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-popup {
+  animation: popup 0.15s ease-out;
+}
+
+/* Wave animations for animated logo */
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes wave-delayed {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-wave-delayed {
+  animation: wave-delayed 2.5s ease-in-out infinite;
+}
+
+/* =============================================================================
+   LIGHT MODE OVERRIDES
+   These rules override hardcoded Tailwind colors when in light mode.
+   This allows the app to work properly with both dark and light themes
+   without needing to update every component individually.
+   ============================================================================= */
+
+[data-theme="light"] {
+  --color-logo-text: #00684A;
+
+  /* Override slate/gray backgrounds to light mode equivalents */
+  .bg-slate-900, .bg-gray-900 { background-color: var(--color-background) !important; }
+  .bg-slate-800, .bg-gray-800 { background-color: var(--color-surface) !important; }
+  .bg-slate-700, .bg-gray-700 { background-color: var(--color-surface-hover) !important; }
+  .bg-slate-700\/50 { background-color: var(--color-surface-muted) !important; }
+  .bg-slate-600, .bg-gray-600 { background-color: var(--color-surface-muted) !important; }
+  .bg-slate-500, .bg-gray-500 { background-color: var(--color-border) !important; }
+
+  /* Override slate/gray text colors to dark text for light mode */
+  .text-slate-100, .text-gray-100 { color: var(--color-text) !important; }
+  .text-slate-200, .text-gray-200 { color: var(--color-text) !important; }
+  .text-slate-300, .text-gray-300 { color: var(--color-text-secondary) !important; }
+  .text-slate-400, .text-gray-400 { color: var(--color-text-secondary) !important; }
+  .text-slate-500, .text-gray-500 { color: var(--color-text-muted) !important; }
+  .text-white { color: var(--color-text) !important; }
+}
+
+/* =============================================================================
+   DARK BANNER - Only affects LIGHT MODE
+   In dark mode, dark-banner has no special effect (components use normal styling)
+   In light mode, dark-banner applies MongoDB dark green style
+   ============================================================================= */
+
+[data-theme="light"] .dark-banner {
+  background: linear-gradient(to bottom right, var(--color-banner-bg), var(--color-surface)) !important;
+}
+
+/* Text colors in dark-banner - preserve light text in light mode */
+[data-theme="light"] .dark-banner .text-white { color: #FFFFFF !important; }
+[data-theme="light"] .dark-banner .text-slate-100,
+[data-theme="light"] .dark-banner .text-gray-100 { color: #FFFFFF !important; }
+[data-theme="light"] .dark-banner .text-slate-200,
+[data-theme="light"] .dark-banner .text-gray-200 { color: var(--color-banner-text) !important; }
+[data-theme="light"] .dark-banner .text-slate-300,
+[data-theme="light"] .dark-banner .text-gray-300 { color: var(--color-banner-text) !important; }
+[data-theme="light"] .dark-banner .text-slate-400,
+[data-theme="light"] .dark-banner .text-gray-400 { color: var(--color-banner-text) !important; }
+
+/* Dark-banner surfaces in light mode - use MongoDB green palette */
+[data-theme="light"] .dark-banner .bg-slate-700\/50 { background-color: var(--color-surface-muted) !important; }
+[data-theme="light"] .dark-banner .bg-slate-700 { background-color: var(--color-surface) !important; }
+[data-theme="light"] .dark-banner .bg-slate-600 { background-color: var(--color-surface-hover) !important; }
+
+/* Dark-banner borders in light mode */
+[data-theme="light"] .dark-banner .border-slate-700,
+[data-theme="light"] .dark-banner .border-slate-600 { border-color: var(--color-border) !important; }
+
+/* Continue light theme rules */
+[data-theme="light"] {
+
+  /* Override slate/gray borders to light mode */
+  .border-slate-900, .border-gray-900 { border-color: var(--color-border) !important; }
+  .border-slate-800, .border-gray-800 { border-color: var(--color-border) !important; }
+  .border-slate-700, .border-gray-700 { border-color: var(--color-border) !important; }
+  .border-slate-600, .border-gray-600 { border-color: var(--color-border-light) !important; }
+  .border-slate-500, .border-gray-500 { border-color: var(--color-border-light) !important; }
+
+  /* Hover states for light mode */
+  .hover\:bg-slate-600:hover, .hover\:bg-gray-600:hover { background-color: var(--color-surface-muted) !important; }
+  .hover\:bg-slate-700:hover, .hover\:bg-gray-700:hover { background-color: var(--color-surface-hover) !important; }
+  .hover\:bg-slate-800:hover, .hover\:bg-gray-800:hover { background-color: var(--color-surface) !important; }
+
+  /* Ring/focus states */
+  .ring-slate-700, .ring-gray-700 { --tw-ring-color: var(--color-border-light) !important; }
+  .focus\:ring-slate-500:focus { --tw-ring-color: var(--color-primary) !important; }
+
+  /* Opacity variants for light mode */
+  .bg-slate-800\/50, .bg-gray-800\/50 { background-color: var(--color-surface) !important; }
+  .bg-slate-700\/30, .bg-gray-700\/30 { background-color: var(--color-surface-muted) !important; }
+  .bg-black\/20 { background-color: var(--color-surface-muted) !important; }
+  .bg-black\/50 { background-color: var(--color-surface-hover) !important; }
+
+  /* Status color backgrounds for light mode - more subtle */
+  .bg-green-500\/20 { background-color: var(--color-success-muted) !important; }
+  .bg-red-500\/20 { background-color: var(--color-error-muted) !important; }
+  .bg-blue-500\/20 { background-color: var(--color-info-muted) !important; }
+  .bg-yellow-500\/20 { background-color: var(--color-warning-muted) !important; }
+  .bg-purple-500\/20 { background-color: var(--color-primary-muted) !important; }
+
+  /* Status text colors - darker for light mode */
+  .text-green-400, .text-green-500 { color: var(--color-success) !important; }
+  .text-red-400, .text-red-500 { color: var(--color-error) !important; }
+  .text-blue-400 { color: var(--color-info) !important; }
+  .text-yellow-400 { color: var(--color-warning) !important; }
+  .text-purple-400, .text-purple-500 { color: var(--color-primary) !important; }
+
+  /* Dividers and decorative elements */
+  .divide-slate-700 > :not([hidden]) ~ :not([hidden]) { border-color: var(--color-border) !important; }
+  .divide-gray-700 > :not([hidden]) ~ :not([hidden]) { border-color: var(--color-border) !important; }
+
+  /* Monaco editor and code blocks - invert for light mode */
+  .monaco-editor, [class*="monaco-"] { background-color: var(--color-surface) !important; }
+
+  /* Cards should have subtle shadows in light mode */
+  .card, [class*="rounded-lg"][class*="bg-slate"], [class*="rounded-lg"][class*="bg-gray"] {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  /* Input fields */
+  input, textarea, select {
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text) !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--color-text-muted) !important;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-muted) !important;
+  }
+}
+
+/* Ensure the main content area respects theme in both modes */
+[data-theme="dark"] main {
+  background-color: var(--color-background) !important;
+}
+
+[data-theme="light"] main {
+  background-color: var(--color-background) !important;
+}

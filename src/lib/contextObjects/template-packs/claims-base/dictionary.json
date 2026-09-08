@@ -1,0 +1,8 @@
+{
+  "dictionaryId": "claims-core.v1",
+  "bindings": {
+    "diagnosis": ["ICD-10"],
+    "procedure": ["CPT", "HCPCS"],
+    "adjudication": ["payer-local"]
+  }
+}

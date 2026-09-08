@@ -1,0 +1,40 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "riqcat-cpl",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "riqcat-cpl"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/informe_amb_1_arquetip_OBS_v3.t.json",
+    "type" : "template",
+    "id" : "informe_amb_1_arquetip_OBS_v3",
+    "sourceId" : "riqcat-cpl",
+    "lastModified" : "2025-01-17T09:52:03.395Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.informe_ad_hoc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.resum_riqcat.v0"
+    } ]
+  }, {
+    "path" : "Templates/informe_amb_1_arquetip_OBS_v3.opt",
+    "type" : "opt",
+    "id" : "informe_amb_1_arquetip_OBS_v3",
+    "lastModified" : "2025-01-17T09:52:03.395Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.informe_ad_hoc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.informe_ad_hoc.v0",
+    "sourceId" : "riqcat-cpl",
+    "lastModified" : "2025-01-17T09:50:58.464Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.resum_riqcat.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.resum_riqcat.v0",
+    "sourceId" : "riqcat-cpl",
+    "lastModified" : "2025-01-17T09:16:43.400Z"
+  } ]
+}

@@ -1,0 +1,1247 @@
+db.getCollection('immunizationsPRO').aggregate(
+    [
+      {
+        $search: {
+          index: 'default',
+          compound: {
+            must: [
+              {
+                equals: {
+                  path: 'ehrid',
+                  value:
+                    '20be4f8-1f41-46b6-9ee9-ba71afe1013'
+                }
+              },
+              {
+                embeddedDocument: {
+                  path: 'CanonicalJSON.content',
+                  operator: {
+                    compound: {
+                      must: [
+                        {
+                          equals: {
+                            path: 'CanonicalJSON.content.archetype_node_id',
+                            value:
+                              'openEHR-EHR-SECTION.immunisation_list.v0'
+                          }
+                        },
+                        {
+                          embeddedDocument: {
+                            path: 'CanonicalJSON.content.items',
+                            operator: {
+                              compound: {
+                                must: [
+                                  {
+                                    equals: {
+                                      path: 'CanonicalJSON.content.items.archetype_node_id',
+                                      value:
+                                        'openEHR-EHR-ACTION.medication.v1'
+                                    }
+                                  },
+                                  {
+                                    range: {
+                                      path: 'CanonicalJSON.content.items.time.value',
+                                      gte: ISODate(
+                                        '2020-02-15T00:00:00.001Z'
+                                      ),
+                                      lte: ISODate(
+                                        '2025-02-15T00:00:00.000Z'
+                                      )
+                                    }
+                                  },
+                                  {
+                                    embeddedDocument:
+                                      {
+                                        path: 'CanonicalJSON.content.items.other_participations',
+                                        operator: {
+                                          embeddedDocument:
+                                            {
+                                              path: 'CanonicalJSON.content.items.other_participations.performer.identifiers',
+                                              operator:
+                                                {
+                                                  equals:
+                                                    {
+                                                      path: 'CanonicalJSON.content.items.other_participations.performer.identifiers.id',
+                                                      value:
+                                                        '325004081'
+                                                    }
+                                                }
+                                            }
+                                        }
+                                      }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                embeddedDocument: {
+                  path: 'CanonicalJSON.context.other_context.items',
+                  operator: {
+                    compound: {
+                      must: [
+                        {
+                          equals: {
+                            path: 'CanonicalJSON.context.other_context.items.archetype_node_id',
+                            value:
+                              'openEHR-EHR-CLUSTER.admin_salut.v0'
+                          }
+                        },
+                        {
+                          embeddedDocument: {
+                            path: 'CanonicalJSON.context.other_context.items.items',
+                            operator: {
+                              compound: {
+                                must: [
+                                  {
+                                    equals: {
+                                      path: 'CanonicalJSON.context.other_context.items.items.archetype_node_id',
+                                      value:
+                                        'at0007'
+                                    }
+                                  },
+                                  {
+                                    embeddedDocument:
+                                      {
+                                        path: 'CanonicalJSON.context.other_context.items.items.items',
+                                        operator: {
+                                          compound:
+                                            {
+                                              must: [
+                                                {
+                                                  equals:
+                                                    {
+                                                      path: 'CanonicalJSON.context.other_context.items.items.items.archetype_node_id',
+                                                      value:
+                                                        'at0014'
+                                                    }
+                                                },
+                                                {
+                                                  equals:
+                                                    {
+                                                      path: 'CanonicalJSON.context.other_context.items.items.items.value.defining_code.code_string',
+                                                      value:
+                                                        'E25007052'
+                                                    }
+                                                }
+                                              ]
+                                            }
+                                        }
+                                      }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      { $limit: 100 },
+      {
+        $project: {
+          _id: 0,
+          ehrId: '$ehr_id',
+          compositionID: '$CanonicalJSON.uid.value',
+          centre: {
+            $let: {
+              vars: {
+                adminSalut: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.context.other_context.items',
+                      as: 'ctxItem',
+                      cond: {
+                        $eq: [
+                          '$$ctxItem.archetype_node_id',
+                          'openEHR-EHR-CLUSTER.admin_salut.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    publishingInstitution: {
+                      $first: {
+                        $filter: {
+                          input: {
+                            $ifNull: [
+                              '$$adminSalut.items',
+                              []
+                            ]
+                          },
+                          as: 'admItem',
+                          cond: {
+                            $eq: [
+                              '$$admItem.archetype_node_id',
+                              'at0007'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        healthcareCentre: {
+                          $first: {
+                            $filter: {
+                              input: {
+                                $ifNull: [
+                                  '$$publishingInstitution.items',
+                                  []
+                                ]
+                              },
+                              as: 'pubItem',
+                              cond: {
+                                $eq: [
+                                  '$$pubItem.archetype_node_id',
+                                  'at0014'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: '$$healthcareCentre.value.defining_code.code_string'
+                    }
+                  }
+                }
+              }
+            }
+          },
+          up: {
+            $let: {
+              vars: {
+                adminSalut: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.context.other_context.items',
+                      as: 'ctxItem',
+                      cond: {
+                        $eq: [
+                          '$$ctxItem.archetype_node_id',
+                          'openEHR-EHR-CLUSTER.admin_salut.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    publishingInstitution: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$adminSalut.items',
+                          as: 'level2',
+                          cond: {
+                            $eq: [
+                              '$$level2.archetype_node_id',
+                              'at0007'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        publishingIntitutionFinal: {
+                          $first: {
+                            $filter: {
+                              input:
+                                '$$publishingInstitution.items',
+                              as: 'level3',
+                              cond: {
+                                $eq: [
+                                  '$$level3.archetype_node_id',
+                                  'at0016'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: '$$publishingIntitutionFinal.value.defining_code.code_string'
+                    }
+                  }
+                }
+              }
+            }
+          },
+          professional: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: '$$medication.other_participations.performer'
+                }
+              }
+            }
+          },
+          marcaComercial: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                '$$medication.description'
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            clusterMedV2: {
+                              $first: {
+                                $filter: {
+                                  input:
+                                    '$$descriptionAt0017.items',
+                                  as: 'descrTemp',
+                                  cond: {
+                                    $eq: [
+                                      '$$descrTemp.archetype_node_id',
+                                      'openEHR-EHR-CLUSTER.medication.v2'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: {
+                            $let: {
+                              vars: {
+                                descripcio2: {
+                                  $first: {
+                                    $filter: {
+                                      input:
+                                        '$$clusterMedV2.items',
+                                      as: 'descrTemp2',
+                                      cond: {
+                                        $eq: [
+                                          '$$descrTemp2.archetype_node_id',
+                                          'at0132'
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              in: {
+                                $let: {
+                                  vars: {
+                                    mapped: {
+                                      $map: {
+                                        input: {
+                                          $ifNull: [
+                                            '$$descripcio2.value.mappings',
+                                            []
+                                          ]
+                                        },
+                                        as: 'oneMapping',
+                                        in: '$$oneMapping.target.code_string'
+                                      }
+                                    }
+                                  },
+                                  in: {
+                                    $cond: [
+                                      {
+                                        $eq: [
+                                          {
+                                            $size:
+                                              '$$mapped'
+                                          },
+                                          1
+                                        ]
+                                      },
+                                      {
+                                        $arrayElemAt:
+                                          [
+                                            '$$mapped',
+                                            0
+                                          ]
+                                      },
+                                      '$$mapped'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          dataAdmin: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: '$$medication.time.value'
+                }
+              }
+            }
+          },
+          estat: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: '$$medication.ism_transition.current_state'
+                }
+              }
+            }
+          },
+          reason: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input: {
+                            $ifNull: [
+                              '$$contentInmList.items',
+                              []
+                            ]
+                          },
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            reasonItem: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descrTemp',
+                                  cond: {
+                                    $eq: [
+                                      '$$descrTemp.archetype_node_id',
+                                      'at0021'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: '$$reasonItem'
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          sisOrigenIds:
+            '$CanonicalJSON.feeder_audit',
+          codiImmunitzacio: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input: '$composition.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            immuCodeItem: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descItem',
+                                  cond: {
+                                    $eq: [
+                                      '$$descItem.archetype_node_id',
+                                      'at0020'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: '$$immuCodeItem.value.defining_code.code_string'
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          numLot: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            medCluster: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descItem',
+                                  cond: {
+                                    $eq: [
+                                      '$$descItem.archetype_node_id',
+                                      'openEHR-EHR-CLUSTER.medication.v2'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: {
+                            $let: {
+                              vars: {
+                                lotNode: {
+                                  $first: {
+                                    $filter: {
+                                      input: {
+                                        $ifNull: [
+                                          '$$medCluster.items',
+                                          []
+                                        ]
+                                      },
+                                      as: 'lotItem',
+                                      cond: {
+                                        $eq: [
+                                          '$$lotItem.archetype_node_id',
+                                          'at0150'
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              in: '$$lotNode.value.value'
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          dataCaducitat: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            medCluster: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descItem',
+                                  cond: {
+                                    $eq: [
+                                      '$$descItem.archetype_node_id',
+                                      'openEHR-EHR-CLUSTER.medication.v2'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: {
+                            $let: {
+                              vars: {
+                                expiryNode: {
+                                  $first: {
+                                    $filter: {
+                                      input: {
+                                        $ifNull: [
+                                          '$$medCluster.items',
+                                          []
+                                        ]
+                                      },
+                                      as: 'expiryItem',
+                                      cond: {
+                                        $eq: [
+                                          '$$expiryItem.archetype_node_id',
+                                          'at0003'
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              in: '$$expiryNode.value.value'
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          codiViaAdmin: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            viaAdminCluster: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descItem',
+                                  cond: {
+                                    $eq: [
+                                      '$$descItem.archetype_node_id',
+                                      'at0140'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: {
+                            $let: {
+                              vars: {
+                                viaAdminCode: {
+                                  $first: {
+                                    $filter: {
+                                      input: {
+                                        $ifNull: [
+                                          '$$viaAdminCluster.items',
+                                          []
+                                        ]
+                                      },
+                                      as: 'viaItem',
+                                      cond: {
+                                        $eq: [
+                                          '$$viaItem.archetype_node_id',
+                                          'at0147'
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              in: '$$viaAdminCode.value.defining_code.code_string'
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          codiLocalitzacio: {
+            $let: {
+              vars: {
+                contentInmList: {
+                  $first: {
+                    $filter: {
+                      input:
+                        '$CanonicalJSON.content',
+                      as: 'content',
+                      cond: {
+                        $eq: [
+                          '$$content.archetype_node_id',
+                          'openEHR-EHR-SECTION.immunisation_list.v0'
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              in: {
+                $let: {
+                  vars: {
+                    medication: {
+                      $first: {
+                        $filter: {
+                          input:
+                            '$$contentInmList.items',
+                          as: 'medTemp',
+                          cond: {
+                            $eq: [
+                              '$$medTemp.archetype_node_id',
+                              'openEHR-EHR-ACTION.medication.v1'
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  in: {
+                    $let: {
+                      vars: {
+                        descriptionAt0017: {
+                          $first: {
+                            $filter: {
+                              input: [
+                                {
+                                  $ifNull: [
+                                    '$$medication.description',
+                                    null
+                                  ]
+                                }
+                              ],
+                              as: 'descObj',
+                              cond: {
+                                $eq: [
+                                  '$$descObj.archetype_node_id',
+                                  'at0017'
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      in: {
+                        $let: {
+                          vars: {
+                            viaAdminCluster: {
+                              $first: {
+                                $filter: {
+                                  input: {
+                                    $ifNull: [
+                                      '$$descriptionAt0017.items',
+                                      []
+                                    ]
+                                  },
+                                  as: 'descItem',
+                                  cond: {
+                                    $eq: [
+                                      '$$descItem.archetype_node_id',
+                                      'at0140'
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          in: {
+                            $let: {
+                              vars: {
+                                codi: {
+                                  $first: {
+                                    $filter: {
+                                      input: {
+                                        $ifNull: [
+                                          '$$viaAdminCluster.items',
+                                          []
+                                        ]
+                                      },
+                                      as: 'viaItem',
+                                      cond: {
+                                        $eq: [
+                                          '$$viaItem.archetype_node_id',
+                                          'at0141'
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              in: '$$codi.value.defining_code.code_string'
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    { maxTimeMS: 60000, allowDiskUse: true }
+  );

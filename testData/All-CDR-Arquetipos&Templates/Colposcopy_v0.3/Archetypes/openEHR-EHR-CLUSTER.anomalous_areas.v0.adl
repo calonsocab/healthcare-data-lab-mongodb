@@ -1,0 +1,120 @@
+archetype (adl_version=1.4; uid=39ced7ef-dbeb-450d-a250-afe8dbf5e373)
+	openEHR-EHR-CLUSTER.anomalous_areas.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-02-27">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9ff8167dd16a5600d9ee0ca4c08dff9c">
+		["build_uid"] = <"8bb580cf-123c-3b98-9630-05ea9168da0f">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Anomalous areas
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Number of anomalous areas
+				value matches {
+					DV_COUNT matches {
+						magnitude matches {|0..4|}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- Additional details
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Anomalous areas">
+					description = <"Anomalous areas">
+				>
+				["at0002"] = <
+					text = <"Additional details">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Number of anomalous areas">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Àrees anòmales">
+					description = <"*Anomalous areas (en)">
+				>
+				["at0002"] = <
+					text = <"Detalls adicionals">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Número d'àrees anòmales">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Anomalous areas (en)">
+					description = <"*Anomalous areas (en)">
+				>
+				["at0002"] = <
+					text = <"*Additional details (en)">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"*Number of anomalous areas (en)">
+					description = <"">
+				>
+			>
+		>
+	>

@@ -1,0 +1,36 @@
+env:
+  NODE_ENV: development
+  BACKEND_URL: http://kehrnel-backend-web-app:80
+  NEXT_PUBLIC_BACKEND_URL: http://kehrnel-backend-web-app:80
+  NEXT_PUBLIC_DEFAULT_KEHRNEL_URL: http://kehrnel-backend-web-app:80
+  APP_BASE_URL: http://kehrnel-backend-web-app:80
+  NEXT_PUBLIC_KEHRNEL_DOCS_URL: http://kehrnel-backend-web-app:80/guide
+  NEXT_PUBLIC_DISABLE_AI_ASSISTANT: "true"
+  ACCESS_MODE: "external"
+
+# Kanopy security and ownership (requires web-app chart v4.30.0+)
+security:
+  dataClassification: "Internal"
+  dataDesignation: ["MI"]
+
+ownership:
+  driEmail: gio.rodriguez@mongodb.com
+  
+envSecrets:
+  ENV_SECRETS_KEY: data-lab-ui
+  MONGODB_URI: data-lab-ui
+  CORE_MONGODB_URL: data-lab-ui
+  CORE_DATABASE_NAME: data-lab-ui
+  NEXTAUTH_URL: data-lab-ui
+  NEXTAUTH_SECRET: data-lab-ui
+  GOOGLE_CLIENT_ID: data-lab-ui
+  GOOGLE_CLIENT_SECRET: data-lab-ui
+  OPENAI_API_KEY: data-lab-ui
+  OPENAI_MODEL: data-lab-ui
+  KEHRNEL_API_KEY: data-lab-ui
+
+serviceAccount:
+  enabled: true
+  irsa:
+    accountId: "275662791714"
+    roleName: "kanopy-staging-cicd-irsa"

@@ -1,0 +1,94 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "proces-o-ajf",
+    "user" : "lmorallopez@gmail.com@google",
+    "repositoryId" : "proces-o-ajf"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Foetus_pregnancy_follow_up_v0.8_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Foetus_pregnancy_follow_up_v0.8_FORMULARIS",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T14:09:18.174Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.seguiment_nado.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Foetus_pregnancy_follow_up_v0.8_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Foetus_pregnancy_follow_up_v0.8_FORMULARIS",
+    "lastModified" : "2024-09-30T14:09:18.174Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.seguiment_nado.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.seguiment_nado.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T13:50:47.407Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0",
+    "sourceId" : "proces-o-ajf",
+    "lastModified" : "2024-09-30T09:20:10.090Z"
+  } ]
+}

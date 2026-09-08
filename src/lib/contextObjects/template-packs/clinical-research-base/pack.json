@@ -1,0 +1,12 @@
+{
+  "templateId": "clinical-research-base",
+  "name": "Clinical Research Base",
+  "version": "1.0.0",
+  "intent": "clinical_research",
+  "primaryAnchor": "participant",
+  "headerProfileId": "header.participant.v1",
+  "terminologyProfileId": "term.research.core.v1",
+  "dictionaryId": "research-core.v1",
+  "skeletonGroups": ["clinicalContent", "events", "assessment"],
+  "requiredAnchors": ["participantId", "studyId"]
+}

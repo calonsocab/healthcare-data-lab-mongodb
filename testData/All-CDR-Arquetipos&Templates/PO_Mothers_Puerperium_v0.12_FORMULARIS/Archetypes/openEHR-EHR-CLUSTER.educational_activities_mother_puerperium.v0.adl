@@ -1,0 +1,238 @@
+archetype (adl_version=1.4; uid=d42efdac-521b-4322-b5c1-fbb67dfa074f)
+	openEHR-EHR-CLUSTER.educational_activities_mother_puerperium.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-24">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"aaabf5b019258dc8139668f4487345b0">
+		["build_uid"] = <"b32c4cfc-7555-3e9d-9791-cd0a11fde4e2">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Educational activities mother puerperium
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Hygiene
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Activity / rest
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Baby handling
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Mother/child interaction
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Emotional state
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Mother's cures
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Warning signs
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {    -- Contraceptive advice
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Others
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Educational activities mother puerperium">
+					description = <"Educational activities mother puerperium">
+				>
+				["at0001"] = <
+					text = <"Hygiene">
+					description = <"Hygiene">
+				>
+				["at0002"] = <
+					text = <"Activity / rest">
+					description = <"Activity / rest">
+				>
+				["at0003"] = <
+					text = <"Baby handling">
+					description = <"Baby handling">
+				>
+				["at0004"] = <
+					text = <"Mother/child interaction">
+					description = <"Mother/child interaction">
+				>
+				["at0005"] = <
+					text = <"Emotional state">
+					description = <"Emotional state">
+				>
+				["at0006"] = <
+					text = <"Mother's cures">
+					description = <"Mother's cures">
+				>
+				["at0007"] = <
+					text = <"Warning signs">
+					description = <"Warning signs">
+				>
+				["at0008"] = <
+					text = <"Contraceptive advice">
+					description = <"Contraceptive advice">
+				>
+				["at0009"] = <
+					text = <"Others">
+					description = <"Others">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Activitats educatives puerperi mare">
+					description = <"Activitats educatives puerperi mare">
+				>
+				["at0001"] = <
+					text = <"Higiene">
+					description = <"Higiene">
+				>
+				["at0002"] = <
+					text = <"Activitat / repòs">
+					description = <"Activitat / repòs">
+				>
+				["at0003"] = <
+					text = <"Manipulació nadó">
+					description = <"Manipulació nadó">
+				>
+				["at0004"] = <
+					text = <"Interacció mare/fill-a">
+					description = <"Interacció mare/fill-a">
+				>
+				["at0005"] = <
+					text = <"Estat emocional">
+					description = <"Estat emocional">
+				>
+				["at0006"] = <
+					text = <"Cures de la mare">
+					description = <"Cures de la mare">
+				>
+				["at0007"] = <
+					text = <"Signes d'alarma">
+					description = <"Signes d'alarma">
+				>
+				["at0008"] = <
+					text = <"Consell contraceptiu">
+					description = <"Consell contraceptiu">
+				>
+				["at0009"] = <
+					text = <"Altres">
+					description = <"Altres">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Actividades educativas puerperio madre">
+					description = <"Actividades educativas puerperio madre">
+				>
+				["at0001"] = <
+					text = <"Higiene">
+					description = <"Higiene">
+				>
+				["at0002"] = <
+					text = <"Actividad / reposo">
+					description = <"Actividad / reposo">
+				>
+				["at0003"] = <
+					text = <"Manipulación bebé">
+					description = <"Manipulación bebé">
+				>
+				["at0004"] = <
+					text = <"Interacción madre/hijo-a">
+					description = <"Interacción madre/hijo-a">
+				>
+				["at0005"] = <
+					text = <"Estado emocional">
+					description = <"Estado emocional">
+				>
+				["at0006"] = <
+					text = <"Cuidados de la madre">
+					description = <"Cuidados de la madre">
+				>
+				["at0007"] = <
+					text = <"Signos de alarma">
+					description = <"Signos de alarma">
+				>
+				["at0008"] = <
+					text = <"Consejo contraceptivo">
+					description = <"Consejo contraceptivo">
+				>
+				["at0009"] = <
+					text = <"Otros">
+					description = <"Otros">
+				>
+			>
+		>
+	>

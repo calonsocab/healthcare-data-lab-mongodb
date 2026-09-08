@@ -1,0 +1,2464 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "06371136-a6d6-4ea1-a7b0-deec5d745878",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2023-11-15"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "",
+      "custodian_organisation" : "",
+      "original_namespace" : "",
+      "original_publisher" : "",
+      "custodian_namespace" : "",
+      "sem_ver" : "0.1.1",
+      "build_uid" : "",
+      "PARENT:MD5-CAM-1.0.1" : "70ab12277ef4320a7bbce48e83a0e95a",
+      "MD5-CAM-1.0.1" : "ec837bf291cb2bcf17e3925de3bedd4d"
+    },
+    "details" : {
+      "ca" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ca"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.informe_ad_hoc.v0",
+  "differential" : false,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_informe_ad_hoc.v0"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "occurrences" : "1..1",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "existence" : "1..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "existence" : "0..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-resum_riqcat-001.v0",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ca" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "informe_amb_1_arquetip_OBS",
+          "description" : "Informe d'implant"
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "informe_ad_hoc",
+          "description" : "Informe d'implant"
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "28f7e657-0ae6-36ae-983c-1fe9063c2633",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "informe_amb_1_arquetip_OBS_v3",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "ff3d1525-f579-4849-8584-60efe227da9f",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "b985597d744dd3b9e3ac5382d51d979e"
+      },
+      "details" : {
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.resum_riqcat.v0",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-resum_riqcat-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "existence" : "1..1",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "occurrences" : "1..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "existence" : "0..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "occurrences" : "0..*",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "occurrences" : "1..1",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "existence" : "0..1",
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0004",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0005",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_DATE_TIME",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0006",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_DATE_TIME",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0007",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_DATE_TIME",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0008",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_ORDINAL",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "value",
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "symbol",
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_INTEGER",
+                                "constraint" : [ {
+                                  "lower" : 1,
+                                  "upper" : 1,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              }, {
+                                "@type" : "C_TERMINOLOGY_CODE",
+                                "constraint" : [ "at0009" ]
+                              } ]
+                            }, {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_INTEGER",
+                                "constraint" : [ {
+                                  "lower" : 2,
+                                  "upper" : 2,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              }, {
+                                "@type" : "C_TERMINOLOGY_CODE",
+                                "constraint" : [ "at0010" ]
+                              } ]
+                            }, {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_INTEGER",
+                                "constraint" : [ {
+                                  "lower" : 3,
+                                  "upper" : 3,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              }, {
+                                "@type" : "C_TERMINOLOGY_CODE",
+                                "constraint" : [ "at0011" ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0012",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0013",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "existence" : "1..1",
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "1..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0014",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0024",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0025",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0026",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0027",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0028",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0029",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0030",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0015",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0031",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0032",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0033",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0034",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0035",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0036",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0037",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0016",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0038",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0039",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0040",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0041",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0042",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0043",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0044",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0017",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0045",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0046",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0047",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0048",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0049",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0050",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0051",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0018",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0052",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0053",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0054",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0055",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0056",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0057",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0058",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0019",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0059",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0060",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0061",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0062",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0063",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0064",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0065",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0020",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0066",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0067",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0068",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0069",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0070",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0071",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0072",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0021",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0073",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0074",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0075",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0076",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0077",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0078",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0079",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0080",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0081",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0082",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0083",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0084",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0085",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0086",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0087",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0023",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "existence" : "1..1",
+                            "cardinality" : {
+                              "@type" : "CARDINALITY",
+                              "interval" : "1..*",
+                              "ordered" : false,
+                              "unique" : false
+                            },
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0088",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0089",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0090",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0091",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0092",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0093",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "ELEMENT",
+                              "occurrences" : "0..1",
+                              "nodeId" : "at0094",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "existence" : "0..1",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "DV_TEXT",
+                                  "occurrences" : "1..1",
+                                  "attributes" : [ ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ca" : {
+          "at0000" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "resum_RIQCat",
+            "description" : "resum_RIQCat"
+          },
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Any event",
+            "description" : "@ internal @"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Centre realitzador",
+            "description" : "Centre realitzador"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Data d'ingrés del pacient",
+            "description" : "Data d'ingrés del pacient"
+          },
+          "at0006" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0006",
+            "text" : "Data d'intervenció del pacient",
+            "description" : "Data d'intervenció del pacient"
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Data d'alta del pacient",
+            "description" : "Data d'alta del pacient"
+          },
+          "at0008" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0008",
+            "text" : "Tipus d'intervenció",
+            "description" : "Tipus d'intervenció"
+          },
+          "at0009" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0009",
+            "text" : "Primera intervenció",
+            "description" : "Primera intervenció"
+          },
+          "at0010" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0010",
+            "text" : "Reintervenció",
+            "description" : "Reintervenció"
+          },
+          "at0011" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011",
+            "text" : "Explantació",
+            "description" : "Explantació"
+          },
+          "at0012" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012",
+            "text" : "Codi procediment",
+            "description" : "Codi procediment"
+          },
+          "at0013" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013",
+            "text" : "Implant",
+            "description" : ""
+          },
+          "at0014" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014",
+            "text" : "Implant 1",
+            "description" : ""
+          },
+          "at0015" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0015",
+            "text" : "Implant 2",
+            "description" : ""
+          },
+          "at0016" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0016",
+            "text" : "Implant 3",
+            "description" : ""
+          },
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Implant 4",
+            "description" : ""
+          },
+          "at0018" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018",
+            "text" : "Implant 5",
+            "description" : ""
+          },
+          "at0019" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019",
+            "text" : "Implant 6",
+            "description" : ""
+          },
+          "at0020" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020",
+            "text" : "Implant 7",
+            "description" : ""
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Implant 8",
+            "description" : ""
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Implant 10",
+            "description" : ""
+          },
+          "at0024" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0025" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0025",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0026" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0026",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0028" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0028",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0029" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0029",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0030" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0030",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0031" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0031",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0032" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0032",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0033" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0034" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0034",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0035" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0036" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0036",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0037" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0038" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0038",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0039" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0040" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0041" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0041",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0042" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0042",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0043" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0043",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0044" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0045" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0045",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0046" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0046",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0047" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0047",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0048" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0048",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0049" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0049",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0050" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0050",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0051" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0051",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0052" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0052",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0053" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0053",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0054" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0054",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0055" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0055",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0056" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0057" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0057",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0058" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0058",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0059" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0060" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0060",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0061" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0061",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0062" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0062",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0063" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0063",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0064" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0064",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0065" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0065",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0066" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0066",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0067" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0067",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0068" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0068",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0069" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0069",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0070" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0070",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0071" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0071",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0072" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0072",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0073" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0073",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0074" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0074",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0075" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0075",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0076" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0076",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0077" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0077",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0078" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0078",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0079" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0079",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0080" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0080",
+            "text" : "Implant 9",
+            "description" : ""
+          },
+          "at0081" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0081",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0082" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0082",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0083" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0083",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0084" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0084",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0085" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0085",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0086" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0086",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0087" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0087",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0088" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0088",
+            "text" : "Codi tipus implant EMDN",
+            "description" : "Codi tipus implant EMDN"
+          },
+          "at0089" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0089",
+            "text" : "Número identificatiu de l'implant",
+            "description" : "Número identificatiu de l'implant"
+          },
+          "at0090" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0090",
+            "text" : "Número del lot del implant",
+            "description" : "Número del lot del implant"
+          },
+          "at0091" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091",
+            "text" : "Número de serie de l'implant",
+            "description" : "Número de serie de l'implant"
+          },
+          "at0092" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0092",
+            "text" : "Nom/descripció del producte",
+            "description" : "Nom/descripció del producte"
+          },
+          "at0093" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0093",
+            "text" : "Nom del fabricant",
+            "description" : "Nom del fabricant"
+          },
+          "at0094" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0094",
+            "text" : "Número d'identificació del fabricant",
+            "description" : "Número d'identificació del fabricant"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "resum_RIQCat",
+            "description" : "resum_RIQCat"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "cb108e14-34c2-35a7-abfc-f6d00f514994",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ca"
+    },
+    "translations" : [ ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "ca"
+  },
+  "translations" : [ ]
+}

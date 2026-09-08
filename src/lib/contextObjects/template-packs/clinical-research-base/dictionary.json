@@ -1,0 +1,8 @@
+{
+  "dictionaryId": "research-core.v1",
+  "bindings": {
+    "observation": ["LOINC", "UCUM"],
+    "adverseEvent": ["MedDRA"],
+    "questionnaire": ["LOINC"]
+  }
+}

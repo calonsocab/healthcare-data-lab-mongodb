@@ -1,0 +1,8 @@
+{
+  "dictionaryId": "genomics-core.v1",
+  "bindings": {
+    "variant": ["HGVS", "Sequence Ontology"],
+    "lab": ["LOINC", "UCUM"],
+    "adverseEvent": ["MedDRA"]
+  }
+}

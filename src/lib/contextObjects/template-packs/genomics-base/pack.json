@@ -1,0 +1,12 @@
+{
+  "templateId": "genomics-base",
+  "name": "Genomics Base",
+  "version": "1.0.0",
+  "intent": "genomics_pipeline",
+  "primaryAnchor": "specimen",
+  "headerProfileId": "header.specimen.v1",
+  "terminologyProfileId": "term.genomics.core.v1",
+  "dictionaryId": "genomics-core.v1",
+  "skeletonGroups": ["genomicsContent", "events", "assessment"],
+  "requiredAnchors": ["specimenId", "sampleId", "runId"]
+}

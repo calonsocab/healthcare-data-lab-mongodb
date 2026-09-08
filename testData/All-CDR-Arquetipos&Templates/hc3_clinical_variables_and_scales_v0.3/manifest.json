@@ -1,0 +1,112 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "tara-hc3-70k",
+    "user" : "bonettara@gmail.com@google",
+    "repositoryId" : "tara-hc3-70k"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/hc3_clinical_variables_and_scales_v0.3.t.json",
+    "type" : "template",
+    "id" : "hc3_clinical_variables_and_scales_v0.3",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-04-02T12:56:50.305Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.body_weight.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.clinical_scale.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.coding_.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.height.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.blood_pressure.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    } ]
+  }, {
+    "path" : "Templates/hc3_clinical_variables_and_scales_v0.3.opt",
+    "type" : "opt",
+    "id" : "hc3_clinical_variables_and_scales_v0.3",
+    "lastModified" : "2024-04-02T12:56:50.305Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.255Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.body_weight.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.body_weight.v2",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.255Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.clinical_scale.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.clinical_scale.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-03-21T09:37:12.850Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.coding_.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.coding_.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-04-02T12:50:47.432Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-04-02T12:52:28.941Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.height.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.height.v2",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.255Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.blood_pressure.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.blood_pressure.v2",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:11.923Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:11.923Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.clinical_attribute.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-03-21T09:37:09.978Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.239Z"
+  } ]
+}

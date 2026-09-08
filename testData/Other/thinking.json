@@ -1,0 +1,84 @@
+
+
+compositions:
+{
+
+},
+
+metadata configuration for each composition
+Some fields shared accross compositions and others are specific
+   - composition_id
+   -ehr_id
+   -archetype_node_id
+   -time
+   -feeder
+   ---------------------------------------------------
+   nodes: {
+    
+    ancestors
+   }
+   ----------------------- vaccionation composition ---
+   -vaccination.code
+   
+   One single collection for metadata only
+
+
+metadata: {
+
+    composition_id : {
+        metadatada
+    },
+    composition_id : {
+        metadatada
+    },
+
+
+}
+
+
+metadata: {
+
+    composition_id : {
+        metadatada:{
+           composition_type: vaccination
+        }
+
+        
+    },
+    composition_id : {
+        metadatada:{
+            composition_type: encounter
+         }
+    },
+
+}
+
+
+metadata: {
+
+    ehr_id : [
+        composition_id: { 
+        metadatada:{
+           composition_type: vaccination
+            }
+        },
+        composition_id : {
+            metadatada:{
+                composition_type: encounter
+        }
+    ]
+
+
+    },
+
+    99.9% patients have less than 200 documets
+    99.5 less 100
+    1 5000
+    1 20000
+
+    Full composition: 11K
+    metadata: <1K
+
+    200K
+
+    

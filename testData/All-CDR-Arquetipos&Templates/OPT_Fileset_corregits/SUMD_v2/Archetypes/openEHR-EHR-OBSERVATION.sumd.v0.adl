@@ -1,0 +1,900 @@
+archetype (adl_version=1.4; uid=b64e3c16-7048-495f-b838-98f20b1163c2)
+	openEHR-EHR-OBSERVATION.sumd.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-04-28">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9eb632ea0ab0535e6d24c9adcf9b3206">
+		["build_uid"] = <"ad4df312-3374-3105-bb2c-88ed72477f55">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- SUMD
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Consciència de trastorn mental
+										value matches {
+											0|[local::at0011],
+											1|[local::at0012],
+											3|[local::at0013],
+											5|[local::at0014]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Consciència efectes medicació
+										value matches {
+											0|[local::at0019],
+											1|[local::at0020],
+											3|[local::at0021],
+											5|[local::at0022]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Consciència conseqüències socials
+										value matches {
+											0|[local::at0027],
+											1|[local::at0028],
+											3|[local::at0029],
+											5|[local::at0030]
+										}
+									}
+									ELEMENT[at0036] occurrences matches {0..1} matches {    -- Consciència al·lucinacions
+										value matches {
+											0|[local::at0048],
+											1|[local::at0049],
+											3|[local::at0050],
+											5|[local::at0051]
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {    -- Atribució al·lucinacions
+										value matches {
+											0|[local::at0052],
+											1|[local::at0053],
+											3|[local::at0054],
+											5|[local::at0055]
+										}
+									}
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Consciència deliris
+										value matches {
+											0|[local::at0056],
+											1|[local::at0057],
+											3|[local::at0058],
+											5|[local::at0059]
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Atribució deliris
+										value matches {
+											0|[local::at0060],
+											1|[local::at0061],
+											3|[local::at0062],
+											5|[local::at0063]
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Consciència trastorn pensament
+										value matches {
+											0|[local::at0064],
+											1|[local::at0065],
+											3|[local::at0066],
+											5|[local::at0067]
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Atribució trastorn pensament
+										value matches {
+											0|[local::at0068],
+											1|[local::at0069],
+											3|[local::at0070],
+											5|[local::at0071]
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Consciència afecte inapropiat
+										value matches {
+											0|[local::at0072],
+											1|[local::at0073],
+											3|[local::at0074],
+											5|[local::at0075]
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Atribució afecte inapropiat
+										value matches {
+											0|[local::at0076],
+											1|[local::at0077],
+											3|[local::at0078],
+											5|[local::at0079]
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Consciència anhedonia/asocialitat
+										value matches {
+											0|[local::at0080],
+											1|[local::at0081],
+											3|[local::at0082],
+											5|[local::at0083]
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Atribució anhedonia/asocialitat
+										value matches {
+											0|[local::at0084],
+											1|[local::at0085],
+											3|[local::at0086],
+											5|[local::at0087]
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Consciència relacions socials pobres
+										value matches {
+											0|[local::at0088],
+											1|[local::at0089],
+											3|[local::at0090],
+											5|[local::at0091]
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Atribució relacions socials pobres
+										value matches {
+											0|[local::at0092],
+											1|[local::at0093],
+											3|[local::at0094],
+											5|[local::at0095]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Puntuació consciència global
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0099] occurrences matches {0..1} matches {    -- Puntuació consciència de símptomes
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::755]>
+												list = <
+													["1"] = <
+														units = <"arb. unit">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0100] occurrences matches {0..1} matches {    -- Puntuació atribució de símptomes
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::755]>
+												list = <
+													["1"] = <
+														units = <"arb. unit">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0035] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0098] occurrences matches {0..*} matches {    -- CLUSTER
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"SUMD">
+					description = <"SUMD, escala d'avaluació de l'insight">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Consciència de trastorn mental">
+					description = <"Consciència de trastorn mental. En termes generals, la persona creu que té un trastorn mental, un problema psiquiàtric, una dificultat  emocional, etc…?">
+				>
+				["at0006"] = <
+					text = <"Consciència efectes medicació">
+					description = <"Consciència sobre els efectes obtinguts amb la medicació. Quina és l’ opinió de la persona sobre els efectes de la medicació?  Creu la persona que la medicació li ha fet disminuir la intensitat o freqüència dels símptomes (si això s’aplica)?">
+				>
+				["at0008"] = <
+					text = <"Consciència conseqüències socials">
+					description = <"Consciència de les conseqüències socials del trastorn mental. Quina és l’opinió de la persona sobre les raons que han fet que hagi estat ingressada en un hospital, hospitalitzada involuntàriament, arrestada, desallotjada, acomiadada, ferida, etc…?  ">
+				>
+				["at0010"] = <
+					text = <"Puntuació consciència global">
+					description = <"Puntuació consciència global (3 ítems)">
+				>
+				["at0011"] = <
+					text = <"No pot ser valorat">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Consciència: la persona creu clarament que té un trastorn mental">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Consciència intermèdia:  no està segura de tenir un trastorn mental, però pot tenir en compte la idea que el pugui tenir">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"No consciència: creu que no té un trastorn mental">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Consciència: la persona creu clarament que la medicació ha fet disminuir la  intensitat o freqüència dels símptomes">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Consciència intermèdia: no està segura que la medicació hagi fet disminuir la intensitat o freqüència dels símptomes , però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"No consciència: creu que la medicació no ha fet disminuir la intensitat o la freqüència dels símptomes">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Consciència: la persona creu clarament que les conseqüències socials rellevants estan relacionades amb tenir un trastorn mental">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Consciència intermèdia: no està segura sobre que les conseqüències socials rellevants estiguin relacionades amb tenir un trastorn mental, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"No consciència: creu que les conseqüències socials rellevants no tenen res a veure amb tenir un trastorn mental">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0036"] = <
+					text = <"Consciència al·lucinacions">
+					description = <"Consciència d’al·lucinacions">
+				>
+				["at0037"] = <
+					text = <"Atribució al·lucinacions">
+					description = <"Atribució de les al·lucinacions">
+				>
+				["at0038"] = <
+					text = <"Consciència deliris">
+					description = <"Consciència de deliris">
+				>
+				["at0039"] = <
+					text = <"Atribució deliris">
+					description = <"Atribució dels deliris">
+				>
+				["at0040"] = <
+					text = <"Consciència trastorn pensament">
+					description = <"Consciència de trastorn del pensament">
+				>
+				["at0041"] = <
+					text = <"Atribució trastorn pensament">
+					description = <"Atribució de trastorn del pensament">
+				>
+				["at0042"] = <
+					text = <"Consciència afecte inapropiat">
+					description = <"Consciència d’afecte inapropiat ">
+				>
+				["at0043"] = <
+					text = <"Atribució afecte inapropiat">
+					description = <"Atribució d’afecte inapropiat ">
+				>
+				["at0044"] = <
+					text = <"Consciència anhedonia/asocialitat">
+					description = <"Consciència d’anhedonia o asocialitat ">
+				>
+				["at0045"] = <
+					text = <"Atribució anhedonia/asocialitat">
+					description = <"Atribució d’anhedonia o asocialitat">
+				>
+				["at0046"] = <
+					text = <"Consciència relacions socials pobres">
+					description = <"Consciència d’unes relacions socials pobres">
+				>
+				["at0047"] = <
+					text = <"Atribució relacions socials pobres">
+					description = <"Atribució d’unes relacions socials pobres">
+				>
+				["at0048"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Consciència: la persona creu clarament que té al·lucinacions">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Consciència intermèdia: no està segura de tenir al·lucinacions, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"No consciència: creu que no té al·lucinacions">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Parcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"Consciència: la persona creu clarament que té idees delirants">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Consciència intermèdia: no està segura que es tracti d’idees delirants, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"No consciència: creu que no té idees delirants">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Parcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Consciència: la persona creu clarament que les seves comunicacions o els seus pensaments estan desorganitzats">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Consciència intermèdia: no està segura que les seves comunicacions o els seus pensaments estiguin desorganitzats, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"No consciència: creu que no té ni comunicacions ni pensaments desorganitzats">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Parcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Consciència: la persona creu clarament que l’ expressió dels seus afectes és inapropiada">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Consciència intermèdia: no està segura que l’ expressió dels seus afectes sigui inapropiada, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"No consciència: creu que no té una expressió d’ afectes inapropiada">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"arcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Consciència: la persona  creu clarament que està socialment aïllada i que gaudeix poc i de gairebé res">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Consciència intermèdia: : no està segura sobre estar socialment aïllada o de ser incapaç de sentir plaer, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"No consciència: creu que no està socialment aïllada o que no és incapaç de sentir plaer">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Parcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0087"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Consciència: la persona creu clarament que les seves relacions socials són pobres">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Consciència intermèdia: no està segura que les seves relacions socials siguin pobres, però pot tenir en compte la idea">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"No consciència: creu que no té unes relacions socials pobres">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"No pot ser valorat o ítem no rellevant">
+					description = <"">
+				>
+				["at0093"] = <
+					text = <"Correcta: creu que el símptoma és degut a un trastorn mental">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Parcial: no n’està segura, però pot tenir en compte la possibilitat que el símptoma sigui degut a un trastorn mental">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Incorrecta: creu que el símptoma no està relacionat amb un trastorn mental">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"CLUSTER">
+					description = <"">
+				>
+				["at0099"] = <
+					text = <"Puntuació consciència de símptomes">
+					description = <"Puntuació consciència de símptomes">
+				>
+				["at0100"] = <
+					text = <"Puntuació atribució de símptomes">
+					description = <"Puntuació atribució de símptomes">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"SUMD">
+					description = <"SUMD, escala de evaluación del insight">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Conciencia  trastorno">
+					description = <"Conciencia de poseer un trastorno">
+				>
+				["at0006"] = <
+					text = <"Conciencia efectos medicación">
+					description = <"Conciencia sobre los efectos de la medicación">
+				>
+				["at0008"] = <
+					text = <"Conciencia consecuencias sociales trastorno mental">
+					description = <"Conciencia de las consecuencias sociales del trastorno mental">
+				>
+				["at0010"] = <
+					text = <"Puntuación conciencia global">
+					description = <"Puntuación conciencia global (3 ítems)">
+				>
+				["at0011"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0036"] = <
+					text = <"Conciencia alucinaciones">
+					description = <"Conciencia de poseer alucinaciones">
+				>
+				["at0037"] = <
+					text = <"Atribución alucinaciones">
+					description = <"Atribución de las alucinaciones a la enfermedad">
+				>
+				["at0038"] = <
+					text = <"Conciencia delirios">
+					description = <"Conciencia de poseer delirios">
+				>
+				["at0039"] = <
+					text = <"Atribución delirios">
+					description = <"Atribución de los delirios a la enfermedad">
+				>
+				["at0040"] = <
+					text = <"Conciencia trastornos pensamiento">
+					description = <"Conciencia de poseer trastornos del pensamiento">
+				>
+				["at0041"] = <
+					text = <"Atribución trastornos pensamiento">
+					description = <"Atribución de los trastornos del pensamiento a la enfermedad">
+				>
+				["at0042"] = <
+					text = <"Conciencia embotamiento afectivo">
+					description = <"Conciencia de poseer embotamiento afectivo">
+				>
+				["at0043"] = <
+					text = <"Atribución embotamiento afectivo">
+					description = <"Atribución del embotamiento afectivo a la enfermedad">
+				>
+				["at0044"] = <
+					text = <"Conciencia anhedonía">
+					description = <"Conciencia de poseer anhedonía">
+				>
+				["at0045"] = <
+					text = <"Atribución anhedonía">
+					description = <"Atribución de la anhedonía a la enfermedad">
+				>
+				["at0046"] = <
+					text = <"Conciencia asociabilidad">
+					description = <"Conciencia de poseer asociabilidad">
+				>
+				["at0047"] = <
+					text = <"Atribución asociabilidad">
+					description = <"Atribución de la asociabilidad a la enfermedad">
+				>
+				["at0048"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0087"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Conciencia">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Conciencia intermedia">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"No hay conciencia">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Ítem no relevante">
+					description = <"">
+				>
+				["at0093"] = <
+					text = <"Atribución">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Atribución intermedia">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"No hay atribución">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"CLUSTER">
+					description = <"">
+				>
+				["at0099"] = <
+					text = <"Puntuación conciencia de síntomas">
+					description = <"Puntuación conciencia de síntomas">
+				>
+				["at0100"] = <
+					text = <"Puntuació atribución de síntomas">
+					description = <"Puntuació atribución de síntomas">
+				>
+			>
+		>
+	>

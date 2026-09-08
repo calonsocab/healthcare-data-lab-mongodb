@@ -1,0 +1,101 @@
+<releaseset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+   <cid>1380.155.2</cid>
+   <versionAsset>1</versionAsset>
+   <rsIdentifier>ImmunizationsE2E_RS0.v1</rsIdentifier>
+   <rsName>ImmunizationsE2E_RS0</rsName>
+   <rsDescription></rsDescription>
+   <publisher></publisher>
+   <purpose></purpose>
+   <use></use>
+   <misuse></misuse>
+   <creationTime>2024-05-07T12:47:37+0200</creationTime>
+   <modificationTime>2024-05-07T12:47:37+0200</modificationTime>
+   <directLink>https://ckm.salut.gencat.cat/ckm/#showReleaseSet_1380.155.2_1</directLink>
+   <logMessage>Creació de Release Set per intercanvi al CDR.</logMessage>
+   <implicitlyContainedArchetypes>
+      <ckmResource>
+         <cid>1380.146.84</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-COMPOSITION.vaccination_list.v0</resourceMainId>
+         <resourceMainDisplayName>Vaccination list</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:41+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:41+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.84/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.85</cid>
+         <versionAsset>1</versionAsset>
+         <revision>1.2.3</revision>
+         <resourceMainId>openEHR-EHR-ACTION.medication.v1</resourceMainId>
+         <resourceMainDisplayName>Gestió de la medicació</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:42+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:42+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.85/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.88</cid>
+         <versionAsset>2</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.admin_salut.v0</resourceMainId>
+         <resourceMainDisplayName>Admin Salut</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:30:42+0100</creationTime>
+         <modificationTime>2024-04-18T15:14:22+0200</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.88/2</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.89</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.xds_metadata.v0</resourceMainId>
+         <resourceMainDisplayName>Metadades XDS</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:31:27+0100</creationTime>
+         <modificationTime>2024-03-12T08:31:27+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.89/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.86</cid>
+         <versionAsset>1</versionAsset>
+         <revision>2.0.1</revision>
+         <resourceMainId>openEHR-EHR-CLUSTER.medication.v2</resourceMainId>
+         <resourceMainDisplayName>Medication details</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:44+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:44+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.86/1</directLink>
+      </ckmResource>
+      <ckmResource>
+         <cid>1380.146.87</cid>
+         <versionAsset>1</versionAsset>
+         <revision>0.0.1-alpha</revision>
+         <resourceMainId>openEHR-EHR-SECTION.immunisation_list.v0</resourceMainId>
+         <resourceMainDisplayName>Vaccination list</resourceMainDisplayName>
+         <resourceType>ARCHETYPE</resourceType>
+         <creationTime>2024-03-12T08:26:45+0100</creationTime>
+         <modificationTime>2024-03-12T08:26:45+0100</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.87/1</directLink>
+      </ckmResource>
+   </implicitlyContainedArchetypes>
+   <explicitlyContainedTemplates>
+      <ckmResource>
+         <cid>1380.167.126</cid>
+         <versionAsset>1</versionAsset>
+         <resourceMainId>8334d66c-7f33-4aaf-8a6a-c2dc658d8edb</resourceMainId>
+         <resourceMainDisplayName>inmunization_e2e_v0.1</resourceMainDisplayName>
+         <resourceType>TEMPLATE</resourceType>
+         <creationTime>2024-05-07T12:12:00+0200</creationTime>
+         <modificationTime>2024-05-07T12:12:00+0200</modificationTime>
+         <directLink>https://ckm.salut.gencat.cat/ckm/templates/1380.167.126/1</directLink>
+      </ckmResource>
+   </explicitlyContainedTemplates>
+   <secondaryAssets>
+      <asset>
+         <resourceType>template</resourceType>
+         <secondaryResourceType>operational-template</secondaryResourceType>
+      </asset>
+   </secondaryAssets>
+</releaseset>

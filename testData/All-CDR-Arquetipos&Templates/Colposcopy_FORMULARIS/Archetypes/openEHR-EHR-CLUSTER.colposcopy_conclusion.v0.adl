@@ -1,0 +1,153 @@
+archetype (adl_version=1.4; uid=370cb13c-6b41-413f-a9f8-08304f853c37)
+	openEHR-EHR-CLUSTER.colposcopy_conclusion.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-01-22">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ba9929a2a098c7ef24a68e5b5a6d70f2">
+		["build_uid"] = <"0dca377c-9bf6-37a1-a607-38e6cecf9544">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Colposcopy conclusion
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Impression
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Colposcopy result
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Other result
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Additional comments from the colposcopist
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Colposcopy conclusion">
+					description = <"Colposcopy conclusion">
+				>
+				["at0001"] = <
+					text = <"Impression">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Colposcopy result">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Other result">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Additional comments from the colposcopist">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Conclusió colposcòpia">
+					description = <"*Colposcopy conclusion (en)">
+				>
+				["at0001"] = <
+					text = <"Impressió">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Resultat colposcòpia">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Altre resultat">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Comentaris addicionals del colposcopista">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Conclución colposcopia">
+					description = <"*Colposcopy conclusion (en)">
+				>
+				["at0001"] = <
+					text = <"Impresión">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Resultado colposcopia">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Otro resultado">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Comentarios adicionales del colposcopista">
+					description = <"">
+				>
+			>
+		>
+	>

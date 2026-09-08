@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "origen": {
+      "type": "string" -> "hc3_clinical_course/composer/_identifier:0|id": "HC3"
+    },
+    "idOrigen": {
+      "type": "string" -> "hc3_clinical_course/_uid": "603a0b71-c26b-4786-b131-ea64b35fad76::ehrbase.ehrbase.org::1"
+    },
+    "idPatient": {
+      "type": "string" -> no lo hemos encontrado en CDR
+    },
+    "idVisit": {
+      "type": "string" -> no lo hemos encontrado en CDR
+    },
+    "idEpisode": {
+      "type": "string"-> no lo hemos encontrado en CDR
+    },
+    "creationDate": {
+      "type": "string" ->  "hc3_clinical_course/context/admin_salut/document_creation_date": "2017-08-01T16:40:36+02:00" o "hc3_clinical_course/context/admin_salut/document_publication_date": "2017-10-27T14:09:18+02:00"
+    },
+	"deletedDate": {
+      "type": "string" -> no lo hemos encontrado en CDR
+    },
+    "deleteReason": {
+      "type": "string" -> no lo hemos encontrado en CDR
+    },
+    "content": { -> "hc3_clinical_course/clinical_course:0/other:0/other:0/other"  -> Esta solo en texto plano, podríamos ponerlo igual en HTML
+      "type": "object",
+      "properties": {
+        "plainText": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "plainText",
+        "html"
+      ]
+    },
+    "professional": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string" -> "hc3_clinical_course/clinical_course:0/other:0/other:0/_other_participation:0|identifiers_id:2": "108198403"
+        },
+		"id_type": {
+          "type": "string" -> "hc3_clinical_course/clinical_course:0/other:0/other:0/_other_participation:0|identifiers_type:2": "2.16.840.1.113883.4.292.10.2",
+        },
+        "name": {
+          "type": "string" -> "hc3_clinical_course/clinical_course:0/other:0/other:0/_other_participation:0|name": "RAFEL"
+        },
+        "role": { -> no lo hemos encontrado en CDR
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "speciality": { -> no lo hemos encontrado en CDR
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        }
+      },
+      "required": [
+        "id",
+		"id_type",
+        "name"
+      ]
+    },
+    "diagnostics": { -> no lo hemos encontrado en CDR
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "description"
+        ]
+      }
+    },
+    "center": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string" -> "hc3_clinical_course/context/admin_salut/performing_institution/performing_centre|code"
+        },
+        "description": {
+          "type": "string" 
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ]
+    },
+    "UP": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string" -> "hc3_clinical_course/context/admin_salut/performing_institution/performing_up|code"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ]
+    },
+    "EP": { -> no lo hemos encontrado en CDR
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ]
+    },
+    "service": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string" -> "hc3_clinical_course/context/admin_salut/publishing_institution/publishing_sa|code"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ]
+    }
+  },
+  "required": [
+    "origen",
+    "idOrigen",
+    "idPatient",
+    "creationDate",
+    "content",
+    "professional",
+    "diagnostics",
+    "center",
+    "UP",
+    "EP",
+    "service"
+  ]
+}

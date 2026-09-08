@@ -1,0 +1,214 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "hc3-temp-70j",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "hc3-temp-70j"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/hc3_spirometry_test_result_v0.6.t.json",
+    "type" : "template",
+    "id" : "hc3_spirometry_test_result_v0.6",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-17T13:39:48.704Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.device_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report-result.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.ethnicity.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.coding_.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.height.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.knowledge_base_reference.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.age.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.media_file.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.environmental_conditions-SampleHealth.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.spirometry_test_additional_information.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.body_weight.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.device.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.spirometry_result-SampleHealth.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.tobacco_use.v0"
+    } ]
+  }, {
+    "path" : "Templates/hc3_spirometry_test_result_v0.6.opt",
+    "type" : "opt",
+    "id" : "hc3_spirometry_test_result_v0.6",
+    "lastModified" : "2024-04-17T13:39:48.704Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.clinical_synopsis.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.device_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.device_details.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report-result.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report-result.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report.v1"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.ethnicity.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.ethnicity.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.coding_.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.coding_.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-03T14:10:59.555Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.height.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.height.v2",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-11T06:38:49.261Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.knowledge_base_reference.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.knowledge_base_reference.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.age.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.age.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.media_file.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.media_file.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.environmental_conditions-SampleHealth.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.environmental_conditions-SampleHealth.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-17T11:37:10.778Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.environmental_conditions.v0"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.environmental_conditions.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.environmental_conditions.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-17T10:54:53.440Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-11T06:38:49.249Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.spirometry_test_additional_information.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.spirometry_test_additional_information.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-11T06:38:49.257Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.body_weight.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.body_weight.v2",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-11T06:38:49.257Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.device.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.device.v1",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.spirometry_result-SampleHealth.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.spirometry_result-SampleHealth.v2",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.spirometry_result.v2"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.spirometry_result.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.spirometry_result.v2",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.tobacco_use.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.tobacco_use.v0",
+    "sourceId" : "hc3-temp-70j",
+    "lastModified" : "2024-04-10T10:20:10.667Z"
+  } ]
+}

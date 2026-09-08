@@ -1,0 +1,99 @@
+archetype (adl_version=1.4; uid=cecdae44-1f17-4c07-9ecd-479cf293c2a1)
+	openEHR-EHR-CLUSTER.fetus_observations.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-10-25">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"33e4a7553d785f96a27d639b57831503">
+		["build_uid"] = <"fdddbbd9-ae0c-31bb-a2ff-9fd811f1b615">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Fetus observations
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Observacions part fetus
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fetus observations">
+					description = <"Fetus observations">
+				>
+				["at0001"] = <
+					text = <"Observacions part fetus">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Observacions part fetus">
+					description = <"*Fetus observations (en)">
+				>
+				["at0001"] = <
+					text = <"Observacions part fetus">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Observaciones del feto">
+					description = <"*Fetus observations (en)">
+				>
+				["at0001"] = <
+					text = <"*Observacions part fetus (en)">
+					description = <"">
+				>
+			>
+		>
+	>

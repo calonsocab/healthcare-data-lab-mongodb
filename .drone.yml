@@ -1,0 +1,122 @@
+---
+kind: pipeline
+type: kubernetes
+name: staging
+
+trigger:
+  branch:
+    - staging
+
+# Step 1: Build frontend image
+steps:
+  - name: publish-data-lab
+    image: plugins/kaniko-ecr
+    settings:
+      create_repository: true
+      registry: 795250896452.dkr.ecr.us-east-1.amazonaws.com
+      repo: industrysolutions/data-lab
+      dockerfile: Dockerfile.app
+      tags:
+        - git-${DRONE_COMMIT_SHA:0:7}
+        - latest
+      build_args:
+        - NEXT_PUBLIC_KEHRNEL_AQL_ENDPOINT=http://kehrnel-backend-web-app:80
+        - NEXT_PUBLIC_BACKEND_URL=http://kehrnel-backend-web-app:80
+        - NEXT_PUBLIC_MONGODBEHR_URL=http://kehrnel-backend-web-app:80
+        - BACKEND_URL=http://kehrnel-backend-web-app:80
+      access_key:
+        from_secret: ecr_access_key
+      secret_key:
+        from_secret: ecr_secret_key
+    when:
+      event:
+        - push
+
+  # Step 2: Deploy frontend
+  - name: deploy-data-lab-staging
+    image: public.ecr.aws/kanopy/drone-helm:v3
+    settings:
+      chart: mongodb/web-app
+      chart_version: 4.30.0
+      add_repos: [mongodb=https://10gen.github.io/helm-charts]
+      namespace: industrysolutions
+      release: data-lab
+      values:
+        - "image.tag=git-${DRONE_COMMIT_SHA:0:7}"
+        - "image.repository=795250896452.dkr.ecr.us-east-1.amazonaws.com/industrysolutions/data-lab"
+        - "ingress.enabled=true"
+        - "ingress.hosts[0]=data-lab.industrysolutions.staging.corp.mongodb.com"
+        - "mesh.enabled=true"
+        - "resources.limits.cpu=1000m"
+        - "resources.limits.memory=1024Mi"
+        - "resources.requests.cpu=250m"
+        - "resources.requests.memory=256Mi"
+      api_server: https://api.staging.corp.mongodb.com
+      kubernetes_token:
+        from_secret: staging_kubernetes_token
+      values_files: [ "environments/staging.yaml" ]
+    when:
+      event:
+        - push
+
+
+---
+kind: pipeline
+type: kubernetes
+name: production
+
+trigger:
+  branch:
+    - main
+
+# Step 1: Build frontend image
+steps:
+  - name: publish-data-lab
+    image: plugins/kaniko-ecr
+    settings:
+      create_repository: true
+      registry: 795250896452.dkr.ecr.us-east-1.amazonaws.com
+      repo: industrysolutions/data-lab
+      dockerfile: Dockerfile.app
+      tags:
+        - git-${DRONE_COMMIT_SHA:0:7}
+        - prod-latest
+      build_args:
+        - NEXT_PUBLIC_KEHRNEL_AQL_ENDPOINT=http://kehrnel-backend-web-app:80
+        - NEXT_PUBLIC_BACKEND_URL=http://kehrnel-backend-web-app:80
+        - NEXT_PUBLIC_MONGODBEHR_URL=http://kehrnel-backend-web-app:80
+        - BACKEND_URL=http://kehrnel-backend-web-app:80
+      access_key:
+        from_secret: ecr_access_key
+      secret_key:
+        from_secret: ecr_secret_key
+    when:
+      event:
+        - push
+
+  # Step 2: Deploy frontend
+  - name: deploy-data-lab-prod
+    image: public.ecr.aws/kanopy/drone-helm:v3
+    settings:
+      chart: mongodb/web-app
+      chart_version: 4.30.0
+      add_repos: [mongodb=https://10gen.github.io/helm-charts]
+      namespace: industrysolutions
+      release: data-lab
+      values:
+        - "image.tag=git-${DRONE_COMMIT_SHA:0:7}"
+        - "image.repository=795250896452.dkr.ecr.us-east-1.amazonaws.com/industrysolutions/data-lab"
+        - "ingress.enabled=true"
+        - "ingress.hosts[0]=data-lab.industrysolutions.prod.corp.mongodb.com"
+        - "mesh.enabled=true"
+        - "resources.limits.cpu=1000m"
+        - "resources.limits.memory=1024Mi"
+        - "resources.requests.cpu=250m"
+        - "resources.requests.memory=256Mi"
+      api_server: https://api.prod.corp.mongodb.com
+      kubernetes_token:
+        from_secret: prod_kubernetes_token
+      values_files: [ "environments/prod.yaml" ]
+    when:
+      event:
+        - push

@@ -1,0 +1,459 @@
+archetype (adl_version=1.4; uid=d1b74ee0-269a-4c31-b99c-08f28ec2e070)
+	openEHR-EHR-CLUSTER.colposcopy_result.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-01-22">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"006ab2593986c6b6dc64c18519f76c3a">
+		["build_uid"] = <"2039cccb-ec94-3687-bd05-4c616bdf0d4a">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Colposcopy result
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Colposcopy general evaluation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Squamous-columnar junction visibility
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Transformation zone visibility
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Colposcopic findings
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Number of anomalous areas
+				value matches {
+					DV_QUANTITY matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Time location area 1
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0019] occurrences matches {0..*} matches {    -- Colposcopic findings area 1 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0020] occurrences matches {0..*} matches {    -- Colposcopic findings area 1 risk 2 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0021] occurrences matches {0..1} matches {    -- Time location area 2
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0022] occurrences matches {0..*} matches {    -- Colposcopic findings area 2 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0023] occurrences matches {0..*} matches {    -- Colposcopic findings area 2 risk 2 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- Time location area 3
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0025] occurrences matches {0..*} matches {    -- Colposcopic findings area 3 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0026] occurrences matches {0..*} matches {    -- Colposcopic findings area 3 risk 2 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {    -- Time location area 4
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..*} matches {    -- Colposcopic findings area 4 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0029] occurrences matches {0..*} matches {    -- Colposcopic findings area 4 risk 2 description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0030] occurrences matches {0..1} matches {    -- Total extension of the cervix affected by injuries
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0031] occurrences matches {0..1} matches {    -- Description of other colposcopic findings
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..*} matches {    -- Other cervical samples obtained
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0033] occurrences matches {0..*} matches {    -- Lesions outside the cervix
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0034] occurrences matches {0..1} matches {    -- Associated images
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Colposcopy result">
+					description = <"Colposcopy result">
+				>
+				["at0001"] = <
+					text = <"Colposcopy general evaluation">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Squamous-columnar junction visibility">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Transformation zone visibility">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Colposcopic findings">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Number of anomalous areas">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Time location area 1">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Colposcopic findings area 1 description">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Colposcopic findings area 1 risk 2 description">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Time location area 2">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Colposcopic findings area 2 description">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Colposcopic findings area 2 risk 2 description">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Time location area 3">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Colposcopic findings area 3 description">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Colposcopic findings area 3 risk 2 description">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Time location area 4">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Colposcopic findings area 4 description">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Colposcopic findings area 4 risk 2 description">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Total extension of the cervix affected by injuries">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Description of other colposcopic findings">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Other cervical samples obtained">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Lesions outside the cervix">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Associated images">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Resultat de la colposcòpia">
+					description = <"*Colposcopy result (en)">
+				>
+				["at0001"] = <
+					text = <"Avaluació general de la colposcòpia">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Visibilitat de la unió escamocolumnar">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Visibilitat de la zona de transformació">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Troballes colposcòpiques">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Nº d’àrees anòmales">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Localització horària àrea 1">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Descripció troballes colposcòpiques àrea 1">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Descripció troballes colposcòpiques àrea 1 de risc 2">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Localització horària àrea 2">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Descripció troballes colposcòpiques àrea 2">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Descripció troballes colposcòpiques àrea 2 de risc 2">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Localització horària àrea 3">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Descripció troballes colposcòpiques àrea 3">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Descripció troballes colposcòpiques àrea 3 de risc 2">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Localització horària àrea 4">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Descripció troballes colposcòpiques àrea 4">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Descripció troballes colposcòpiques àrea 4 de risc 2">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Extensió total del coll uterí afectat per lesions">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Descripció d’altres troballes colposcòpiques">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Altres mostres de coll uterí obtingudes">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Lesions fora del coll uterí">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Imatges associades">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Resultado de la colposcopia">
+					description = <"*Colposcopy result (en)">
+				>
+				["at0001"] = <
+					text = <"Evaluación general de la colposcopia">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Visibilidad de la unión escamocolumnar">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Visibilidad de la zona de transformación">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Hallazgos colposcópicos">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Nº de áreas anómalas">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Localización horaria área 1">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Descripción hallazgos colposcópicos área 1">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Descripción hallazgos colposcópicos área 1 de riesgo 2">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Localización horaria área 2">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Descripción hallazgos colposcópicos área 2">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Descripción hallazgos colposcópicos área 2 de riesgo 2">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Localización horaria área 3">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Descripción hallazgos colposcópicos área 3">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Descripción hallazgos colposcópicos área 3 de riesgo 2">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Localización horaria área 4">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Descripción hallazgos colposcópicos área 4">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Descripción hallazgos colposcópicos área 4 de riesgo 2">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Extensión total del cuello uterino afectado por lesiones">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Descripción de otros hallazgos colposcópicos">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Otras muestras de cuello uterino obtenidas">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Lesiones fuera del cuello uterino">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Imágenes asociadas">
+					description = <"">
+				>
+			>
+		>
+	>

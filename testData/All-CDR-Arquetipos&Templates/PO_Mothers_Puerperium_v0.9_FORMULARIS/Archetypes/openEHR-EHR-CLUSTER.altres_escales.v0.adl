@@ -1,0 +1,116 @@
+archetype (adl_version=1.4; uid=320d1800-5e4b-4192-b420-5eb90cd022ca)
+	openEHR-EHR-CLUSTER.altres_escales.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"260ff8790c42d5c11b1883d0e486367c">
+		["build_uid"] = <"9245e221-7fb7-3ed5-9e3e-5529e5091fb8">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Altres escales
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Nom de l'escala
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Valor
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Altres escales">
+					description = <"Altres escales">
+				>
+				["at0001"] = <
+					text = <"Nom de l'escala">
+					description = <"Nom de l'escala">
+				>
+				["at0002"] = <
+					text = <"Valor">
+					description = <"Valor">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Other scales">
+					description = <"Other scales">
+				>
+				["at0001"] = <
+					text = <"Name of the scale">
+					description = <"Name of the scale">
+				>
+				["at0002"] = <
+					text = <"Value">
+					description = <"Value">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Otras escaleras">
+					description = <"Otras escaleras">
+				>
+				["at0001"] = <
+					text = <"Nombre de la escalera">
+					description = <"Nombre de la escalera">
+				>
+				["at0002"] = <
+					text = <"Valor">
+					description = <"Valor">
+				>
+			>
+		>
+	>

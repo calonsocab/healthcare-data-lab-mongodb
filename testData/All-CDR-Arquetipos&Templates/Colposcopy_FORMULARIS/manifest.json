@@ -1,0 +1,95 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "colposco-83c",
+    "user" : "becf4cc5-51fc-4196-b12d-acf2fb232a3a@microsoft",
+    "repositoryId" : "colposco-83c"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/Colposcopy_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "Colposcopy_FORMULARIS",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T14:59:47.414Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.colposcopy_result.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.colposcopy.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.colposcopy_background.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report-result.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.colposcopy_conclusion.v0"
+    } ]
+  }, {
+    "path" : "Templates/Colposcopy_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "Colposcopy_FORMULARIS",
+    "lastModified" : "2025-01-22T14:59:47.414Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2024-05-08T06:05:55.087Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.colposcopy_result.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.colposcopy_result.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T14:58:03.847Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.colposcopy.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.colposcopy.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T11:35:03.669Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.colposcopy_background.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.colposcopy_background.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T14:56:12.743Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-10T08:52:36.111Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report-result.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report-result.v1",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T11:40:29.795Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report.v1"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report.v1",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2024-05-08T06:05:55.087Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.colposcopy_conclusion.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.colposcopy_conclusion.v0",
+    "sourceId" : "colposco-83c",
+    "lastModified" : "2025-01-22T14:54:24.743Z"
+  } ]
+}

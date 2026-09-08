@@ -1,0 +1,64 @@
+﻿archetype (adl_version=1.4; uid=8ae1ec8d-3b46-4d83-a3db-8e424e3a88b7)
+	openEHR-EHR-CLUSTER.data_sospita_clinica.v0
+
+concept
+	[at0000]	-- Data_sospita_clinica
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Modelatge del Coneixement Clínic  Catsalut">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"ckm.salut@gencat.cat">
+		["date"] = <"2024-10-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Registrar la data en que el primer professional es va referir a la malaltia o algun símptoma relacionat.">
+			use = <"S'utilitza per registrar registrar la data en que el primer professional es va referir a la malaltia o algun símptoma relacionat.">
+			keywords = <"Data sospita clínica", ...>
+			misuse = <"">
+			copyright = <"© openEHR Foundation, Departament de Salut de la Generalitat de Catalunya">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>">
+		["custodian_organisation"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["original_namespace"] = <"org.samplehealth">
+		["original_publisher"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["custodian_namespace"] = <"org.samplehealth">
+		["MD5-CAM-1.0.1"] = <"4364177827D7CC9E3F2CBB2EB428C83F">
+		["build_uid"] = <"6613f533-16dc-4c5b-80e2-91975b70f94d">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Data_sospita_clinica
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Data de sospita clínica
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Data_sospita_clinica">
+					description = <"Data sospita clínica: És la data en que el primer professional es va referir a la malaltia o algun símptoma relacionat. Normalment és la data en què el professional enregistra la malaltia, però es pot donar el cas que, per exemple, el professional que enregistra el diagnòstic veu un Curs Clínic d'un altre professional que parla d'algun símptoma relacionat. En aquest cas, el professional pot decidir informar com a data de sospita clínica, la data del curs clínic del primer professional.">
+				>
+				["at0001"] = <
+					text = <"Data de sospita clínica">
+					description = <"És la data en que el primer professional es va referir a la malaltia o algun símptoma relacionar. Normalment és la data en què el professional enregistra la malaltia, però es pot donar el cas que, per exemple, el professional que enregistra el diagnòstic veu un Curs Clínic d'un altre professional que parla d'algun símptoma relacionat. En aquest cas, el professional pot decidir informar com a data de sospita clínica, la data del curs clínic del primer professional.">
+				>
+			>
+		>
+	>

@@ -1,0 +1,67 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "painad-8nk",
+    "user" : "xavier.alzaga@gmail.com@google",
+    "repositoryId" : "painad-8nk"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PAINAD_v1.t.json",
+    "type" : "template",
+    "id" : "PAINAD_v1",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-04-16T06:08:44.675Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.interpre_painad.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.self_reported_data.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.painad.v0"
+    } ]
+  }, {
+    "path" : "Templates/PAINAD_v1.opt",
+    "type" : "opt",
+    "id" : "PAINAD_v1",
+    "lastModified" : "2024-04-16T06:08:44.675Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-03-29T05:27:36.920Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.interpre_painad.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.interpre_painad.v0",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-03-30T06:05:19.795Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.self_reported_data.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.self_reported_data.v1",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-03-29T05:27:36.920Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-03-29T05:27:36.920Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.painad.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.painad.v0",
+    "sourceId" : "painad-8nk",
+    "lastModified" : "2024-03-30T06:05:30.527Z"
+  } ]
+}

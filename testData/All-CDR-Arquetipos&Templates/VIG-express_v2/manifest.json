@@ -1,0 +1,67 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "vig-expr-a43",
+    "user" : "xavier.alzaga@gmail.com@google",
+    "repositoryId" : "vig-expr-a43"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/VIG-express_v2.t.json",
+    "type" : "template",
+    "id" : "VIG-express_v2",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-08T11:35:55.467Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.interpre_vig_express.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.vig_express.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.self_reported_data.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    } ]
+  }, {
+    "path" : "Templates/VIG-express_v2.opt",
+    "type" : "opt",
+    "id" : "VIG-express_v2",
+    "lastModified" : "2024-07-08T11:35:55.467Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.interpre_vig_express.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.interpre_vig_express.v0",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-06T06:16:21.871Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-06T06:16:59.023Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.vig_express.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.vig_express.v0",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-08T11:34:31.883Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.self_reported_data.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.self_reported_data.v1",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-06T06:16:48.703Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "vig-expr-a43",
+    "lastModified" : "2024-07-06T06:16:59.023Z"
+  } ]
+}

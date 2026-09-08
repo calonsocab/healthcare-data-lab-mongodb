@@ -1,0 +1,94 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "241029-p-bkj",
+    "user" : "1435754d-565c-4375-a557-6e1547bc4d16@microsoft",
+    "repositoryId" : "241029-p-bkj"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Pregnancy_End_v0.6_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Pregnancy_End_v0.6_FORMULARIS",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T10:31:41.133Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.resum_de_l_embaras.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Pregnancy_End_v0.6_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Pregnancy_End_v0.6_FORMULARIS",
+    "lastModified" : "2024-10-29T10:31:41.133Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:09.633Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:07.925Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.resum_de_l_embaras.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.resum_de_l_embaras.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:09.633Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T09:32:10.688Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:07.929Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:07.929Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:09.633Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "241029-p-bkj",
+    "lastModified" : "2024-10-29T07:03:11.393Z"
+  } ]
+}

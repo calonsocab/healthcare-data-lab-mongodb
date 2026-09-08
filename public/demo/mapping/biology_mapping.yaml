@@ -1,0 +1,114 @@
+meta:
+  default_source: csv1
+
+sources:
+  csv1:
+    type: csv
+    date_format: "%d/%m/%Y"
+
+input:
+  from: csv1
+  group_by: [IdentifiantAnalyse]
+
+output:
+  prune_empty: true
+  filename: "biology_output.json"
+
+mappings:
+  "/name/value":
+    set: "Rapport de Biologie"
+
+  "/composer/name":
+    get:
+      column: Emetteur
+    transform: [strip]
+
+  "/context/start_time/value":
+    get:
+      column: DateResultat
+    transform: [date_iso]
+
+  "/context/end_time/value":
+    get:
+      column: DateResultat
+    transform: [date_iso]
+
+  "/context/other_context/items[at0002]/value/value":
+    get:
+      column: IdentifiantAnalyse
+    transform: [strip]
+
+  "/context/other_context/items[at0005]/value/value":
+    set: "final"
+
+  "/content[0]/data/origin/value":
+    get:
+      column: DatePrelevement
+    transform: [date_iso]
+
+  "/content[0]/data/events[0]/time/value":
+    get:
+      column: DateResultat
+    transform: [date_iso]
+
+  "/content[0]/data/events[0]/data/items[0]/value/value":
+    get:
+      column: Test
+    transform: [strip]
+
+  "/content[0]/data/events[0]/data/items[1]/value/value":
+    get:
+      column: StatutResultats
+    map:
+      "F": "Final"
+      "X": "Corrected"
+
+  "/content[0]/data/events[0]/data/items[1]/value/defining_code/code_string":
+    get:
+      column: StatutResultats
+    map:
+      "F": "at0038"
+      "X": "at0115"
+
+  "/content[0]/data/events[0]/data/items[1]/value/defining_code/terminology_id/value":
+    set: "local"
+
+  "/content[0]/data/events[0]/data/items[5]/items[0]/value/value":
+    get:
+      column: Test
+    transform: [strip]
+
+  "/content[0]/data/events[0]/data/items[5]/items[1]/value/_type":
+    set: "DV_TEXT"
+
+  "/content[0]/data/events[0]/data/items[5]/items[1]/value/value":
+    get:
+      column: Resultat
+    transform: [strip]
+
+  "/content[0]/data/events[0]/data/items[5]/items[2]/value/value":
+    get:
+      column: Normales
+    transform: [strip]
+    null_if_empty: true
+
+  "/content[0]/data/events[0]/data/items[5]/items[4]/value/value":
+    get:
+      column: StatutResultats
+    map:
+      "F": "Final"
+      "X": "Corrected"
+
+  "/content[0]/data/events[0]/data/items[5]/items[4]/value/defining_code/code_string":
+    get:
+      column: StatutResultats
+    map:
+      "F": "at0038"
+      "X": "at0115"
+
+  "/content[0]/data/events[0]/data/items[5]/items[4]/value/defining_code/terminology_id/value":
+    set: "local"
+
+  "/content[0]/protocol/items[0]/items[0]/value/value":
+    get:
+      column: IdentifiantAnalyse

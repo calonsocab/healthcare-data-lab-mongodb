@@ -1,0 +1,204 @@
+archetype (adl_version=1.4; uid=ab3249a8-9bbe-49e2-81a2-bea423a11300)
+	openEHR-EHR-CLUSTER.colposcopy_background.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-01-22">
+		["name"] = <"Clara Calleja Vega">
+		["organisation"] = <"SampleHealth">
+		["email"] = <"contact@example.org">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"66455b0a97e3e78d313e3fe80877353d">
+		["build_uid"] = <"2238df02-44ad-3c08-befb-faf164b8f819">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Colposcopy background
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Reason for request
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Other reasons for request
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- HPV detection test time
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..*} matches {    -- HPV detection test result
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Cytology test time
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Cytology test result
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Other results
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Colposcopy background">
+					description = <"Colposcopy background">
+				>
+				["at0001"] = <
+					text = <"Reason for request">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Other reasons for request">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"HPV detection test time">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"HPV detection test result">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Cytology test time">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Cytology test result">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Other results">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antecedents colposcòpia">
+					description = <"Antecedents colposcòpia">
+				>
+				["at0001"] = <
+					text = <"Motiu de realització de la colposcòpia">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Altres motius">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Data prova detecció VPH">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Resultat prova detecció VPH">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Data citologia">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Resultat citologia">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Altres resultats">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antecedentes colposcopia">
+					description = <"Antecedentes colposcopia">
+				>
+				["at0001"] = <
+					text = <"Motivo de realización de la colposcopia">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Otros motivos">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Fecha prueba detección VPH">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Resultado prueba detección VPH">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Fecha citología">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Resultado citología">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Otros resultados">
+					description = <"">
+				>
+			>
+		>
+	>

@@ -1,0 +1,148 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "tara-hc3-70k",
+    "user" : "bonettara@gmail.com@google",
+    "repositoryId" : "tara-hc3-70k"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/hc3_clinical_course_v0.3.t.json",
+    "type" : "template",
+    "id" : "hc3_clinical_course_v0.3",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:09:23.987Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.conclusion.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-INSTRUCTION.care_plan_request.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.soap.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-INSTRUCTION.service_request.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.problem_list.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ACTION.procedure.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.reason_for_encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.exam.v1"
+    } ]
+  }, {
+    "path" : "Templates/hc3_clinical_course_v0.3.opt",
+    "type" : "opt",
+    "id" : "hc3_clinical_course_v0.3",
+    "lastModified" : "2024-02-16T12:09:23.987Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:11.923Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.255Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.239Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.conclusion.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.conclusion.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:14.827Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:19.255Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.problem_diagnosis.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:17.543Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-INSTRUCTION.care_plan_request.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-INSTRUCTION.care_plan_request.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:07.679Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.soap.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.soap.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:07.679Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-INSTRUCTION.service_request.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-INSTRUCTION.service_request.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:07.679Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.problem_list.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.problem_list.v0",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:14.827Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ACTION.procedure.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ACTION.procedure.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:17.539Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.clinical_synopsis.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:14.823Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.reason_for_encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.reason_for_encounter.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:07.679Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.exam.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.exam.v1",
+    "sourceId" : "tara-hc3-70k",
+    "lastModified" : "2024-02-16T12:05:07.679Z"
+  } ]
+}

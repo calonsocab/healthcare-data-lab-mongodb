@@ -1,0 +1,12 @@
+{
+  "templateId": "clinical-trials-base",
+  "name": "Clinical Trials Base",
+  "version": "1.0.0",
+  "intent": "clinical_trials",
+  "primaryAnchor": "participant",
+  "headerProfileId": "header.participant.v1",
+  "terminologyProfileId": "term.trials.core.v1",
+  "dictionaryId": "trials-core.v1",
+  "skeletonGroups": ["clinicalContent", "events", "assessment"],
+  "requiredAnchors": ["participantId", "studyId", "visitId"]
+}

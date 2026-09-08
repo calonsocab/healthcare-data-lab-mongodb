@@ -1,0 +1,112 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "250930-p-b5r",
+    "user" : "1435754d-565c-4375-a557-6e1547bc4d16@microsoft",
+    "repositoryId" : "250930-p-b5r"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Pregnancy_Onset_v0.8_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Pregnancy_Onset_v0.8_FORMULARIS",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T10:47:26.374Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.dades_de_la_parella.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.comment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.mother_general_data.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Pregnancy_Onset_v0.8_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Pregnancy_Onset_v0.8_FORMULARIS",
+    "lastModified" : "2024-09-30T10:47:26.374Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.dades_de_la_parella.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.dades_de_la_parella.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T10:09:40.309Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.comment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.comment.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.mother_general_data.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.mother_general_data.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T09:43:57.291Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.antecedents_personals_de_la_dona.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T09:55:13.294Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread_care_of_newborn.v0",
+    "sourceId" : "250930-p-b5r",
+    "lastModified" : "2024-09-30T08:49:52.528Z"
+  } ]
+}

@@ -1,0 +1,98 @@
+Release Set
+-------------------------------------------------------------
+Cid: 1380.155.1
+Versionasset: 1
+Rsidentifier: HC3ImmunizationListRS0.v1
+Rsname: HC3 Immunization list RS 0
+Rsdescription: Conjunto de publicación de plantillas "HC3". 
+En este caso solo contiene "Immunization list".
+Use: Para la descarga y validación en el CDR.
+Creationtime: 2024-03-12T09:02:34+0100
+Modificationtime: 2024-03-12T09:02:34+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/#showReleaseSet_1380.155.1_1
+Logmessage: Release Set per proves HC3 Immunization list
+
+Implicitlycontainedarchetypes
+-------------------------------------------------------------
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.84
+Versionasset: 1
+Revision: 0.0.1-alpha
+Resourcemainid: openEHR-EHR-COMPOSITION.vaccination_list.v0
+Resourcemaindisplayname: Vaccination list
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:26:41+0100
+Modificationtime: 2024-03-12T08:26:41+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.84/1
+
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.85
+Versionasset: 1
+Revision: 1.2.3
+Resourcemainid: openEHR-EHR-ACTION.medication.v1
+Resourcemaindisplayname: Gestió de la medicació
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:26:42+0100
+Modificationtime: 2024-03-12T08:26:42+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.85/1
+
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.88
+Versionasset: 1
+Revision: 0.0.1-alpha
+Resourcemainid: openEHR-EHR-CLUSTER.admin_salut.v0
+Resourcemaindisplayname: Admin Salut
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:30:42+0100
+Modificationtime: 2024-03-12T08:30:42+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.88/1
+
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.89
+Versionasset: 1
+Revision: 0.0.1-alpha
+Resourcemainid: openEHR-EHR-CLUSTER.xds_metadata.v0
+Resourcemaindisplayname: Metadades XDS
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:31:27+0100
+Modificationtime: 2024-03-12T08:31:27+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.89/1
+
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.86
+Versionasset: 1
+Revision: 2.0.1
+Resourcemainid: openEHR-EHR-CLUSTER.medication.v2
+Resourcemaindisplayname: Medication details
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:26:44+0100
+Modificationtime: 2024-03-12T08:26:44+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.86/1
+
+Ckmresource
+-------------------------------------------------------------Cid: 1380.146.87
+Versionasset: 1
+Revision: 0.0.1-alpha
+Resourcemainid: openEHR-EHR-SECTION.immunisation_list.v0
+Resourcemaindisplayname: Vaccination list
+Resourcetype: ARCHETYPE
+Creationtime: 2024-03-12T08:26:45+0100
+Modificationtime: 2024-03-12T08:26:45+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/archetypes/1380.146.87/1
+
+Explicitlycontainedtemplates
+-------------------------------------------------------------
+Ckmresource
+-------------------------------------------------------------Cid: 1380.167.114
+Versionasset: 1
+Resourcemainid: 3806c87e-40c6-4c85-9b7d-c128dc6de19e
+Resourcemaindisplayname: HC3 Immunization List v0.6
+Resourcetype: TEMPLATE
+Creationtime: 2024-03-12T08:35:53+0100
+Modificationtime: 2024-03-12T08:35:53+0100
+Directlink: https://ckm.salut.gencat.cat/ckm/templates/1380.167.114/1
+
+Secondaryassets
+-------------------------------------------------------------
+Resourcetype: template
+Secondaryresourcetype: operational-template

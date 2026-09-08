@@ -1,0 +1,76 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "hc3-defi-7mj",
+    "user" : "pascualseguraana@gmail.com@google",
+    "repositoryId" : "hc3-defi-7mj"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/hc3_clinical_variables_and_scales_v0.2.t.json",
+    "type" : "template",
+    "id" : "hc3_clinical_variables_and_scales_v0.2",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-02-13T13:18:45.126Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.blood_pressure.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    } ]
+  }, {
+    "path" : "Templates/hc3_clinical_variables_and_scales_v0.2.opt",
+    "type" : "opt",
+    "id" : "hc3_clinical_variables_and_scales_v0.2",
+    "lastModified" : "2024-02-13T13:18:45.126Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.anticoagulant_treatment.v0",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-02-13T11:38:22.153Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-02-13T11:38:22.153Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-01-29T09:40:41.218Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.blood_pressure.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.blood_pressure.v2",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-02-13T11:38:22.153Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.clinical_attribute.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.clinical_attribute.v0",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-02-13T11:38:22.153Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "hc3-defi-7mj",
+    "lastModified" : "2024-01-29T09:40:41.214Z"
+  } ]
+}

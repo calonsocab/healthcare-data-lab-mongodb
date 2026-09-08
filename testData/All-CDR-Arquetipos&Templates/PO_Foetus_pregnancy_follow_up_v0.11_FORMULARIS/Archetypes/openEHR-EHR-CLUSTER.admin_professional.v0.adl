@@ -1,0 +1,201 @@
+archetype (adl_version=1.4; uid=da201736-dc2f-4c64-acb9-aee1a14d17c4)
+	openEHR-EHR-CLUSTER.admin_professional.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-07-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"adb80cb501d2a373c6252f183a1237ff">
+		["build_uid"] = <"185fd9fd-d37d-3553-8ab6-5462b6b2670e">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Professional data
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Professional Category Code
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Description Professional category
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- First surname
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Second surname
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Identification code
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Identifier type
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dades del professional">
+					description = <"Dades del  professional">
+				>
+				["at0002"] = <
+					text = <"Nom">
+					description = <"Nom">
+				>
+				["at0009"] = <
+					text = <"Primer cognom">
+					description = <"Primer cognom">
+				>
+				["at0010"] = <
+					text = <"Segon cognom">
+					description = <"Segon cognom">
+				>
+				["at0011"] = <
+					text = <"Tipus d'identificador">
+					description = <"Tipus d'identificador">
+				>
+				["at0012"] = <
+					text = <"Codi identificador">
+					description = <"Codi identificador">
+				>
+				["at0013"] = <
+					text = <"Codi Categoria professional">
+					description = <"Codi Categoria professional">
+				>
+				["at0014"] = <
+					text = <"Descripció Categoria professional">
+					description = <"Descripció Categoria professional">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Professional data">
+					description = <"Professional data">
+				>
+				["at0002"] = <
+					text = <"Name">
+					description = <"name">
+				>
+				["at0009"] = <
+					text = <"First surname">
+					description = <"First surname">
+				>
+				["at0010"] = <
+					text = <"Second surname">
+					description = <"Second surname">
+				>
+				["at0011"] = <
+					text = <"Identifier type">
+					description = <"Identifier type">
+				>
+				["at0012"] = <
+					text = <"Identification code">
+					description = <"Identification code">
+				>
+				["at0013"] = <
+					text = <"Professional Category Code">
+					description = <"Professional Category Code">
+				>
+				["at0014"] = <
+					text = <"Description Professional category">
+					description = <"Description Professional category">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos del profesional">
+					description = <"Datos del profesional">
+				>
+				["at0002"] = <
+					text = <"Nombre">
+					description = <"Nombre">
+				>
+				["at0009"] = <
+					text = <"Primer apellido">
+					description = <"Primer apellido">
+				>
+				["at0010"] = <
+					text = <"Segundo apellido">
+					description = <"Segundo apellido">
+				>
+				["at0011"] = <
+					text = <"Tipo de identificador">
+					description = <"Tipo de identificador">
+				>
+				["at0012"] = <
+					text = <"Código identificador">
+					description = <"Código identificador">
+				>
+				["at0013"] = <
+					text = <"Código Categoría profesional">
+					description = <"Código Categoría profesional">
+				>
+				["at0014"] = <
+					text = <"Descripción Categoría profesional">
+					description = <"Descripción Categoría profesional">
+				>
+			>
+		>
+	>

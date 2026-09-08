@@ -1,0 +1,8 @@
+{
+  "dictionaryId": "healthcare-core.v1",
+  "bindings": {
+    "observation": ["LOINC", "UCUM"],
+    "diagnosis": ["SNOMED-CT", "ICD-10"],
+    "medication": ["RxNorm", "ATC"]
+  }
+}

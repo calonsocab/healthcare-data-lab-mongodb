@@ -1,0 +1,94 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "241120-p-bzs",
+    "user" : "1435754d-565c-4375-a557-6e1547bc4d16@microsoft",
+    "repositoryId" : "241120-p-bzs"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/PO_Obstetric_process_v0.5_FORMULARIS.t.json",
+    "type" : "template",
+    "id" : "PO_Obstetric_process_v0.5_FORMULARIS",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:26:32.160Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.obstetric_process_closure.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.health_thread.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_professional.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.fetus_identification.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.admin_salut.v0"
+    } ]
+  }, {
+    "path" : "Templates/PO_Obstetric_process_v0.5_FORMULARIS.opt",
+    "type" : "opt",
+    "id" : "PO_Obstetric_process_v0.5_FORMULARIS",
+    "lastModified" : "2024-11-20T10:26:32.160Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.probs_base_observation.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.probs_base_observation.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.obstetric_process_closure.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.obstetric_process_closure.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.health_thread.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.health_thread.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:34.288Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_professional.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_professional.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:33.820Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.fetus_identification.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.fetus_identification.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.probs_base_composition.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.probs_base_composition.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.admin_salut.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.admin_salut.v0",
+    "sourceId" : "241120-p-bzs",
+    "lastModified" : "2024-11-20T10:12:21.444Z"
+  } ]
+}

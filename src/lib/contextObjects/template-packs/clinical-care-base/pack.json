@@ -1,0 +1,12 @@
+{
+  "templateId": "clinical-care-base",
+  "name": "Clinical Care Base",
+  "version": "1.0.0",
+  "intent": "care_delivery",
+  "primaryAnchor": "patient",
+  "headerProfileId": "header.patient.v1",
+  "terminologyProfileId": "term.clinical.core.v1",
+  "dictionaryId": "healthcare-core.v1",
+  "skeletonGroups": ["clinicalContent", "events", "assessment"],
+  "requiredAnchors": ["patientId"]
+}

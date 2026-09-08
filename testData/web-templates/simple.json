@@ -1,0 +1,67 @@
+{
+  "tree": {
+    "id": "hc3_immunization_list",
+    "name": "HC3 Immunization List",
+    "rmType": "COMPOSITION",
+    "nodeId": "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+    "min": 1,
+    "max": 1,
+    "localizedNames": {
+      "en": "HC3 Immunization List"
+    },
+    "localizedDescriptions": {
+      "en": "A persistent and managed list of vaccinations that have been administered to an individual over time."
+    },
+    "aqlPath": "/composition",
+    "children": [
+      {
+        "id": "context",
+        "name": "test",
+        "rmType": "EVENT_CONTEXT",
+        "nodeId": "",
+        "min": 1,
+        "max": 1,
+        "aqlPath": "/context",
+        "children": [
+          {
+            "id": "xds_metadata",
+            "name": "XDS Metadata",
+            "rmType": "CLUSTER",
+            "nodeId": "openEHR-EHR-CLUSTER.xds_metadata.v0",
+            "min": 0,
+            "max": 1,
+            "localizedNames": {
+              "en": "XDS Metadata"
+            },
+            "localizedDescriptions": {
+              "en": "Additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class."
+            },
+            "aqlPath": "/context/other_context[at0004]/items[openEHR-EHR-CLUSTER.xds_metadata.v0]",
+            "inputs": [
+              {
+                "type": "DATETIME"
+              }
+            ],
+            "children": [
+              {
+                "id": "author_specialty",
+                "name": "Author specialty",
+                "rmType": "DV_TEXT",
+                "nodeId": "at0001",
+                "min": 0,
+                "max": 1,
+                "localizedNames": {
+                  "en": "Author specialty"
+                },
+                "localizedDescriptions": {
+                  "en": "The speciality of the author/composer of the document."
+                },
+                "aqlPath": "/context/other_context[at0004]/items[openEHR-EHR-CLUSTER.xds_metadata.v0]/items[at0001]/value"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,558 @@
+archetype (adl_version=1.4; uid=6a3b6ec8-d01a-473e-9cc4-09c5a6da726f)
+	openEHR-EHR-CLUSTER.dades_de_la_parella.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::ca]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-09-30">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5d715eee5b95b716b2e789d5d4a402b2">
+		["build_uid"] = <"c19e0074-fddb-3bd2-9fab-c71b0c63fd2e">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Dades de la parella
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Parella
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Nom de la parella
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Edat de la parella a l'inici de l'embaràs
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::128]>
+						list = <
+							["1"] = <
+								units = <"a">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Consanguinitat
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Hàbits tòxics de la parella
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- no
+							at0009,    -- alcohol
+							at0010,    -- tabac
+							at0011,    -- cànnabis
+							at0012,    -- amfetamines
+							at0013,    -- opiacis
+							at0014,    -- cocaïna
+							at0015,    -- coles i dissolvents
+							at0016]    -- benzodiazepines
+						}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Antecedents personals remarcables de la parella
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0017,    -- No
+							at0018,    -- Malalties hereditàries
+							at0019]    -- Trastorns mentals
+						}
+					}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Antecedents familiars de primer grau  de la parella
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0020,    -- No
+							at0021,    -- Defectes congènits i malaties hereditàries
+							at0022,    -- Endocrionpaties
+							at0023,    -- Patologia cardivascular
+							at0024,    -- Hipertensió i nefropaties
+							at0025,    -- Patologia pulmonar
+							at0026,    -- Malalties hematològiques i autoimmunitàries
+							at0027,    -- Neoplàsies
+							at0028,    -- Embaràs múltiple
+							at0029,    -- Malaties infeccioses
+							at0030,    -- Patologia mental en familiars de primer grau
+							at0031,    -- suicidis
+							at0032,    -- depressió postpart
+							at0033]    -- psicosi puerperal
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dades de la parella">
+					description = <"Dades de la parella">
+				>
+				["at0001"] = <
+					text = <"Parella">
+					description = <"Parella">
+				>
+				["at0002"] = <
+					text = <"Nom de la parella">
+					description = <"Nom de la parella">
+				>
+				["at0003"] = <
+					text = <"Edat de la parella a l'inici de l'embaràs">
+					description = <"Edat de la parella a l'inici de l'embaràs">
+				>
+				["at0004"] = <
+					text = <"Consanguinitat">
+					description = <"Consanguinitat">
+				>
+				["at0005"] = <
+					text = <"Hàbits tòxics de la parella">
+					description = <"Hàbits tòxics de la parella">
+				>
+				["at0006"] = <
+					text = <"Antecedents personals remarcables de la parella">
+					description = <"Antecedents personals remarcables de la parella">
+				>
+				["at0007"] = <
+					text = <"Antecedents familiars de primer grau  de la parella">
+					description = <"Antecedents familiars de primer grau  de la parella">
+				>
+				["at0008"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0009"] = <
+					text = <"alcohol">
+					description = <"alcohol">
+				>
+				["at0010"] = <
+					text = <"tabac">
+					description = <"tabac">
+				>
+				["at0011"] = <
+					text = <"cànnabis">
+					description = <"cànnabis">
+				>
+				["at0012"] = <
+					text = <"amfetamines">
+					description = <"amfetamines">
+				>
+				["at0013"] = <
+					text = <"opiacis">
+					description = <"opiacis">
+				>
+				["at0014"] = <
+					text = <"cocaïna">
+					description = <"cocaïna">
+				>
+				["at0015"] = <
+					text = <"coles i dissolvents">
+					description = <"coles i dissolvents">
+				>
+				["at0016"] = <
+					text = <"benzodiazepines">
+					description = <"benzodiazepines">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"No">
+				>
+				["at0018"] = <
+					text = <"Malalties hereditàries">
+					description = <"Malalties hereditàries">
+				>
+				["at0019"] = <
+					text = <"Trastorns mentals">
+					description = <"Trastorns mentals">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"No">
+				>
+				["at0021"] = <
+					text = <"Defectes congènits i malaties hereditàries">
+					description = <"Defectes congènits i malaties hereditàries">
+				>
+				["at0022"] = <
+					text = <"Endocrionpaties">
+					description = <"Endocrionpaties">
+				>
+				["at0023"] = <
+					text = <"Patologia cardivascular">
+					description = <"Patologia cardivascular">
+				>
+				["at0024"] = <
+					text = <"Hipertensió i nefropaties">
+					description = <"Hipertensió i nefropaties">
+				>
+				["at0025"] = <
+					text = <"Patologia pulmonar">
+					description = <"Patologia pulmonar">
+				>
+				["at0026"] = <
+					text = <"Malalties hematològiques i autoimmunitàries">
+					description = <"Malalties hematològiques i autoimmunitàries">
+				>
+				["at0027"] = <
+					text = <"Neoplàsies">
+					description = <"Neoplàsies">
+				>
+				["at0028"] = <
+					text = <"Embaràs múltiple">
+					description = <"Embaràs múltiple">
+				>
+				["at0029"] = <
+					text = <"Malaties infeccioses">
+					description = <"Malaties infeccioses">
+				>
+				["at0030"] = <
+					text = <"Patologia mental en familiars de primer grau">
+					description = <"Patologia mental en familiars de primer grau">
+				>
+				["at0031"] = <
+					text = <"suicidis">
+					description = <"suicidis">
+				>
+				["at0032"] = <
+					text = <"depressió postpart">
+					description = <"depressió postpart">
+				>
+				["at0033"] = <
+					text = <"psicosi puerperal">
+					description = <"psicosi puerperal">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos de la pareja">
+					description = <"Datos de la pareja">
+				>
+				["at0001"] = <
+					text = <"Pareja">
+					description = <"Pareja">
+				>
+				["at0002"] = <
+					text = <"Nombre de la pareja">
+					description = <"Nombre de la pareja">
+				>
+				["at0003"] = <
+					text = <"Edad de la pareja al inicio del embarazo">
+					description = <"Edad de la pareja al inicio del embarazo">
+				>
+				["at0004"] = <
+					text = <"Consanguinidad">
+					description = <"Consanguinidad">
+				>
+				["at0005"] = <
+					text = <"Hábitos tóxicos de la pareja">
+					description = <"Hábitos tóxicos de la pareja">
+				>
+				["at0006"] = <
+					text = <"Antecedentes personales remarcables de la pareja">
+					description = <"Antecedentes personales remarcables de la pareja">
+				>
+				["at0007"] = <
+					text = <"Antecedentes familiares de primer grado de la pareja">
+					description = <"Antecedentes familiares de primer grado de la pareja">
+				>
+				["at0008"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0009"] = <
+					text = <"alcohol">
+					description = <"alcohol">
+				>
+				["at0010"] = <
+					text = <"tabaco">
+					description = <"tabaco">
+				>
+				["at0011"] = <
+					text = <"cannabis">
+					description = <"cannabis">
+				>
+				["at0012"] = <
+					text = <"anfetaminas">
+					description = <"anfetaminas">
+				>
+				["at0013"] = <
+					text = <"opiáceos">
+					description = <"opiáceos">
+				>
+				["at0014"] = <
+					text = <"cocaína">
+					description = <"cocaína">
+				>
+				["at0015"] = <
+					text = <"colas y disolventes">
+					description = <"colas y disolventes">
+				>
+				["at0016"] = <
+					text = <"benzodiacepinas">
+					description = <"benzodiacepinas">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"No">
+				>
+				["at0018"] = <
+					text = <"Enfermedades hereditarias">
+					description = <"Enfermedades hereditarias">
+				>
+				["at0019"] = <
+					text = <"Trastornos mentales">
+					description = <"Trastornos mentales">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"No">
+				>
+				["at0021"] = <
+					text = <"Defectos congénitos y enfermedades hereditarias">
+					description = <"Defectos congénitos y enfermedades hereditarias">
+				>
+				["at0022"] = <
+					text = <"Endocrionpatías">
+					description = <"Endocrionpatías">
+				>
+				["at0023"] = <
+					text = <"Patología cardivascular">
+					description = <"Patología cardivascular">
+				>
+				["at0024"] = <
+					text = <"Hipertensión y nefropatías">
+					description = <"Hipertensión y nefropatías">
+				>
+				["at0025"] = <
+					text = <"Patología pulmonar">
+					description = <"Patología pulmonar">
+				>
+				["at0026"] = <
+					text = <"Enfermedades hematológicas y autoinmunitarias">
+					description = <"Enfermedades hematológicas y autoinmunitarias">
+				>
+				["at0027"] = <
+					text = <"Neoplasias">
+					description = <"Neoplasias">
+				>
+				["at0028"] = <
+					text = <"Embarazo múltiple">
+					description = <"Embarazo múltiple">
+				>
+				["at0029"] = <
+					text = <"Enfermedades infecciosas">
+					description = <"Enfermedades infecciosas">
+				>
+				["at0030"] = <
+					text = <"Patología mental en familiares de primer grado">
+					description = <"Patología mental en familiares de primer grado">
+				>
+				["at0031"] = <
+					text = <"suicidios">
+					description = <"suicidios">
+				>
+				["at0032"] = <
+					text = <"depresión postparto">
+					description = <"depresión postparto">
+				>
+				["at0033"] = <
+					text = <"psicosis puerperal">
+					description = <"psicosis puerperal">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Data of the couple">
+					description = <"Data of the couple">
+				>
+				["at0001"] = <
+					text = <"couple">
+					description = <"couple">
+				>
+				["at0002"] = <
+					text = <"Name of the couple">
+					description = <"Name of the couple">
+				>
+				["at0003"] = <
+					text = <"Age of the couple at the beginning of the pregnancy">
+					description = <"Age of the couple at the beginning of the pregnancy">
+				>
+				["at0004"] = <
+					text = <"Consanguinity">
+					description = <"Consanguinity">
+				>
+				["at0005"] = <
+					text = <"Toxic habits of the partner">
+					description = <"Toxic habits of the partner">
+				>
+				["at0006"] = <
+					text = <"Remarkable personal antecedents of the couple">
+					description = <"Remarkable personal antecedents of the couple">
+				>
+				["at0007"] = <
+					text = <"First degree family history of the couple">
+					description = <"First degree family history of the couple">
+				>
+				["at0008"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0009"] = <
+					text = <"alcohol">
+					description = <"alcohol">
+				>
+				["at0010"] = <
+					text = <"tobacco">
+					description = <"tobacco">
+				>
+				["at0011"] = <
+					text = <"cannabis">
+					description = <"cannabis">
+				>
+				["at0012"] = <
+					text = <"amphetamines">
+					description = <"amphetamines">
+				>
+				["at0013"] = <
+					text = <"opiates">
+					description = <"opiates">
+				>
+				["at0014"] = <
+					text = <"cocaine">
+					description = <"cocaine">
+				>
+				["at0015"] = <
+					text = <"glues and solvents">
+					description = <"glues and solvents">
+				>
+				["at0016"] = <
+					text = <"benzodiazepines">
+					description = <"benzodiazepines">
+				>
+				["at0017"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0018"] = <
+					text = <"Hereditary diseases">
+					description = <"Hereditary diseases">
+				>
+				["at0019"] = <
+					text = <"Mental disorders">
+					description = <"Mental disorders">
+				>
+				["at0020"] = <
+					text = <"no">
+					description = <"no">
+				>
+				["at0021"] = <
+					text = <"Congenital defects and hereditary diseases">
+					description = <"Congenital defects and hereditary diseases">
+				>
+				["at0022"] = <
+					text = <"Endocrinopathies">
+					description = <"Endocrinopathies">
+				>
+				["at0023"] = <
+					text = <"Cardiovascular pathology">
+					description = <"Cardiovascular pathology">
+				>
+				["at0024"] = <
+					text = <"Hypertension and nephropathies">
+					description = <"Hypertension and nephropathies">
+				>
+				["at0025"] = <
+					text = <"Pulmonary pathology">
+					description = <"Pulmonary pathology">
+				>
+				["at0026"] = <
+					text = <"Hematological and autoimmune diseases">
+					description = <"Hematological and autoimmune diseases">
+				>
+				["at0027"] = <
+					text = <"neoplasms">
+					description = <"neoplasms">
+				>
+				["at0028"] = <
+					text = <"Multiple pregnancy">
+					description = <"Multiple pregnancy">
+				>
+				["at0029"] = <
+					text = <"Infectious diseases">
+					description = <"Infectious diseases">
+				>
+				["at0030"] = <
+					text = <"Mental pathology in first degree relatives">
+					description = <"Mental pathology in first degree relatives">
+				>
+				["at0031"] = <
+					text = <"suicides">
+					description = <"suicides">
+				>
+				["at0032"] = <
+					text = <"postpartum depression">
+					description = <"postpartum depression">
+				>
+				["at0033"] = <
+					text = <"puerperal psychosis">
+					description = <"puerperal psychosis">
+				>
+			>
+		>
+	>

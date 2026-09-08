@@ -1,0 +1,44 @@
+{
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "ehr_id": {
+          "type": "token"
+        },
+        "comp_archetype_id": {
+          "type": "token"
+        },
+        "comp_id": {
+          "type": "token"
+        },
+        "entry_time": {
+          "type": "date"
+        },
+        "feeder_audit_originating_system_item_ids": {
+          "fields": {
+            "id": {
+              "type": "token"
+            },
+            "type": {
+              "type": "token"
+            }
+          },
+          "type": "embeddedDocuments"
+        },
+        "healthcare_centre": {
+          "type": "token"
+        },
+        "professionals": {
+          "fields": {
+            "id": {
+              "type": "token"
+            },
+            "type": {
+              "type": "token"
+            }
+          },
+          "type": "embeddedDocuments"
+        }
+      }
+    }
+  }

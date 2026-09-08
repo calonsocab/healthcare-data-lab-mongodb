@@ -1,0 +1,155 @@
+Ok. I have developed an application, that given an openEHR AQL must:
+
+1) find affected templates
+2) normalize the AQL query to:
+
+1) decompose it with different OR clauses if necessary when is affecting different templates.
+2) substitute the paths per absolute paths in the query.
+
+You have to take into account the FROM/CONTAINS block and getting tha max hierarchy in the openehr RM. Then scan all the webtemplates to find those templates affected by the AQL , get the aqlpaths from the web templates and substitute the corresponding aliases while probably building a full hierarchical CONTAINS block from composition to the smallest component necessary in that query.
+
+original query
+
+SELECT 
+  a/time/value as AdministrationTime,
+  im_item/value as ImmunizationItem
+FROM EHR e
+CONTAINS (
+  ACTION a[Immunization managemeenEHR-EHR-ACTION.medication.v1]
+  AND DV_CODED_TEXT im_item[at0020, 'Immunization item']
+)
+
+normalized
+
+SELECT 
+  c/uid/value as CompositionID,
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/time/value as AdministrationTime,
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[at0020]/value as ImmunizationItem
+FROM EHR e
+CONTAINS COMPOSITION c[openEHR-EHR-COMPOSITION.vaccination_list.v0]
+
+
+SELECT 
+  c/uid/value as CompositionID,
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/time/value as AdministrationTime,
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[at0020]/value as ImmunizationItem
+FROM EHR e
+CONTAINS (COMPOSITION c[openEHR-EHR-COMPOSITION.vaccination_list.v1] OR COMPOSITION c[openEHR-EHR-COMPOSITION.vaccination_list.v2])
+
+
+
+SELECT 
+  c/uid/value as CompositionID,
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/time/value OR c/content[openEHR-EHR-SECTION.immunisation_list.v2]/items[openEHR-EHR-ACTION.medication.v1]/time/value as AdministrationTime 
+  c/content[openEHR-EHR-SECTION.immunisation_list.v0]/items[openEHR-EHR-ACTION.medication.v1]/description[at0017]/items[at0020]/value as ImmunizationItem
+FROM EHR e
+CONTAINS COMPOSITION c[openEHR-EHR-COMPOSITION.vaccination_list.v0]
+
+
+
+
+
+SELECT 
+  a/time/value as AdministrationTime,
+  im_item/value as ImmunizationItem
+FROM EHR e
+CONTAINS (
+  ACTION a[openEHR-EHR-ACTION.medication.v1, 'Immunization management']
+  AND DV_CODED_TEXT im_item[at0020, 'Immunization item']
+)
+
+SELECT 
+  a/time/value as AdministrationTime,
+  b/value as BatchID
+FROM EHR e
+CONTAINS (
+  ACTION a[openEHR-EHR-ACTION.medication.v1, 'Immunization management']
+  AND CLUSTER med[openEHR-EHR-CLUSTER.medication.v2, 'Medication details']
+  AND ELEMENT b[at0150, 'Batch ID']
+)
+
+
+SELECT 
+  a/time/value as AdministrationTime,
+  cd/items[at0132]/value as ConstituentName
+FROM EHR e
+CONTAINS (
+  ACTION a[openEHR-EHR-ACTION.medication.v1, 'Immunization management']
+  AND CLUSTER med[openEHR-EHR-CLUSTER.medication.v2, 'Medication details']
+  AND CLUSTER cd[openEHR-EHR-CLUSTER.medication.v2, 'Constituent details']
+)
+
+
+SELECT 
+  a/time/value as AdministrationTime,
+  COALESCE(im_item/value, b/value) as ImmunizationDetail
+FROM EHR e
+CONTAINS (
+  ACTION a[openEHR-EHR-ACTION.medication.v1, 'Immunization management']
+  AND (DV_CODED_TEXT im_item[at0020, 'Immunization item'] OR ELEMENT b[at0150, 'Batch ID'])
+)
+
+
+SELECT 
+  ad/items[at0002]/value as DocumentCreationDate
+FROM EHR e
+CONTAINS (
+  EVENT_CONTEXT ec
+  AND CLUSTER ad[openEHR-EHR-CLUSTER.admin_salut.v0]
+)
+
+
+
+
+
+1.a) Queries that we know the ehr_id
+
+one unique composition collection
+filter though ehr_id with $match
+often depending on the contains clauses we will need to filter though nodes field
+transverse the full where clauses with elemmatch on normal composition
+
+
+1.b) Queries that we know the ehr_id
+
+two compositions, one with original compositions, and another with the metaIndex info,
+filter though ehr_id and often depending on the contains clauses we will need to filter though nodes field using $search
+match for the rest of the conditions afer a lookup
+transverse the full where clauses with elemmatch on normal composition
+
+2) Population level queries
+
+two compositions, one with original compositions, and another with the metaIndex info,
+we would need to add attributes in the nodes field and corresponding index
+
+filter though ehr_id and often depending on the contains clauses we will need to filter though nodes field using $search
+match for the rest of the conditions afer a lookup
+transverse the full where clauses with elemmatch on normal composition
+
+*****************************
+1. Use Atlas Search nodes for isolating $search
+2. Rest of the pipeline could be managed by dedicated Analytics nodes (stalliness of min 90s)
+
+
+
+Composition collection
+
+ehr_id
+folder_id
+composition_version: 
+CanonicalJSON:
+
+metaIndex collection
+
+ehr_id
+folder_id
+composition_version: 
+nodes: [
+    archetype_id: node,
+    ancestors:[
+    node_attributes:[
+     "time.value": 
+     "perticipations": [{}. ]
+    ]
+    ],
+]
